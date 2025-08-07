@@ -32,57 +32,57 @@ finalizers: ["voyager.dev/finalizer"] # added by controller
 spec:
 departureAirport: JFK
 arrivalAirport: LAX
-airline  United
+airline: United
 phase: takeoff
-scheduledDeparture: "20250725T140000Z"
-scheduledArrival: "20250725T182000Z"
-windVector: { x: 2.3, y: 1.5, z: 0.1 
+scheduledDeparture: "2025-07-25T14:00:00Z"
+scheduledArrival: "2025-07-25T18:20:00Z"
+windVector: { x: 2.3, y: -1.5, z: 0.1 }
 status:
-velocity: { x: 203.5, y: 10.2, z: 0.0 
-liftForce: 3200.
+velocity: { x: 203.5, y: -10.2, z: 0.0 }
+liftForce: 3200
 ```
 
 ```
-dragForce: 1100.
-altitude: 11500.
-distanceRemaining: 1800.
-fuelRemaining: 5600.
-estimatedArrival: "20250725T183200Z"
-lastComputedAt: "20250725T142300Z"
-traceID "f3a9c1e7f12c4d3a9bc2a47db9e30b7c"
+dragForce: 1100
+altitude: 11500
+distanceRemaining: 1800
+fuelRemaining: 5600
+estimatedArrival: "2025-07-25T18:32:00Z"
+lastComputedAt: "2025-07-25T14:23:00Z"
+traceID: "f3a9c1e7f12c4d3a9bc2a47db9e30b7c"
 jobRef: "default/flight-banf351-cruise- 7 c9d"
 conditions:
 ```
 - type: Ready
 status: "True"
 reason: PhaseJobRunning
-lastTransitionTime: "20250725T142115Z"
+lastTransitionTime: "2025-07-25T14:21:15Z"
 - type: Succeeded
 status: "False"
 reason: InProgress
-lastTransitionTime: "20250725T142115Z"
+lastTransitionTime: "2025-07-25T14:21:15Z"
 
 ## Equations To Determine Status Values :
 
 ### Velocity :
 
-v = v₀ + Δt × (a_thrust + a_drag + a_wind)
+v = v0 + DeltaT * (a_thrust + a_drag + a_wind)
 Where:
 
 ```
-v₀= prior velocity vector (from last status update)
-a_thrust  T / m (thrust force / mass)
-a_drag = D / m (drag opposes motion)
+v0= prior velocity vector (from last status update)
+a_thrust = T / m (thrust force / mass)
+a_drag = -D / m (drag opposes motion)
 a_wind = vector field sampled from wind map at current position
-Δt = time since last simulation step
+DeltaT = time since last simulation step
 ```
 ### Lift Force :
 
-L  ½  ρ × v²  S  C_L
+L = 0.5 * rho * v^2 * S * C_L
 Where:
 
 ```
-ρ = air density (kg/m³)
+rho = air density (kg/m³)
 ```
 
 ```
@@ -92,7 +92,7 @@ C_L = coefficient of lift
 ```
 ### Drag Force :
 
-D  ½  ρ × v²  S  C_D
+D = 0.5 * rho * v^2 * S * C_D
 Where:
 
 ```
@@ -122,7 +122,7 @@ Phase / Event Ready Succeeded Failed Reason
 Flight created False False False WaitingForJob
 Job scheduled
 & running True False False PhaseJobRunning
-Mid‑cruise
+Mid-cruise
 progress True False False PhaseJobRunning
 Landing
 complete True True False AllPhasesSucceeded
@@ -160,7 +160,7 @@ enough to simulate plausible drag, lift, and trajectory responses without full C
 overhead. Wind currents are generated using realtime global datasets from NOAA.
 
 We use Poisson Burst Traffic to model realistic, randomly timed flight spawns.
-Additionally, we define burst clauses around high traffic airports JFK at 5PM to
+Additionally, we define burst clauses around high traffic airports (JFK at 5PM) to
 simulate congestion peaks. This serves as a load testing mechanism that stresses
 autoscalers, validates controller responsiveness, and mirrors the unpredictable,
 bursty nature of real world air traffic.
@@ -176,7 +176,7 @@ tolerance.
 
 ## Auto Scaling :
 
-Using KEDA K ubernetes Event Driven Autoscaler) to auto scale as number of
+Using KEDA (Kubernetes Event Driven Autoscaler) to auto scale as number of
 flights grows and HPA to scale based on CPU and memory needs.
 
 ## Development :
@@ -212,6 +212,6 @@ Voyager serves as an educational blueprint for understanding CRDs, controller
 reconciliation, and distributed system state transitions inside Kubernetes. In doing
 so, Voyager becomes a showcase of distributed systems at scale, end to end
 observability from metrics to logs to traces, and a foundation for more advanced
-physics in CFD Computational Fluid Dynamics).
+physics in CFD (Computational Fluid Dynamics).
 
 
