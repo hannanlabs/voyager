@@ -1,103 +1,161 @@
-import Image from "next/image";
+import Link from 'next/link';
 
-export default function Home() {
+import type { JSX } from 'react';
+
+export default function Home(): JSX.Element {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-black text-white">
+      <div className="relative">
+        {/* Navigation */}
+        <nav className="border-b border-gray-800 px-8 py-6">
+          <div className="max-w-7xl mx-auto flex justify-between items-center">
+            <div className="text-xl font-light tracking-wide">VOYAGER</div>
+          </div>
+        </nav>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        {/* Hero Section */}
+        <main className="max-w-7xl mx-auto px-8 py-24">
+          <div className="max-w-4xl">
+            <h1 className="text-6xl md:text-8xl font-thin mb-8 tracking-tighter leading-none">
+              Global Air Traffic
+              <br />
+              <span className="text-gray-400">Simulation</span>
+            </h1>
+
+            <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl font-light">
+              A sophisticated distributed system demonstrating Kubernetes orchestration, real-time
+              physics simulation, and enterprise-grade observability.
+            </p>
+
+            <div className="flex gap-6 mb-24">
+              <Link
+                href="/globe"
+                className="bg-white text-black px-8 py-3 font-medium hover:bg-gray-200 transition-colors"
+              >
+                Explore Globe
+              </Link>
+              <a
+                href="https://github.com/hannanlabs/voyager"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-gray-600 px-8 py-3 font-medium hover:border-gray-400 transition-colors"
+              >
+                View Source
+              </a>
+            </div>
+          </div>
+
+          {/* Feature Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-800 mb-24">
+            <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
+              <h3 className="text-lg font-medium mb-4 text-white">Kubernetes CRDs</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Custom Resource Definitions orchestrate flight lifecycle management with automated
+                reconciliation and state transitions.
+              </p>
+            </div>
+
+            <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
+              <h3 className="text-lg font-medium mb-4 text-white">Real-time Physics</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Vector field approximations simulate drag, lift, and wind currents using
+                Navier-Stokes inspired dynamics.
+              </p>
+            </div>
+
+            <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
+              <h3 className="text-lg font-medium mb-4 text-white">WebSocket Streaming</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Live telemetry streams flight positions, velocity vectors, and phase transitions to
+                the 3D globe interface.
+              </p>
+            </div>
+
+            <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
+              <h3 className="text-lg font-medium mb-4 text-white">Observability</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Comprehensive monitoring with Prometheus metrics, Loki logs, and OpenTelemetry
+                distributed tracing.
+              </p>
+            </div>
+
+            <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
+              <h3 className="text-lg font-medium mb-4 text-white">Chaos Engineering</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                ChaosMesh integration validates system resiliency through pod deletion, network
+                delays, and node failures.
+              </p>
+            </div>
+
+            <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
+              <h3 className="text-lg font-medium mb-4 text-white">Auto Scaling</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                KEDA and HPA automatically scale resources based on flight volume and system load
+                patterns.
+              </p>
+            </div>
+          </div>
+
+          {/* Architecture Section */}
+          <div className="border border-gray-800 p-12">
+            <h2 className="text-3xl font-thin mb-12 text-center">Technical Architecture</h2>
+            <div className="grid md:grid-cols-2 gap-16">
+              <div>
+                <h3 className="text-lg font-medium mb-6 text-white">Infrastructure</h3>
+                <div className="space-y-4 text-gray-400 text-sm">
+                  <div className="flex justify-between border-b border-gray-800 pb-2">
+                    <span>Platform</span>
+                    <span>AWS EKS</span>
+                  </div>
+                  <div className="flex justify-between border-b border-gray-800 pb-2">
+                    <span>Orchestration</span>
+                    <span>Kubernetes Operators</span>
+                  </div>
+                  <div className="flex justify-between border-b border-gray-800 pb-2">
+                    <span>Infrastructure</span>
+                    <span>Terraform</span>
+                  </div>
+                  <div className="flex justify-between border-b border-gray-800 pb-2">
+                    <span>Development</span>
+                    <span>Tilt</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-lg font-medium mb-6 text-white">Data Flow</h3>
+                <div className="space-y-4 text-gray-400 text-sm">
+                  <div className="flex justify-between border-b border-gray-800 pb-2">
+                    <span>API</span>
+                    <span>gRPC</span>
+                  </div>
+                  <div className="flex justify-between border-b border-gray-800 pb-2">
+                    <span>Traffic Modeling</span>
+                    <span>Poisson Burst</span>
+                  </div>
+                  <div className="flex justify-between border-b border-gray-800 pb-2">
+                    <span>Wind Data</span>
+                    <span>NOAA Integration</span>
+                  </div>
+                  <div className="flex justify-between border-b border-gray-800 pb-2">
+                    <span>Tracing</span>
+                    <span>OpenTelemetry</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        {/* Footer */}
+        <footer className="border-t border-gray-800 mt-24 py-12">
+          <div className="max-w-7xl mx-auto px-8">
+            <div className="text-center text-gray-400 text-sm font-light">
+              Technical showcase of distributed systems, Kubernetes orchestration, and observability
+              patterns.
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
