@@ -1,13 +1,23 @@
 FROM node:18-alpine
 
-WORKDIR /app
-
 RUN npm install -g pnpm
 
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+WORKDIR /workspace
 
-COPY . .
+COPY package.json pnpm-workspace.yaml ./
+
+COPY packages/shared-ts/package.json ./packages/shared-ts/
+COPY apps/frontend/package.json ./apps/frontend/
+
+RUN pnpm install
+
+COPY packages/shared-ts/ ./packages/shared-ts/
+
+RUN pnpm --filter @voyager/shared-ts build
+
+COPY apps/frontend/ ./apps/frontend/
+
+WORKDIR /workspace/apps/frontend
 
 EXPOSE 3000
 

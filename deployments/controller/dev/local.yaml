@@ -1,0 +1,278 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: voyager-system
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: flights.voyager.dev
+spec:
+  group: voyager.dev
+  names:
+    kind: Flight
+    listKind: FlightList
+    plural: flights
+    singular: flight
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    served: true
+    storage: true
+    additionalPrinterColumns:
+    - name: CallSign
+      type: string
+      jsonPath: .spec.callSign
+    - name: Airline
+      type: string
+      jsonPath: .spec.airline
+    - name: Route
+      type: string
+      jsonPath: .spec.departureAirport
+    - name: To
+      type: string
+      jsonPath: .spec.arrivalAirport
+    - name: Phase
+      type: string
+      jsonPath: .status.phase
+    - name: Ready
+      type: string
+      jsonPath: .status.conditions[?(@.type=="Ready")].status
+    - name: Age
+      type: date
+      jsonPath: .metadata.creationTimestamp
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            required: ["callSign", "airline", "departureAirport", "arrivalAirport", "scheduledDeparture", "scheduledArrival"]
+            properties:
+              callSign:
+                type: string
+                pattern: "^[A-Z]{2,3}[0-9]{1,4}$"
+              airline:
+                type: string
+                minLength: 2
+                maxLength: 50
+              departureAirport:
+                type: string
+                pattern: "^[A-Z]{3}$"
+              arrivalAirport:
+                type: string
+                pattern: "^[A-Z]{3}$"
+              scheduledDeparture:
+                type: string
+                format: date-time
+              scheduledArrival:
+                type: string
+                format: date-time
+          status:
+            type: object
+            properties:
+              phase:
+                type: string
+                enum: ["takeoff", "climb", "cruise", "descent", "landing"]
+                default: "cruise"
+              estimatedArrival:
+                type: string
+                format: date-time
+              lastComputedAt:
+                type: string
+                format: date-time
+              conditions:
+                type: array
+                items:
+                  type: object
+                  required: ["type", "status", "lastTransitionTime", "reason", "message"]
+                  properties:
+                    type:
+                      type: string
+                    status:
+                      type: string
+                      enum: ["True", "False", "Unknown"]
+                    lastTransitionTime:
+                      type: string
+                      format: date-time
+                    reason:
+                      type: string
+                    message:
+                      type: string
+    subresources:
+      status: {}
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: voyager-controller-manager
+  namespace: voyager-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: voyager-controller-manager-role
+rules:
+- apiGroups:
+  - voyager.dev
+  resources:
+  - flights
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - voyager.dev
+  resources:
+  - flights/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - voyager.dev
+  resources:
+  - flights/status
+  verbs:
+  - get
+  - patch
+  - update
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: voyager-controller-manager-rolebinding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: voyager-controller-manager-role
+subjects:
+- kind: ServiceAccount
+  name: voyager-controller-manager
+  namespace: voyager-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: voyager-controller-leader-election-role
+  namespace: voyager-system
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - coordination.k8s.io
+  resources:
+  - leases
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: voyager-controller-leader-election-rolebinding
+  namespace: voyager-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: voyager-controller-leader-election-role
+subjects:
+- kind: ServiceAccount
+  name: voyager-controller-manager
+  namespace: voyager-system
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: controller
+  namespace: voyager-system
+  labels:
+    app: controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: controller
+  template:
+    metadata:
+      labels:
+        app: controller
+    spec:
+      serviceAccountName: voyager-controller-manager
+      containers:
+      - name: controller
+        image: controller
+        command:
+        - /manager
+        args:
+        - --leader-elect=false
+        ports:
+        - containerPort: 8080
+          name: metrics
+        - containerPort: 8081
+          name: health
+        env:
+        - name: ENV
+          value: "development"
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8081
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: 8081
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        resources:
+          requests:
+            cpu: 10m
+            memory: 64Mi
+          limits:
+            cpu: 500m
+            memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: controller
+  namespace: voyager-system
+spec:
+  selector:
+    app: controller
+  ports:
+  - name: metrics
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+  - name: health
+    protocol: TCP
+    port: 8081
+    targetPort: 8081
+  type: ClusterIP
