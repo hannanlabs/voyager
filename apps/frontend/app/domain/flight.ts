@@ -1,33 +1,10 @@
-export type FlightPosition = {
-  latitude: number;
-  longitude: number;
-  altitude: number;
-};
+// Re-export types from shared schema for backward compatibility
+export type { 
+  FlightState, 
+  FlightPosition, 
+  FlightVelocity 
+} from '@voyager/shared-ts';
 
-export type FlightVelocity = {
-  x: number;
-  y: number;
-  z: number;
-};
-
-export type FlightState = {
-  id: string;
-  callSign: string;
-  airline: string;
-  departureAirport: string;
-  arrivalAirport: string;
-  phase: 'takeoff' | 'climb' | 'cruise' | 'descent' | 'landing';
-  position: FlightPosition;
-  velocity: FlightVelocity;
-  bearing: number;
-  speed: number;
-  altitude: number;
-  progress: number;
-  scheduledDeparture: string;
-  scheduledArrival: string;
-  estimatedArrival: string;
-  lastComputedAt: string;
-  traceID: string;
-};
+import type { FlightState } from '@voyager/shared-ts';
 
 export type FlightUpdates = Map<string, FlightState>;

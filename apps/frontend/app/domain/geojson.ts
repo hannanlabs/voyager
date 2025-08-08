@@ -94,6 +94,8 @@ const AIRPORT_COORDS = {
   LAX: [-118.4081, 33.9425] as [number, number],
   ATL: [-84.4277, 33.6407] as [number, number],
   SEA: [-122.3088, 47.4502] as [number, number],
+  DEN: [-104.6737, 39.8561] as [number, number],
+  ORD: [-87.9073, 41.9742] as [number, number],
 };
 
 export function toFlightRoutesGeoJSON(
