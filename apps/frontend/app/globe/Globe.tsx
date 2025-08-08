@@ -13,7 +13,7 @@ import {
   createFlightsRoutesLayer,
   updateRouteVisibility,
 } from '../components/layers/FlightsRoutesLayer';
-import { useFlights } from '../data/useFlights';
+import { useFlights } from '../providers/WebSocketProvider';
 import { toFlightPointsGeoJSON, toFlightRoutesGeoJSON } from '../domain/geojson';
 
 import type { JSX } from 'react';
@@ -26,7 +26,7 @@ export default function Globe(): JSX.Element {
   const map = useRef<mapboxgl.Map | null>(null);
   const [selectedFlightId, setSelectedFlightId] = useState<string | null>(null);
 
-  const { flights, connected } = useFlights({ updateHz: 6 });
+  const { flights, connected } = useFlights();
   const selectedFlight = selectedFlightId ? (flights.get(selectedFlightId) ?? null) : null;
 
   const handleFlightClick = useCallback((flightId: string) => {

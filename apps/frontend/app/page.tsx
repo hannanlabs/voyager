@@ -23,8 +23,8 @@ export default function Home(): JSX.Element {
             </h1>
 
             <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl font-light">
-              A sophisticated distributed system demonstrating Kubernetes orchestration, real-time
-              physics simulation, and enterprise-grade observability.
+              Real-time flight simulation with live physics calculations and WebSocket streaming,
+              built for scalability and observability.
             </p>
 
             <div className="flex gap-6 mb-24">
@@ -48,10 +48,10 @@ export default function Home(): JSX.Element {
           {/* Feature Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-800 mb-24">
             <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
-              <h3 className="text-lg font-medium mb-4 text-white">Kubernetes CRDs</h3>
+              <h3 className="text-lg font-medium mb-4 text-white">Flight Simulator</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Custom Resource Definitions orchestrate flight lifecycle management with automated
-                reconciliation and state transitions.
+                Go-based simulation engine generating realistic flight paths with physics calculations
+                for drag, lift, and wind effects.
               </p>
             </div>
 
@@ -80,18 +80,18 @@ export default function Home(): JSX.Element {
             </div>
 
             <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
-              <h3 className="text-lg font-medium mb-4 text-white">Chaos Engineering</h3>
+              <h3 className="text-lg font-medium mb-4 text-white">Chaos Testing</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                ChaosMesh integration validates system resiliency through pod deletion, network
-                delays, and node failures.
+                Chaos Mesh integration for pod-level failures and network perturbations, plus
+                configurable simulator fault injection.
               </p>
             </div>
 
             <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
-              <h3 className="text-lg font-medium mb-4 text-white">Auto Scaling</h3>
+              <h3 className="text-lg font-medium mb-4 text-white">Scalable Architecture</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                KEDA and HPA automatically scale resources based on flight volume and system load
-                patterns.
+                Kubernetes-ready design with horizontal scaling capabilities and resource optimization
+                for high-volume flight simulation.
               </p>
             </div>
           </div>
@@ -105,11 +105,11 @@ export default function Home(): JSX.Element {
                 <div className="space-y-4 text-gray-400 text-sm">
                   <div className="flex justify-between border-b border-gray-800 pb-2">
                     <span>Platform</span>
-                    <span>AWS EKS</span>
+                    <span>Kubernetes</span>
                   </div>
                   <div className="flex justify-between border-b border-gray-800 pb-2">
-                    <span>Orchestration</span>
-                    <span>Kubernetes Operators</span>
+                    <span>Backend</span>
+                    <span>Go Simulator</span>
                   </div>
                   <div className="flex justify-between border-b border-gray-800 pb-2">
                     <span>Infrastructure</span>
@@ -125,16 +125,16 @@ export default function Home(): JSX.Element {
                 <h3 className="text-lg font-medium mb-6 text-white">Data Flow</h3>
                 <div className="space-y-4 text-gray-400 text-sm">
                   <div className="flex justify-between border-b border-gray-800 pb-2">
-                    <span>API</span>
-                    <span>gRPC</span>
+                    <span>Streaming</span>
+                    <span>WebSocket</span>
                   </div>
                   <div className="flex justify-between border-b border-gray-800 pb-2">
-                    <span>Traffic Modeling</span>
-                    <span>Poisson Burst</span>
+                    <span>Frontend</span>
+                    <span>React + MapGL</span>
                   </div>
                   <div className="flex justify-between border-b border-gray-800 pb-2">
-                    <span>Wind Data</span>
-                    <span>NOAA Integration</span>
+                    <span>Physics</span>
+                    <span>Real-time Simulation</span>
                   </div>
                   <div className="flex justify-between border-b border-gray-800 pb-2">
                     <span>Tracing</span>
@@ -150,8 +150,8 @@ export default function Home(): JSX.Element {
         <footer className="border-t border-gray-800 mt-24 py-12">
           <div className="max-w-7xl mx-auto px-8">
             <div className="text-center text-gray-400 text-sm font-light">
-              Technical showcase of distributed systems, Kubernetes orchestration, and observability
-              patterns.
+              Real-time flight simulation demonstrating scalable WebSocket streaming and 
+              physics-based modeling.
             </div>
           </div>
         </footer>
