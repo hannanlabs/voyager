@@ -4,6 +4,8 @@ import type { Metadata } from 'next';
 import type { JSX } from 'react';
 import './globals.css';
 
+import { WebSocketProvider } from './providers/WebSocketProvider';
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -26,7 +28,11 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <WebSocketProvider>
+          {children}
+        </WebSocketProvider>
+      </body>
     </html>
   );
 }

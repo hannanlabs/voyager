@@ -165,10 +165,7 @@ export default function FlightDetailsSheet({
                   <div className="bg-white rounded-lg p-3 shadow-sm border border-white/50">
                     <p className="text-slate-800 font-semibold text-sm">Speed</p>
                     <p className="text-lg font-bold text-slate-800">
-                      {Math.sqrt(
-                        flight.velocity.x ** 2 + flight.velocity.y ** 2 + flight.velocity.z ** 2,
-                      ).toFixed(0)}{' '}
-                      kts
+                      {flight.speed.toFixed(0)} kts
                     </p>
                   </div>
                 </div>

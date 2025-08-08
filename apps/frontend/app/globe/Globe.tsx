@@ -13,7 +13,7 @@ import {
   createFlightsRoutesLayer,
   updateRouteVisibility,
 } from '../components/layers/FlightsRoutesLayer';
-import { useFlights } from '../data/useFlights';
+import { useFlights } from '../providers/WebSocketProvider';
 import { toFlightPointsGeoJSON, toFlightRoutesGeoJSON } from '../domain/geojson';
 
 import type { JSX } from 'react';
