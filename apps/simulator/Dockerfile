@@ -2,10 +2,8 @@ FROM golang:1.22-alpine AS builder
 
 WORKDIR /app
 
-# Copy the entire monorepo to get access to packages/shared-go
 COPY . .
 
-# Change to the simulator directory
 WORKDIR /app/apps/simulator
 
 RUN go mod tidy
@@ -17,6 +15,7 @@ RUN apk --no-cache add ca-certificates tzdata
 WORKDIR /root/
 
 COPY --from=builder /app/apps/simulator/simulator .
+COPY --from=builder /app/data/airports.iata.geojson ./data/airports.iata.geojson
 
 EXPOSE 8080
 

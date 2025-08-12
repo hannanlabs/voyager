@@ -35,13 +35,11 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
   const pendingUpdatesRef = useRef<FlightState[]>([]);
   const reconnectDelay = useRef(1000);
 
-  // Get WebSocket URL from environment
   const wsUrl = process.env.NEXT_PUBLIC_FLIGHTS_WS_URL;
   if (!wsUrl) {
     throw new Error('NEXT_PUBLIC_FLIGHTS_WS_URL environment variable is required');
   }
 
-  // Throttled state updates for performance
   const flushPendingUpdates = useCallback(() => {
     if (pendingUpdatesRef.current.length === 0) return;
 
@@ -49,21 +47,21 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
     pendingUpdatesRef.current = [];
 
     setState(prevState => {
-      const newFlights = new Map(prevState.flights);
-      let changed = false;
-
+      const newFlights = new Map<string, FlightState>();
+      
       for (const flight of updates) {
-        const existing = newFlights.get(flight.id);
-        // Only update if changed (shallow comparison of key fields)
-        if (!existing || 
+        newFlights.set(flight.id, flight);
+      }
+
+      const changed = prevState.flights.size !== newFlights.size ||
+        Array.from(newFlights.values()).some(flight => {
+          const existing = prevState.flights.get(flight.id);
+          return !existing || 
             existing.lastComputedAt !== flight.lastComputedAt ||
             existing.position.latitude !== flight.position.latitude ||
             existing.position.longitude !== flight.position.longitude ||
-            existing.phase !== flight.phase) {
-          newFlights.set(flight.id, flight);
-          changed = true;
-        }
-      }
+            existing.phase !== flight.phase;
+        });
 
       return changed 
         ? { ...prevState, flights: newFlights }
@@ -74,14 +72,13 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
   }, []);
 
   const scheduleUpdate = useCallback((flights: FlightState[]) => {
-    pendingUpdatesRef.current = flights; // Replace, don't accumulate
+    pendingUpdatesRef.current = flights; 
 
-    if (updateThrottleRef.current) return; // Already scheduled
+    if (updateThrottleRef.current) return; 
 
-    const delay = document.hidden ? 2000 : 100; // 0.5Hz hidden, ~10Hz visible
+    const delay = document.hidden ? 2000 : 100; 
 
     if (!document.hidden) {
-      // Use requestAnimationFrame for smooth updates when tab is visible
       updateThrottleRef.current = setTimeout(() => {
         requestAnimationFrame(flushPendingUpdates);
       }, 0);
@@ -108,7 +105,7 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
   const connect = useCallback(() => {
     if (wsRef.current?.readyState === WebSocket.CONNECTING || 
         wsRef.current?.readyState === WebSocket.OPEN) {
-      return; // Already connecting or connected
+      return; 
     }
 
     try {
@@ -119,7 +116,7 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
       ws.onopen = () => {
         console.log('[WS] Connected');
         setState(prev => ({ ...prev, connected: true, error: null }));
-        reconnectDelay.current = 1000; // Reset backoff
+        reconnectDelay.current = 1000; 
       };
 
       ws.onmessage = handleMessage;
@@ -132,7 +129,6 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
           error: event.wasClean ? null : 'Connection lost'
         }));
         
-        // Auto-reconnect for unexpected closes
         if (!event.wasClean) {
           scheduleReconnect();
         }
@@ -160,7 +156,6 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
       clearTimeout(reconnectTimeoutRef.current);
     }
     
-    // Exponential backoff with jitter, max 30s
     reconnectDelay.current = Math.min(
       reconnectDelay.current * 2 + Math.random() * 1000,
       30000
@@ -171,7 +166,6 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
   }, [connect]);
 
   const reconnect = useCallback(() => {
-    // Close existing connection
     if (wsRef.current) {
       wsRef.current.close(1000, 'Manual reconnect');
       wsRef.current = null;
@@ -182,18 +176,16 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
       reconnectTimeoutRef.current = null;
     }
     
-    // Clear any pending updates
     pendingUpdatesRef.current = [];
     if (updateThrottleRef.current) {
       clearTimeout(updateThrottleRef.current);
       updateThrottleRef.current = null;
     }
     
-    reconnectDelay.current = 1000; // Reset delay
+    reconnectDelay.current = 1000; 
     connect();
   }, [connect]);
 
-  // Initialize connection
   useEffect(() => {
     connect();
     
@@ -210,11 +202,9 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
     };
   }, [connect]);
 
-  // Handle visibility change for throttling
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (!document.hidden && pendingUpdatesRef.current.length > 0) {
-        // Flush immediately when tab becomes visible
         flushPendingUpdates();
       }
     };
@@ -245,5 +235,4 @@ export function useWebSocket(): WebSocketContextValue {
   return context;
 }
 
-// Alias for backward compatibility and semantic clarity
 export const useFlights = useWebSocket;

@@ -1,21 +1,79 @@
 package simulator
 
-import "github.com/hannan/voyager/shared-go/flight"
+import (
+	"encoding/json"
+	"os"
 
-var Airports = map[string]flight.Position{
-	"JFK": {40.6413, -73.7781, 0},
-	"LAX": {33.9425, -118.4081, 0},
-	"ATL": {33.6407, -84.4277, 0},
-	"SEA": {47.4502, -122.3088, 0},
-	"DEN": {39.8561, -104.6737, 0},
-	"ORD": {41.9742, -87.9073, 0},
+	"github.com/hannan/voyager/shared-go/flight"
+)
+
+type GeoJSONFeature struct {
+	Type       string                 `json:"type"`
+	Geometry   GeoJSONGeometry        `json:"geometry"`
+	Properties map[string]interface{} `json:"properties"`
+}
+
+type GeoJSONGeometry struct {
+	Type        string    `json:"type"`
+	Coordinates []float64 `json:"coordinates"`
+}
+
+type GeoJSONFeatureCollection struct {
+	Type     string           `json:"type"`
+	Features []GeoJSONFeature `json:"features"`
+}
+
+func LoadAirports(path string) (map[string]flight.Position, []string, error) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	var geojson GeoJSONFeatureCollection
+	if err := json.Unmarshal(data, &geojson); err != nil {
+		return nil, nil, err
+	}
+
+	positions := make(map[string]flight.Position, len(geojson.Features))
+	var codes []string
+
+	for _, feature := range geojson.Features {
+		iata, ok := feature.Properties["iata"].(string)
+		if !ok || iata == "" {
+			continue
+		}
+
+		if len(feature.Geometry.Coordinates) >= 2 {
+			longitude := feature.Geometry.Coordinates[0]
+			latitude := feature.Geometry.Coordinates[1]
+
+			positions[iata] = flight.Position{
+				Latitude:  latitude,
+				Longitude: longitude,
+				Altitude:  0,
+			}
+			codes = append(codes, iata)
+		}
+	}
+	return positions, codes, nil
+}
+
+var Airports map[string]flight.Position
+var AirportCodes []string
+
+func init() {
+	var err error
+	Airports, AirportCodes, err = LoadAirports("data/airports.iata.geojson")
+	if err != nil {
+		panic("Failed to load airports data: " + err.Error())
+	}
 }
 
 var Airlines = []string{"United", "American", "Delta", "Southwest", "JetBlue", "Alaska"}
 
 var Phases = []flight.Phase{
 	flight.Takeoff,
-	flight.Climb, 
+	flight.Climb,
 	flight.Cruise,
 	flight.Descent,
 	flight.Landing,

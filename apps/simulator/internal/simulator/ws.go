@@ -77,13 +77,12 @@ func (fs *FlightSimulator) removeClient(conn *websocket.Conn) {
 }
 
 func (fs *FlightSimulator) BroadcastFlights() {
-	// Copy clients list while holding the lock briefly
 	fs.clientsMu.RLock()
 	if len(fs.clients) == 0 {
 		fs.clientsMu.RUnlock()
 		return
 	}
-	
+
 	clientsSlice := make([]*websocket.Conn, 0, len(fs.clients))
 	for client := range fs.clients {
 		clientsSlice = append(clientsSlice, client)
@@ -106,12 +105,10 @@ func (fs *FlightSimulator) BroadcastFlights() {
 		return
 	}
 
-	// Write to clients without holding the lock
 	for _, client := range clientsSlice {
-		// Set write deadline
 		deadline := time.Now().Add(5 * time.Second)
 		client.SetWriteDeadline(deadline)
-		
+
 		if err := client.WriteMessage(websocket.TextMessage, data); err != nil {
 			log.Printf("Error sending message to client: %v", err)
 			fs.removeClient(client)

@@ -16,6 +16,7 @@ COPY packages/shared-ts/ ./packages/shared-ts/
 RUN pnpm --filter @voyager/shared-ts build
 
 COPY apps/frontend/ ./apps/frontend/
+COPY data/airports.iata.geojson ./apps/frontend/public/data/airports.iata.geojson
 
 WORKDIR /workspace/apps/frontend
 

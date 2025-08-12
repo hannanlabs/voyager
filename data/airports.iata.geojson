@@ -1,0 +1,8681 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          160.054993,
+          -9.428
+        ]
+      },
+      "properties": {
+        "iata": "HIR",
+        "icao": "AGGH",
+        "name": "Honiara International Airport",
+        "type": "large_airport",
+        "country": "SB",
+        "city": "Honiara"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          147.220001,
+          -9.44338
+        ]
+      },
+      "properties": {
+        "iata": "POM",
+        "icao": "AYPY",
+        "name": "Port Moresby Jacksons International Airport",
+        "type": "large_airport",
+        "country": "PG",
+        "city": "Port Moresby"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.6056,
+          63.985001
+        ]
+      },
+      "properties": {
+        "iata": "KEF",
+        "icao": "BIKF",
+        "name": "Keflavik International Airport",
+        "type": "large_airport",
+        "country": "IS",
+        "city": "Reykjavík"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.580002,
+          53.3097
+        ]
+      },
+      "properties": {
+        "iata": "YEG",
+        "icao": "CYEG",
+        "name": "Edmonton International Airport",
+        "type": "large_airport",
+        "country": "CA",
+        "city": "Edmonton"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.508598,
+          44.880798
+        ]
+      },
+      "properties": {
+        "iata": "YHZ",
+        "icao": "CYHZ",
+        "name": "Halifax / Stanfield International Airport",
+        "type": "large_airport",
+        "country": "CA",
+        "city": "Halifax"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.669197,
+          45.322498
+        ]
+      },
+      "properties": {
+        "iata": "YOW",
+        "icao": "CYOW",
+        "name": "Ottawa Macdonald-Cartier International Airport",
+        "type": "large_airport",
+        "country": "CA",
+        "city": "Ottawa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.393303,
+          46.7911
+        ]
+      },
+      "properties": {
+        "iata": "YQB",
+        "icao": "CYQB",
+        "name": "Quebec Jean Lesage International Airport",
+        "type": "large_airport",
+        "country": "CA",
+        "city": "Quebec"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.742294,
+          45.467837
+        ]
+      },
+      "properties": {
+        "iata": "YUL",
+        "icao": "CYUL",
+        "name": "Montreal / Pierre Elliott Trudeau International Airport",
+        "type": "large_airport",
+        "country": "CA",
+        "city": "Montréal"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.183998,
+          49.193901
+        ]
+      },
+      "properties": {
+        "iata": "YVR",
+        "icao": "CYVR",
+        "name": "Vancouver International Airport",
+        "type": "large_airport",
+        "country": "CA",
+        "city": "Vancouver"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.239899,
+          49.91
+        ]
+      },
+      "properties": {
+        "iata": "YWG",
+        "icao": "CYWG",
+        "name": "Winnipeg / James Armstrong Richardson International Airport",
+        "type": "large_airport",
+        "country": "CA",
+        "city": "Winnipeg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.009933,
+          51.118822
+        ]
+      },
+      "properties": {
+        "iata": "YYC",
+        "icao": "CYYC",
+        "name": "Calgary International Airport",
+        "type": "large_airport",
+        "country": "CA",
+        "city": "Calgary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.7519,
+          47.618599
+        ]
+      },
+      "properties": {
+        "iata": "YYT",
+        "icao": "CYYT",
+        "name": "St. John's International Airport",
+        "type": "large_airport",
+        "country": "CA",
+        "city": "St. John's"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.6306,
+          43.6772
+        ]
+      },
+      "properties": {
+        "iata": "YYZ",
+        "icao": "CYYZ",
+        "name": "Toronto Lester B. Pearson International Airport",
+        "type": "large_airport",
+        "country": "CA",
+        "city": "Toronto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.214531,
+          36.693886
+        ]
+      },
+      "properties": {
+        "iata": "ALG",
+        "icao": "DAAG",
+        "name": "Houari Boumediene Airport",
+        "type": "large_airport",
+        "country": "DZ",
+        "city": "Algiers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.166786,
+          5.60519
+        ]
+      },
+      "properties": {
+        "iata": "ACC",
+        "icao": "DGAA",
+        "name": "Kotoka International Airport",
+        "type": "large_airport",
+        "country": "GH",
+        "city": "Accra"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.26317,
+          9.00679
+        ]
+      },
+      "properties": {
+        "iata": "ABV",
+        "icao": "DNAA",
+        "name": "Nnamdi Azikiwe International Airport",
+        "type": "large_airport",
+        "country": "NG",
+        "city": "Abuja"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.32116,
+          6.57737
+        ]
+      },
+      "properties": {
+        "iata": "LOS",
+        "icao": "DNMM",
+        "name": "Murtala Muhammed International Airport",
+        "type": "large_airport",
+        "country": "NG",
+        "city": "Lagos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.18361,
+          13.4815
+        ]
+      },
+      "properties": {
+        "iata": "NIM",
+        "icao": "DRRN",
+        "name": "Diori Hamani International Airport",
+        "type": "large_airport",
+        "country": "NE",
+        "city": "Niamey"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2272,
+          36.851002
+        ]
+      },
+      "properties": {
+        "iata": "TUN",
+        "icao": "DTTA",
+        "name": "Tunis Carthage International Airport",
+        "type": "large_airport",
+        "country": "TN",
+        "city": "Tunis"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.48444,
+          50.901402
+        ]
+      },
+      "properties": {
+        "iata": "BRU",
+        "icao": "EBBR",
+        "name": "Brussels Airport",
+        "type": "large_airport",
+        "country": "BE",
+        "city": "Zaventem"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.500672,
+          52.362247
+        ]
+      },
+      "properties": {
+        "iata": "BER",
+        "icao": "EDDB",
+        "name": "Berlin Brandenburg Airport",
+        "type": "large_airport",
+        "country": "DE",
+        "city": "Berlin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.561096,
+          50.030241
+        ]
+      },
+      "properties": {
+        "iata": "FRA",
+        "icao": "EDDF",
+        "name": "Frankfurt Airport",
+        "type": "large_airport",
+        "country": "DE",
+        "city": "Frankfurt am Main"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.98823,
+          53.630402
+        ]
+      },
+      "properties": {
+        "iata": "HAM",
+        "icao": "EDDH",
+        "name": "Hamburg Helmut Schmidt Airport",
+        "type": "large_airport",
+        "country": "DE",
+        "city": "Hamburg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.14274,
+          50.865898
+        ]
+      },
+      "properties": {
+        "iata": "CGN",
+        "icao": "EDDK",
+        "name": "Cologne Bonn Airport",
+        "type": "large_airport",
+        "country": "DE",
+        "city": "Köln (Cologne)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.76678,
+          51.289501
+        ]
+      },
+      "properties": {
+        "iata": "DUS",
+        "icao": "EDDL",
+        "name": "Düsseldorf Airport",
+        "type": "large_airport",
+        "country": "DE",
+        "city": "Düsseldorf"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.7861,
+          48.353802
+        ]
+      },
+      "properties": {
+        "iata": "MUC",
+        "icao": "EDDM",
+        "name": "Munich Airport",
+        "type": "large_airport",
+        "country": "DE",
+        "city": "Munich"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.078056,
+          49.498699
+        ]
+      },
+      "properties": {
+        "iata": "NUE",
+        "icao": "EDDN",
+        "name": "Nuremberg Airport",
+        "type": "large_airport",
+        "country": "DE",
+        "city": "Nuremberg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.232705,
+          51.420657
+        ]
+      },
+      "properties": {
+        "iata": "LEJ",
+        "icao": "EDDP",
+        "name": "Leipzig/Halle Airport",
+        "type": "large_airport",
+        "country": "DE",
+        "city": "Schkeuditz"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.22196,
+          48.689899
+        ]
+      },
+      "properties": {
+        "iata": "STR",
+        "icao": "EDDS",
+        "name": "Stuttgart Airport",
+        "type": "large_airport",
+        "country": "DE",
+        "city": "Stuttgart"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.68508,
+          52.461102
+        ]
+      },
+      "properties": {
+        "iata": "HAJ",
+        "icao": "EDDV",
+        "name": "Hannover Airport",
+        "type": "large_airport",
+        "country": "DE",
+        "city": "Hannover"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.83264,
+          59.413246
+        ]
+      },
+      "properties": {
+        "iata": "TLL",
+        "icao": "EETN",
+        "name": "Lennart Meri Tallinn Airport",
+        "type": "large_airport",
+        "country": "EE",
+        "city": "Tallinn"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.963341,
+          60.318363
+        ]
+      },
+      "properties": {
+        "iata": "HEL",
+        "icao": "EFHK",
+        "name": "Helsinki Vantaa Airport",
+        "type": "large_airport",
+        "country": "FI",
+        "city": "Helsinki (Vantaa)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.21583,
+          54.657501
+        ]
+      },
+      "properties": {
+        "iata": "BFS",
+        "icao": "EGAA",
+        "name": "Belfast International Airport",
+        "type": "large_airport",
+        "country": "GB",
+        "city": "Belfast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.74803,
+          52.453899
+        ]
+      },
+      "properties": {
+        "iata": "BHX",
+        "icao": "EGBB",
+        "name": "Birmingham Airport",
+        "type": "large_airport",
+        "country": "GB",
+        "city": "Birmingham, West Midlands"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.279521,
+          53.349375
+        ]
+      },
+      "properties": {
+        "iata": "MAN",
+        "icao": "EGCC",
+        "name": "Manchester Airport",
+        "type": "large_airport",
+        "country": "GB",
+        "city": "Manchester, Greater Manchester"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.368333,
+          51.874699
+        ]
+      },
+      "properties": {
+        "iata": "LTN",
+        "icao": "EGGW",
+        "name": "London Luton Airport",
+        "type": "large_airport",
+        "country": "GB",
+        "city": "Luton, Bedfordshire"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.192089,
+          51.148771
+        ]
+      },
+      "properties": {
+        "iata": "LGW",
+        "icao": "EGKK",
+        "name": "London Gatwick Airport",
+        "type": "large_airport",
+        "country": "GB",
+        "city": "London"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.461941,
+          51.4706
+        ]
+      },
+      "properties": {
+        "iata": "LHR",
+        "icao": "EGLL",
+        "name": "London Heathrow Airport",
+        "type": "large_airport",
+        "country": "GB",
+        "city": "London"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.43306,
+          55.871899
+        ]
+      },
+      "properties": {
+        "iata": "GLA",
+        "icao": "EGPF",
+        "name": "Glasgow Airport",
+        "type": "large_airport",
+        "country": "GB",
+        "city": "Glasgow"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.372288,
+          55.950145
+        ]
+      },
+      "properties": {
+        "iata": "EDI",
+        "icao": "EGPH",
+        "name": "Edinburgh Airport",
+        "type": "large_airport",
+        "country": "GB",
+        "city": "Edinburgh"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.235,
+          51.884998
+        ]
+      },
+      "properties": {
+        "iata": "STN",
+        "icao": "EGSS",
+        "name": "London Stansted Airport",
+        "type": "large_airport",
+        "country": "GB",
+        "city": "London"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.76389,
+          52.308601
+        ]
+      },
+      "properties": {
+        "iata": "AMS",
+        "icao": "EHAM",
+        "name": "Amsterdam Airport Schiphol",
+        "type": "large_airport",
+        "country": "NL",
+        "city": "Amsterdam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.37453,
+          51.4501
+        ]
+      },
+      "properties": {
+        "iata": "EIN",
+        "icao": "EHEH",
+        "name": "Eindhoven Airport",
+        "type": "large_airport",
+        "country": "NL",
+        "city": "Eindhoven"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.262121,
+          53.428713
+        ]
+      },
+      "properties": {
+        "iata": "DUB",
+        "icao": "EIDW",
+        "name": "Dublin Airport",
+        "type": "large_airport",
+        "country": "IE",
+        "city": "Dublin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.92482,
+          52.702
+        ]
+      },
+      "properties": {
+        "iata": "SNN",
+        "icao": "EINN",
+        "name": "Shannon Airport",
+        "type": "large_airport",
+        "country": "IE",
+        "city": "Shannon"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.157019,
+          55.740335
+        ]
+      },
+      "properties": {
+        "iata": "BLL",
+        "icao": "EKBI",
+        "name": "Billund Airport",
+        "type": "large_airport",
+        "country": "DK",
+        "city": "Billund"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.656,
+          55.617901
+        ]
+      },
+      "properties": {
+        "iata": "CPH",
+        "icao": "EKCH",
+        "name": "Copenhagen Kastrup Airport",
+        "type": "large_airport",
+        "country": "DK",
+        "city": "Copenhagen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.204444,
+          49.623333
+        ]
+      },
+      "properties": {
+        "iata": "LUX",
+        "icao": "ELLX",
+        "name": "Luxembourg-Findel International Airport",
+        "type": "large_airport",
+        "country": "LU",
+        "city": "Luxembourg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.21814,
+          60.2934
+        ]
+      },
+      "properties": {
+        "iata": "BGO",
+        "icao": "ENBR",
+        "name": "Bergen Airport, Flesland",
+        "type": "large_airport",
+        "country": "NO",
+        "city": "Bergen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.1004,
+          60.193901
+        ]
+      },
+      "properties": {
+        "iata": "OSL",
+        "icao": "ENGM",
+        "name": "Oslo Airport, Gardermoen",
+        "type": "large_airport",
+        "country": "NO",
+        "city": "Oslo (Gardermoen)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.9189,
+          69.683296
+        ]
+      },
+      "properties": {
+        "iata": "TOS",
+        "icao": "ENTC",
+        "name": "Tromsø Airport, Langnes",
+        "type": "large_airport",
+        "country": "NO",
+        "city": "Tromsø"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.924,
+          63.457802
+        ]
+      },
+      "properties": {
+        "iata": "TRD",
+        "icao": "ENVA",
+        "name": "Trondheim Airport, Værnes",
+        "type": "large_airport",
+        "country": "NO",
+        "city": "Trondheim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.63778,
+          58.876701
+        ]
+      },
+      "properties": {
+        "iata": "SVG",
+        "icao": "ENZV",
+        "name": "Stavanger Airport, Sola",
+        "type": "large_airport",
+        "country": "NO",
+        "city": "Stavanger"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.4662,
+          54.377602
+        ]
+      },
+      "properties": {
+        "iata": "GDN",
+        "icao": "EPGD",
+        "name": "Gdańsk Lech Wałęsa Airport",
+        "type": "large_airport",
+        "country": "PL",
+        "city": "Gdańsk"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.7848,
+          50.077702
+        ]
+      },
+      "properties": {
+        "iata": "KRK",
+        "icao": "EPKK",
+        "name": "Kraków John Paul II International Airport",
+        "type": "large_airport",
+        "country": "PL",
+        "city": "Balice"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.9671,
+          52.165699
+        ]
+      },
+      "properties": {
+        "iata": "WAW",
+        "icao": "EPWA",
+        "name": "Warsaw Chopin Airport",
+        "type": "large_airport",
+        "country": "PL",
+        "city": "Warsaw"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.2798,
+          57.6628
+        ]
+      },
+      "properties": {
+        "iata": "GOT",
+        "icao": "ESGG",
+        "name": "Göteborg Landvetter Airport",
+        "type": "large_airport",
+        "country": "SE",
+        "city": "Göteborg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.928829,
+          59.64849
+        ]
+      },
+      "properties": {
+        "iata": "ARN",
+        "icao": "ESSA",
+        "name": "Stockholm-Arlanda Airport",
+        "type": "large_airport",
+        "country": "SE",
+        "city": "Stockholm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.9711,
+          56.923599
+        ]
+      },
+      "properties": {
+        "iata": "RIX",
+        "icao": "EVRA",
+        "name": "Riga International Airport",
+        "type": "large_airport",
+        "country": "LV",
+        "city": "Riga"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.285801,
+          54.634102
+        ]
+      },
+      "properties": {
+        "iata": "VNO",
+        "icao": "EYVI",
+        "name": "Vilnius International Airport",
+        "type": "large_airport",
+        "country": "LT",
+        "city": "Vilnius"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.6017,
+          -33.964802
+        ]
+      },
+      "properties": {
+        "iata": "CPT",
+        "icao": "FACT",
+        "name": "Cape Town International Airport",
+        "type": "large_airport",
+        "country": "ZA",
+        "city": "Cape Town"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.119722,
+          -29.614444
+        ]
+      },
+      "properties": {
+        "iata": "DUR",
+        "icao": "FALE",
+        "name": "King Shaka International Airport",
+        "type": "large_airport",
+        "country": "ZA",
+        "city": "Durban"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.246,
+          -26.1392
+        ]
+      },
+      "properties": {
+        "iata": "JNB",
+        "icao": "FAOR",
+        "name": "O.R. Tambo International Airport",
+        "type": "large_airport",
+        "country": "ZA",
+        "city": "Johannesburg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.9182,
+          -24.555201
+        ]
+      },
+      "properties": {
+        "iata": "GBE",
+        "icao": "FBSK",
+        "name": "Sir Seretse Khama International Airport",
+        "type": "large_airport",
+        "country": "BW",
+        "city": "Gaborone"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.716944,
+          -26.358611
+        ]
+      },
+      "properties": {
+        "iata": "SHO",
+        "icao": "FDSK",
+        "name": "King Mswati III International Airport",
+        "type": "large_airport",
+        "country": "SZ",
+        "city": "Mpaka"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          57.683601,
+          -20.430201
+        ]
+      },
+      "properties": {
+        "iata": "MRU",
+        "icao": "FIMP",
+        "name": "Sir Seewoosagur Ramgoolam International Airport",
+        "type": "large_airport",
+        "country": "MU",
+        "city": "Plaine Magnien"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.452722,
+          -15.330833
+        ]
+      },
+      "properties": {
+        "iata": "LUN",
+        "icao": "FLKK",
+        "name": "Kenneth Kaunda International Airport",
+        "type": "large_airport",
+        "country": "ZM",
+        "city": "Lusaka"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.518894,
+          -20.890087
+        ]
+      },
+      "properties": {
+        "iata": "RUN",
+        "icao": "FMEE",
+        "name": "Roland Garros Airport",
+        "type": "large_airport",
+        "country": "RE",
+        "city": "Sainte-Marie"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.478802,
+          -18.7969
+        ]
+      },
+      "properties": {
+        "iata": "TNR",
+        "icao": "FMMI",
+        "name": "Ivato Airport",
+        "type": "large_airport",
+        "country": "MG",
+        "city": "Antananarivo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2312,
+          -8.85837
+        ]
+      },
+      "properties": {
+        "iata": "LAD",
+        "icao": "FNLU",
+        "name": "Quatro de Fevereiro International Airport",
+        "type": "large_airport",
+        "country": "AO",
+        "city": "Luanda"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.71215,
+          0.378175
+        ]
+      },
+      "properties": {
+        "iata": "TMS",
+        "icao": "FPST",
+        "name": "São Tomé International Airport",
+        "type": "large_airport",
+        "country": "ST",
+        "city": "São Tomé"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.572601,
+          -25.920799
+        ]
+      },
+      "properties": {
+        "iata": "MPM",
+        "icao": "FQMA",
+        "name": "Maputo Airport",
+        "type": "large_airport",
+        "country": "MZ",
+        "city": "Maputo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.521801,
+          -4.67434
+        ]
+      },
+      "properties": {
+        "iata": "SEZ",
+        "icao": "FSIA",
+        "name": "Seychelles International Airport",
+        "type": "large_airport",
+        "country": "SC",
+        "city": "Mahe Island"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.034,
+          12.1337
+        ]
+      },
+      "properties": {
+        "iata": "NDJ",
+        "icao": "FTTJ",
+        "name": "N'Djamena International Airport",
+        "type": "large_airport",
+        "country": "TD",
+        "city": "N'Djamena"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.0928,
+          -17.931801
+        ]
+      },
+      "properties": {
+        "iata": "HRE",
+        "icao": "",
+        "name": "Robert Gabriel Mugabe International Airport",
+        "type": "large_airport",
+        "country": "ZW",
+        "city": "Harare"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.4709,
+          -22.4799
+        ]
+      },
+      "properties": {
+        "iata": "WDH",
+        "icao": "FYWH",
+        "name": "Hosea Kutako International Airport",
+        "type": "large_airport",
+        "country": "NA",
+        "city": "Windhoek"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.4446,
+          -4.38575
+        ]
+      },
+      "properties": {
+        "iata": "FIH",
+        "icao": "FZAA",
+        "name": "Ndjili International Airport",
+        "type": "large_airport",
+        "country": "CD",
+        "city": "Kinshasa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.94994,
+          12.5335
+        ]
+      },
+      "properties": {
+        "iata": "BKO",
+        "icao": "GABS",
+        "name": "Modibo Keita International Airport",
+        "type": "large_airport",
+        "country": "ML",
+        "city": "Bamako"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.652201,
+          13.338
+        ]
+      },
+      "properties": {
+        "iata": "BJL",
+        "icao": "GBYD",
+        "name": "Banjul International Airport",
+        "type": "large_airport",
+        "country": "GM",
+        "city": "Yundum"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.8638,
+          28.4527
+        ]
+      },
+      "properties": {
+        "iata": "FUE",
+        "icao": "GCFV",
+        "name": "Fuerteventura Airport",
+        "type": "large_airport",
+        "country": "ES",
+        "city": "El Matorral"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.3866,
+          27.9319
+        ]
+      },
+      "properties": {
+        "iata": "LPA",
+        "icao": "GCLP",
+        "name": "Gran Canaria Airport",
+        "type": "large_airport",
+        "country": "ES",
+        "city": "Gran Canaria Island"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.6052,
+          28.945499
+        ]
+      },
+      "properties": {
+        "iata": "ACE",
+        "icao": "GCRR",
+        "name": "César Manrique-Lanzarote Airport",
+        "type": "large_airport",
+        "country": "ES",
+        "city": "San Bartolomé"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5725,
+          28.0445
+        ]
+      },
+      "properties": {
+        "iata": "TFS",
+        "icao": "GCTS",
+        "name": "Tenerife Sur Airport",
+        "type": "large_airport",
+        "country": "ES",
+        "city": "Tenerife"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.1955,
+          8.61644
+        ]
+      },
+      "properties": {
+        "iata": "FNA",
+        "icao": "GFLL",
+        "name": "Lungi International Airport",
+        "type": "large_airport",
+        "country": "SL",
+        "city": "Freetown (Lungi-Town)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -10.3623,
+          6.23379
+        ]
+      },
+      "properties": {
+        "iata": "ROB",
+        "icao": "GLRB",
+        "name": "Roberts International Airport",
+        "type": "large_airport",
+        "country": "LR",
+        "city": "Monrovia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.412003,
+          30.322478
+        ]
+      },
+      "properties": {
+        "iata": "AGA",
+        "icao": "GMAD",
+        "name": "Al Massira Airport",
+        "type": "large_airport",
+        "country": "MA",
+        "city": "Agadir (Temsia)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.97796,
+          33.927299
+        ]
+      },
+      "properties": {
+        "iata": "FEZ",
+        "icao": "GMFF",
+        "name": "Fes Saïss International Airport",
+        "type": "large_airport",
+        "country": "MA",
+        "city": "Saïss"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.75152,
+          34.051498
+        ]
+      },
+      "properties": {
+        "iata": "RBA",
+        "icao": "GMME",
+        "name": "Rabat-Salé Airport",
+        "type": "large_airport",
+        "country": "MA",
+        "city": "Rabat"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.58997,
+          33.3675
+        ]
+      },
+      "properties": {
+        "iata": "CMN",
+        "icao": "GMMN",
+        "name": "Mohammed V International Airport",
+        "type": "large_airport",
+        "country": "MA",
+        "city": "Casablanca"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.0363,
+          31.606899
+        ]
+      },
+      "properties": {
+        "iata": "RAK",
+        "icao": "GMMX",
+        "name": "Menara Airport",
+        "type": "large_airport",
+        "country": "MA",
+        "city": "Marrakech"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.921459,
+          35.731741
+        ]
+      },
+      "properties": {
+        "iata": "TNG",
+        "icao": "GMTT",
+        "name": "Tangier Ibn Battuta Airport",
+        "type": "large_airport",
+        "country": "MA",
+        "city": "Tangier"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17.072829,
+          14.670878
+        ]
+      },
+      "properties": {
+        "iata": "DSS",
+        "icao": "GOBD",
+        "name": "Blaise Diagne International Airport",
+        "type": "large_airport",
+        "country": "SN",
+        "city": "Dakar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.969722,
+          18.31
+        ]
+      },
+      "properties": {
+        "iata": "NKC",
+        "icao": "GQNO",
+        "name": "Nouakchott–Oumtounsy International Airport",
+        "type": "large_airport",
+        "country": "MR",
+        "city": "Nouakchott"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.9494,
+          16.7414
+        ]
+      },
+      "properties": {
+        "iata": "SID",
+        "icao": "GVAC",
+        "name": "Amílcar Cabral International Airport",
+        "type": "large_airport",
+        "country": "CV",
+        "city": "Espargos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.484728,
+          14.941126
+        ]
+      },
+      "properties": {
+        "iata": "RAI",
+        "icao": "GVNP",
+        "name": "Nelson Mandela International Airport",
+        "type": "large_airport",
+        "country": "CV",
+        "city": "Praia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.799301,
+          8.97789
+        ]
+      },
+      "properties": {
+        "iata": "ADD",
+        "icao": "HAAB",
+        "name": "Addis Ababa Bole International Airport",
+        "type": "large_airport",
+        "country": "ET",
+        "city": "Addis Ababa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.1595,
+          11.5473
+        ]
+      },
+      "properties": {
+        "iata": "JIB",
+        "icao": "HDAM",
+        "name": "Djibouti-Ambouli Airport",
+        "type": "large_airport",
+        "country": "DJ",
+        "city": "Djibouti City"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.396694,
+          30.111534
+        ]
+      },
+      "properties": {
+        "iata": "CAI",
+        "icao": "HECA",
+        "name": "Cairo International Airport",
+        "type": "large_airport",
+        "country": "EG",
+        "city": "Cairo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.796692,
+          27.176776
+        ]
+      },
+      "properties": {
+        "iata": "HRG",
+        "icao": "HEGN",
+        "name": "Hurghada International Airport",
+        "type": "large_airport",
+        "country": "EG",
+        "city": "Hurghada"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.743017,
+          26.342515
+        ]
+      },
+      "properties": {
+        "iata": "HMB",
+        "icao": "HESG",
+        "name": "Sohag International Airport",
+        "type": "large_airport",
+        "country": "EG",
+        "city": "Suhaj"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.394717,
+          27.977272
+        ]
+      },
+      "properties": {
+        "iata": "SSH",
+        "icao": "HESH",
+        "name": "Sharm El Sheikh International Airport",
+        "type": "large_airport",
+        "country": "EG",
+        "city": "Sharm El Sheikh"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.601101,
+          4.87201
+        ]
+      },
+      "properties": {
+        "iata": "JUB",
+        "icao": "HJJJ",
+        "name": "Juba International Airport",
+        "type": "large_airport",
+        "country": "SS",
+        "city": "Juba"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.927799,
+          -1.31924
+        ]
+      },
+      "properties": {
+        "iata": "NBO",
+        "icao": "HKJK",
+        "name": "Jomo Kenyatta International Airport",
+        "type": "large_airport",
+        "country": "KE",
+        "city": "Nairobi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.5942,
+          -4.03483
+        ]
+      },
+      "properties": {
+        "iata": "MBA",
+        "icao": "HKMO",
+        "name": "Moi International Airport",
+        "type": "large_airport",
+        "country": "KE",
+        "city": "Mombasa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.287878,
+          32.89177
+        ]
+      },
+      "properties": {
+        "iata": "MJI",
+        "icao": "HLLM",
+        "name": "Mitiga International Airport",
+        "type": "large_airport",
+        "country": "LY",
+        "city": "Tripoli"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.1395,
+          -1.96863
+        ]
+      },
+      "properties": {
+        "iata": "KGL",
+        "icao": "HRYR",
+        "name": "Kigali International Airport",
+        "type": "large_airport",
+        "country": "RW",
+        "city": "Kigali"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.5532,
+          15.5895
+        ]
+      },
+      "properties": {
+        "iata": "KRT",
+        "icao": "HSSK",
+        "name": "Khartoum International Airport",
+        "type": "large_airport",
+        "country": "SD",
+        "city": "Khartoum"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.202599,
+          -6.87811
+        ]
+      },
+      "properties": {
+        "iata": "DAR",
+        "icao": "HTDA",
+        "name": "Julius Nyerere International Airport",
+        "type": "large_airport",
+        "country": "TZ",
+        "city": "Dar es Salaam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.224899,
+          -6.22202
+        ]
+      },
+      "properties": {
+        "iata": "ZNZ",
+        "icao": "HTZA",
+        "name": "Abeid Amani Karume International Airport",
+        "type": "large_airport",
+        "country": "TZ",
+        "city": "Zanzibar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.443501,
+          0.042386
+        ]
+      },
+      "properties": {
+        "iata": "EBB",
+        "icao": "HUEN",
+        "name": "Entebbe International Airport",
+        "type": "large_airport",
+        "country": "UG",
+        "city": "Kampala"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.947222,
+          -7.750278
+        ]
+      },
+      "properties": {
+        "iata": "DHX",
+        "icao": "WARD",
+        "name": "Dhoho International Airport",
+        "type": "large_airport",
+        "country": "ID",
+        "city": "Kediri"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.065253,
+          18.984597
+        ]
+      },
+      "properties": {
+        "iata": "NMI",
+        "icao": "VANM",
+        "name": "Navi Mumbai International Airport",
+        "type": "large_airport",
+        "country": "IN",
+        "city": "Navi Mumbai"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.608925,
+          35.039976
+        ]
+      },
+      "properties": {
+        "iata": "ABQ",
+        "icao": "KABQ",
+        "name": "Albuquerque International Sunport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Albuquerque"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.866997,
+          38.810799
+        ]
+      },
+      "properties": {
+        "iata": "ADW",
+        "icao": "KADW",
+        "name": "Joint Base Andrews",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Camp Springs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.428101,
+          33.6367
+        ]
+      },
+      "properties": {
+        "iata": "ATL",
+        "icao": "KATL",
+        "name": "Hartsfield Jackson Atlanta International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Atlanta"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.662015,
+          30.197535
+        ]
+      },
+      "properties": {
+        "iata": "AUS",
+        "icao": "KAUS",
+        "name": "Austin Bergstrom International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Austin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.688066,
+          41.93851
+        ]
+      },
+      "properties": {
+        "iata": "BDL",
+        "icao": "KBDL",
+        "name": "Bradley International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Hartford"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.6782,
+          36.1245
+        ]
+      },
+      "properties": {
+        "iata": "BNA",
+        "icao": "KBNA",
+        "name": "Nashville International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Nashville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0079,
+          42.36197
+        ]
+      },
+      "properties": {
+        "iata": "BOS",
+        "icao": "KBOS",
+        "name": "Logan International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Boston"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.732201,
+          42.940498
+        ]
+      },
+      "properties": {
+        "iata": "BUF",
+        "icao": "KBUF",
+        "name": "Buffalo Niagara International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Buffalo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.668297,
+          39.1754
+        ]
+      },
+      "properties": {
+        "iata": "BWI",
+        "icao": "KBWI",
+        "name": "Baltimore/Washington International Thurgood Marshall Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Baltimore"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.8498,
+          41.411701
+        ]
+      },
+      "properties": {
+        "iata": "CLE",
+        "icao": "KCLE",
+        "name": "Cleveland Hopkins International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Cleveland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.9431,
+          35.214001
+        ]
+      },
+      "properties": {
+        "iata": "CLT",
+        "icao": "KCLT",
+        "name": "Charlotte Douglas International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Charlotte"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.891899,
+          39.998001
+        ]
+      },
+      "properties": {
+        "iata": "CMH",
+        "icao": "KCMH",
+        "name": "John Glenn Columbus International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Columbus"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.667801,
+          39.048801
+        ]
+      },
+      "properties": {
+        "iata": "CVG",
+        "icao": "KCVG",
+        "name": "Cincinnati Northern Kentucky International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Cincinnati / Covington"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.037697,
+          38.8521
+        ]
+      },
+      "properties": {
+        "iata": "DCA",
+        "icao": "KDCA",
+        "name": "Ronald Reagan Washington National Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Washington"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.672997,
+          39.861698
+        ]
+      },
+      "properties": {
+        "iata": "DEN",
+        "icao": "KDEN",
+        "name": "Denver International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Denver"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.038002,
+          32.896801
+        ]
+      },
+      "properties": {
+        "iata": "DFW",
+        "icao": "KDFW",
+        "name": "Dallas Fort Worth International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Dallas-Fort Worth"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.353786,
+          42.21377
+        ]
+      },
+      "properties": {
+        "iata": "DTW",
+        "icao": "KDTW",
+        "name": "Detroit Metropolitan Wayne County Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Detroit"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.168701,
+          40.692501
+        ]
+      },
+      "properties": {
+        "iata": "EWR",
+        "icao": "KEWR",
+        "name": "Newark Liberty International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Newark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.152702,
+          26.072599
+        ]
+      },
+      "properties": {
+        "iata": "FLL",
+        "icao": "KFLL",
+        "name": "Fort Lauderdale Hollywood International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Fort Lauderdale"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.455803,
+          38.9445
+        ]
+      },
+      "properties": {
+        "iata": "IAD",
+        "icao": "KIAD",
+        "name": "Washington Dulles International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Dulles"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.3414,
+          29.9844
+        ]
+      },
+      "properties": {
+        "iata": "IAH",
+        "icao": "KIAH",
+        "name": "George Bush Intercontinental Houston Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Houston"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.294403,
+          39.7173
+        ]
+      },
+      "properties": {
+        "iata": "IND",
+        "icao": "KIND",
+        "name": "Indianapolis International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Indianapolis"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.687813,
+          30.492469
+        ]
+      },
+      "properties": {
+        "iata": "JAX",
+        "icao": "KJAX",
+        "name": "Jacksonville International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Jacksonville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.779317,
+          40.639447
+        ]
+      },
+      "properties": {
+        "iata": "JFK",
+        "icao": "KJFK",
+        "name": "John F Kennedy International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "New York"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.151817,
+          36.083361
+        ]
+      },
+      "properties": {
+        "iata": "LAS",
+        "icao": "KLAS",
+        "name": "Harry Reid International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Las Vegas"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.407997,
+          33.942501
+        ]
+      },
+      "properties": {
+        "iata": "LAX",
+        "icao": "KLAX",
+        "name": "Los Angeles International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Los Angeles"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.872597,
+          40.777199
+        ]
+      },
+      "properties": {
+        "iata": "LGA",
+        "icao": "KLGA",
+        "name": "LaGuardia Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "New York"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.713898,
+          39.2976
+        ]
+      },
+      "properties": {
+        "iata": "MCI",
+        "icao": "KMCI",
+        "name": "Kansas City International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Kansas City"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.308998,
+          28.429399
+        ]
+      },
+      "properties": {
+        "iata": "MCO",
+        "icao": "KMCO",
+        "name": "Orlando International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Orlando"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.752403,
+          41.785999
+        ]
+      },
+      "properties": {
+        "iata": "MDW",
+        "icao": "KMDW",
+        "name": "Chicago Midway International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Chicago"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9767,
+          35.0424
+        ]
+      },
+      "properties": {
+        "iata": "MEM",
+        "icao": "KMEM",
+        "name": "Memphis International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Memphis"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.290604,
+          25.7932
+        ]
+      },
+      "properties": {
+        "iata": "MIA",
+        "icao": "KMIA",
+        "name": "Miami International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Miami"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.896599,
+          42.947201
+        ]
+      },
+      "properties": {
+        "iata": "MKE",
+        "icao": "KMKE",
+        "name": "General Mitchell International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Milwaukee"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.221741,
+          44.880081
+        ]
+      },
+      "properties": {
+        "iata": "MSP",
+        "icao": "KMSP",
+        "name": "Minneapolis–Saint Paul International Airport / Wold–Chamberlain Field",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Minneapolis"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.258003,
+          29.993401
+        ]
+      },
+      "properties": {
+        "iata": "MSY",
+        "icao": "KMSY",
+        "name": "Louis Armstrong New Orleans International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "New Orleans"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.221184,
+          37.720085
+        ]
+      },
+      "properties": {
+        "iata": "OAK",
+        "icao": "KOAK",
+        "name": "San Francisco Bay Oakland International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Oakland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.598248,
+          35.393388
+        ]
+      },
+      "properties": {
+        "iata": "OKC",
+        "icao": "KOKC",
+        "name": "Will Rogers World Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Oklahoma City"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.894096,
+          41.3032
+        ]
+      },
+      "properties": {
+        "iata": "OMA",
+        "icao": "KOMA",
+        "name": "Eppley Airfield",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Omaha"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.600998,
+          34.056
+        ]
+      },
+      "properties": {
+        "iata": "ONT",
+        "icao": "KONT",
+        "name": "Ontario International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Ontario"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9048,
+          41.9786
+        ]
+      },
+      "properties": {
+        "iata": "ORD",
+        "icao": "KORD",
+        "name": "Chicago O'Hare International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Chicago"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.201,
+          36.895341
+        ]
+      },
+      "properties": {
+        "iata": "ORF",
+        "icao": "KORF",
+        "name": "Norfolk International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Norfolk"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.095596,
+          26.683201
+        ]
+      },
+      "properties": {
+        "iata": "PBI",
+        "icao": "KPBI",
+        "name": "Palm Beach International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "West Palm Beach"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.598,
+          45.588699
+        ]
+      },
+      "properties": {
+        "iata": "PDX",
+        "icao": "KPDX",
+        "name": "Portland International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Portland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.241096,
+          39.871899
+        ]
+      },
+      "properties": {
+        "iata": "PHL",
+        "icao": "KPHL",
+        "name": "Philadelphia International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Philadelphia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.005905,
+          33.435302
+        ]
+      },
+      "properties": {
+        "iata": "PHX",
+        "icao": "KPHX",
+        "name": "Phoenix Sky Harbor International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Phoenix"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.232903,
+          40.491501
+        ]
+      },
+      "properties": {
+        "iata": "PIT",
+        "icao": "KPIT",
+        "name": "Pittsburgh International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Pittsburgh"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.425668,
+          41.725038
+        ]
+      },
+      "properties": {
+        "iata": "PVD",
+        "icao": "KPVD",
+        "name": "Theodore Francis Green State Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Warwick"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.309303,
+          43.646198
+        ]
+      },
+      "properties": {
+        "iata": "PWM",
+        "icao": "KPWM",
+        "name": "Portland International Jetport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Portland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.787498,
+          35.877602
+        ]
+      },
+      "properties": {
+        "iata": "RDU",
+        "icao": "KRDU",
+        "name": "Raleigh Durham International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Raleigh/Durham"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.319702,
+          37.505199
+        ]
+      },
+      "properties": {
+        "iata": "RIC",
+        "icao": "KRIC",
+        "name": "Richmond International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Richmond"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.767998,
+          39.4991
+        ]
+      },
+      "properties": {
+        "iata": "RNO",
+        "icao": "KRNO",
+        "name": "Reno Tahoe International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Reno"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.755203,
+          26.5362
+        ]
+      },
+      "properties": {
+        "iata": "RSW",
+        "icao": "KRSW",
+        "name": "Southwest Florida International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Fort Myers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.190002,
+          32.733601
+        ]
+      },
+      "properties": {
+        "iata": "SAN",
+        "icao": "KSAN",
+        "name": "San Diego International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "San Diego"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.469803,
+          29.533701
+        ]
+      },
+      "properties": {
+        "iata": "SAT",
+        "icao": "KSAT",
+        "name": "San Antonio International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "San Antonio"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.202103,
+          32.127602
+        ]
+      },
+      "properties": {
+        "iata": "SAV",
+        "icao": "KSAV",
+        "name": "Savannah Hilton Head International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Savannah"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.736,
+          38.1744
+        ]
+      },
+      "properties": {
+        "iata": "SDF",
+        "icao": "KSDF",
+        "name": "Louisville Muhammad Ali International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Louisville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.310276,
+          47.447943
+        ]
+      },
+      "properties": {
+        "iata": "SEA",
+        "icao": "KSEA",
+        "name": "Seattle–Tacoma International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Seattle"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.237503,
+          28.777599
+        ]
+      },
+      "properties": {
+        "iata": "SFB",
+        "icao": "KSFB",
+        "name": "Orlando Sanford International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Orlando"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.374821,
+          37.619806
+        ]
+      },
+      "properties": {
+        "iata": "SFO",
+        "icao": "KSFO",
+        "name": "San Francisco International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "San Francisco"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.929188,
+          37.362452
+        ]
+      },
+      "properties": {
+        "iata": "SJC",
+        "icao": "KSJC",
+        "name": "Norman Y. Mineta San Jose International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "San Jose"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.979866,
+          40.78886
+        ]
+      },
+      "properties": {
+        "iata": "SLC",
+        "icao": "KSLC",
+        "name": "Salt Lake City International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Salt Lake City"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.591003,
+          38.6954
+        ]
+      },
+      "properties": {
+        "iata": "SMF",
+        "icao": "KSMF",
+        "name": "Sacramento International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Sacramento"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.867996,
+          33.675701
+        ]
+      },
+      "properties": {
+        "iata": "SNA",
+        "icao": "KSNA",
+        "name": "John Wayne Orange County International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Santa Ana"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.554359,
+          27.394631
+        ]
+      },
+      "properties": {
+        "iata": "SRQ",
+        "icao": "KSRQ",
+        "name": "Sarasota Bradenton International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Sarasota/Bradenton"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.370003,
+          38.748697
+        ]
+      },
+      "properties": {
+        "iata": "STL",
+        "icao": "KSTL",
+        "name": "St. Louis Lambert International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "St Louis"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.1063,
+          43.111198
+        ]
+      },
+      "properties": {
+        "iata": "SYR",
+        "icao": "KSYR",
+        "name": "Syracuse Hancock International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Syracuse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.533203,
+          27.9755
+        ]
+      },
+      "properties": {
+        "iata": "TPA",
+        "icao": "KTPA",
+        "name": "Tampa International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Tampa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.8881,
+          36.198399
+        ]
+      },
+      "properties": {
+        "iata": "TUL",
+        "icao": "KTUL",
+        "name": "Tulsa International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Tulsa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.7206,
+          41.4147
+        ]
+      },
+      "properties": {
+        "iata": "TIA",
+        "icao": "LATI",
+        "name": "Tirana International Airport Mother Teresa",
+        "type": "large_airport",
+        "country": "AL",
+        "city": "Rinas"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.515173,
+          42.569917
+        ]
+      },
+      "properties": {
+        "iata": "BOJ",
+        "icao": "LBBG",
+        "name": "Burgas Airport",
+        "type": "large_airport",
+        "country": "BG",
+        "city": "Burgas"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.417671,
+          42.696357
+        ]
+      },
+      "properties": {
+        "iata": "SOF",
+        "icao": "LBSF",
+        "name": "Sofia Airport",
+        "type": "large_airport",
+        "country": "BG",
+        "city": "Sofia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.8251,
+          43.232101
+        ]
+      },
+      "properties": {
+        "iata": "VAR",
+        "icao": "LBWN",
+        "name": "Varna Airport",
+        "type": "large_airport",
+        "country": "BG",
+        "city": "Varna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.624901,
+          34.875099
+        ]
+      },
+      "properties": {
+        "iata": "LCA",
+        "icao": "LCLK",
+        "name": "Larnaca International Airport",
+        "type": "large_airport",
+        "country": "CY",
+        "city": "Larnaca"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.0688,
+          45.742901
+        ]
+      },
+      "properties": {
+        "iata": "ZAG",
+        "icao": "LDZA",
+        "name": "Zagreb Franjo Tuđman International Airport",
+        "type": "large_airport",
+        "country": "HR",
+        "city": "Velika Gorica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.558156,
+          38.2822
+        ]
+      },
+      "properties": {
+        "iata": "ALC",
+        "icao": "LEAL",
+        "name": "Alicante-Elche Miguel Hernández Airport",
+        "type": "large_airport",
+        "country": "ES",
+        "city": "Alicante"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.07846,
+          41.2971
+        ]
+      },
+      "properties": {
+        "iata": "BCN",
+        "icao": "LEBL",
+        "name": "Josep Tarradellas Barcelona-El Prat Airport",
+        "type": "large_airport",
+        "country": "ES",
+        "city": "Barcelona"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.37312,
+          38.872898
+        ]
+      },
+      "properties": {
+        "iata": "IBZ",
+        "icao": "LEIB",
+        "name": "Ibiza Airport",
+        "type": "large_airport",
+        "country": "ES",
+        "city": "Ibiza (Eivissa)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.56264,
+          40.471926
+        ]
+      },
+      "properties": {
+        "iata": "MAD",
+        "icao": "LEMD",
+        "name": "Adolfo Suárez Madrid–Barajas Airport",
+        "type": "large_airport",
+        "country": "ES",
+        "city": "Madrid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.49911,
+          36.6749
+        ]
+      },
+      "properties": {
+        "iata": "AGP",
+        "icao": "LEMG",
+        "name": "Málaga-Costa del Sol Airport",
+        "type": "large_airport",
+        "country": "ES",
+        "city": "Málaga"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.73881,
+          39.551701
+        ]
+      },
+      "properties": {
+        "iata": "PMI",
+        "icao": "LEPA",
+        "name": "Palma de Mallorca Airport",
+        "type": "large_airport",
+        "country": "ES",
+        "city": "Palma de Mallorca"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.41514,
+          42.896301
+        ]
+      },
+      "properties": {
+        "iata": "SCQ",
+        "icao": "LEST",
+        "name": "Santiago-Rosalía de Castro Airport",
+        "type": "large_airport",
+        "country": "ES",
+        "city": "Santiago de Compostela"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.715556,
+          44.8283
+        ]
+      },
+      "properties": {
+        "iata": "BOD",
+        "icao": "LFBD",
+        "name": "Bordeaux-Mérignac Airport",
+        "type": "large_airport",
+        "country": "FR",
+        "city": "Bordeaux/Mérignac"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.36382,
+          43.629101
+        ]
+      },
+      "properties": {
+        "iata": "TLS",
+        "icao": "LFBO",
+        "name": "Toulouse-Blagnac Airport",
+        "type": "large_airport",
+        "country": "FR",
+        "city": "Toulouse/Blagnac"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.090139,
+          45.725996
+        ]
+      },
+      "properties": {
+        "iata": "LYS",
+        "icao": "LFLL",
+        "name": "Lyon Saint-Exupéry Airport",
+        "type": "large_airport",
+        "country": "FR",
+        "city": "Colombier-Saugnieu, Rhône"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.2125,
+          43.438088
+        ]
+      },
+      "properties": {
+        "iata": "MRS",
+        "icao": "LFML",
+        "name": "Marseille Provence Airport",
+        "type": "large_airport",
+        "country": "FR",
+        "city": "Marignane, Bouches-du-Rhône"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.21587,
+          43.658401
+        ]
+      },
+      "properties": {
+        "iata": "NCE",
+        "icao": "LFMN",
+        "name": "Nice-Côte d'Azur Airport",
+        "type": "large_airport",
+        "country": "FR",
+        "city": "Nice, Alpes-Maritimes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.55,
+          49.012798
+        ]
+      },
+      "properties": {
+        "iata": "CDG",
+        "icao": "LFPG",
+        "name": "Charles de Gaulle International Airport",
+        "type": "large_airport",
+        "country": "FR",
+        "city": "Paris (Roissy-en-France, Val-d'Oise)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.37944,
+          48.72333
+        ]
+      },
+      "properties": {
+        "iata": "ORY",
+        "icao": "LFPO",
+        "name": "Paris-Orly Airport",
+        "type": "large_airport",
+        "country": "FR",
+        "city": "Paris (Orly, Val-de-Marne)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.521117,
+          47.60068
+        ]
+      },
+      "properties": {
+        "iata": "BSL",
+        "icao": "LFSB",
+        "name": "EuroAirport Basel-Mulhouse-Freiburg",
+        "type": "large_airport",
+        "country": "FR",
+        "city": "Saint-Louis"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.9445,
+          37.936401
+        ]
+      },
+      "properties": {
+        "iata": "ATH",
+        "icao": "LGAV",
+        "name": "Athens Eleftherios Venizelos International Airport",
+        "type": "large_airport",
+        "country": "GR",
+        "city": "Spata-Artemida"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.1803,
+          35.339699
+        ]
+      },
+      "properties": {
+        "iata": "HER",
+        "icao": "LGIR",
+        "name": "Heraklion International Nikos Kazantzakis Airport",
+        "type": "large_airport",
+        "country": "GR",
+        "city": "Heraklion"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.970009,
+          40.51928
+        ]
+      },
+      "properties": {
+        "iata": "SKG",
+        "icao": "LGTS",
+        "name": "Thessaloniki Macedonia International Airport",
+        "type": "large_airport",
+        "country": "GR",
+        "city": "Thessaloniki"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.262393,
+          47.43018
+        ]
+      },
+      "properties": {
+        "iata": "BUD",
+        "icao": "LHBP",
+        "name": "Budapest Liszt Ferenc International Airport",
+        "type": "large_airport",
+        "country": "HU",
+        "city": "Budapest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.760599,
+          41.138901
+        ]
+      },
+      "properties": {
+        "iata": "BRI",
+        "icao": "LIBD",
+        "name": "Bari Karol Wojtyła International Airport",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Bari"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.947001,
+          40.6576
+        ]
+      },
+      "properties": {
+        "iata": "BDS",
+        "icao": "LIBR",
+        "name": "Brindisi Airport",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Brindisi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.0664,
+          37.466801
+        ]
+      },
+      "properties": {
+        "iata": "CTA",
+        "icao": "LICC",
+        "name": "Catania-Fontanarossa Airport",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Catania"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.091,
+          38.175999
+        ]
+      },
+      "properties": {
+        "iata": "PMO",
+        "icao": "LICJ",
+        "name": "Falcone–Borsellino Airport",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Palermo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.05428,
+          39.251499
+        ]
+      },
+      "properties": {
+        "iata": "CAG",
+        "icao": "LIEE",
+        "name": "Cagliari Elmas Airport",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Cagliari"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.72811,
+          45.6306
+        ]
+      },
+      "properties": {
+        "iata": "MXP",
+        "icao": "LIMC",
+        "name": "Milan Malpensa International Airport",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Ferno (VA)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.709223,
+          45.670725
+        ]
+      },
+      "properties": {
+        "iata": "BGY",
+        "icao": "LIME",
+        "name": "Milan Bergamo Airport / Antonio Locatelli Air Base",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Orio al Serio (BG)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.64963,
+          45.200802
+        ]
+      },
+      "properties": {
+        "iata": "TRN",
+        "icao": "LIMF",
+        "name": "Turin Airport",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Caselle Torinese (TO)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.840732,
+          44.412039
+        ]
+      },
+      "properties": {
+        "iata": "GOA",
+        "icao": "LIMJ",
+        "name": "Genoa Cristoforo Colombo Airport",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Genova (GE)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.2887,
+          44.5354
+        ]
+      },
+      "properties": {
+        "iata": "BLQ",
+        "icao": "LIPE",
+        "name": "Bologna Guglielmo Marconi Airport",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Bologna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.887303,
+          45.394955
+        ]
+      },
+      "properties": {
+        "iata": "VRN",
+        "icao": "LIPX",
+        "name": "Verona Villafranca Valerio Catullo Airport",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Caselle (VR)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3519,
+          45.505299
+        ]
+      },
+      "properties": {
+        "iata": "VCE",
+        "icao": "LIPZ",
+        "name": "Venice Marco Polo Airport",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Venezia (VE)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.251998,
+          41.804532
+        ]
+      },
+      "properties": {
+        "iata": "FCO",
+        "icao": "LIRF",
+        "name": "Rome–Fiumicino Leonardo da Vinci International Airport",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Rome"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.2908,
+          40.886002
+        ]
+      },
+      "properties": {
+        "iata": "NAP",
+        "icao": "LIRN",
+        "name": "Naples International Airport",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Napoli"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3927,
+          43.683899
+        ]
+      },
+      "properties": {
+        "iata": "PSA",
+        "icao": "LIRP",
+        "name": "Pisa International Airport",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Pisa (PI)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.202822,
+          43.808558
+        ]
+      },
+      "properties": {
+        "iata": "FLR",
+        "icao": "LIRQ",
+        "name": "Florence Airport, Peretola",
+        "type": "large_airport",
+        "country": "IT",
+        "city": "Firenze (FI)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4576,
+          46.223701
+        ]
+      },
+      "properties": {
+        "iata": "LJU",
+        "icao": "LJLJ",
+        "name": "Ljubljana Jože Pučnik Airport",
+        "type": "large_airport",
+        "country": "SI",
+        "city": "Zgornji Brnik"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.259911,
+          50.100874
+        ]
+      },
+      "properties": {
+        "iata": "PRG",
+        "icao": "LKPR",
+        "name": "Václav Havel Airport Prague",
+        "type": "large_airport",
+        "country": "CZ",
+        "city": "Prague"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.8867,
+          32.011398
+        ]
+      },
+      "properties": {
+        "iata": "TLV",
+        "icao": "LLBG",
+        "name": "Ben Gurion International Airport",
+        "type": "large_airport",
+        "country": "IL",
+        "city": "Tel Aviv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.014116,
+          29.727009
+        ]
+      },
+      "properties": {
+        "iata": "ETM",
+        "icao": "LLER",
+        "name": "Ramon International Airport",
+        "type": "large_airport",
+        "country": "IL",
+        "city": "Eilat"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4775,
+          35.857498
+        ]
+      },
+      "properties": {
+        "iata": "MLA",
+        "icao": "LMML",
+        "name": "Malta International Airport",
+        "type": "large_airport",
+        "country": "MT",
+        "city": "Valletta"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.5697,
+          48.110298
+        ]
+      },
+      "properties": {
+        "iata": "VIE",
+        "icao": "LOWW",
+        "name": "Vienna International Airport",
+        "type": "large_airport",
+        "country": "AT",
+        "city": "Vienna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.96591,
+          37.0144
+        ]
+      },
+      "properties": {
+        "iata": "FAO",
+        "icao": "LPFR",
+        "name": "Faro Airport",
+        "type": "large_airport",
+        "country": "PT",
+        "city": "Faro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7745,
+          32.697899
+        ]
+      },
+      "properties": {
+        "iata": "FNC",
+        "icao": "LPMA",
+        "name": "Madeira International Airport Cristiano Ronaldo",
+        "type": "large_airport",
+        "country": "PT",
+        "city": "Funchal"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.697901,
+          37.741199
+        ]
+      },
+      "properties": {
+        "iata": "PDL",
+        "icao": "LPPD",
+        "name": "João Paulo II Airport",
+        "type": "large_airport",
+        "country": "PT",
+        "city": "Ponta Delgada"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.68139,
+          41.2481
+        ]
+      },
+      "properties": {
+        "iata": "OPO",
+        "icao": "LPPR",
+        "name": "Francisco de Sá Carneiro Airport",
+        "type": "large_airport",
+        "country": "PT",
+        "city": "Porto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.13592,
+          38.7813
+        ]
+      },
+      "properties": {
+        "iata": "LIS",
+        "icao": "LPPT",
+        "name": "Lisbon Humberto Delgado Airport",
+        "type": "large_airport",
+        "country": "PT",
+        "city": "Lisbon"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.331499,
+          43.8246
+        ]
+      },
+      "properties": {
+        "iata": "SJJ",
+        "icao": "LQSA",
+        "name": "Sarajevo International Airport",
+        "type": "large_airport",
+        "country": "BA",
+        "city": "Sarajevo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.103396,
+          44.572127
+        ]
+      },
+      "properties": {
+        "iata": "OTP",
+        "icao": "LROP",
+        "name": "Bucharest Henri Coandă International Airport",
+        "type": "large_airport",
+        "country": "RO",
+        "city": "Otopeni"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.10895,
+          46.238098
+        ]
+      },
+      "properties": {
+        "iata": "GVA",
+        "icao": "LSGG",
+        "name": "Geneva Cointrin International Airport",
+        "type": "large_airport",
+        "country": "CH",
+        "city": "Geneva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.548056,
+          47.458056
+        ]
+      },
+      "properties": {
+        "iata": "ZRH",
+        "icao": "LSZH",
+        "name": "Zürich Airport",
+        "type": "large_airport",
+        "country": "CH",
+        "city": "Zurich"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.995098,
+          40.128101
+        ]
+      },
+      "properties": {
+        "iata": "ESB",
+        "icao": "LTAC",
+        "name": "Esenboğa International Airport",
+        "type": "large_airport",
+        "country": "TR",
+        "city": "Ankara"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.800501,
+          36.898701
+        ]
+      },
+      "properties": {
+        "iata": "AYT",
+        "icao": "LTAI",
+        "name": "Antalya International Airport",
+        "type": "large_airport",
+        "country": "TR",
+        "city": "Antalya"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.157,
+          38.2924
+        ]
+      },
+      "properties": {
+        "iata": "ADB",
+        "icao": "LTBJ",
+        "name": "Adnan Menderes International Airport",
+        "type": "large_airport",
+        "country": "TR",
+        "city": "Gaziemir"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.7925,
+          36.7131
+        ]
+      },
+      "properties": {
+        "iata": "DLM",
+        "icao": "LTBS",
+        "name": "Dalaman International Airport",
+        "type": "large_airport",
+        "country": "TR",
+        "city": "Dalaman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.070522,
+          36.890908
+        ]
+      },
+      "properties": {
+        "iata": "COV",
+        "icao": "LTDB",
+        "name": "Çukurova International Airport",
+        "type": "large_airport",
+        "country": "TR",
+        "city": "Tarsus"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.664301,
+          37.250599
+        ]
+      },
+      "properties": {
+        "iata": "BJV",
+        "icao": "LTFE",
+        "name": "Milas Bodrum International Airport",
+        "type": "large_airport",
+        "country": "TR",
+        "city": "Bodrum"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3092,
+          40.898602
+        ]
+      },
+      "properties": {
+        "iata": "SAW",
+        "icao": "LTFJ",
+        "name": "Istanbul Sabiha Gökçen International Airport",
+        "type": "large_airport",
+        "country": "TR",
+        "city": "Pendik, Istanbul"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.741951,
+          41.261297
+        ]
+      },
+      "properties": {
+        "iata": "IST",
+        "icao": "LTFM",
+        "name": "İstanbul Airport",
+        "type": "large_airport",
+        "country": "TR",
+        "city": "Arnavutköy, Istanbul"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.622581,
+          41.958087
+        ]
+      },
+      "properties": {
+        "iata": "SKP",
+        "icao": "LWSK",
+        "name": "Skopje International Airport",
+        "type": "large_airport",
+        "country": "MK",
+        "city": "Ilinden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.34966,
+          36.151199
+        ]
+      },
+      "properties": {
+        "iata": "GIB",
+        "icao": "LXGB",
+        "name": "Gibraltar Airport",
+        "type": "large_airport",
+        "country": "GI",
+        "city": "Gibraltar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.309099,
+          44.818401
+        ]
+      },
+      "properties": {
+        "iata": "BEG",
+        "icao": "LYBE",
+        "name": "Belgrade Nikola Tesla Airport",
+        "type": "large_airport",
+        "country": "RS",
+        "city": "Belgrade"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.2519,
+          42.359402
+        ]
+      },
+      "properties": {
+        "iata": "TGD",
+        "icao": "LYPG",
+        "name": "Podgorica Airport / Podgorica Golubovci Airbase",
+        "type": "large_airport",
+        "country": "ME",
+        "city": "Podgorica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.2127,
+          48.1702
+        ]
+      },
+      "properties": {
+        "iata": "BTS",
+        "icao": "LZIB",
+        "name": "M. R. Štefánik Airport",
+        "type": "large_airport",
+        "country": "SK",
+        "city": "Bratislava"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.268321,
+          21.773697
+        ]
+      },
+      "properties": {
+        "iata": "PLS",
+        "icao": "MBPV",
+        "name": "Providenciales International Airport",
+        "type": "large_airport",
+        "country": "TC",
+        "city": "Providenciales"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.911111,
+          18.452222
+        ]
+      },
+      "properties": {
+        "iata": "LRM",
+        "icao": "MDLR",
+        "name": "Casa De Campo International Airport",
+        "type": "large_airport",
+        "country": "DO",
+        "city": "La Romana"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.363403,
+          18.5674
+        ]
+      },
+      "properties": {
+        "iata": "PUJ",
+        "icao": "MDPC",
+        "name": "Punta Cana International Airport",
+        "type": "large_airport",
+        "country": "DO",
+        "city": "Punta Cana"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.6689,
+          18.429701
+        ]
+      },
+      "properties": {
+        "iata": "SDQ",
+        "icao": "MDSD",
+        "name": "Las Américas International Airport",
+        "type": "large_airport",
+        "country": "DO",
+        "city": "Santo Domingo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.527496,
+          14.5833
+        ]
+      },
+      "properties": {
+        "iata": "GUA",
+        "icao": "MGGT",
+        "name": "La Aurora Airport",
+        "type": "large_airport",
+        "country": "GT",
+        "city": "Guatemala City"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.787498,
+          17.935699
+        ]
+      },
+      "properties": {
+        "iata": "KIN",
+        "icao": "MKJP",
+        "name": "Norman Manley International Airport",
+        "type": "large_airport",
+        "country": "JM",
+        "city": "Kingston"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.928538,
+          20.514922
+        ]
+      },
+      "properties": {
+        "iata": "CZM",
+        "icao": "MMCZ",
+        "name": "Cozumel International Airport",
+        "type": "large_airport",
+        "country": "MX",
+        "city": "Cozumel"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.527938,
+          24.125468
+        ]
+      },
+      "properties": {
+        "iata": "DGO",
+        "icao": "MMDO",
+        "name": "General Guadalupe Victoria International Airport",
+        "type": "large_airport",
+        "country": "MX",
+        "city": "Durango"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.310108,
+          20.523342
+        ]
+      },
+      "properties": {
+        "iata": "GDL",
+        "icao": "MMGL",
+        "name": "Guadalajara International Airport",
+        "type": "large_airport",
+        "country": "MX",
+        "city": "Guadalajara"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.645462,
+          20.930485
+        ]
+      },
+      "properties": {
+        "iata": "MID",
+        "icao": "MMMD",
+        "name": "Manuel Crescencio Rejón International Airport",
+        "type": "large_airport",
+        "country": "MX",
+        "city": "Mérida"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.071328,
+          19.435137
+        ]
+      },
+      "properties": {
+        "iata": "MEX",
+        "icao": "MMMX",
+        "name": "Benito Juárez International Airport",
+        "type": "large_airport",
+        "country": "MX",
+        "city": "Ciudad de México"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.106989,
+          25.778521
+        ]
+      },
+      "properties": {
+        "iata": "MTY",
+        "icao": "MMMY",
+        "name": "Monterrey International Airport",
+        "type": "large_airport",
+        "country": "MX",
+        "city": "Monterrey"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.264572,
+          23.161474
+        ]
+      },
+      "properties": {
+        "iata": "MZT",
+        "icao": "MMMZ",
+        "name": "General Rafael Buelna International Airport",
+        "type": "large_airport",
+        "country": "MX",
+        "city": "Mazatlàn"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.254391,
+          20.679913
+        ]
+      },
+      "properties": {
+        "iata": "PVR",
+        "icao": "MMPR",
+        "name": "Puerto Vallarta International Airport",
+        "type": "large_airport",
+        "country": "MX",
+        "city": "Puerto Vallarta"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.720731,
+          23.151919
+        ]
+      },
+      "properties": {
+        "iata": "SJD",
+        "icao": "MMSD",
+        "name": "Los Cabos International Airport",
+        "type": "large_airport",
+        "country": "MX",
+        "city": "San José del Cabo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0257,
+          19.7357
+        ]
+      },
+      "properties": {
+        "iata": "NLU",
+        "icao": "MMSM",
+        "name": "General Felipe Ángeles International Airport",
+        "type": "large_airport",
+        "country": "MX",
+        "city": "Mexico City"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.969976,
+          32.541043
+        ]
+      },
+      "properties": {
+        "iata": "TIJ",
+        "icao": "MMTJ",
+        "name": "General Abelardo L. Rodriguez International Airport",
+        "type": "large_airport",
+        "country": "MX",
+        "city": "Tijuana"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.874304,
+          21.039444
+        ]
+      },
+      "properties": {
+        "iata": "CUN",
+        "icao": "MMUN",
+        "name": "Cancún International Airport",
+        "type": "large_airport",
+        "country": "MX",
+        "city": "Cancún"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.383499,
+          9.07136
+        ]
+      },
+      "properties": {
+        "iata": "PTY",
+        "icao": "MPTO",
+        "name": "Tocumen International Airport",
+        "type": "large_airport",
+        "country": "PA",
+        "city": "Tocumen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.544403,
+          10.5933
+        ]
+      },
+      "properties": {
+        "iata": "LIR",
+        "icao": "MRLB",
+        "name": "Guanacaste Airport",
+        "type": "large_airport",
+        "country": "CR",
+        "city": "Liberia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.208801,
+          9.99386
+        ]
+      },
+      "properties": {
+        "iata": "SJO",
+        "icao": "MROC",
+        "name": "Juan Santamaría International Airport",
+        "type": "large_airport",
+        "country": "CR",
+        "city": "San José (Alajuela)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.055702,
+          13.4409
+        ]
+      },
+      "properties": {
+        "iata": "SAL",
+        "icao": "MSLP",
+        "name": "Monseñor Óscar Arnulfo Romero International Airport",
+        "type": "large_airport",
+        "country": "SV",
+        "city": "San Salvador (San Luis Talpa)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.292596,
+          18.580023
+        ]
+      },
+      "properties": {
+        "iata": "PAP",
+        "icao": "MTPP",
+        "name": "Toussaint Louverture International Airport",
+        "type": "large_airport",
+        "country": "HT",
+        "city": "Port-au-Prince"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.409103,
+          22.989201
+        ]
+      },
+      "properties": {
+        "iata": "HAV",
+        "icao": "MUHA",
+        "name": "José Martí International Airport",
+        "type": "large_airport",
+        "country": "CU",
+        "city": "Havana"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.435303,
+          23.034401
+        ]
+      },
+      "properties": {
+        "iata": "VRA",
+        "icao": "MUVR",
+        "name": "Juan Gualberto Gomez International Airport",
+        "type": "large_airport",
+        "country": "CU",
+        "city": "Matanzas"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.357697,
+          19.292801
+        ]
+      },
+      "properties": {
+        "iata": "GCM",
+        "icao": "MWCR",
+        "name": "Owen Roberts International Airport",
+        "type": "large_airport",
+        "country": "KY",
+        "city": "George Town"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.466202,
+          25.039
+        ]
+      },
+      "properties": {
+        "iata": "NAS",
+        "icao": "MYNN",
+        "name": "Lynden Pindling International Airport",
+        "type": "large_airport",
+        "country": "BS",
+        "city": "Nassau"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.303556,
+          17.539951
+        ]
+      },
+      "properties": {
+        "iata": "BZE",
+        "icao": "MZBZ",
+        "name": "Philip S. W. Goldson International Airport",
+        "type": "large_airport",
+        "country": "BZ",
+        "city": "Belize City"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -149.606995,
+          -17.553699
+        ]
+      },
+      "properties": {
+        "iata": "PPT",
+        "icao": "NTAA",
+        "name": "Faa'a International Airport",
+        "type": "large_airport",
+        "country": "PF",
+        "city": "Papeete"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.320007,
+          -17.699301
+        ]
+      },
+      "properties": {
+        "iata": "VLI",
+        "icao": "NVVV",
+        "name": "Bauerfield International Airport",
+        "type": "large_airport",
+        "country": "VU",
+        "city": "Port Vila"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.786331,
+          -37.01199
+        ]
+      },
+      "properties": {
+        "iata": "AKL",
+        "icao": "NZAA",
+        "name": "Auckland International Airport",
+        "type": "large_airport",
+        "country": "NZ",
+        "city": "Auckland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.532065,
+          -43.489029
+        ]
+      },
+      "properties": {
+        "iata": "CHC",
+        "icao": "NZCH",
+        "name": "Christchurch International Airport",
+        "type": "large_airport",
+        "country": "NZ",
+        "city": "Christchurch"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.804993,
+          -41.327202
+        ]
+      },
+      "properties": {
+        "iata": "WLG",
+        "icao": "NZWN",
+        "name": "Wellington International Airport",
+        "type": "large_airport",
+        "country": "NZ",
+        "city": "Wellington"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.63764,
+          26.267295
+        ]
+      },
+      "properties": {
+        "iata": "BAH",
+        "icao": "OBBI",
+        "name": "Bahrain International Airport",
+        "type": "large_airport",
+        "country": "BH",
+        "city": "Manama"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.656601,
+          18.2404
+        ]
+      },
+      "properties": {
+        "iata": "AHB",
+        "icao": "OEAB",
+        "name": "Abha International Airport",
+        "type": "large_airport",
+        "country": "SA",
+        "city": "Abha"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.797901,
+          26.471201
+        ]
+      },
+      "properties": {
+        "iata": "DMM",
+        "icao": "OEDF",
+        "name": "King Fahd International Airport",
+        "type": "large_airport",
+        "country": "SA",
+        "city": "Ad Dammam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.152,
+          26.2654
+        ]
+      },
+      "properties": {
+        "iata": "DHA",
+        "icao": "OEDR",
+        "name": "King Abdulaziz Air Base",
+        "type": "large_airport",
+        "country": "SA",
+        "city": "Dhahran"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.156502,
+          21.6796
+        ]
+      },
+      "properties": {
+        "iata": "JED",
+        "icao": "OEJN",
+        "name": "King Abdulaziz International Airport",
+        "type": "large_airport",
+        "country": "SA",
+        "city": "Jeddah"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.705101,
+          24.5534
+        ]
+      },
+      "properties": {
+        "iata": "MED",
+        "icao": "OEMA",
+        "name": "Prince Mohammad Bin Abdulaziz Airport",
+        "type": "large_airport",
+        "country": "SA",
+        "city": "Medina"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.698799,
+          24.9576
+        ]
+      },
+      "properties": {
+        "iata": "RUH",
+        "icao": "OERK",
+        "name": "King Khaled International Airport",
+        "type": "large_airport",
+        "country": "SA",
+        "city": "Riyadh"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.152199,
+          35.4161
+        ]
+      },
+      "properties": {
+        "iata": "IKA",
+        "icao": "OIIE",
+        "name": "Imam Khomeini International Airport",
+        "type": "large_airport",
+        "country": "IR",
+        "city": "Tehran"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.3134,
+          35.689201
+        ]
+      },
+      "properties": {
+        "iata": "THR",
+        "icao": "OIII",
+        "name": "Mehrabad International Airport",
+        "type": "large_airport",
+        "country": "IR",
+        "city": "Tehran"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.640999,
+          36.235199
+        ]
+      },
+      "properties": {
+        "iata": "MHD",
+        "icao": "OIMM",
+        "name": "Mashhad International Airport",
+        "type": "large_airport",
+        "country": "IR",
+        "city": "Mashhad"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          52.589802,
+          29.5392
+        ]
+      },
+      "properties": {
+        "iata": "SYZ",
+        "icao": "OISS",
+        "name": "Shiraz Shahid Dastghaib International Airport",
+        "type": "large_airport",
+        "country": "IR",
+        "city": "Shiraz"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.993198,
+          31.722601
+        ]
+      },
+      "properties": {
+        "iata": "AMM",
+        "icao": "OJAI",
+        "name": "Queen Alia International Airport",
+        "type": "large_airport",
+        "country": "JO",
+        "city": "Amman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.968899,
+          29.226601
+        ]
+      },
+      "properties": {
+        "iata": "KWI",
+        "icao": "OKKK",
+        "name": "Kuwait International Airport",
+        "type": "large_airport",
+        "country": "KW",
+        "city": "Kuwait City"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4884,
+          33.8209
+        ]
+      },
+      "properties": {
+        "iata": "BEY",
+        "icao": "OLBA",
+        "name": "Beirut Rafic Hariri International Airport",
+        "type": "large_airport",
+        "country": "LB",
+        "city": "Beirut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          57.634167,
+          19.501944
+        ]
+      },
+      "properties": {
+        "iata": "DQM",
+        "icao": "",
+        "name": "Duqm International Airport",
+        "type": "large_airport",
+        "country": "OM",
+        "city": "Duqm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          54.651718,
+          24.443764
+        ]
+      },
+      "properties": {
+        "iata": "AUH",
+        "icao": "OMAA",
+        "name": "Zayed International Airport",
+        "type": "large_airport",
+        "country": "AE",
+        "city": "Abu Dhabi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.364399,
+          25.2528
+        ]
+      },
+      "properties": {
+        "iata": "DXB",
+        "icao": "OMDB",
+        "name": "Dubai International Airport",
+        "type": "large_airport",
+        "country": "AE",
+        "city": "Dubai"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.161389,
+          24.896356
+        ]
+      },
+      "properties": {
+        "iata": "DWC",
+        "icao": "OMDW",
+        "name": "Al Maktoum International Airport",
+        "type": "large_airport",
+        "country": "AE",
+        "city": "Jebel Ali"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.5172,
+          25.3286
+        ]
+      },
+      "properties": {
+        "iata": "SHJ",
+        "icao": "OMSJ",
+        "name": "Sharjah International Airport",
+        "type": "large_airport",
+        "country": "AE",
+        "city": "Sharjah"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          58.284401,
+          23.5933
+        ]
+      },
+      "properties": {
+        "iata": "MCT",
+        "icao": "OOMS",
+        "name": "Muscat International Airport",
+        "type": "large_airport",
+        "country": "OM",
+        "city": "Muscat"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.82566,
+          33.549
+        ]
+      },
+      "properties": {
+        "iata": "ISB",
+        "icao": "OPIS",
+        "name": "Islamabad International Airport",
+        "type": "large_airport",
+        "country": "PK",
+        "city": "Attock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.160797,
+          24.9065
+        ]
+      },
+      "properties": {
+        "iata": "KHI",
+        "icao": "OPKC",
+        "name": "Jinnah International Airport",
+        "type": "large_airport",
+        "country": "PK",
+        "city": "Karachi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.403603,
+          31.521601
+        ]
+      },
+      "properties": {
+        "iata": "LHE",
+        "icao": "OPLA",
+        "name": "Allama Iqbal International Airport",
+        "type": "large_airport",
+        "country": "PK",
+        "city": "Lahore"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.2346,
+          33.262501
+        ]
+      },
+      "properties": {
+        "iata": "BGW",
+        "icao": "ORBI",
+        "name": "Baghdad International Airport / New Al Muthana Air Base",
+        "type": "large_airport",
+        "country": "IQ",
+        "city": "Baghdad"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.515598,
+          33.411499
+        ]
+      },
+      "properties": {
+        "iata": "DAM",
+        "icao": "OSDI",
+        "name": "Damascus International Airport",
+        "type": "large_airport",
+        "country": "SY",
+        "city": "Damascus"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.608056,
+          25.273056
+        ]
+      },
+      "properties": {
+        "iata": "DOH",
+        "icao": "OTHH",
+        "name": "Hamad International Airport",
+        "type": "large_airport",
+        "country": "QA",
+        "city": "Doha"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -149.992561,
+          61.179004
+        ]
+      },
+      "properties": {
+        "iata": "ANC",
+        "icao": "PANC",
+        "name": "Ted Stevens Anchorage International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Anchorage"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          144.797282,
+          13.485
+        ]
+      },
+      "properties": {
+        "iata": "GUM",
+        "icao": "PGUM",
+        "name": "Antonio B. Won Pat International Airport",
+        "type": "large_airport",
+        "country": "GU",
+        "city": "Hagåtña"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -157.924228,
+          21.32062
+        ]
+      },
+      "properties": {
+        "iata": "HNL",
+        "icao": "PHNL",
+        "name": "Daniel K Inouye International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Honolulu, Oahu"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -156.431837,
+          20.896263
+        ]
+      },
+      "properties": {
+        "iata": "OGG",
+        "icao": "PHOG",
+        "name": "Kahului International Airport",
+        "type": "large_airport",
+        "country": "US",
+        "city": "Kahului"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.349998,
+          22.577101
+        ]
+      },
+      "properties": {
+        "iata": "KHH",
+        "icao": "RCKH",
+        "name": "Kaohsiung International Airport",
+        "type": "large_airport",
+        "country": "TW",
+        "city": "Kaohsiung (Xiaogang)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.233002,
+          25.0777
+        ]
+      },
+      "properties": {
+        "iata": "TPE",
+        "icao": "RCTP",
+        "name": "Taiwan Taoyuan International Airport",
+        "type": "large_airport",
+        "country": "TW",
+        "city": "Taoyuan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.386002,
+          35.764702
+        ]
+      },
+      "properties": {
+        "iata": "NRT",
+        "icao": "RJAA",
+        "name": "Narita International Airport",
+        "type": "large_airport",
+        "country": "JP",
+        "city": "Narita"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.244003,
+          34.427299
+        ]
+      },
+      "properties": {
+        "iata": "KIX",
+        "icao": "RJBB",
+        "name": "Kansai International Airport",
+        "type": "large_airport",
+        "country": "JP",
+        "city": "Osaka"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.692001,
+          42.7752
+        ]
+      },
+      "properties": {
+        "iata": "CTS",
+        "icao": "RJCC",
+        "name": "New Chitose Airport",
+        "type": "large_airport",
+        "country": "JP",
+        "city": "Sapporo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.451004,
+          33.585899
+        ]
+      },
+      "properties": {
+        "iata": "FUK",
+        "icao": "RJFF",
+        "name": "Fukuoka Airport",
+        "type": "large_airport",
+        "country": "JP",
+        "city": "Fukuoka"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.718994,
+          31.8034
+        ]
+      },
+      "properties": {
+        "iata": "KOJ",
+        "icao": "RJFK",
+        "name": "Kagoshima Airport",
+        "type": "large_airport",
+        "country": "JP",
+        "city": "Kagoshima"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.804993,
+          34.858398
+        ]
+      },
+      "properties": {
+        "iata": "NGO",
+        "icao": "RJGG",
+        "name": "Chubu Centrair International Airport",
+        "type": "large_airport",
+        "country": "JP",
+        "city": "Tokoname"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.438004,
+          34.7855
+        ]
+      },
+      "properties": {
+        "iata": "ITM",
+        "icao": "RJOO",
+        "name": "Osaka International Airport",
+        "type": "large_airport",
+        "country": "JP",
+        "city": "Osaka"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.917007,
+          38.139702
+        ]
+      },
+      "properties": {
+        "iata": "SDJ",
+        "icao": "RJSS",
+        "name": "Sendai Airport",
+        "type": "large_airport",
+        "country": "JP",
+        "city": "Natori"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.779999,
+          35.552299
+        ]
+      },
+      "properties": {
+        "iata": "HND",
+        "icao": "RJTT",
+        "name": "Tokyo Haneda International Airport",
+        "type": "large_airport",
+        "country": "JP",
+        "city": "Tokyo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.348007,
+          35.748501
+        ]
+      },
+      "properties": {
+        "iata": "OKO",
+        "icao": "RJTY",
+        "name": "Yokota Air Base",
+        "type": "large_airport",
+        "country": "JP",
+        "city": "Fussa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.382814,
+          34.991406
+        ]
+      },
+      "properties": {
+        "iata": "MWX",
+        "icao": "RKJB",
+        "name": "Muan International Airport",
+        "type": "large_airport",
+        "country": "KR",
+        "city": "Muan (Piseo-ri)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.492548,
+          33.512058
+        ]
+      },
+      "properties": {
+        "iata": "CJU",
+        "icao": "RKPC",
+        "name": "Jeju International Airport",
+        "type": "large_airport",
+        "country": "KR",
+        "city": "Jeju City"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.938004,
+          35.179501
+        ]
+      },
+      "properties": {
+        "iata": "PUS",
+        "icao": "RKPK",
+        "name": "Gimhae International Airport",
+        "type": "large_airport",
+        "country": "KR",
+        "city": "Busan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.450996,
+          37.469101
+        ]
+      },
+      "properties": {
+        "iata": "ICN",
+        "icao": "RKSI",
+        "name": "Incheon International Airport",
+        "type": "large_airport",
+        "country": "KR",
+        "city": "Seoul"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.791,
+          37.5583
+        ]
+      },
+      "properties": {
+        "iata": "GMP",
+        "icao": "RKSS",
+        "name": "Gimpo International Airport",
+        "type": "large_airport",
+        "country": "KR",
+        "city": "Seoul"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.646004,
+          26.195801
+        ]
+      },
+      "properties": {
+        "iata": "OKA",
+        "icao": "ROAH",
+        "name": "Naha Airport / JASDF Naha Air Base",
+        "type": "large_airport",
+        "country": "JP",
+        "city": "Naha"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.769444,
+          26.351667
+        ]
+      },
+      "properties": {
+        "iata": "DNA",
+        "icao": "RODN",
+        "name": "Kadena Air Base",
+        "type": "large_airport",
+        "country": "JP",
+        "city": "Okinawa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.019997,
+          14.5086
+        ]
+      },
+      "properties": {
+        "iata": "MNL",
+        "icao": "RPLL",
+        "name": "Ninoy Aquino International Airport",
+        "type": "large_airport",
+        "country": "PH",
+        "city": "Manila (Pasay)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.646004,
+          7.12552
+        ]
+      },
+      "properties": {
+        "iata": "DVO",
+        "icao": "RPMD",
+        "name": "Francisco Bangoy International Airport",
+        "type": "large_airport",
+        "country": "PH",
+        "city": "Davao"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          123.97974,
+          10.309261
+        ]
+      },
+      "properties": {
+        "iata": "CEB",
+        "icao": "RPVM",
+        "name": "Mactan Cebu International Airport",
+        "type": "large_airport",
+        "country": "PH",
+        "city": "Lapu-Lapu City"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.4156,
+          -34.5592
+        ]
+      },
+      "properties": {
+        "iata": "AEP",
+        "icao": "SABE",
+        "name": "Jorge Newbery Airpark",
+        "type": "large_airport",
+        "country": "AR",
+        "city": "Buenos Aires"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.5358,
+          -34.8222
+        ]
+      },
+      "properties": {
+        "iata": "EZE",
+        "icao": "SAEZ",
+        "name": "Minister Pistarini International Airport",
+        "type": "large_airport",
+        "country": "AR",
+        "city": "Buenos Aires (Ezeiza)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.476207,
+          -1.379279
+        ]
+      },
+      "properties": {
+        "iata": "BEL",
+        "icao": "SBBE",
+        "name": "Val de Cans/Júlio Cezar Ribeiro International Airport",
+        "type": "large_airport",
+        "country": "BR",
+        "city": "Belém"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.920834,
+          -15.869167
+        ]
+      },
+      "properties": {
+        "iata": "BSB",
+        "icao": "SBBR",
+        "name": "Presidente Juscelino Kubitschek International Airport",
+        "type": "large_airport",
+        "country": "BR",
+        "city": "Brasília"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -43.966928,
+          -19.63571
+        ]
+      },
+      "properties": {
+        "iata": "CNF",
+        "icao": "SBCF",
+        "name": "Tancredo Neves International Airport",
+        "type": "large_airport",
+        "country": "BR",
+        "city": "Belo Horizonte"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.049702,
+          -3.03861
+        ]
+      },
+      "properties": {
+        "iata": "MAO",
+        "icao": "SBEG",
+        "name": "Eduardo Gomes International Airport",
+        "type": "large_airport",
+        "country": "BR",
+        "city": "Manaus"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.552502,
+          -27.670279
+        ]
+      },
+      "properties": {
+        "iata": "FLN",
+        "icao": "SBFL",
+        "name": "Hercílio Luz International Airport",
+        "type": "large_airport",
+        "country": "BR",
+        "city": "Florianópolis"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -38.532222,
+          -3.775833
+        ]
+      },
+      "properties": {
+        "iata": "FOR",
+        "icao": "SBFZ",
+        "name": "Pinto Martins International Airport",
+        "type": "large_airport",
+        "country": "BR",
+        "city": "Fortaleza"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -43.250557,
+          -22.809999
+        ]
+      },
+      "properties": {
+        "iata": "GIG",
+        "icao": "SBGL",
+        "name": "Rio Galeão – Tom Jobim International Airport",
+        "type": "large_airport",
+        "country": "BR",
+        "city": "Rio De Janeiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.467778,
+          -23.431944
+        ]
+      },
+      "properties": {
+        "iata": "GRU",
+        "icao": "SBGR",
+        "name": "Guarulhos - Governador André Franco Montoro International Airport",
+        "type": "large_airport",
+        "country": "BR",
+        "city": "São Paulo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -39.080584,
+          -16.438426
+        ]
+      },
+      "properties": {
+        "iata": "BPS",
+        "icao": "SBPS",
+        "name": "Porto Seguro Airport",
+        "type": "large_airport",
+        "country": "BR",
+        "city": "Porto Seguro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -38.322498,
+          -12.908611
+        ]
+      },
+      "properties": {
+        "iata": "SSA",
+        "icao": "SBSV",
+        "name": "Deputado Luiz Eduardo Magalhães International Airport",
+        "type": "large_airport",
+        "country": "BR",
+        "city": "Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -40.285,
+          -20.258
+        ]
+      },
+      "properties": {
+        "iata": "VIX",
+        "icao": "SBVT",
+        "name": "Eurico de Aguiar Salles Airport",
+        "type": "large_airport",
+        "country": "BR",
+        "city": "Vitória"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.785797,
+          -33.393002
+        ]
+      },
+      "properties": {
+        "iata": "SCL",
+        "icao": "SCEL",
+        "name": "Comodoro Arturo Merino Benítez International Airport",
+        "type": "large_airport",
+        "country": "CL",
+        "city": "Santiago"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.883598,
+          -2.15742
+        ]
+      },
+      "properties": {
+        "iata": "GYE",
+        "icao": "SEGU",
+        "name": "José Joaquín de Olmedo International Airport",
+        "type": "large_airport",
+        "country": "EC",
+        "city": "Guayaquil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.354306,
+          -0.125399
+        ]
+      },
+      "properties": {
+        "iata": "UIO",
+        "icao": "SEQM",
+        "name": "Mariscal Sucre International Airport",
+        "type": "large_airport",
+        "country": "EC",
+        "city": "Quito"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.519227,
+          -25.240156
+        ]
+      },
+      "properties": {
+        "iata": "ASU",
+        "icao": "SGAS",
+        "name": "Aeropuerto Internacional Silvio Pettirossi",
+        "type": "large_airport",
+        "country": "PY",
+        "city": "Asunción"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.837584,
+          -27.227537
+        ]
+      },
+      "properties": {
+        "iata": "ENO",
+        "icao": "SGEN",
+        "name": "Aeropuerto Internacional Tte. Amín Ayub González",
+        "type": "large_airport",
+        "country": "PY",
+        "city": "Encarnación"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.839544,
+          -25.457186
+        ]
+      },
+      "properties": {
+        "iata": "AGT",
+        "icao": "SGES",
+        "name": "Aeropuerto Internacional Guaraní",
+        "type": "large_airport",
+        "country": "PY",
+        "city": "Ciudad del Este"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.6217,
+          -22.046499
+        ]
+      },
+      "properties": {
+        "iata": "ESG",
+        "icao": "SGME",
+        "name": "Aeropuerto Internacional Dr. Luis Maria Argaña",
+        "type": "large_airport",
+        "country": "PY",
+        "city": "Mariscal Estigarribia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.1469,
+          4.70159
+        ]
+      },
+      "properties": {
+        "iata": "BOG",
+        "icao": "SKBO",
+        "name": "El Dorado International Airport",
+        "type": "large_airport",
+        "country": "CO",
+        "city": "Bogota"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.135399,
+          -17.6448
+        ]
+      },
+      "properties": {
+        "iata": "VVI",
+        "icao": "SLVR",
+        "name": "Viru Viru International Airport",
+        "type": "large_airport",
+        "country": "BO",
+        "city": "Santa Cruz"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.187801,
+          5.45283
+        ]
+      },
+      "properties": {
+        "iata": "PBM",
+        "icao": "SMJP",
+        "name": "Johan Adolf Pengel International Airport",
+        "type": "large_airport",
+        "country": "SR",
+        "city": "Zandery"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.361326,
+          4.819964
+        ]
+      },
+      "properties": {
+        "iata": "CAY",
+        "icao": "SOCA",
+        "name": "Cayenne – Félix Eboué Airport",
+        "type": "large_airport",
+        "country": "GF",
+        "city": "Matoury"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.114305,
+          -12.0219
+        ]
+      },
+      "properties": {
+        "iata": "LIM",
+        "icao": "SPJC",
+        "name": "Jorge Chávez International Airport",
+        "type": "large_airport",
+        "country": "PE",
+        "city": "Lima"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.938797,
+          -13.5357
+        ]
+      },
+      "properties": {
+        "iata": "CUZ",
+        "icao": "SPZO",
+        "name": "Alejandro Velasco Astete International Airport",
+        "type": "large_airport",
+        "country": "PE",
+        "city": "Cusco"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.026497,
+          -34.835647
+        ]
+      },
+      "properties": {
+        "iata": "MVD",
+        "icao": "SUMU",
+        "name": "Carrasco General Cesáreo L. Berisso International Airport",
+        "type": "large_airport",
+        "country": "UY",
+        "city": "Ciudad de la Costa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.692222,
+          10.111111
+        ]
+      },
+      "properties": {
+        "iata": "BLA",
+        "icao": "SVBC",
+        "name": "General José Antonio Anzoategui International Airport",
+        "type": "large_airport",
+        "country": "VE",
+        "city": "Barcelona"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.991222,
+          10.601194
+        ]
+      },
+      "properties": {
+        "iata": "CCS",
+        "icao": "SVMI",
+        "name": "Maiquetía Simón Bolívar International Airport",
+        "type": "large_airport",
+        "country": "VE",
+        "city": "Maiquetía"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.003201,
+          14.591
+        ]
+      },
+      "properties": {
+        "iata": "FDF",
+        "icao": "TFFF",
+        "name": "Martinique Aimé Césaire International Airport",
+        "type": "large_airport",
+        "country": "MQ",
+        "city": "Fort-de-France"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.531799,
+          16.265301
+        ]
+      },
+      "properties": {
+        "iata": "PTP",
+        "icao": "TFFR",
+        "name": "Guadeloupe - Maryse Condé International Airport",
+        "type": "large_airport",
+        "country": "GP",
+        "city": "Pointe-à-Pitre"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.001801,
+          18.4394
+        ]
+      },
+      "properties": {
+        "iata": "SJU",
+        "icao": "TJSJ",
+        "name": "Luis Munoz Marin International Airport",
+        "type": "large_airport",
+        "country": "PR",
+        "city": "San Juan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.952599,
+          13.7332
+        ]
+      },
+      "properties": {
+        "iata": "UVF",
+        "icao": "TLPL",
+        "name": "Hewanorra International Airport",
+        "type": "large_airport",
+        "country": "LC",
+        "city": "Vieux Fort"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.015198,
+          12.5014
+        ]
+      },
+      "properties": {
+        "iata": "AUA",
+        "icao": "TNCA",
+        "name": "Queen Beatrix International Airport",
+        "type": "large_airport",
+        "country": "AW",
+        "city": "Oranjestad"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.268501,
+          12.131
+        ]
+      },
+      "properties": {
+        "iata": "BON",
+        "icao": "TNCB",
+        "name": "Flamingo International Airport",
+        "type": "large_airport",
+        "country": "BQ",
+        "city": "Kralendijk"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.959801,
+          12.1889
+        ]
+      },
+      "properties": {
+        "iata": "CUR",
+        "icao": "TNCC",
+        "name": "Hato International Airport",
+        "type": "large_airport",
+        "country": "CW",
+        "city": "Willemstad"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.108898,
+          18.041
+        ]
+      },
+      "properties": {
+        "iata": "SXM",
+        "icao": "TNCM",
+        "name": "Princess Juliana International Airport",
+        "type": "large_airport",
+        "country": "SX",
+        "city": "Sint Maarten"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.042828,
+          43.354267
+        ]
+      },
+      "properties": {
+        "iata": "ALA",
+        "icao": "UAAA",
+        "name": "Almaty International Airport",
+        "type": "large_airport",
+        "country": "KZ",
+        "city": "Almaty"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.467094,
+          51.027035
+        ]
+      },
+      "properties": {
+        "iata": "NQZ",
+        "icao": "UACC",
+        "name": "Nursultan Nazarbayev International Airport",
+        "type": "large_airport",
+        "country": "KZ",
+        "city": "Astana"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.4776,
+          43.061298
+        ]
+      },
+      "properties": {
+        "iata": "FRU",
+        "icao": "UCFM",
+        "name": "Manas International Airport",
+        "type": "large_airport",
+        "country": "KG",
+        "city": "Bishkek"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.0467,
+          40.467499
+        ]
+      },
+      "properties": {
+        "iata": "GYD",
+        "icao": "UBBB",
+        "name": "Heydar Aliyev International Airport",
+        "type": "large_airport",
+        "country": "AZ",
+        "city": "Baku"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.395901,
+          40.147301
+        ]
+      },
+      "properties": {
+        "iata": "EVN",
+        "icao": "UDYZ",
+        "name": "Zvartnots International Airport",
+        "type": "large_airport",
+        "country": "AM",
+        "city": "Yerevan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.9547,
+          41.669201
+        ]
+      },
+      "properties": {
+        "iata": "TBS",
+        "icao": "UGTB",
+        "name": "Tbilisi International Airport",
+        "type": "large_airport",
+        "country": "GE",
+        "city": "Tbilisi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.148155,
+          43.396256
+        ]
+      },
+      "properties": {
+        "iata": "VVO",
+        "icao": "UHWW",
+        "name": "Vladivostok International Airport",
+        "type": "large_airport",
+        "country": "RU",
+        "city": "Artyom"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.894699,
+          50.345001
+        ]
+      },
+      "properties": {
+        "iata": "KBP",
+        "icao": "UKBB",
+        "name": "Boryspil International Airport",
+        "type": "large_airport",
+        "country": "UA",
+        "city": "Boryspil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.9561,
+          49.8125
+        ]
+      },
+      "properties": {
+        "iata": "LWO",
+        "icao": "UKLL",
+        "name": "Lviv International Airport",
+        "type": "large_airport",
+        "country": "UA",
+        "city": "Lviv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.262501,
+          59.800301
+        ]
+      },
+      "properties": {
+        "iata": "LED",
+        "icao": "ULLI",
+        "name": "Pulkovo Airport",
+        "type": "large_airport",
+        "country": "RU",
+        "city": "St. Petersburg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.039964,
+          53.888071
+        ]
+      },
+      "properties": {
+        "iata": "MSQ",
+        "icao": "UMMS",
+        "name": "Minsk National Airport",
+        "type": "large_airport",
+        "country": "BY",
+        "city": "Minsk"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.492437,
+          56.173077
+        ]
+      },
+      "properties": {
+        "iata": "KJA",
+        "icao": "UNKL",
+        "name": "Krasnoyarsk International Airport",
+        "type": "large_airport",
+        "country": "RU",
+        "city": "Krasnoyarsk"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.618675,
+          55.019756
+        ]
+      },
+      "properties": {
+        "iata": "OVB",
+        "icao": "UNNT",
+        "name": "Novosibirsk Tolmachevo Airport",
+        "type": "large_airport",
+        "country": "RU",
+        "city": "Novosibirsk"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.924722,
+          47.493888
+        ]
+      },
+      "properties": {
+        "iata": "ROV",
+        "icao": "URRP",
+        "name": "Platov International Airport",
+        "type": "large_airport",
+        "country": "RU",
+        "city": "Rostov-on-Don"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.9566,
+          43.449902
+        ]
+      },
+      "properties": {
+        "iata": "AER",
+        "icao": "URSS",
+        "name": "Sochi International Airport",
+        "type": "large_airport",
+        "country": "RU",
+        "city": "Sochi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.8027,
+          56.743099
+        ]
+      },
+      "properties": {
+        "iata": "SVX",
+        "icao": "USSS",
+        "name": "Koltsovo Airport",
+        "type": "large_airport",
+        "country": "RU",
+        "city": "Yekaterinburg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          58.361,
+          37.986801
+        ]
+      },
+      "properties": {
+        "iata": "ASB",
+        "icao": "UTAA",
+        "name": "Ashgabat International Airport",
+        "type": "large_airport",
+        "country": "TM",
+        "city": "Ashgabat"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.281197,
+          41.2579
+        ]
+      },
+      "properties": {
+        "iata": "TAS",
+        "icao": "UTTT",
+        "name": "Tashkent International Airport",
+        "type": "large_airport",
+        "country": "UZ",
+        "city": "Tashkent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.150002,
+          55.553299
+        ]
+      },
+      "properties": {
+        "iata": "ZIA",
+        "icao": "UUBW",
+        "name": "Zhukovsky International Airport",
+        "type": "large_airport",
+        "country": "RU",
+        "city": "Moscow"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.9063,
+          55.408798
+        ]
+      },
+      "properties": {
+        "iata": "DME",
+        "icao": "UUDD",
+        "name": "Domodedovo International Airport",
+        "type": "large_airport",
+        "country": "RU",
+        "city": "Moscow"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4146,
+          55.972599
+        ]
+      },
+      "properties": {
+        "iata": "SVO",
+        "icao": "UUEE",
+        "name": "Sheremetyevo International Airport",
+        "type": "large_airport",
+        "country": "RU",
+        "city": "Moscow"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.261501,
+          55.591499
+        ]
+      },
+      "properties": {
+        "iata": "VKO",
+        "icao": "UUWW",
+        "name": "Vnukovo International Airport",
+        "type": "large_airport",
+        "country": "RU",
+        "city": "Moscow"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.278702,
+          55.606201
+        ]
+      },
+      "properties": {
+        "iata": "KZN",
+        "icao": "UWKD",
+        "name": "Kazan International Airport",
+        "type": "large_airport",
+        "country": "RU",
+        "city": "Kazan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.171111,
+          51.712778
+        ]
+      },
+      "properties": {
+        "iata": "GSV",
+        "icao": "UWSG",
+        "name": "Gagarin International Airport",
+        "type": "large_airport",
+        "country": "RU",
+        "city": "Saratov"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.874401,
+          54.557499
+        ]
+      },
+      "properties": {
+        "iata": "UFA",
+        "icao": "UWUU",
+        "name": "Ufa International Airport",
+        "type": "large_airport",
+        "country": "RU",
+        "city": "Ufa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.164299,
+          53.504902
+        ]
+      },
+      "properties": {
+        "iata": "KUF",
+        "icao": "UWWW",
+        "name": "Kurumoch International Airport",
+        "type": "large_airport",
+        "country": "RU",
+        "city": "Samara"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.867897,
+          19.088699
+        ]
+      },
+      "properties": {
+        "iata": "BOM",
+        "icao": "VABB",
+        "name": "Chhatrapati Shivaji International Airport",
+        "type": "large_airport",
+        "country": "IN",
+        "city": "Mumbai"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.039391,
+          22.378824
+        ]
+      },
+      "properties": {
+        "iata": "HSR",
+        "icao": "VAHS",
+        "name": "Rajkot International Airport",
+        "type": "large_airport",
+        "country": "IN",
+        "city": "Rajkot"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.884102,
+          7.18076
+        ]
+      },
+      "properties": {
+        "iata": "CMB",
+        "icao": "VCBI",
+        "name": "Bandaranaike International Colombo Airport",
+        "type": "large_airport",
+        "country": "LK",
+        "city": "Colombo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.124128,
+          6.284467
+        ]
+      },
+      "properties": {
+        "iata": "HRI",
+        "icao": "VCRI",
+        "name": "Mattala Rajapaksa International Airport",
+        "type": "large_airport",
+        "country": "LK",
+        "city": "Mattala"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.844002,
+          11.5466
+        ]
+      },
+      "properties": {
+        "iata": "PNH",
+        "icao": "VDPP",
+        "name": "Phnom Penh International Airport",
+        "type": "large_airport",
+        "country": "KH",
+        "city": "Phnom Penh (Pou Senchey)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.223056,
+          13.369167
+        ]
+      },
+      "properties": {
+        "iata": "SAI",
+        "icao": "VDSA",
+        "name": "Siem Reap-Angkor International Airport",
+        "type": "large_airport",
+        "country": "KH",
+        "city": "Siem Reap"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.446701,
+          22.654699
+        ]
+      },
+      "properties": {
+        "iata": "CCU",
+        "icao": "VECC",
+        "name": "Netaji Subhash Chandra Bose International Airport",
+        "type": "large_airport",
+        "country": "IN",
+        "city": "Kolkata"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.397783,
+          23.843347
+        ]
+      },
+      "properties": {
+        "iata": "DAC",
+        "icao": "VGHS",
+        "name": "Hazrat Shahjalal International Airport",
+        "type": "large_airport",
+        "country": "BD",
+        "city": "Dhaka"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.915001,
+          22.308901
+        ]
+      },
+      "properties": {
+        "iata": "HKG",
+        "icao": "VHHH",
+        "name": "Hong Kong International Airport",
+        "type": "large_airport",
+        "country": "HK",
+        "city": "Hong Kong"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.09519,
+          28.55563
+        ]
+      },
+      "properties": {
+        "iata": "DEL",
+        "icao": "VIDP",
+        "name": "Indira Gandhi International Airport",
+        "type": "large_airport",
+        "country": "IN",
+        "city": "New Delhi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.592003,
+          22.149599
+        ]
+      },
+      "properties": {
+        "iata": "MFM",
+        "icao": "VMMC",
+        "name": "Macau International Airport",
+        "type": "large_airport",
+        "country": "MO",
+        "city": "Nossa Senhora do Carmo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3591,
+          27.6966
+        ]
+      },
+      "properties": {
+        "iata": "KTM",
+        "icao": "VNKT",
+        "name": "Tribhuvan International Airport",
+        "type": "large_airport",
+        "country": "NP",
+        "city": "Kathmandu"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.706299,
+          13.1979
+        ]
+      },
+      "properties": {
+        "iata": "BLR",
+        "icao": "VOBL",
+        "name": "Kempegowda International Airport",
+        "type": "large_airport",
+        "country": "IN",
+        "city": "Bangalore"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.400838,
+          10.151047
+        ]
+      },
+      "properties": {
+        "iata": "COK",
+        "icao": "VOCI",
+        "name": "Cochin International Airport",
+        "type": "large_airport",
+        "country": "IN",
+        "city": "Kochi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.860625,
+          15.744257
+        ]
+      },
+      "properties": {
+        "iata": "GOX",
+        "icao": "VOGA",
+        "name": "Manohar International Airport",
+        "type": "large_airport",
+        "country": "IN",
+        "city": "Mopa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.831398,
+          15.3808
+        ]
+      },
+      "properties": {
+        "iata": "GOI",
+        "icao": "VOGO",
+        "name": "Dabolim Airport",
+        "type": "large_airport",
+        "country": "IN",
+        "city": "Vasco da Gama"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.429855,
+          17.231318
+        ]
+      },
+      "properties": {
+        "iata": "HYD",
+        "icao": "VOHS",
+        "name": "Rajiv Gandhi International Airport",
+        "type": "large_airport",
+        "country": "IN",
+        "city": "Hyderabad"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.169296,
+          12.990005
+        ]
+      },
+      "properties": {
+        "iata": "MAA",
+        "icao": "VOMM",
+        "name": "Chennai International Airport",
+        "type": "large_airport",
+        "country": "IN",
+        "city": "Chennai"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.920097,
+          8.48212
+        ]
+      },
+      "properties": {
+        "iata": "TRV",
+        "icao": "VOTV",
+        "name": "Thiruvananthapuram International Airport",
+        "type": "large_airport",
+        "country": "IN",
+        "city": "Thiruvananthapuram"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.529099,
+          4.19183
+        ]
+      },
+      "properties": {
+        "iata": "MLE",
+        "icao": "VRMM",
+        "name": "Malé International Airport",
+        "type": "large_airport",
+        "country": "MV",
+        "city": "Malé"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.607002,
+          13.9126
+        ]
+      },
+      "properties": {
+        "iata": "DMK",
+        "icao": "VTBD",
+        "name": "Don Mueang International Airport",
+        "type": "large_airport",
+        "country": "TH",
+        "city": "Bangkok"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.747002,
+          13.6811
+        ]
+      },
+      "properties": {
+        "iata": "BKK",
+        "icao": "VTBS",
+        "name": "Suvarnabhumi Airport",
+        "type": "large_airport",
+        "country": "TH",
+        "city": "Bangkok"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.962601,
+          18.7668
+        ]
+      },
+      "properties": {
+        "iata": "CNX",
+        "icao": "VTCC",
+        "name": "Chiang Mai International Airport",
+        "type": "large_airport",
+        "country": "TH",
+        "city": "Chiang Mai"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.316902,
+          8.1132
+        ]
+      },
+      "properties": {
+        "iata": "HKT",
+        "icao": "VTSP",
+        "name": "Phuket International Airport",
+        "type": "large_airport",
+        "country": "TH",
+        "city": "Phuket"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.806999,
+          21.221201
+        ]
+      },
+      "properties": {
+        "iata": "HAN",
+        "icao": "VVNB",
+        "name": "Noi Bai International Airport",
+        "type": "large_airport",
+        "country": "VN",
+        "city": "Hanoi (Soc Son)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.652,
+          10.8188
+        ]
+      },
+      "properties": {
+        "iata": "SGN",
+        "icao": "VVTS",
+        "name": "Tan Son Nhat International Airport",
+        "type": "large_airport",
+        "country": "VN",
+        "city": "Ho Chi Minh City"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.977898,
+          21.7022
+        ]
+      },
+      "properties": {
+        "iata": "MDL",
+        "icao": "VYMD",
+        "name": "Mandalay International Airport",
+        "type": "large_airport",
+        "country": "MM",
+        "city": "Mandalay"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.133202,
+          16.907301
+        ]
+      },
+      "properties": {
+        "iata": "RGN",
+        "icao": "VYYY",
+        "name": "Yangon International Airport",
+        "type": "large_airport",
+        "country": "MM",
+        "city": "Yangon"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.554001,
+          -5.06163
+        ]
+      },
+      "properties": {
+        "iata": "UPG",
+        "icao": "WAAA",
+        "name": "Hasanuddin International Airport",
+        "type": "large_airport",
+        "country": "ID",
+        "city": "Ujung Pandang"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.167123,
+          -8.748409
+        ]
+      },
+      "properties": {
+        "iata": "DPS",
+        "icao": "WADD",
+        "name": "Denpasar I Gusti Ngurah Rai International Airport",
+        "type": "large_airport",
+        "country": "ID",
+        "city": "Kuta, Badung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.519857,
+          -2.579627
+        ]
+      },
+      "properties": {
+        "iata": "DJJ",
+        "icao": "WAJJ",
+        "name": "Dortheys Hiyo Eluay International Airport",
+        "type": "large_airport",
+        "country": "ID",
+        "city": "Sentani"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.89452,
+          -1.268342
+        ]
+      },
+      "properties": {
+        "iata": "BPN",
+        "icao": "WALL",
+        "name": "Sultan Aji Muhammad Sulaiman Sepinggan International Airport",
+        "type": "large_airport",
+        "country": "ID",
+        "city": "Balikpapan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.787003,
+          -7.37983
+        ]
+      },
+      "properties": {
+        "iata": "SUB",
+        "icao": "WARR",
+        "name": "Juanda International Airport",
+        "type": "large_airport",
+        "country": "ID",
+        "city": "Surabaya"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.928001,
+          4.9442
+        ]
+      },
+      "properties": {
+        "iata": "BWN",
+        "icao": "WBSB",
+        "name": "Brunei International Airport",
+        "type": "large_airport",
+        "country": "BN",
+        "city": "Bandar Seri Begawan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.655998,
+          -6.12557
+        ]
+      },
+      "properties": {
+        "iata": "CGK",
+        "icao": "WIII",
+        "name": "Soekarno-Hatta International Airport",
+        "type": "large_airport",
+        "country": "ID",
+        "city": "Jakarta"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.870566,
+          3.637847
+        ]
+      },
+      "properties": {
+        "iata": "KNO",
+        "icao": "WIMM",
+        "name": "Kualanamu International Airport",
+        "type": "large_airport",
+        "country": "ID",
+        "city": "Beringin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.709999,
+          2.74558
+        ]
+      },
+      "properties": {
+        "iata": "KUL",
+        "icao": "WMKK",
+        "name": "Kuala Lumpur International Airport",
+        "type": "large_airport",
+        "country": "MY",
+        "city": "Sepang"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.994003,
+          1.35019
+        ]
+      },
+      "properties": {
+        "iata": "SIN",
+        "icao": "WSSS",
+        "name": "Singapore Changi Airport",
+        "type": "large_airport",
+        "country": "SG",
+        "city": "Singapore"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          153.117004,
+          -27.384199
+        ]
+      },
+      "properties": {
+        "iata": "BNE",
+        "icao": "YBBN",
+        "name": "Brisbane International Airport",
+        "type": "large_airport",
+        "country": "AU",
+        "city": "Brisbane"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          144.836432,
+          -37.661548
+        ]
+      },
+      "properties": {
+        "iata": "MEL",
+        "icao": "YMML",
+        "name": "Melbourne Airport",
+        "type": "large_airport",
+        "country": "AU",
+        "city": "Melbourne"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.533393,
+          -34.947512
+        ]
+      },
+      "properties": {
+        "iata": "ADL",
+        "icao": "YPAD",
+        "name": "Adelaide International Airport",
+        "type": "large_airport",
+        "country": "AU",
+        "city": "Adelaide"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.88185,
+          -12.41497
+        ]
+      },
+      "properties": {
+        "iata": "DRW",
+        "icao": "YPDN",
+        "name": "Darwin International Airport / RAAF Darwin",
+        "type": "large_airport",
+        "country": "AU",
+        "city": "Darwin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.967003,
+          -31.9403
+        ]
+      },
+      "properties": {
+        "iata": "PER",
+        "icao": "YPPH",
+        "name": "Perth International Airport",
+        "type": "large_airport",
+        "country": "AU",
+        "city": "Perth"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.177002,
+          -33.946098
+        ]
+      },
+      "properties": {
+        "iata": "SYD",
+        "icao": "YSSY",
+        "name": "Sydney Kingsford Smith International Airport",
+        "type": "large_airport",
+        "country": "AU",
+        "city": "Sydney (Mascot)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.584999,
+          40.080101
+        ]
+      },
+      "properties": {
+        "iata": "PEK",
+        "icao": "ZBAA",
+        "name": "Beijing Capital International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Beijing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.41092,
+          39.509945
+        ]
+      },
+      "properties": {
+        "iata": "PKX",
+        "icao": "ZBAD",
+        "name": "Beijing Daxing International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Beijing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.824598,
+          40.849658
+        ]
+      },
+      "properties": {
+        "iata": "HET",
+        "icao": "ZBHH",
+        "name": "Hohhot Baita International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Hohhot"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          117.346001,
+          39.124401
+        ]
+      },
+      "properties": {
+        "iata": "TSN",
+        "icao": "ZBTJ",
+        "name": "Tianjin Binhai International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Tianjin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.627998,
+          37.746899
+        ]
+      },
+      "properties": {
+        "iata": "TYN",
+        "icao": "ZBYN",
+        "name": "Taiyuan Wusu International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Taiyuan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.299004,
+          23.392401
+        ]
+      },
+      "properties": {
+        "iata": "CAN",
+        "icao": "ZGGG",
+        "name": "Guangzhou Baiyun International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Guangzhou (Huadu)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.220001,
+          28.189199
+        ]
+      },
+      "properties": {
+        "iata": "CSX",
+        "icao": "ZGHA",
+        "name": "Changsha Huanghua International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Changsha (Changsha)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.039553,
+          25.219828
+        ]
+      },
+      "properties": {
+        "iata": "KWL",
+        "icao": "ZGKL",
+        "name": "Guilin Liangjiang International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Guilin (Lingui)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.175335,
+          22.608544
+        ]
+      },
+      "properties": {
+        "iata": "NNG",
+        "icao": "ZGNN",
+        "name": "Nanning Wuxu Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Nanning (Jiangnan)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.810997,
+          22.639299
+        ]
+      },
+      "properties": {
+        "iata": "SZX",
+        "icao": "ZGSZ",
+        "name": "Shenzhen Bao'an International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Shenzhen (Bao'an)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.849165,
+          34.526497
+        ]
+      },
+      "properties": {
+        "iata": "CGO",
+        "icao": "ZHCC",
+        "name": "Zhengzhou Xinzheng International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Zhengzhou"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.03926,
+          30.341178
+        ]
+      },
+      "properties": {
+        "iata": "EHU",
+        "icao": "ZHEC",
+        "name": "Ezhou Huahu Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Ezhou"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.213723,
+          30.774798
+        ]
+      },
+      "properties": {
+        "iata": "WUH",
+        "icao": "ZHHH",
+        "name": "Wuhan Tianhe International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Wuhan (Huangpi)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.459,
+          19.9349
+        ]
+      },
+      "properties": {
+        "iata": "HAK",
+        "icao": "ZJHK",
+        "name": "Haikou Meilan International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Haikou (Meilan)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.412003,
+          18.3029
+        ]
+      },
+      "properties": {
+        "iata": "SYX",
+        "icao": "ZJSY",
+        "name": "Sanya Phoenix International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Sanya (Tianya)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.669998,
+          39.224098
+        ]
+      },
+      "properties": {
+        "iata": "FNJ",
+        "icao": "ZKPY",
+        "name": "Pyongyang Sunan International Airport",
+        "type": "large_airport",
+        "country": "KP",
+        "city": "Pyongyang"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.620003,
+          36.515202
+        ]
+      },
+      "properties": {
+        "iata": "LHW",
+        "icao": "ZLLL",
+        "name": "Lanzhou Zhongchuan International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Lanzhou (Yongdeng)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.751999,
+          34.447102
+        ]
+      },
+      "properties": {
+        "iata": "XIY",
+        "icao": "ZLXY",
+        "name": "Xi'an Xianyang International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Xianyang (Weicheng)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.819833,
+          47.646916
+        ]
+      },
+      "properties": {
+        "iata": "UBN",
+        "icao": "ZMCK",
+        "name": "Ulaanbaatar Chinggis Khaan International Airport",
+        "type": "large_airport",
+        "country": "MN",
+        "city": "Ulaanbaatar (Sergelen)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.936743,
+          25.110313
+        ]
+      },
+      "properties": {
+        "iata": "KMG",
+        "icao": "ZPPP",
+        "name": "Kunming Changshui International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Kunming"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.127998,
+          24.544001
+        ]
+      },
+      "properties": {
+        "iata": "XMN",
+        "icao": "ZSAM",
+        "name": "Xiamen Gaoqi International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Xiamen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.90271,
+          28.864815
+        ]
+      },
+      "properties": {
+        "iata": "KHN",
+        "icao": "ZSCN",
+        "name": "Nanchang Changbei International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Nanchang"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.66318,
+          25.934669
+        ]
+      },
+      "properties": {
+        "iata": "FOC",
+        "icao": "ZSFZ",
+        "name": "Fuzhou Changle International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Fuzhou (Changle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.428865,
+          30.23609
+        ]
+      },
+      "properties": {
+        "iata": "HGH",
+        "icao": "ZSHC",
+        "name": "Hangzhou Xiaoshan International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Hangzhou"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          117.216003,
+          36.857201
+        ]
+      },
+      "properties": {
+        "iata": "TNA",
+        "icao": "ZSJN",
+        "name": "Jinan Yaoqiang International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Jinan (Licheng)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.461998,
+          29.8267
+        ]
+      },
+      "properties": {
+        "iata": "NGB",
+        "icao": "ZSNB",
+        "name": "Ningbo Lishe International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Ningbo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.865949,
+          31.735032
+        ]
+      },
+      "properties": {
+        "iata": "NKG",
+        "icao": "ZSNJ",
+        "name": "Nanjing Lukou International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Nanjing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.805,
+          31.1434
+        ]
+      },
+      "properties": {
+        "iata": "PVG",
+        "icao": "ZSPD",
+        "name": "Shanghai Pudong International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Shanghai (Pudong)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.088171,
+          36.361953
+        ]
+      },
+      "properties": {
+        "iata": "TAO",
+        "icao": "ZSQD",
+        "name": "Qingdao Jiaodong International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Qingdao (Jiaozhou)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.33426,
+          31.198104
+        ]
+      },
+      "properties": {
+        "iata": "SHA",
+        "icao": "ZSSS",
+        "name": "Shanghai Hongqiao International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Shanghai (Minhang)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.853465,
+          27.910572
+        ]
+      },
+      "properties": {
+        "iata": "WNZ",
+        "icao": "ZSWZ",
+        "name": "Wenzhou Longwan International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Wenzhou (Longwan)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.978124,
+          37.659724
+        ]
+      },
+      "properties": {
+        "iata": "YNT",
+        "icao": "ZSYT",
+        "name": "Yantai Penglai International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Yantai"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.651895,
+          29.712254
+        ]
+      },
+      "properties": {
+        "iata": "CKG",
+        "icao": "ZUCK",
+        "name": "Chongqing Jiangbei International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Chongqing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.803331,
+          26.541466
+        ]
+      },
+      "properties": {
+        "iata": "KWE",
+        "icao": "ZUGY",
+        "name": "Guiyang Longdongbao International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Guiyang (Nanming)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.441284,
+          30.31252
+        ]
+      },
+      "properties": {
+        "iata": "TFU",
+        "icao": "ZUTF",
+        "name": "Chengdu Tianfu International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Chengdu (Jianyang)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.945966,
+          30.558257
+        ]
+      },
+      "properties": {
+        "iata": "CTU",
+        "icao": "ZUUU",
+        "name": "Chengdu Shuangliu International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Chengdu (Shuangliu)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.474197,
+          43.907101
+        ]
+      },
+      "properties": {
+        "iata": "URC",
+        "icao": "ZWWW",
+        "name": "Ürümqi Tianshan International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Ürümqi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.684998,
+          43.996201
+        ]
+      },
+      "properties": {
+        "iata": "CGQ",
+        "icao": "ZYCC",
+        "name": "Changchun Longjia International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Changchun"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.25,
+          45.623402
+        ]
+      },
+      "properties": {
+        "iata": "HRB",
+        "icao": "ZYHB",
+        "name": "Harbin Taiping International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Harbin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.538477,
+          38.965719
+        ]
+      },
+      "properties": {
+        "iata": "DLC",
+        "icao": "ZYTL",
+        "name": "Dalian Zhoushuizi International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Dalian (Ganjingzi)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          123.483002,
+          41.639801
+        ]
+      },
+      "properties": {
+        "iata": "SHE",
+        "icao": "ZYTX",
+        "name": "Shenyang Taoxian International Airport",
+        "type": "large_airport",
+        "country": "CN",
+        "city": "Hunnan, Shenyang"
+      }
+    }
+  ]
+}

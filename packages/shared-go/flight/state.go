@@ -13,6 +13,7 @@ type State struct {
 	Speed              float64  `json:"speed"`
 	Altitude           float64  `json:"altitude"`
 	Progress           float64  `json:"progress"`
+	DistanceRemaining  float64  `json:"distanceRemaining"`
 	ScheduledDeparture string   `json:"scheduledDeparture"`
 	ScheduledArrival   string   `json:"scheduledArrival"`
 	EstimatedArrival   string   `json:"estimatedArrival"`

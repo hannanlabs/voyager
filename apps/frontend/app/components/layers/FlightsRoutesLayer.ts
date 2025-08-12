@@ -8,7 +8,6 @@ export type FlightsRoutesLayerConfig = {
 export function createFlightsRoutesLayer(map: Map, config: FlightsRoutesLayerConfig): void {
   const { sourceId, layerId } = config;
 
-  // Base routes layer
   map.addLayer({
     id: layerId,
     type: 'line',
@@ -37,7 +36,6 @@ export function createFlightsRoutesLayer(map: Map, config: FlightsRoutesLayerCon
     },
   });
 
-  // Selected route emphasis layer
   map.addLayer({
     id: `${layerId}-selected`,
     type: 'line',

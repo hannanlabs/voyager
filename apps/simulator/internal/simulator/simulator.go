@@ -2,28 +2,36 @@ package simulator
 
 import (
 	"sync"
+	"time"
 
 	"github.com/gorilla/websocket"
 	"github.com/hannan/voyager/shared-go/flight"
 )
 
 type FlightSimulator struct {
-	flights   map[string]*flight.State
-	clients   map[*websocket.Conn]bool
-	clientsMu sync.RWMutex
-	updateHz  int
-	isReady   bool
-	readyMu   sync.RWMutex
+	flights       map[string]*flight.State
+	clients       map[*websocket.Conn]bool
+	clientsMu     sync.RWMutex
+	updateHz      int
+	isReady       bool
+	readyMu       sync.RWMutex
+	lastTickAt    time.Time
+	landedFlights map[string]time.Time
+	lastSpawnAt   time.Time
 }
 
 func NewFlightSimulator(updateHz int) *FlightSimulator {
+	now := time.Now()
 	sim := &FlightSimulator{
-		flights:  make(map[string]*flight.State),
-		clients:  make(map[*websocket.Conn]bool),
-		updateHz: updateHz,
+		flights:       make(map[string]*flight.State),
+		clients:       make(map[*websocket.Conn]bool),
+		updateHz:      updateHz,
+		lastTickAt:    now,
+		landedFlights: make(map[string]time.Time),
+		lastSpawnAt:   now,
 	}
 
-	sim.generateSyntheticFlights()
+	sim.generateAirportBurst(50)
 	sim.setReady(true)
 
 	return sim

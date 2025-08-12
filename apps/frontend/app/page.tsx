@@ -6,14 +6,12 @@ export default function Home(): JSX.Element {
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="relative">
-        {/* Navigation */}
         <nav className="border-b border-gray-800 px-8 py-6">
           <div className="max-w-7xl mx-auto flex justify-between items-center">
             <div className="text-xl font-light tracking-wide">VOYAGER</div>
           </div>
         </nav>
 
-        {/* Hero Section */}
         <main className="max-w-7xl mx-auto px-8 py-24">
           <div className="max-w-4xl">
             <h1 className="text-6xl md:text-8xl font-thin mb-8 tracking-tighter leading-none">
@@ -45,7 +43,6 @@ export default function Home(): JSX.Element {
             </div>
           </div>
 
-          {/* Feature Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-800 mb-24">
             <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
               <h3 className="text-lg font-medium mb-4 text-white">Flight Simulator</h3>
@@ -96,7 +93,6 @@ export default function Home(): JSX.Element {
             </div>
           </div>
 
-          {/* Architecture Section */}
           <div className="border border-gray-800 p-12">
             <h2 className="text-3xl font-thin mb-12 text-center">Technical Architecture</h2>
             <div className="grid md:grid-cols-2 gap-16">
@@ -146,7 +142,6 @@ export default function Home(): JSX.Element {
           </div>
         </main>
 
-        {/* Footer */}
         <footer className="border-t border-gray-800 mt-24 py-12">
           <div className="max-w-7xl mx-auto px-8">
             <div className="text-center text-gray-400 text-sm font-light">

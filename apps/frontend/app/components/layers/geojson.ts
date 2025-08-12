@@ -1,6 +1,6 @@
 import { greatCircle } from '@turf/turf';
 
-import type { FlightState } from './flight';
+import type { FlightState } from '@voyager/shared-ts';
 
 export type FlightPointFeature = {
   type: 'Feature';
@@ -22,13 +22,20 @@ export type FlightPointFeature = {
   };
 };
 
+export type FlightRouteGeometry =
+  | {
+      type: 'LineString';
+      coordinates: [number, number][];
+    }
+  | {
+      type: 'MultiLineString';
+      coordinates: [number, number][][];
+    };
+
 export type FlightRouteFeature = {
   type: 'Feature';
   id: string;
-  geometry: {
-    type: 'LineString';
-    coordinates: [number, number][];
-  };
+  geometry: FlightRouteGeometry;
   properties: {
     id: string;
     callSign: string;
@@ -89,45 +96,72 @@ export function toFlightPointsGeoJSON(
   };
 }
 
-const AIRPORT_COORDS = {
-  JFK: [-73.7781, 40.6413] as [number, number],
-  LAX: [-118.4081, 33.9425] as [number, number],
-  ATL: [-84.4277, 33.6407] as [number, number],
-  SEA: [-122.3088, 47.4502] as [number, number],
-  DEN: [-104.6737, 39.8561] as [number, number],
-  ORD: [-87.9073, 41.9742] as [number, number],
-};
+let airportCoords: Record<string, [number, number]> = {};
 
-export function toFlightRoutesGeoJSON(
+async function loadAirportCoords(): Promise<void> {
+  if (typeof window === 'undefined') return; 
+  if (Object.keys(airportCoords).length > 0) {
+    return; 
+  }
+  
+  try {
+    const url = new URL('/data/airports.iata.geojson', window.location.origin).toString();
+    const response = await fetch(url);
+    const data = await response.json();
+    
+    for (const feature of data.features) {
+      const iata = feature.properties?.iata;
+      const coords = feature.geometry?.coordinates;
+      
+      if (iata && coords && Array.isArray(coords) && coords.length >= 2) {
+        airportCoords[iata] = [coords[0], coords[1]]; 
+      }
+    }
+  } catch (error) {
+    console.error('Failed to load airport coordinates:', error);
+    airportCoords = {};
+  }
+}
+
+
+export async function toFlightRoutesGeoJSON(
   flights: Iterable<FlightState>,
   selectedFlightId?: string | null,
-): FlightRoutesGeoJSON {
+): Promise<FlightRoutesGeoJSON> {
+  await loadAirportCoords();
+  
   const features: FlightRouteFeature[] = [];
 
-  for (const flight of flights) {
-    const departureCoords = AIRPORT_COORDS[flight.departureAirport as keyof typeof AIRPORT_COORDS];
-    const arrivalCoords = AIRPORT_COORDS[flight.arrivalAirport as keyof typeof AIRPORT_COORDS];
+  if (!selectedFlightId) {
+    return {
+      type: 'FeatureCollection',
+      features: [],
+    };
+  }
 
-    // Create great circle route for better globe visualization
+  for (const flight of flights) {
+    if (flight.id !== selectedFlightId) {
+      continue;
+    }
+
+    const departureCoords = airportCoords[flight.departureAirport];
+    const arrivalCoords = airportCoords[flight.arrivalAirport];
+
+    if (!departureCoords || !arrivalCoords) {
+      console.warn(`Missing coordinates for flight ${flight.id}: ${flight.departureAirport} -> ${flight.arrivalAirport}`);
+      continue;
+    }
+
     const greatCircleRoute = greatCircle(
       { type: 'Point', coordinates: departureCoords },
       { type: 'Point', coordinates: arrivalCoords },
-      { npoints: 50 }, // More points for smoother curve on globe
+      { npoints: 128 },
     );
-
-    // Normalize coordinates as LineString for Mapbox
-    const coords =
-      greatCircleRoute.geometry.type === 'LineString'
-        ? (greatCircleRoute.geometry.coordinates as [number, number][])
-        : ((greatCircleRoute.geometry.coordinates as [number, number][][])[0] ?? []);
 
     features.push({
       type: 'Feature',
       id: `${flight.id}-route`,
-      geometry: {
-        type: 'LineString',
-        coordinates: coords,
-      },
+      geometry: greatCircleRoute.geometry as FlightRouteGeometry,
       properties: {
         id: flight.id,
         callSign: flight.callSign,
@@ -136,7 +170,7 @@ export function toFlightRoutesGeoJSON(
         arrivalAirport: flight.arrivalAirport,
         progress: flight.progress,
         phase: flight.phase,
-        selected: selectedFlightId === flight.id,
+        selected: true, 
       },
     });
   }

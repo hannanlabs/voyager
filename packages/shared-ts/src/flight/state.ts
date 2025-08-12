@@ -16,6 +16,7 @@ export const FlightStateSchema = z.object({
   speed: z.number(),
   altitude: z.number(), // Duplicate of position.altitude for compatibility
   progress: z.number().min(0).max(1),
+  distanceRemaining: z.number().min(0),
   scheduledDeparture: z.string().datetime(),
   scheduledArrival: z.string().datetime(),
   estimatedArrival: z.string().datetime(),

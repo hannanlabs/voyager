@@ -8,4 +8,5 @@ const (
 	Cruise  Phase = "cruise"
 	Descent Phase = "descent"
 	Landing Phase = "landing"
+	Landed  Phase = "landed"
 )
