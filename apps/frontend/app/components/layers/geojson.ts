@@ -107,17 +107,20 @@ async function loadAirportCoords(): Promise<void> {
   try {
     const url = new URL('/data/airports.iata.geojson', window.location.origin).toString();
     const response = await fetch(url);
-    const data = await response.json();
+    const data = await response.json() as {
+      features: Array<{
+        properties: { iata: string };
+        geometry: { coordinates: [number, number] };
+      }>;
+    };
     
     for (const feature of data.features) {
-      const iata = feature.properties?.iata;
-      const coords = feature.geometry?.coordinates;
+      const { iata } = feature.properties;
+      const coords = feature.geometry.coordinates;
       
-      if (iata && coords && Array.isArray(coords) && coords.length >= 2) {
-        airportCoords[iata] = [coords[0], coords[1]]; 
-      }
+      airportCoords[iata] = coords; 
     }
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Failed to load airport coordinates:', error);
     airportCoords = {};
   }

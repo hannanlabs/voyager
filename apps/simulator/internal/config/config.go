@@ -3,6 +3,7 @@ package config
 import (
 	"os"
 	"strconv"
+	"strings"
 )
 
 func GetPort() string {
@@ -21,4 +22,12 @@ func GetUpdateHz() int {
 		}
 	}
 	return updateHz
+}
+
+func GetAllowedOrigins() []string {
+	origins := os.Getenv("ALLOWED_ORIGINS")
+	if origins == "" {
+		return []string{}
+	}
+	return strings.Split(origins, ",")
 }

@@ -4,7 +4,7 @@ import (
 	"net/http"
 )
 
-func (fs *FlightSimulator) setReady(ready bool) {
+func (fs *FlightSimulator) SetReady(ready bool) {
 	fs.readyMu.Lock()
 	defer fs.readyMu.Unlock()
 	fs.isReady = ready

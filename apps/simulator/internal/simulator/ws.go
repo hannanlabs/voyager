@@ -9,11 +9,23 @@ import (
 	"github.com/gorilla/websocket"
 	"github.com/hannan/voyager/shared-go/flight"
 	"github.com/hannan/voyager/shared-go/ws"
+	"github.com/hannan/voyager/simulator/internal/config"
 )
 
 var upgrader = websocket.Upgrader{
 	CheckOrigin: func(r *http.Request) bool {
-		return true
+		allowedOrigins := config.GetAllowedOrigins()
+		if len(allowedOrigins) == 0 {
+			return true
+		}
+		
+		origin := r.Header.Get("Origin")
+		for _, allowed := range allowedOrigins {
+			if origin == allowed {
+				return true
+			}
+		}
+		return false
 	},
 }
 
@@ -49,10 +61,12 @@ func (fs *FlightSimulator) addClient(conn *websocket.Conn) {
 
 	fs.clients[conn] = true
 
+	fs.flightsMu.RLock()
 	flights := make([]flight.State, 0, len(fs.flights))
 	for _, f := range fs.flights {
 		flights = append(flights, *f)
 	}
+	fs.flightsMu.RUnlock()
 
 	initialMsg := ws.InitialStateMessage{
 		Type:    ws.TypeInitialState,
@@ -89,10 +103,12 @@ func (fs *FlightSimulator) BroadcastFlights() {
 	}
 	fs.clientsMu.RUnlock()
 
+	fs.flightsMu.RLock()
 	flights := make([]flight.State, 0, len(fs.flights))
 	for _, f := range fs.flights {
 		flights = append(flights, *f)
 	}
+	fs.flightsMu.RUnlock()
 
 	message := ws.FlightUpdatesMessage{
 		Type:    ws.TypeFlightUpdates,

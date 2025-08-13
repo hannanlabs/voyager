@@ -67,6 +67,9 @@ func (fs *FlightSimulator) createFlight(from, to, airline, callSign string) *fli
 }
 
 func (fs *FlightSimulator) UpdateFlights() {
+	fs.flightsMu.Lock()
+	defer fs.flightsMu.Unlock()
+	
 	now := time.Now()
 	dt := now.Sub(fs.lastTickAt).Seconds()
 	fs.lastTickAt = now

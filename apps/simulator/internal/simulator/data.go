@@ -61,12 +61,13 @@ func LoadAirports(path string) (map[string]flight.Position, []string, error) {
 var Airports map[string]flight.Position
 var AirportCodes []string
 
-func init() {
+func InitializeAirportData() error {
 	var err error
 	Airports, AirportCodes, err = LoadAirports("data/airports.iata.geojson")
 	if err != nil {
-		panic("Failed to load airports data: " + err.Error())
+		return err
 	}
+	return nil
 }
 
 var Airlines = []string{"United", "American", "Delta", "Southwest", "JetBlue", "Alaska"}

@@ -14,7 +14,7 @@ export const FlightStateSchema = z.object({
   velocity: FlightVelocitySchema,
   bearing: z.number(),
   speed: z.number(),
-  altitude: z.number(), // Duplicate of position.altitude for compatibility
+  altitude: z.number(), 
   progress: z.number().min(0).max(1),
   distanceRemaining: z.number().min(0),
   scheduledDeparture: z.string().datetime(),

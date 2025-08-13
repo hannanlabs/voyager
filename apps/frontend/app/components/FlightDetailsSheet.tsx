@@ -15,20 +15,6 @@ export default function FlightDetailsSheet({
 }: FlightDetailsSheetProps): React.ReactElement | null {
   if (!isOpen || !flight) return null;
 
-  const formatTime = (dateString: string) => {
-    return new Date(dateString).toLocaleTimeString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      timeZoneName: 'short',
-    });
-  };
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric',
-    });
-  };
 
   return (
     <>

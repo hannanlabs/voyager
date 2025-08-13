@@ -20,7 +20,10 @@ func main() {
 
 	log.Printf("Starting Flight Simulator WebSocket server on port %s with %d Hz updates", port, updateHz)
 
-	sim := simulator.NewFlightSimulator(updateHz)
+	sim, err := simulator.NewFlightSimulator(updateHz)
+	if err != nil {
+		log.Fatalf("Failed to initialize flight simulator: %v", err)
+	}
 
 	router := httpserver.NewRouter(sim)
 	server := httpserver.NewServer(port, router)
@@ -29,6 +32,8 @@ func main() {
 	defer cancel()
 
 	go sim.StartTicker(ctx)
+
+	sim.SetReady(true)
 
 	go func() {
 		if err := httpserver.StartServer(server); err != nil && err != http.ErrServerClosed {

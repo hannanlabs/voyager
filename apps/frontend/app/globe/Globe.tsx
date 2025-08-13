@@ -169,7 +169,7 @@ export default function Globe(): JSX.Element {
             routesSource.setData(routesData);
           }
         })
-        .catch((error) => {
+        .catch((error: unknown) => {
           console.error('Failed to load flight routes:', error);
         });
     }

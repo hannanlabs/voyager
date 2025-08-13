@@ -10,6 +10,7 @@ import (
 
 type FlightSimulator struct {
 	flights       map[string]*flight.State
+	flightsMu     sync.RWMutex
 	clients       map[*websocket.Conn]bool
 	clientsMu     sync.RWMutex
 	updateHz      int
@@ -20,7 +21,11 @@ type FlightSimulator struct {
 	lastSpawnAt   time.Time
 }
 
-func NewFlightSimulator(updateHz int) *FlightSimulator {
+func NewFlightSimulator(updateHz int) (*FlightSimulator, error) {
+	if err := InitializeAirportData(); err != nil {
+		return nil, err
+	}
+
 	now := time.Now()
 	sim := &FlightSimulator{
 		flights:       make(map[string]*flight.State),
@@ -32,7 +37,6 @@ func NewFlightSimulator(updateHz int) *FlightSimulator {
 	}
 
 	sim.generateAirportBurst(50)
-	sim.setReady(true)
 
-	return sim
+	return sim, nil
 }
