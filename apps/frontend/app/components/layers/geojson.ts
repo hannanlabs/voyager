@@ -1,62 +1,7 @@
 import { greatCircle } from '@turf/turf';
 
-import type { FlightState } from '@voyager/shared-ts';
-
-export type FlightPointFeature = {
-  type: 'Feature';
-  id: string;
-  geometry: {
-    type: 'Point';
-    coordinates: [number, number, number];
-  };
-  properties: {
-    id: string;
-    callSign: string;
-    airline: string;
-    phase: string;
-    bearing: number;
-    speed: number;
-    altitude: number;
-    progress: number;
-    selected?: boolean;
-  };
-};
-
-export type FlightRouteGeometry =
-  | {
-      type: 'LineString';
-      coordinates: [number, number][];
-    }
-  | {
-      type: 'MultiLineString';
-      coordinates: [number, number][][];
-    };
-
-export type FlightRouteFeature = {
-  type: 'Feature';
-  id: string;
-  geometry: FlightRouteGeometry;
-  properties: {
-    id: string;
-    callSign: string;
-    airline: string;
-    departureAirport: string;
-    arrivalAirport: string;
-    progress: number;
-    phase: FlightState['phase'];
-    selected?: boolean;
-  };
-};
-
-export type FlightPointsGeoJSON = {
-  type: 'FeatureCollection';
-  features: FlightPointFeature[];
-};
-
-export type FlightRoutesGeoJSON = {
-  type: 'FeatureCollection';
-  features: FlightRouteFeature[];
-};
+import type { FlightState, FlightPointFeature, FlightRouteFeature, FlightRouteGeometry, FlightPointsGeoJSON, FlightRoutesGeoJSON } from '@voyager/shared-ts';
+import { ensureAirportCoordsLoaded, getAirportCoord } from './airportCoords';
 
 export function toFlightPointsGeoJSON(
   flights: Iterable<FlightState>,
@@ -96,75 +41,33 @@ export function toFlightPointsGeoJSON(
   };
 }
 
-let airportCoords: Record<string, [number, number]> = {};
-
-async function loadAirportCoords(): Promise<void> {
-  if (typeof window === 'undefined') return; 
-  if (Object.keys(airportCoords).length > 0) {
-    return; 
-  }
-  
-  try {
-    const url = new URL('/data/airports.iata.geojson', window.location.origin).toString();
-    const response = await fetch(url);
-    const data = await response.json() as {
-      features: Array<{
-        properties: { iata: string };
-        geometry: { coordinates: [number, number] };
-      }>;
-    };
-    
-    for (const feature of data.features) {
-      const { iata } = feature.properties;
-      const coords = feature.geometry.coordinates;
-      
-      airportCoords[iata] = coords; 
-    }
-  } catch (error: unknown) {
-    console.error('Failed to load airport coordinates:', error);
-    airportCoords = {};
-  }
-}
-
-
 export async function toFlightRoutesGeoJSON(
   flights: Iterable<FlightState>,
   selectedFlightId?: string | null,
 ): Promise<FlightRoutesGeoJSON> {
-  await loadAirportCoords();
+  if (!selectedFlightId) return { type: 'FeatureCollection', features: [] };
   
+  await ensureAirportCoordsLoaded();
   const features: FlightRouteFeature[] = [];
 
-  if (!selectedFlightId) {
-    return {
-      type: 'FeatureCollection',
-      features: [],
-    };
-  }
-
   for (const flight of flights) {
-    if (flight.id !== selectedFlightId) {
-      continue;
-    }
+    if (flight.id !== selectedFlightId) continue;
 
-    const departureCoords = airportCoords[flight.departureAirport];
-    const arrivalCoords = airportCoords[flight.arrivalAirport];
+    const departureCoords = await getAirportCoord(flight.departureAirport);
+    const arrivalCoords = await getAirportCoord(flight.arrivalAirport);
+    
+    if (!departureCoords || !arrivalCoords) continue;
 
-    if (!departureCoords || !arrivalCoords) {
-      console.warn(`Missing coordinates for flight ${flight.id}: ${flight.departureAirport} -> ${flight.arrivalAirport}`);
-      continue;
-    }
-
-    const greatCircleRoute = greatCircle(
+    const route = greatCircle(
       { type: 'Point', coordinates: departureCoords },
       { type: 'Point', coordinates: arrivalCoords },
-      { npoints: 128 },
+      { npoints: 128 }
     );
 
     features.push({
       type: 'Feature',
       id: `${flight.id}-route`,
-      geometry: greatCircleRoute.geometry as FlightRouteGeometry,
+      geometry: route.geometry as FlightRouteGeometry,
       properties: {
         id: flight.id,
         callSign: flight.callSign,
@@ -173,13 +76,10 @@ export async function toFlightRoutesGeoJSON(
         arrivalAirport: flight.arrivalAirport,
         progress: flight.progress,
         phase: flight.phase,
-        selected: true, 
+        selected: true,
       },
     });
   }
 
-  return {
-    type: 'FeatureCollection',
-    features,
-  };
+  return { type: 'FeatureCollection', features };
 }

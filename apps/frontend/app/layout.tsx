@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import type { JSX } from 'react';
 import './globals.css';
 
-import { WebSocketProvider } from './domain/WebSocketProvider';
+import { WebSocketProvider } from './globe/websocket';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

@@ -15,15 +15,11 @@ export default function FlightDetailsSheet({
 }: FlightDetailsSheetProps): React.ReactElement | null {
   if (!isOpen || !flight) return null;
 
-
   return (
     <>
-      {/* Sheet */}
       <div className="fixed right-0 top-0 h-full w-96 bg-gray-50 shadow-2xl z-50 transform transition-transform duration-300 border-l border-gray-300">
         <div className="h-full flex flex-col">
-          {/* Header */}
           <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-black px-8 py-8 relative overflow-hidden">
-            {/* Subtle background patterns */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.08),transparent_50%)]"></div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-white/5 to-transparent rounded-full blur-2xl"></div>
 
@@ -73,9 +69,7 @@ export default function FlightDetailsSheet({
             </div>
           </div>
 
-          {/* Content */}
           <div className="flex-1 overflow-y-auto px-8 py-6 space-y-8 bg-gradient-to-b from-gray-50 to-white">
-            {/* Status */}
             <div className="space-y-4">
               <h3 className="text-xl font-light text-gray-800 tracking-wide">Current Status</h3>
               <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-200/50 backdrop-blur-sm">
@@ -88,7 +82,6 @@ export default function FlightDetailsSheet({
               </div>
             </div>
 
-            {/* Flight Progress */}
             <div className="space-y-4">
               <h3 className="text-xl font-light text-gray-800 tracking-wide">Flight Progress</h3>
               <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-200/50">
@@ -111,7 +104,6 @@ export default function FlightDetailsSheet({
               </div>
             </div>
 
-            {/* Position Details */}
             <div className="space-y-4">
               <h3 className="text-xl font-light text-gray-800 tracking-wide">Position</h3>
               <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-200/50 space-y-4">
