@@ -9,14 +9,13 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/hannan/voyager/simulator/internal/config"
 	"github.com/hannan/voyager/simulator/internal/httpserver"
 	"github.com/hannan/voyager/simulator/internal/simulator"
 )
 
 func main() {
-	updateHz := config.GetUpdateHz()
-	port := config.GetPort()
+	updateHz := httpserver.GetUpdateHz()
+	port := httpserver.GetPort()
 
 	log.Printf("Starting Flight Simulator WebSocket server on port %s with %d Hz updates", port, updateHz)
 
@@ -33,7 +32,7 @@ func main() {
 
 	go sim.StartTicker(ctx)
 
-	sim.SetReady(true)
+	httpserver.SetReady(true)
 
 	go func() {
 		if err := httpserver.StartServer(server); err != nil && err != http.ErrServerClosed {

@@ -1,9 +1,5 @@
 import type { Map } from 'mapbox-gl';
-
-export type FlightsRoutesLayerConfig = {
-  sourceId: string;
-  layerId: string;
-};
+import type { FlightsRoutesLayerConfig } from '@voyager/shared-ts';
 
 export function createFlightsRoutesLayer(map: Map, config: FlightsRoutesLayerConfig): void {
   const { sourceId, layerId } = config;

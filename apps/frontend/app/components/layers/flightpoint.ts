@@ -1,11 +1,5 @@
 import type { Map } from 'mapbox-gl';
-
-export type FlightsPointsLayerConfig = {
-  sourceId: string;
-  layerId: string;
-  onFlightClick?: (flightId: string) => void;
-  onFlightHover?: (flightId: string | null) => void;
-};
+import type { FlightsPointsLayerConfig } from '@voyager/shared-ts';
 
 export function createFlightsPointsLayer(map: Map, config: FlightsPointsLayerConfig): void {
   const { sourceId, layerId } = config;

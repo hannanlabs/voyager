@@ -13,7 +13,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@turf/turf": "^7.1.0",
     "@voyager/shared-ts": "workspace:*",
     "mapbox-gl": "^3.14.0",
     "next": "15.4.6",

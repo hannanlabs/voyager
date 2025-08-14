@@ -1,4 +1,4 @@
-package id
+package simulator
 
 import (
 	"crypto/rand"

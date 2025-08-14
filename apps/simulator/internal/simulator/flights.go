@@ -7,20 +7,13 @@ import (
 	"time"
 
 	"github.com/hannan/voyager/shared-go/flight"
-	"github.com/hannan/voyager/shared-go/id"
-)
-
-const (
-	SpeedTakeoff = 10000.0
-	SpeedClimb   = 18000.0
-	SpeedCruise  = 30000.0
-	SpeedDescent = 21000.0
-	SpeedLanding = 15000.0
+	"github.com/hannan/voyager/shared-go/modularity"
 )
 
 func (fs *FlightSimulator) createFlight(from, to, airline, callSign string) *flight.State {
-	fromPos := Airports[from]
-	toPos := Airports[to]
+	airportPositions := GetGlobalAirportData().GetPositions()
+	fromPos := airportPositions[from]
+	toPos := airportPositions[to]
 
 	if from == to {
 		return nil
@@ -30,7 +23,7 @@ func (fs *FlightSimulator) createFlight(from, to, airline, callSign string) *fli
 
 	phase := flight.Takeoff
 	altitude := 2000 + rand.Float64()*8000
-	speed := SpeedTakeoff
+	speed := modularity.SpeedTakeoff
 
 	currentPos.Altitude = altitude
 
@@ -62,14 +55,14 @@ func (fs *FlightSimulator) createFlight(from, to, airline, callSign string) *fli
 		ScheduledArrival:   arrival.Format(time.RFC3339),
 		EstimatedArrival:   estimated.Format(time.RFC3339),
 		LastComputedAt:     now.Format(time.RFC3339),
-		TraceID:            id.GenerateTraceID(),
+		TraceID:            GenerateTraceID(),
 	}
 }
 
 func (fs *FlightSimulator) UpdateFlights() {
 	fs.flightsMu.Lock()
 	defer fs.flightsMu.Unlock()
-	
+
 	now := time.Now()
 	dt := now.Sub(fs.lastTickAt).Seconds()
 	fs.lastTickAt = now
@@ -87,9 +80,10 @@ func (fs *FlightSimulator) UpdateFlights() {
 
 	var toRemove []string
 
+	airportPositions := GetGlobalAirportData().GetPositions()
 	for flightID, f := range fs.flights {
-		fromPos := Airports[f.DepartureAirport]
-		toPos := Airports[f.ArrivalAirport]
+		fromPos := airportPositions[f.DepartureAirport]
+		toPos := airportPositions[f.ArrivalAirport]
 
 		if f.Phase == flight.Landed {
 			if landedAt, exists := fs.landedFlights[flightID]; exists {
@@ -101,7 +95,7 @@ func (fs *FlightSimulator) UpdateFlights() {
 				fs.landedFlights[flightID] = now
 			}
 			f.LastComputedAt = now.Format(time.RFC3339)
-			f.TraceID = id.GenerateTraceID()
+			f.TraceID = GenerateTraceID()
 			continue
 		}
 
@@ -121,7 +115,7 @@ func (fs *FlightSimulator) UpdateFlights() {
 		}
 
 		if f.DistanceRemaining < 50 {
-			f.Speed = SpeedLanding
+			f.Speed = modularity.SpeedLanding
 		}
 
 		if f.Speed > 50 {
@@ -135,28 +129,28 @@ func (fs *FlightSimulator) UpdateFlights() {
 			f.Phase = newPhase
 			switch f.Phase {
 			case flight.Takeoff:
-				f.Speed = SpeedTakeoff
+				f.Speed = modularity.SpeedTakeoff
 			case flight.Climb:
-				f.Speed = SpeedClimb
+				f.Speed = modularity.SpeedClimb
 			case flight.Cruise:
-				f.Speed = SpeedCruise
+				f.Speed = modularity.SpeedCruise
 			case flight.Descent:
-				f.Speed = SpeedDescent
+				f.Speed = modularity.SpeedDescent
 			case flight.Landing:
-				f.Speed = SpeedLanding
+				f.Speed = modularity.SpeedLanding
 			case flight.Landed:
 				f.Speed = 0
 			}
 		}
 
-		if f.DistanceRemaining < 15.0 && f.Altitude < 500 && f.Speed < 15000 {
+		if (f.DistanceRemaining < 15.0 && f.Altitude < 500 && f.Speed < 15000) || f.Progress >= 1.0 {
 			f.Phase = flight.Landed
 			f.DistanceRemaining = 0
 			f.Progress = 1.0
 		}
 
 		f.LastComputedAt = now.Format(time.RFC3339)
-		f.TraceID = id.GenerateTraceID()
+		f.TraceID = GenerateTraceID()
 	}
 
 	for _, flightID := range toRemove {
@@ -242,26 +236,28 @@ func (fs *FlightSimulator) dynamicSpawn(now time.Time) {
 }
 
 func selectDeparture() string {
-	if len(AirportCodes) == 0 {
+	codes := GetGlobalAirportData().GetCodes()
+	if len(codes) == 0 {
 		return ""
 	}
-	return AirportCodes[rand.Intn(len(AirportCodes))]
+	return codes[rand.Intn(len(codes))]
 }
 
 func selectArrival(departure string) string {
-	if len(AirportCodes) <= 1 {
+	codes := GetGlobalAirportData().GetCodes()
+	if len(codes) <= 1 {
 		return ""
 	}
 
 	maxRetries := 10
 	for retry := 0; retry < maxRetries; retry++ {
-		candidate := AirportCodes[rand.Intn(len(AirportCodes))]
+		candidate := codes[rand.Intn(len(codes))]
 		if candidate != departure {
 			return candidate
 		}
 	}
 
-	for _, code := range AirportCodes {
+	for _, code := range codes {
 		if code != departure {
 			return code
 		}
@@ -281,7 +277,7 @@ func (fs *FlightSimulator) generateAirportBurst(numFlights int) {
 			continue
 		}
 
-		airline := Airlines[rand.Intn(len(Airlines))]
+		airline := modularity.Airlines[rand.Intn(len(modularity.Airlines))]
 		callSign := generateCallSign(airline, i+1)
 
 		flightState := fs.createFlight(departure, arrival, airline, callSign)

@@ -7,18 +7,18 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/hannan/voyager/shared-go/flight"
-	"github.com/hannan/voyager/shared-go/ws"
-	"github.com/hannan/voyager/simulator/internal/config"
+	"github.com/hannan/voyager/shared-go/modularity"
+	"github.com/hannan/voyager/simulator/internal/httpserver"
 )
 
 var upgrader = websocket.Upgrader{
+	EnableCompression: true,
 	CheckOrigin: func(r *http.Request) bool {
-		allowedOrigins := config.GetAllowedOrigins()
+		allowedOrigins := httpserver.GetAllowedOrigins()
 		if len(allowedOrigins) == 0 {
 			return true
 		}
-		
+
 		origin := r.Header.Get("Origin")
 		for _, allowed := range allowedOrigins {
 			if origin == allowed {
@@ -61,19 +61,55 @@ func (fs *FlightSimulator) addClient(conn *websocket.Conn) {
 
 	fs.clients[conn] = true
 
+	go fs.sendInitialGeoJSONToClient(conn)
+}
+
+func (fs *FlightSimulator) buildFlightsGeoJSON() modularity.GeoJSONFeatureCollection {
 	fs.flightsMu.RLock()
-	flights := make([]flight.State, 0, len(fs.flights))
+	defer fs.flightsMu.RUnlock()
+
+	features := make([]modularity.GeoJSONFeature, 0, len(fs.flights))
 	for _, f := range fs.flights {
-		flights = append(flights, *f)
+		feature := NewPointFeature(
+			f.Position.Longitude,
+			f.Position.Latitude,
+			f.Position.Altitude,
+			map[string]interface{}{
+				"id":                 f.ID,
+				"callSign":           f.CallSign,
+				"airline":            f.Airline,
+				"departureAirport":   f.DepartureAirport,
+				"arrivalAirport":     f.ArrivalAirport,
+				"phase":              string(f.Phase),
+				"bearing":            f.Bearing,
+				"speed":              f.Speed,
+				"altitude":           f.Position.Altitude,
+				"progress":           f.Progress,
+				"distanceRemaining":  f.DistanceRemaining,
+				"scheduledDeparture": f.ScheduledDeparture,
+				"scheduledArrival":   f.ScheduledArrival,
+				"estimatedArrival":   f.EstimatedArrival,
+				"lastComputedAt":     f.LastComputedAt,
+				"traceID":            f.TraceID,
+			},
+		)
+		features = append(features, feature)
 	}
-	fs.flightsMu.RUnlock()
 
-	initialMsg := ws.InitialStateMessage{
-		Type:    ws.TypeInitialState,
-		Flights: flights,
+	return NewFeatureCollection(features)
+}
+
+func (fs *FlightSimulator) sendInitialGeoJSONToClient(conn *websocket.Conn) {
+	featureCollection := fs.buildFlightsGeoJSON()
+
+	message := modularity.FlightsGeoJSONMessage{
+		Type:              "flights_geojson",
+		FeatureCollection: featureCollection,
+		Seq:               0,
+		ServerTimestamp:   time.Now().UnixMilli(),
 	}
 
-	if data, err := json.Marshal(initialMsg); err == nil {
+	if data, err := json.Marshal(message); err == nil {
 		deadline := time.Now().Add(5 * time.Second)
 		conn.SetWriteDeadline(deadline)
 		conn.WriteMessage(websocket.TextMessage, data)
@@ -90,7 +126,16 @@ func (fs *FlightSimulator) removeClient(conn *websocket.Conn) {
 	}
 }
 
-func (fs *FlightSimulator) BroadcastFlights() {
+func (fs *FlightSimulator) BroadcastFlightsGeoJSON() {
+	now := time.Now()
+	interval := time.Duration(1000000000/fs.geoJSONFlightsHz) * time.Nanosecond
+
+	if now.Sub(fs.lastGeoJSONAt) < interval {
+		return
+	}
+
+	fs.lastGeoJSONAt = now
+
 	fs.clientsMu.RLock()
 	if len(fs.clients) == 0 {
 		fs.clientsMu.RUnlock()
@@ -103,21 +148,19 @@ func (fs *FlightSimulator) BroadcastFlights() {
 	}
 	fs.clientsMu.RUnlock()
 
-	fs.flightsMu.RLock()
-	flights := make([]flight.State, 0, len(fs.flights))
-	for _, f := range fs.flights {
-		flights = append(flights, *f)
-	}
-	fs.flightsMu.RUnlock()
+	featureCollection := fs.buildFlightsGeoJSON()
 
-	message := ws.FlightUpdatesMessage{
-		Type:    ws.TypeFlightUpdates,
-		Flights: flights,
+	fs.geoJSONSeq++
+	message := modularity.FlightsGeoJSONMessage{
+		Type:              "flights_geojson",
+		FeatureCollection: featureCollection,
+		Seq:               fs.geoJSONSeq,
+		ServerTimestamp:   now.UnixMilli(),
 	}
 
 	data, err := json.Marshal(message)
 	if err != nil {
-		log.Printf("Error marshaling flight updates: %v", err)
+		log.Printf("Error marshaling flights GeoJSON: %v", err)
 		return
 	}
 
@@ -126,7 +169,7 @@ func (fs *FlightSimulator) BroadcastFlights() {
 		client.SetWriteDeadline(deadline)
 
 		if err := client.WriteMessage(websocket.TextMessage, data); err != nil {
-			log.Printf("Error sending message to client: %v", err)
+			log.Printf("Error sending GeoJSON message to client: %v", err)
 			fs.removeClient(client)
 		}
 	}

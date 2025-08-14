@@ -1,4 +1,4 @@
-package config
+package httpserver
 
 import (
 	"os"
@@ -30,4 +30,22 @@ func GetAllowedOrigins() []string {
 		return []string{}
 	}
 	return strings.Split(origins, ",")
+}
+
+func GetAirportsGeoJSONPath() string {
+	path := "data/airports.iata.geojson"
+	if p := os.Getenv("AIRPORTS_GEOJSON_PATH"); p != "" {
+		path = p
+	}
+	return path
+}
+
+func GetGeoJSONFlightsHz() int {
+	hz := 2
+	if h := os.Getenv("GEOJSON_FLIGHTS_HZ"); h != "" {
+		if parsed, err := strconv.Atoi(h); err == nil && parsed > 0 {
+			hz = parsed
+		}
+	}
+	return hz
 }

@@ -1,21 +1,16 @@
 import { z } from 'zod';
-import { FlightStateSchema } from '../flight/state';
 
-export const FlightUpdatesMessageSchema = z.object({
-  type: z.literal('flight_updates'),
-  flights: z.array(FlightStateSchema),
+export const FlightsGeoJSONMessageSchema = z.object({
+  type: z.literal('flights_geojson'),
+  featureCollection: z.object({
+    type: z.literal('FeatureCollection'),
+    features: z.array(z.any()),
+  }),
+  seq: z.number(),
+  serverTimestamp: z.number(),
 });
 
-export const InitialStateMessageSchema = z.object({
-  type: z.literal('initial_state'),
-  flights: z.array(FlightStateSchema),
-});
+export const WebSocketMessageSchema = FlightsGeoJSONMessageSchema;
 
-export const WebSocketMessageSchema = z.discriminatedUnion('type', [
-  FlightUpdatesMessageSchema,
-  InitialStateMessageSchema,
-]);
-
-export type FlightUpdatesMessage = z.infer<typeof FlightUpdatesMessageSchema>;
-export type InitialStateMessage = z.infer<typeof InitialStateMessageSchema>;
+export type FlightsGeoJSONMessage = z.infer<typeof FlightsGeoJSONMessageSchema>;
 export type WebSocketMessage = z.infer<typeof WebSocketMessageSchema>;

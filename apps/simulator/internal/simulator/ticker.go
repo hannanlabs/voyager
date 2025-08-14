@@ -15,7 +15,7 @@ func (fs *FlightSimulator) StartTicker(ctx context.Context) {
 			return
 		case <-ticker.C:
 			fs.UpdateFlights()
-			fs.BroadcastFlights()
+			fs.BroadcastFlightsGeoJSON()
 		}
 	}
 }
