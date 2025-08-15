@@ -1,4 +1,4 @@
-package simulator
+package helpers
 
 import (
 	"math"

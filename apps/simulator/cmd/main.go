@@ -11,26 +11,33 @@ import (
 
 	"github.com/hannan/voyager/simulator/internal/httpserver"
 	"github.com/hannan/voyager/simulator/internal/simulator"
+	"github.com/hannan/voyager/simulator/internal/airports/fileadapter"
 )
 
 func main() {
 	updateHz := httpserver.GetUpdateHz()
 	port := httpserver.GetPort()
+	airportPath := httpserver.GetAirportsGeoJSONPath()
+	geoJSONFlightsHz := httpserver.GetGeoJSONFlightsHz()
 
 	log.Printf("Starting Flight Simulator WebSocket server on port %s with %d Hz updates", port, updateHz)
 
-	sim, err := simulator.NewFlightSimulator(updateHz)
-	if err != nil {
-		log.Fatalf("Failed to initialize flight simulator: %v", err)
+	// Initialize airports repository
+	repo := fileadapter.New()
+	if err := repo.Load(airportPath); err != nil {
+		log.Fatalf("Failed to load airports data: %v", err)
 	}
 
-	router := httpserver.NewRouter(sim)
+	// Initialize simulator with injected repository
+	sim := simulator.NewFlightSimulator(updateHz, geoJSONFlightsHz, repo)
+
+	router := httpserver.NewRouter(sim, repo)
 	server := httpserver.NewServer(port, router)
 
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
-	go sim.StartTicker(ctx)
+	go sim.Start(ctx)
 
 	httpserver.SetReady(true)
 

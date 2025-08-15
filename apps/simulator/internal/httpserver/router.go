@@ -2,22 +2,21 @@ package httpserver
 
 import (
 	"net/http"
+
+	httphandlers "github.com/hannan/voyager/simulator/internal/transport/http"
+	"github.com/hannan/voyager/simulator/internal/simulator"
+	wshandlers "github.com/hannan/voyager/simulator/internal/transport/websocket"
+	"github.com/hannan/voyager/simulator/internal/airports"
 )
 
-type FlightSimulatorInterface interface {
-	WSFlightsHandler(w http.ResponseWriter, r *http.Request)
-	GeoJSONAirportsHandler(w http.ResponseWriter, r *http.Request)
-	GeoJSONFlightRouteHandler(w http.ResponseWriter, r *http.Request)
-}
-
-func NewRouter(simulator FlightSimulatorInterface) http.Handler {
+func NewRouter(sim *simulator.FlightSimulator, repo airports.Repository) http.Handler {
 	mux := http.NewServeMux()
 	
 	mux.HandleFunc("/healthz", HealthzHandler)
 	mux.HandleFunc("/readyz", ReadyzHandler)
-	mux.HandleFunc("/ws/flights", simulator.WSFlightsHandler)
-	mux.HandleFunc("/geojson/airports", simulator.GeoJSONAirportsHandler)
-	mux.HandleFunc("/geojson/flights/route", simulator.GeoJSONFlightRouteHandler)
+	mux.HandleFunc("/ws/flights", wshandlers.WSFlightsHandler(sim))
+	mux.HandleFunc("/geojson/airports", httphandlers.GeoJSONAirportsHandler(repo))
+	mux.HandleFunc("/geojson/flights/route", httphandlers.GeoJSONFlightRouteHandler(sim, repo))
 	
 	return CORSMiddleware(mux)
 }

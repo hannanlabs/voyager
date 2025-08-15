@@ -1,4 +1,4 @@
-package modularity
+package data
 
 const (
 	SpeedTakeoff = 10000.0

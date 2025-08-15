@@ -7,11 +7,12 @@ import (
 	"time"
 
 	"github.com/hannan/voyager/shared-go/flight"
-	"github.com/hannan/voyager/shared-go/modularity"
+	"github.com/hannan/voyager/shared-go/data"
+	"github.com/hannan/voyager/simulator/internal/helpers"
 )
 
 func (fs *FlightSimulator) createFlight(from, to, airline, callSign string) *flight.State {
-	airportPositions := GetGlobalAirportData().GetPositions()
+	airportPositions := fs.airports.Positions()
 	fromPos := airportPositions[from]
 	toPos := airportPositions[to]
 
@@ -23,19 +24,19 @@ func (fs *FlightSimulator) createFlight(from, to, airline, callSign string) *fli
 
 	phase := flight.Takeoff
 	altitude := 2000 + rand.Float64()*8000
-	speed := modularity.SpeedTakeoff
+	speed := data.SpeedTakeoff
 
 	currentPos.Altitude = altitude
 
-	bearing := CalculateBearing(fromPos, toPos)
-	vel := SpeedToVelocity(speed, bearing)
+	bearing := helpers.CalculateBearing(fromPos, toPos)
+	vel := helpers.SpeedToVelocity(speed, bearing)
 
 	now := time.Now()
 	departure := now
 	arrival := departure.Add(6 * time.Hour)
 	estimated := arrival.Add(time.Duration((rand.Float64()-0.5)*30) * time.Minute)
 
-	distanceRemaining := CalculateDistance(currentPos, toPos)
+	distanceRemaining := helpers.CalculateDistance(currentPos, toPos)
 
 	return &flight.State{
 		ID:                 fmt.Sprintf("%s-%s-%s", callSign, from, to),
@@ -55,7 +56,7 @@ func (fs *FlightSimulator) createFlight(from, to, airline, callSign string) *fli
 		ScheduledArrival:   arrival.Format(time.RFC3339),
 		EstimatedArrival:   estimated.Format(time.RFC3339),
 		LastComputedAt:     now.Format(time.RFC3339),
-		TraceID:            GenerateTraceID(),
+		TraceID:            helpers.GenerateTraceID(),
 	}
 }
 
@@ -80,7 +81,7 @@ func (fs *FlightSimulator) UpdateFlights() {
 
 	var toRemove []string
 
-	airportPositions := GetGlobalAirportData().GetPositions()
+	airportPositions := fs.airports.Positions()
 	for flightID, f := range fs.flights {
 		fromPos := airportPositions[f.DepartureAirport]
 		toPos := airportPositions[f.ArrivalAirport]
@@ -95,27 +96,27 @@ func (fs *FlightSimulator) UpdateFlights() {
 				fs.landedFlights[flightID] = now
 			}
 			f.LastComputedAt = now.Format(time.RFC3339)
-			f.TraceID = GenerateTraceID()
+			f.TraceID = helpers.GenerateTraceID()
 			continue
 		}
 
-		f.Position = GreatCircleStep(f.Position, toPos, f.Speed, dt)
+		f.Position = helpers.GreatCircleStep(f.Position, toPos, f.Speed, dt)
 
-		f.Bearing = CalculateBearing(f.Position, toPos)
+		f.Bearing = helpers.CalculateBearing(f.Position, toPos)
 
-		f.Velocity = SpeedToVelocity(f.Speed, f.Bearing)
+		f.Velocity = helpers.SpeedToVelocity(f.Speed, f.Bearing)
 
 		f.Altitude = f.Position.Altitude
 
-		f.DistanceRemaining = CalculateDistance(f.Position, toPos)
-		totalDistance := CalculateDistance(fromPos, toPos)
+		f.DistanceRemaining = helpers.CalculateDistance(f.Position, toPos)
+		totalDistance := helpers.CalculateDistance(fromPos, toPos)
 		if totalDistance > 0.1 {
 			f.Progress = 1.0 - (f.DistanceRemaining / totalDistance)
 			f.Progress = math.Max(0, math.Min(1, f.Progress))
 		}
 
 		if f.DistanceRemaining < 50 {
-			f.Speed = modularity.SpeedLanding
+			f.Speed = data.SpeedLanding
 		}
 
 		if f.Speed > 50 {
@@ -129,15 +130,15 @@ func (fs *FlightSimulator) UpdateFlights() {
 			f.Phase = newPhase
 			switch f.Phase {
 			case flight.Takeoff:
-				f.Speed = modularity.SpeedTakeoff
+				f.Speed = data.SpeedTakeoff
 			case flight.Climb:
-				f.Speed = modularity.SpeedClimb
+				f.Speed = data.SpeedClimb
 			case flight.Cruise:
-				f.Speed = modularity.SpeedCruise
+				f.Speed = data.SpeedCruise
 			case flight.Descent:
-				f.Speed = modularity.SpeedDescent
+				f.Speed = data.SpeedDescent
 			case flight.Landing:
-				f.Speed = modularity.SpeedLanding
+				f.Speed = data.SpeedLanding
 			case flight.Landed:
 				f.Speed = 0
 			}
@@ -150,7 +151,7 @@ func (fs *FlightSimulator) UpdateFlights() {
 		}
 
 		f.LastComputedAt = now.Format(time.RFC3339)
-		f.TraceID = GenerateTraceID()
+		f.TraceID = helpers.GenerateTraceID()
 	}
 
 	for _, flightID := range toRemove {
@@ -235,16 +236,16 @@ func (fs *FlightSimulator) dynamicSpawn(now time.Time) {
 	}
 }
 
-func selectDeparture() string {
-	codes := GetGlobalAirportData().GetCodes()
+func (fs *FlightSimulator) selectDeparture() string {
+	codes := fs.airports.Codes()
 	if len(codes) == 0 {
 		return ""
 	}
 	return codes[rand.Intn(len(codes))]
 }
 
-func selectArrival(departure string) string {
-	codes := GetGlobalAirportData().GetCodes()
+func (fs *FlightSimulator) selectArrival(departure string) string {
+	codes := fs.airports.Codes()
 	if len(codes) <= 1 {
 		return ""
 	}
@@ -267,17 +268,17 @@ func selectArrival(departure string) string {
 
 func (fs *FlightSimulator) generateAirportBurst(numFlights int) {
 	for i := 0; i < numFlights; i++ {
-		departure := selectDeparture()
+		departure := fs.selectDeparture()
 		if departure == "" {
 			continue
 		}
 
-		arrival := selectArrival(departure)
+		arrival := fs.selectArrival(departure)
 		if arrival == "" {
 			continue
 		}
 
-		airline := modularity.Airlines[rand.Intn(len(modularity.Airlines))]
+		airline := data.Airlines[rand.Intn(len(data.Airlines))]
 		callSign := generateCallSign(airline, i+1)
 
 		flightState := fs.createFlight(departure, arrival, airline, callSign)
