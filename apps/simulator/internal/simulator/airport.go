@@ -1,4 +1,4 @@
-package fileadapter
+package simulator
 
 import (
 	"crypto/sha256"
@@ -9,10 +9,19 @@ import (
 	"sync"
 
 	"github.com/hannan/voyager/shared-go/flight"
-	"github.com/hannan/voyager/simulator/internal/airports"
 )
 
-type FileAdapter struct {
+type Repository interface {
+	Load(path string) error
+	RawJSON() []byte
+	ETag() string
+	Positions() map[string]flight.Position
+	Codes() []string
+	IsLoaded() bool
+	Reload() error
+}
+
+type FileRepository struct {
 	mu        sync.RWMutex
 	path      string
 	rawJSON   []byte
@@ -22,14 +31,18 @@ type FileAdapter struct {
 	loaded    bool
 }
 
-func New() airports.Repository {
-	return &FileAdapter{
+func NewFileRepository() Repository {
+	return &FileRepository{
 		positions: make(map[string]flight.Position),
 		codes:     []string{},
 	}
 }
 
-func (f *FileAdapter) Load(path string) error {
+func New() Repository {
+	return NewFileRepository()
+}
+
+func (f *FileRepository) Load(path string) error {
 	f.mu.Lock()
 	defer f.mu.Unlock()
 
@@ -37,7 +50,7 @@ func (f *FileAdapter) Load(path string) error {
 	return f.loadInternal()
 }
 
-func (f *FileAdapter) Reload() error {
+func (f *FileRepository) Reload() error {
 	f.mu.Lock()
 	defer f.mu.Unlock()
 
@@ -48,7 +61,7 @@ func (f *FileAdapter) Reload() error {
 	return f.loadInternal()
 }
 
-func (f *FileAdapter) loadInternal() error {
+func (f *FileRepository) loadInternal() error {
 	data, err := os.ReadFile(f.path)
 	if err != nil {
 		return fmt.Errorf("failed to read airports file: %w", err)
@@ -97,7 +110,7 @@ func (f *FileAdapter) loadInternal() error {
 	return nil
 }
 
-func (f *FileAdapter) RawJSON() []byte {
+func (f *FileRepository) RawJSON() []byte {
 	f.mu.RLock()
 	defer f.mu.RUnlock()
 
@@ -109,14 +122,14 @@ func (f *FileAdapter) RawJSON() []byte {
 	return result
 }
 
-func (f *FileAdapter) ETag() string {
+func (f *FileRepository) ETag() string {
 	f.mu.RLock()
 	defer f.mu.RUnlock()
 
 	return f.etag
 }
 
-func (f *FileAdapter) Positions() map[string]flight.Position {
+func (f *FileRepository) Positions() map[string]flight.Position {
 	f.mu.RLock()
 	defer f.mu.RUnlock()
 
@@ -127,7 +140,7 @@ func (f *FileAdapter) Positions() map[string]flight.Position {
 	return result
 }
 
-func (f *FileAdapter) Codes() []string {
+func (f *FileRepository) Codes() []string {
 	f.mu.RLock()
 	defer f.mu.RUnlock()
 
@@ -136,7 +149,7 @@ func (f *FileAdapter) Codes() []string {
 	return result
 }
 
-func (f *FileAdapter) IsLoaded() bool {
+func (f *FileRepository) IsLoaded() bool {
 	f.mu.RLock()
 	defer f.mu.RUnlock()
 
