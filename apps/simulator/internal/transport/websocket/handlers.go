@@ -11,7 +11,7 @@ import (
 )
 
 var upgrader = websocket.Upgrader{
-	EnableCompression: true,
+	EnableCompression: false,
 	CheckOrigin: func(r *http.Request) bool {
 		allowedOriginsEnv := os.Getenv("ALLOWED_ORIGINS")
 		if allowedOriginsEnv == "" {

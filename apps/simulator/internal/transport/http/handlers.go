@@ -6,7 +6,7 @@ import (
 	"strconv"
 
 	"github.com/hannan/voyager/shared-go/flight"
-	"github.com/hannan/voyager/simulator/internal/airports"
+	"github.com/hannan/voyager/simulator/internal/simulator"
 	"github.com/hannan/voyager/simulator/internal/helpers"
 )
 
@@ -14,7 +14,7 @@ type FlightProvider interface {
 	GetFlightByID(flightID string) (*flight.State, bool)
 }
 
-func GeoJSONAirportsHandler(repo airports.Repository) http.HandlerFunc {
+func GeoJSONAirportsHandler(repo simulator.Repository) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodGet {
 			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
@@ -42,7 +42,7 @@ func GeoJSONAirportsHandler(repo airports.Repository) http.HandlerFunc {
 	}
 }
 
-func GeoJSONFlightRouteHandler(fs FlightProvider, repo airports.Repository) http.HandlerFunc {
+func GeoJSONFlightRouteHandler(fs FlightProvider, repo simulator.Repository) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodGet {
 			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)

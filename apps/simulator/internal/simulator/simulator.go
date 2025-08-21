@@ -9,7 +9,6 @@ import (
 
 	"github.com/gorilla/websocket"
 	"github.com/hannan/voyager/shared-go/flight"
-	"github.com/hannan/voyager/simulator/internal/airports"
 	"github.com/hannan/voyager/simulator/internal/helpers"
 )
 
@@ -25,10 +24,10 @@ type FlightSimulator struct {
 	landedFlights    map[string]time.Time
 	lastSpawnAt      time.Time
 	geoJSONSeq       int64
-	airports         airports.Repository
+	airports         Repository
 }
 
-func NewFlightSimulator(updateHz int, geoJSONFlightsHz int, airports airports.Repository) *FlightSimulator {
+func NewFlightSimulator(updateHz int, geoJSONFlightsHz int, airports Repository) *FlightSimulator {
 	now := time.Now()
 	sim := &FlightSimulator{
 		flights:          make(map[string]*flight.State),

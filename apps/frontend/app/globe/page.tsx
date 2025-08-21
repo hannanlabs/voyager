@@ -8,9 +8,9 @@ import FlightStatusIndicator from '../components/flightstatus';
 import { createFlightsPointsLayer, addFlightInteractions } from '../components/layers/flightpoint';
 import { createFlightsRoutesLayer, updateRouteVisibility } from '../components/layers/flightroute';
 import { createAirportLayers } from '../components/layers/airports';
-import { useFlights } from './websocket';
-import { addSelectionToGeoJSON } from './utils';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import { useFlights } from './transport/websocket';
+import { addSelectionToGeoJSON, type FlightState, EMPTY_GEOJSON, MAP_CONFIG, MAP_SOURCES, MAP_LAYERS } from '@voyager/shared-ts';
+import { getFlightRoute } from './transport/http';
 
 const MAPBOX_ACCESS_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 const SIMULATOR_HTTP_URL = process.env.NEXT_PUBLIC_SIMULATOR_HTTP_URL;
@@ -20,22 +20,19 @@ export default function Globe() {
   const map = useRef<mapboxgl.Map | null>(null);
   const mapReady = useRef(false);
   const [selectedFlightId, setSelectedFlightId] = useState<string | null>(null);
+  const [selectedFlightEnriched, setSelectedFlightEnriched] = useState<FlightState | null>(null);
 
-  const { flights, flightsGeoJSON, flightCount, status } = useFlights();
-  const selectedFlight = selectedFlightId ? flights.get(selectedFlightId) : null;
+  const { flights: flightsMap, flightsGeoJSON, flightCount, status } = useFlights();
+  const selectedFlight = selectedFlightEnriched ?? (selectedFlightId ? flightsMap.get(selectedFlightId) ?? null : null);
 
   const processedFlightsGeoJSON = flightsGeoJSON ? addSelectionToGeoJSON(flightsGeoJSON, selectedFlightId) : null;
 
   const fetchFlightRoute = useCallback(async (flightId: string) => {
     try {
-      const response = await fetch(`${SIMULATOR_HTTP_URL}/geojson/flights/route?id=${flightId}`);
-      if (!response.ok) {
-        return { type: 'FeatureCollection', features: [] };
-      }
-      return await response.json();
+      return await getFlightRoute(flightId);
     } catch (error) {
       console.error('Failed to fetch flight route:', error);
-      return { type: 'FeatureCollection', features: [] };
+      return EMPTY_GEOJSON;
     }
   }, []);
 
@@ -45,20 +42,21 @@ export default function Globe() {
 
   const handleCloseDetails = useCallback(() => {
     setSelectedFlightId(null);
+    setSelectedFlightEnriched(null);
   }, []);
 
   useEffect(() => {
     if (!MAPBOX_ACCESS_TOKEN || map.current) return;
 
     const mapInstance = new mapboxgl.Map({
-      container: mapContainer.current,
+      container: mapContainer.current as HTMLDivElement,
       accessToken: MAPBOX_ACCESS_TOKEN,
-      style: 'mapbox://styles/mapbox/standard',
-      projection: { name: 'globe' },
-      center: [0, 20],
-      zoom: 1.5,
-      pitch: 0,
-      bearing: 0,
+      style: MAP_CONFIG.STYLE,
+      projection: MAP_CONFIG.PROJECTION,
+      center: MAP_CONFIG.CENTER,
+      zoom: MAP_CONFIG.ZOOM,
+      pitch: MAP_CONFIG.PITCH,
+      bearing: MAP_CONFIG.BEARING,
     });
 
     mapInstance.dragRotate.enable();
@@ -68,19 +66,18 @@ export default function Globe() {
     const setupMapContent = () => {
       addAirplaneIcon(mapInstance);
 
-      const emptyGeoJSON = { type: 'FeatureCollection', features: [] };
-      mapInstance.addSource('flights-points', { type: 'geojson', data: emptyGeoJSON, promoteId: 'id' });
-      mapInstance.addSource('flights-routes', { type: 'geojson', data: emptyGeoJSON });
-      mapInstance.addSource('airports', { type: 'geojson', data: `${SIMULATOR_HTTP_URL}/geojson/airports` });
+      mapInstance.addSource(MAP_SOURCES.FLIGHTS_POINTS, { type: 'geojson', data: EMPTY_GEOJSON, promoteId: 'id' });
+      mapInstance.addSource(MAP_SOURCES.FLIGHTS_ROUTES, { type: 'geojson', data: EMPTY_GEOJSON });
+      mapInstance.addSource(MAP_SOURCES.AIRPORTS, { type: 'geojson', data: `${SIMULATOR_HTTP_URL || ''}/geojson/airports` });
 
-      createFlightsPointsLayer(mapInstance, { sourceId: 'flights-points', layerId: 'flights-points-layer' });
-      addFlightInteractions(mapInstance, { sourceId: 'flights-points', layerId: 'flights-points-layer', onFlightClick: handleFlightClick });
-      createFlightsRoutesLayer(mapInstance, { sourceId: 'flights-routes', layerId: 'flights-routes-layer' });
+      createFlightsPointsLayer(mapInstance, { sourceId: MAP_SOURCES.FLIGHTS_POINTS, layerId: MAP_LAYERS.FLIGHTS_POINTS });
+      addFlightInteractions(mapInstance, { sourceId: MAP_SOURCES.FLIGHTS_POINTS, layerId: MAP_LAYERS.FLIGHTS_POINTS, onFlightClick: handleFlightClick });
+      createFlightsRoutesLayer(mapInstance, { sourceId: MAP_SOURCES.FLIGHTS_ROUTES, layerId: MAP_LAYERS.FLIGHTS_ROUTES });
 
       createAirportLayers(mapInstance);
 
       mapInstance.on('zoom', () => {
-        updateRouteVisibility(mapInstance, 'flights-routes-layer');
+        updateRouteVisibility(mapInstance, MAP_LAYERS.FLIGHTS_ROUTES);
       });
 
       mapReady.current = true;
@@ -98,8 +95,8 @@ export default function Globe() {
   useEffect(() => {
     if (!map.current || !mapReady.current) return;
 
-    const points = map.current.getSource('flights-points') as mapboxgl.GeoJSONSource | undefined;
-    if (points && processedFlightsGeoJSON) {
+    const points = map.current.getSource(MAP_SOURCES.FLIGHTS_POINTS) as mapboxgl.GeoJSONSource;
+    if (processedFlightsGeoJSON) {
       points.setData(processedFlightsGeoJSON);
     }
   }, [processedFlightsGeoJSON]);
@@ -108,19 +105,31 @@ export default function Globe() {
     if (!map.current || !mapReady.current) return;
 
     const updateFlightRoute = async () => {
-      const routesSrc = map.current?.getSource('flights-routes') as mapboxgl.GeoJSONSource | undefined;
-      if (routesSrc) {
-        if (selectedFlightId) {
-          const routes = await fetchFlightRoute(selectedFlightId);
-          routesSrc.setData(routes);
-        } else {
-          routesSrc.setData({ type: 'FeatureCollection', features: [] });
+      const routesSrc = map.current?.getSource(MAP_SOURCES.FLIGHTS_ROUTES) as mapboxgl.GeoJSONSource;
+      if (selectedFlightId) {
+        const routes = await fetchFlightRoute(selectedFlightId);
+        routesSrc.setData(routes);
+        
+        const baseFlight = flightsMap.get(selectedFlightId);
+        if (baseFlight && routes.features.length > 0) {
+          const routeFeature = routes.features[0];
+          if (routeFeature) {
+            const enrichedFlight: FlightState = {
+              ...baseFlight,
+              departureAirport: routeFeature.properties.departureAirport,
+              arrivalAirport: routeFeature.properties.arrivalAirport,
+            };
+            setSelectedFlightEnriched(enrichedFlight);
+          }
         }
+      } else {
+        routesSrc.setData(EMPTY_GEOJSON);
+        setSelectedFlightEnriched(null);
       }
     };
 
-    updateFlightRoute();
-  }, [selectedFlightId, fetchFlightRoute]);
+    void updateFlightRoute();
+  }, [selectedFlightId, fetchFlightRoute, flightsMap]);
 
   return (
     <div className="relative w-full h-screen">
