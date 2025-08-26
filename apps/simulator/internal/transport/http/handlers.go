@@ -6,8 +6,8 @@ import (
 	"strconv"
 
 	"github.com/hannan/voyager/shared-go/flight"
-	"github.com/hannan/voyager/simulator/internal/simulator"
 	"github.com/hannan/voyager/simulator/internal/helpers"
+	"github.com/hannan/voyager/simulator/internal/simulator"
 )
 
 type FlightProvider interface {

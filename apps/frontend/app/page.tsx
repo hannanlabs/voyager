@@ -47,8 +47,8 @@ export default function Home(): JSX.Element {
             <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
               <h3 className="text-lg font-medium mb-4 text-white">Flight Simulator</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Go-based simulation engine generating realistic flight paths with physics calculations
-                for drag, lift, and wind effects.
+                Go-based simulation engine generating realistic flight paths with physics
+                calculations for drag, lift, and wind effects.
               </p>
             </div>
 
@@ -87,8 +87,8 @@ export default function Home(): JSX.Element {
             <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
               <h3 className="text-lg font-medium mb-4 text-white">Scalable Architecture</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Kubernetes-ready design with horizontal scaling capabilities and resource optimization
-                for high-volume flight simulation.
+                Kubernetes-ready design with horizontal scaling capabilities and resource
+                optimization for high-volume flight simulation.
               </p>
             </div>
           </div>
@@ -145,7 +145,7 @@ export default function Home(): JSX.Element {
         <footer className="border-t border-gray-800 mt-24 py-12">
           <div className="max-w-7xl mx-auto px-8">
             <div className="text-center text-gray-400 text-sm font-light">
-              Real-time flight simulation demonstrating scalable WebSocket streaming and 
+              Real-time flight simulation demonstrating scalable WebSocket streaming and
               physics-based modeling.
             </div>
           </div>

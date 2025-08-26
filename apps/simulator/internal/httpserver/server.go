@@ -21,14 +21,14 @@ func StartServer(server *http.Server) error {
 
 func ShutdownServer(server *http.Server, timeout time.Duration) error {
 	log.Println("Shutting down server...")
-	
+
 	shutdownCtx, cancel := context.WithTimeout(context.Background(), timeout)
 	defer cancel()
-	
+
 	if err := server.Shutdown(shutdownCtx); err != nil {
 		return err
 	}
-	
+
 	log.Println("Server stopped")
 	return nil
 }

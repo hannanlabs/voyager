@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { 
-  validateFlightRouteResponse, 
+import {
+  validateFlightRouteResponse,
   validateAirportsResponse,
   type FlightRoutesGeoJSON,
   type AirportsGeoJSON,
   FLIGHT_ROUTE_DETAIL_POINTS,
-  EMPTY_GEOJSON
+  EMPTY_GEOJSON,
 } from '@voyager/shared-ts';
 
 const BASE = process.env.NEXT_PUBLIC_SIMULATOR_HTTP_URL || '';
@@ -16,8 +16,13 @@ export async function getJSON<T>(path: string, signal?: AbortSignal): Promise<T>
   return res.json() as Promise<T>;
 }
 
-export async function getFlightRoute(id: string, n = FLIGHT_ROUTE_DETAIL_POINTS): Promise<FlightRoutesGeoJSON> {
-  const json = await getJSON(`/geojson/flights/route?id=${encodeURIComponent(id)}&n=${n.toString()}`);
+export async function getFlightRoute(
+  id: string,
+  n = FLIGHT_ROUTE_DETAIL_POINTS,
+): Promise<FlightRoutesGeoJSON> {
+  const json = await getJSON(
+    `/geojson/flights/route?id=${encodeURIComponent(id)}&n=${n.toString()}`,
+  );
   return validateFlightRouteResponse(json);
 }
 
@@ -36,7 +41,7 @@ export function useFlightRoute(flightId: string | null) {
     }
 
     const ctrl = new AbortController();
-    
+
     getFlightRoute(flightId)
       .then(setData)
       .catch(() => {

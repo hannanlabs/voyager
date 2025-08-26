@@ -28,7 +28,7 @@ export default function FlightDetailsSheet({
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm">
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                      <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
                     </svg>
                   </div>
                   <h2 className="text-2xl font-light text-white tracking-wide">Flight Details</h2>
@@ -37,7 +37,13 @@ export default function FlightDetailsSheet({
                   onClick={onClose}
                   className="text-white/60 hover:text-white transition-all duration-200 p-3 hover:bg-white/10 rounded-2xl backdrop-blur-sm"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
@@ -45,24 +51,39 @@ export default function FlightDetailsSheet({
 
               <div className="space-y-6">
                 <div className="flex items-baseline gap-4">
-                  <span className="text-3xl font-light text-white tracking-wide">{flight.airline}</span>
-                  <span className="text-lg font-mono text-gray-300 bg-white/10 px-3 py-1 rounded-xl">{flight.callSign}</span>
+                  <span className="text-3xl font-light text-white tracking-wide">
+                    {flight.airline}
+                  </span>
+                  <span className="text-lg font-mono text-gray-300 bg-white/10 px-3 py-1 rounded-xl">
+                    {flight.callSign}
+                  </span>
                 </div>
                 <div className="flex items-center gap-4 text-white">
                   <div className="bg-white/10 px-4 py-3 rounded-2xl backdrop-blur-sm border border-white/10">
-                    <span className="text-lg font-medium tracking-wider">{flight.departureAirport}</span>
+                    <span className="text-lg font-medium tracking-wider">
+                      {flight.departureAirport}
+                    </span>
                   </div>
                   <div className="flex-1 flex items-center gap-3">
                     <div className="flex-1 h-px bg-gradient-to-r from-white/40 to-white/20"></div>
                     <div className="w-8 h-8 bg-white/15 rounded-full flex items-center justify-center backdrop-blur-sm">
-                      <svg className="w-4 h-4 text-white/80" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10 10.293 5.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"/>
+                      <svg
+                        className="w-4 h-4 text-white/80"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10.293 15.707a1 1 0 010-1.414L14.586 10 10.293 5.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                        />
                       </svg>
                     </div>
                     <div className="flex-1 h-px bg-gradient-to-l from-white/40 to-white/20"></div>
                   </div>
                   <div className="bg-white/10 px-4 py-3 rounded-2xl backdrop-blur-sm border border-white/10">
-                    <span className="text-lg font-medium tracking-wider">{flight.arrivalAirport}</span>
+                    <span className="text-lg font-medium tracking-wider">
+                      {flight.arrivalAirport}
+                    </span>
                   </div>
                 </div>
               </div>

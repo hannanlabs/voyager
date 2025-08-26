@@ -31,14 +31,14 @@ export function WebSocketProvider({ children }: { children: ReactNode }) {
     const connect = () => {
       setStatus(WS_STATUS.CONNECTING);
       const ws = new WebSocket(url);
-      
+
       ws.onopen = () => {
         setStatus(WS_STATUS.OPEN);
       };
       ws.onmessage = (e) => {
         try {
           const message = validateWebSocketMessage(JSON.parse(e.data as string));
-          
+
           setFlightsGeoJSON(message.featureCollection);
           const flightsMap = extractFlightsFromGeoJSON(message.featureCollection);
           setFlights(flightsMap);
@@ -63,7 +63,11 @@ export function WebSocketProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  return <WebSocketContext.Provider value={{ flights, flightsGeoJSON, flightCount, status }}>{children}</WebSocketContext.Provider>;
+  return (
+    <WebSocketContext.Provider value={{ flights, flightsGeoJSON, flightCount, status }}>
+      {children}
+    </WebSocketContext.Provider>
+  );
 }
 
 export const useFlights = () => useContext(WebSocketContext);

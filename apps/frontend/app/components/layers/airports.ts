@@ -3,7 +3,7 @@ import type { Map } from 'mapbox-gl';
 export function createAirportLayers(map: Map): void {
   const filter = ['==', ['get', 'type'], 'large_airport'];
   const gold = '#FFD700';
-  
+
   map.addLayer({
     id: 'airports-large',
     type: 'circle',

@@ -6,8 +6,8 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/hannan/voyager/shared-go/flight"
 	"github.com/hannan/voyager/shared-go/data"
+	"github.com/hannan/voyager/shared-go/flight"
 	"github.com/hannan/voyager/simulator/internal/helpers"
 )
 

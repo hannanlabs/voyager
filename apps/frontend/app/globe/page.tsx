@@ -9,7 +9,14 @@ import { createFlightsPointsLayer, addFlightInteractions } from '../components/l
 import { createFlightsRoutesLayer, updateRouteVisibility } from '../components/layers/flightroute';
 import { createAirportLayers } from '../components/layers/airports';
 import { useFlights } from './transport/websocket';
-import { addSelectionToGeoJSON, type FlightState, EMPTY_GEOJSON, MAP_CONFIG, MAP_SOURCES, MAP_LAYERS } from '@voyager/shared-ts';
+import {
+  addSelectionToGeoJSON,
+  type FlightState,
+  EMPTY_GEOJSON,
+  MAP_CONFIG,
+  MAP_SOURCES,
+  MAP_LAYERS,
+} from '@voyager/shared-ts';
 import { getFlightRoute } from './transport/http';
 
 const MAPBOX_ACCESS_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
@@ -23,9 +30,13 @@ export default function Globe() {
   const [selectedFlightEnriched, setSelectedFlightEnriched] = useState<FlightState | null>(null);
 
   const { flights: flightsMap, flightsGeoJSON, flightCount, status } = useFlights();
-  const selectedFlight = selectedFlightEnriched ?? (selectedFlightId ? flightsMap.get(selectedFlightId) ?? null : null);
+  const selectedFlight =
+    selectedFlightEnriched ??
+    (selectedFlightId ? (flightsMap.get(selectedFlightId) ?? null) : null);
 
-  const processedFlightsGeoJSON = flightsGeoJSON ? addSelectionToGeoJSON(flightsGeoJSON, selectedFlightId) : null;
+  const processedFlightsGeoJSON = flightsGeoJSON
+    ? addSelectionToGeoJSON(flightsGeoJSON, selectedFlightId)
+    : null;
 
   const fetchFlightRoute = useCallback(async (flightId: string) => {
     try {
@@ -66,13 +77,30 @@ export default function Globe() {
     const setupMapContent = () => {
       addAirplaneIcon(mapInstance);
 
-      mapInstance.addSource(MAP_SOURCES.FLIGHTS_POINTS, { type: 'geojson', data: EMPTY_GEOJSON, promoteId: 'id' });
+      mapInstance.addSource(MAP_SOURCES.FLIGHTS_POINTS, {
+        type: 'geojson',
+        data: EMPTY_GEOJSON,
+        promoteId: 'id',
+      });
       mapInstance.addSource(MAP_SOURCES.FLIGHTS_ROUTES, { type: 'geojson', data: EMPTY_GEOJSON });
-      mapInstance.addSource(MAP_SOURCES.AIRPORTS, { type: 'geojson', data: `${SIMULATOR_HTTP_URL || ''}/geojson/airports` });
+      mapInstance.addSource(MAP_SOURCES.AIRPORTS, {
+        type: 'geojson',
+        data: `${SIMULATOR_HTTP_URL || ''}/geojson/airports`,
+      });
 
-      createFlightsPointsLayer(mapInstance, { sourceId: MAP_SOURCES.FLIGHTS_POINTS, layerId: MAP_LAYERS.FLIGHTS_POINTS });
-      addFlightInteractions(mapInstance, { sourceId: MAP_SOURCES.FLIGHTS_POINTS, layerId: MAP_LAYERS.FLIGHTS_POINTS, onFlightClick: handleFlightClick });
-      createFlightsRoutesLayer(mapInstance, { sourceId: MAP_SOURCES.FLIGHTS_ROUTES, layerId: MAP_LAYERS.FLIGHTS_ROUTES });
+      createFlightsPointsLayer(mapInstance, {
+        sourceId: MAP_SOURCES.FLIGHTS_POINTS,
+        layerId: MAP_LAYERS.FLIGHTS_POINTS,
+      });
+      addFlightInteractions(mapInstance, {
+        sourceId: MAP_SOURCES.FLIGHTS_POINTS,
+        layerId: MAP_LAYERS.FLIGHTS_POINTS,
+        onFlightClick: handleFlightClick,
+      });
+      createFlightsRoutesLayer(mapInstance, {
+        sourceId: MAP_SOURCES.FLIGHTS_ROUTES,
+        layerId: MAP_LAYERS.FLIGHTS_ROUTES,
+      });
 
       createAirportLayers(mapInstance);
 
@@ -105,11 +133,13 @@ export default function Globe() {
     if (!map.current || !mapReady.current) return;
 
     const updateFlightRoute = async () => {
-      const routesSrc = map.current?.getSource(MAP_SOURCES.FLIGHTS_ROUTES) as mapboxgl.GeoJSONSource;
+      const routesSrc = map.current?.getSource(
+        MAP_SOURCES.FLIGHTS_ROUTES,
+      ) as mapboxgl.GeoJSONSource;
       if (selectedFlightId) {
         const routes = await fetchFlightRoute(selectedFlightId);
         routesSrc.setData(routes);
-        
+
         const baseFlight = flightsMap.get(selectedFlightId);
         if (baseFlight && routes.features.length > 0) {
           const routeFeature = routes.features[0];
@@ -134,9 +164,9 @@ export default function Globe() {
   return (
     <div className="relative w-full h-screen">
       <div ref={mapContainer} className="w-full h-full" />
-      
+
       <FlightStatusIndicator flightCount={flightCount} status={status} />
-      
+
       <FlightDetailsSheet
         flight={selectedFlight}
         isOpen={selectedFlightId !== null}
