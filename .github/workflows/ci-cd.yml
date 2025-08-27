@@ -24,15 +24,11 @@ jobs:
       uses: actions/setup-go@v5
       with:
         go-version: '1.22'
+        cache-dependency-path: packages/shared-go/go.mod
 
     - name: Format check
       working-directory: packages/shared-go
-      run: |
-        if [ "$(gofmt -s -l . | wc -l)" -gt 0 ]; then
-          echo "Code is not properly formatted:"
-          gofmt -s -d .
-          exit 1
-        fi
+      run: test -z "$(gofmt -l .)"
 
     - name: Go vet
       working-directory: packages/shared-go
@@ -59,15 +55,11 @@ jobs:
       uses: actions/setup-go@v5
       with:
         go-version: '1.22'
+        cache-dependency-path: apps/simulator/go.sum
 
     - name: Format check
       working-directory: apps/simulator
-      run: |
-        if [ "$(gofmt -s -l . | wc -l)" -gt 0 ]; then
-          echo "Code is not properly formatted:"
-          gofmt -s -d .
-          exit 1
-        fi
+      run: test -z "$(gofmt -l .)"
 
     - name: Go vet
       working-directory: apps/simulator
