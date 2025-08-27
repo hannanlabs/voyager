@@ -4,7 +4,7 @@ RUN npm install -g pnpm
 
 WORKDIR /workspace
 
-COPY package.json pnpm-workspace.yaml ./
+COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
 
 COPY packages/shared-ts/package.json ./packages/shared-ts/
 COPY apps/frontend/package.json ./apps/frontend/
@@ -20,6 +20,10 @@ COPY data/airports.iata.geojson ./apps/frontend/public/data/airports.iata.geojso
 
 WORKDIR /workspace/apps/frontend
 
+RUN pnpm build
+
 EXPOSE 3000
 
-CMD ["pnpm", "dev"]
+ENV NODE_ENV=production
+
+CMD ["pnpm", "start"]

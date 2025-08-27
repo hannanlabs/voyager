@@ -19,11 +19,6 @@ spec:
         image: frontend
         ports:
         - containerPort: 3000
-        env:
-        - name: NODE_ENV
-          value: "development"
-        - name: NEXT_PUBLIC_FLIGHTS_WS_URL
-          value: "ws://localhost:8080/ws/flights"
 ---
 apiVersion: v1
 kind: Service
@@ -35,5 +30,4 @@ spec:
   ports:
     - protocol: TCP
       port: 3000
-      targetPort: 3000
   type: ClusterIP
