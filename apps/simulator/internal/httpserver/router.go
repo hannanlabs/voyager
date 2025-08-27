@@ -8,7 +8,7 @@ import (
 	wshandlers "github.com/hannan/voyager/simulator/internal/transport/websocket"
 )
 
-func NewRouter(sim *simulator.FlightSimulator, repo simulator.Repository) http.Handler {
+func NewRouter(sim *simulator.FlightSimulator, repo *simulator.Repository) http.Handler {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/healthz", HealthzHandler)

@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import type { JSX } from 'react';
+import type { JSX } from "react";
 
 export default function Home(): JSX.Element {
   return (
@@ -21,8 +21,8 @@ export default function Home(): JSX.Element {
             </h1>
 
             <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl font-light">
-              Real-time flight simulation with live physics calculations and WebSocket streaming,
-              built for scalability and observability.
+              Real-time flight simulation with live physics calculations and
+              WebSocket streaming, built for scalability and observability.
             </p>
 
             <div className="flex gap-6 mb-24">
@@ -45,59 +45,75 @@ export default function Home(): JSX.Element {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-800 mb-24">
             <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
-              <h3 className="text-lg font-medium mb-4 text-white">Flight Simulator</h3>
+              <h3 className="text-lg font-medium mb-4 text-white">
+                Flight Simulator
+              </h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Go-based simulation engine generating realistic flight paths with physics
-                calculations for drag, lift, and wind effects.
+                Go-based simulation engine generating realistic flight paths
+                with physics calculations for drag, lift, and wind effects.
               </p>
             </div>
 
             <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
-              <h3 className="text-lg font-medium mb-4 text-white">Real-time Physics</h3>
+              <h3 className="text-lg font-medium mb-4 text-white">
+                Real-time Physics
+              </h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Vector field approximations simulate drag, lift, and wind currents using
-                Navier-Stokes inspired dynamics.
+                Vector field approximations simulate drag, lift, and wind
+                currents using Navier-Stokes inspired dynamics.
               </p>
             </div>
 
             <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
-              <h3 className="text-lg font-medium mb-4 text-white">WebSocket Streaming</h3>
+              <h3 className="text-lg font-medium mb-4 text-white">
+                WebSocket Streaming
+              </h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Live telemetry streams flight positions, velocity vectors, and phase transitions to
-                the 3D globe interface.
+                Live telemetry streams flight positions, velocity vectors, and
+                phase transitions to the 3D globe interface.
               </p>
             </div>
 
             <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
-              <h3 className="text-lg font-medium mb-4 text-white">Observability</h3>
+              <h3 className="text-lg font-medium mb-4 text-white">
+                Observability
+              </h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Comprehensive monitoring with Prometheus metrics, Loki logs, and OpenTelemetry
-                distributed tracing.
+                Comprehensive monitoring with Prometheus metrics, Loki logs, and
+                OpenTelemetry distributed tracing.
               </p>
             </div>
 
             <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
-              <h3 className="text-lg font-medium mb-4 text-white">Chaos Testing</h3>
+              <h3 className="text-lg font-medium mb-4 text-white">
+                Chaos Testing
+              </h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Chaos Mesh integration for pod-level failures and network perturbations, plus
-                configurable simulator fault injection.
+                Chaos Mesh integration for pod-level failures and network
+                perturbations, plus configurable simulator fault injection.
               </p>
             </div>
 
             <div className="bg-black p-8 hover:bg-gray-900 transition-colors">
-              <h3 className="text-lg font-medium mb-4 text-white">Scalable Architecture</h3>
+              <h3 className="text-lg font-medium mb-4 text-white">
+                Scalable Architecture
+              </h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Kubernetes-ready design with horizontal scaling capabilities and resource
-                optimization for high-volume flight simulation.
+                Kubernetes-ready design with horizontal scaling capabilities and
+                resource optimization for high-volume flight simulation.
               </p>
             </div>
           </div>
 
           <div className="border border-gray-800 p-12">
-            <h2 className="text-3xl font-thin mb-12 text-center">Technical Architecture</h2>
+            <h2 className="text-3xl font-thin mb-12 text-center">
+              Technical Architecture
+            </h2>
             <div className="grid md:grid-cols-2 gap-16">
               <div>
-                <h3 className="text-lg font-medium mb-6 text-white">Infrastructure</h3>
+                <h3 className="text-lg font-medium mb-6 text-white">
+                  Infrastructure
+                </h3>
                 <div className="space-y-4 text-gray-400 text-sm">
                   <div className="flex justify-between border-b border-gray-800 pb-2">
                     <span>Platform</span>
@@ -118,7 +134,9 @@ export default function Home(): JSX.Element {
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-medium mb-6 text-white">Data Flow</h3>
+                <h3 className="text-lg font-medium mb-6 text-white">
+                  Data Flow
+                </h3>
                 <div className="space-y-4 text-gray-400 text-sm">
                   <div className="flex justify-between border-b border-gray-800 pb-2">
                     <span>Streaming</span>
@@ -145,8 +163,8 @@ export default function Home(): JSX.Element {
         <footer className="border-t border-gray-800 mt-24 py-12">
           <div className="max-w-7xl mx-auto px-8">
             <div className="text-center text-gray-400 text-sm font-light">
-              Real-time flight simulation demonstrating scalable WebSocket streaming and
-              physics-based modeling.
+              Real-time flight simulation demonstrating scalable WebSocket
+              streaming and physics-based modeling.
             </div>
           </div>
         </footer>

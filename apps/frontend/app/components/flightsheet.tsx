@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import type { FlightState } from '@voyager/shared-ts';
+import type { FlightState } from "@voyager/shared-ts";
 
-export type FlightDetailsSheetProps = {
+interface FlightDetailsSheetProps {
   flight: FlightState | null;
   isOpen: boolean;
   onClose: () => void;
-};
+}
 
 export default function FlightDetailsSheet({
   flight,
@@ -27,11 +27,17 @@ export default function FlightDetailsSheet({
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
                     </svg>
                   </div>
-                  <h2 className="text-2xl font-light text-white tracking-wide">Flight Details</h2>
+                  <h2 className="text-2xl font-light text-white tracking-wide">
+                    Flight Details
+                  </h2>
                 </div>
                 <button
                   onClick={onClose}
@@ -44,7 +50,11 @@ export default function FlightDetailsSheet({
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 </button>
               </div>
@@ -92,7 +102,9 @@ export default function FlightDetailsSheet({
 
           <div className="flex-1 overflow-y-auto px-8 py-6 space-y-8 bg-gradient-to-b from-gray-50 to-white">
             <div className="space-y-4">
-              <h3 className="text-xl font-light text-gray-800 tracking-wide">Current Status</h3>
+              <h3 className="text-xl font-light text-gray-800 tracking-wide">
+                Current Status
+              </h3>
               <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-200/50 backdrop-blur-sm">
                 <div className="flex justify-between items-center p-4 bg-gray-50/80 rounded-2xl">
                   <span className="text-gray-700 font-medium">Phase</span>
@@ -104,7 +116,9 @@ export default function FlightDetailsSheet({
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-light text-gray-800 tracking-wide">Flight Progress</h3>
+              <h3 className="text-xl font-light text-gray-800 tracking-wide">
+                Flight Progress
+              </h3>
               <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-200/50">
                 <div className="space-y-6">
                   <div className="flex justify-between items-center">
@@ -116,7 +130,9 @@ export default function FlightDetailsSheet({
                   <div className="w-full bg-gray-200 rounded-full h-4 shadow-inner">
                     <div
                       className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 h-4 rounded-full transition-all duration-500 shadow-sm relative overflow-hidden"
-                      style={{ width: `${(flight.progress * 100).toFixed(1)}%` }}
+                      style={{
+                        width: `${(flight.progress * 100).toFixed(1)}%`,
+                      }}
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
                     </div>
@@ -126,7 +142,9 @@ export default function FlightDetailsSheet({
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-light text-gray-800 tracking-wide">Position</h3>
+              <h3 className="text-xl font-light text-gray-800 tracking-wide">
+                Position
+              </h3>
               <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-200/50 space-y-4">
                 <div className="flex justify-between items-center p-4 bg-gray-50/80 rounded-2xl">
                   <span className="text-gray-700 font-medium">Latitude</span>

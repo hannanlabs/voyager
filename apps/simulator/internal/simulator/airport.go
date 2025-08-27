@@ -4,75 +4,34 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"encoding/json"
-	"fmt"
 	"os"
-	"sync"
 
 	"github.com/hannan/voyager/shared-go/flight"
 )
 
-type Repository interface {
-	Load(path string) error
-	RawJSON() []byte
-	ETag() string
-	Positions() map[string]flight.Position
-	Codes() []string
-	IsLoaded() bool
-	Reload() error
+type Repository struct {
+	RawJSON   []byte
+	ETag      string
+	Positions map[string]flight.Position
+	Codes     []string
+	Loaded    bool
 }
 
-type FileRepository struct {
-	mu        sync.RWMutex
-	path      string
-	rawJSON   []byte
-	etag      string
-	positions map[string]flight.Position
-	codes     []string
-	loaded    bool
-}
-
-func NewFileRepository() Repository {
-	return &FileRepository{
-		positions: make(map[string]flight.Position),
-		codes:     []string{},
+func New() *Repository {
+	return &Repository{
+		Positions: make(map[string]flight.Position),
 	}
 }
 
-func New() Repository {
-	return NewFileRepository()
-}
-
-func (f *FileRepository) Load(path string) error {
-	f.mu.Lock()
-	defer f.mu.Unlock()
-
-	f.path = path
-	return f.loadInternal()
-}
-
-func (f *FileRepository) Reload() error {
-	f.mu.Lock()
-	defer f.mu.Unlock()
-
-	if f.path == "" {
-		return fmt.Errorf("no path set, call Load() first")
-	}
-
-	return f.loadInternal()
-}
-
-func (f *FileRepository) loadInternal() error {
-	data, err := os.ReadFile(f.path)
+func (r *Repository) Load(path string) error {
+	data, err := os.ReadFile(path)
 	if err != nil {
-		return fmt.Errorf("failed to read airports file: %w", err)
+		return err
 	}
 
 	var geoJSON struct {
-		Type     string `json:"type"`
 		Features []struct {
-			Type     string `json:"type"`
 			Geometry struct {
-				Type        string    `json:"type"`
 				Coordinates []float64 `json:"coordinates"`
 			} `json:"geometry"`
 			Properties map[string]interface{} `json:"properties"`
@@ -80,83 +39,29 @@ func (f *FileRepository) loadInternal() error {
 	}
 
 	if err := json.Unmarshal(data, &geoJSON); err != nil {
-		return fmt.Errorf("failed to unmarshal airports GeoJSON: %w", err)
+		return err
 	}
 
-	positions := make(map[string]flight.Position)
-	codes := make([]string, 0, len(geoJSON.Features))
+	r.Positions = make(map[string]flight.Position)
+	r.Codes = make([]string, 0, len(geoJSON.Features))
 
 	for _, feature := range geoJSON.Features {
-		if props := feature.Properties; props != nil {
-			if iata, ok := props["iata"].(string); ok && iata != "" {
-				if coords := feature.Geometry.Coordinates; len(coords) >= 2 {
-					positions[iata] = flight.Position{
-						Longitude: coords[0],
-						Latitude:  coords[1],
-						Altitude:  0,
-					}
-					codes = append(codes, iata)
+		if iata, ok := feature.Properties["iata"].(string); ok && iata != "" {
+			if coords := feature.Geometry.Coordinates; len(coords) >= 2 {
+				r.Positions[iata] = flight.Position{
+					Longitude: coords[0],
+					Latitude:  coords[1],
+					Altitude:  0,
 				}
+				r.Codes = append(r.Codes, iata)
 			}
 		}
 	}
 
-	f.rawJSON = data
-	f.etag = generateETag(data)
-	f.positions = positions
-	f.codes = codes
-	f.loaded = true
+	r.RawJSON = data
+	hash := sha256.Sum256(data)
+	r.ETag = hex.EncodeToString(hash[:])
+	r.Loaded = true
 
 	return nil
-}
-
-func (f *FileRepository) RawJSON() []byte {
-	f.mu.RLock()
-	defer f.mu.RUnlock()
-
-	if f.rawJSON == nil {
-		return nil
-	}
-	result := make([]byte, len(f.rawJSON))
-	copy(result, f.rawJSON)
-	return result
-}
-
-func (f *FileRepository) ETag() string {
-	f.mu.RLock()
-	defer f.mu.RUnlock()
-
-	return f.etag
-}
-
-func (f *FileRepository) Positions() map[string]flight.Position {
-	f.mu.RLock()
-	defer f.mu.RUnlock()
-
-	result := make(map[string]flight.Position, len(f.positions))
-	for k, v := range f.positions {
-		result[k] = v
-	}
-	return result
-}
-
-func (f *FileRepository) Codes() []string {
-	f.mu.RLock()
-	defer f.mu.RUnlock()
-
-	result := make([]string, len(f.codes))
-	copy(result, f.codes)
-	return result
-}
-
-func (f *FileRepository) IsLoaded() bool {
-	f.mu.RLock()
-	defer f.mu.RUnlock()
-
-	return f.loaded
-}
-
-func generateETag(data []byte) string {
-	hash := sha256.Sum256(data)
-	return hex.EncodeToString(hash[:])
 }

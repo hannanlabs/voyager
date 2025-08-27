@@ -1,20 +1,20 @@
-import type { Map } from 'mapbox-gl';
+import type { Map } from "mapbox-gl";
 
 export function addAirplaneIcon(map: Map): void {
-  if (!map.hasImage('airplane-icon')) {
+  if (!map.hasImage("airplane-icon")) {
     const size = 48;
-    const canvas = document.createElement('canvas');
+    const canvas = document.createElement("canvas");
     canvas.width = size;
     canvas.height = size;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) {
-      throw new Error('Canvas 2D context is not available');
+      throw new Error("Canvas 2D context is not available");
     }
 
     ctx.clearRect(0, 0, size, size);
 
-    ctx.fillStyle = '#ffffff';
-    ctx.strokeStyle = '#000000';
+    ctx.fillStyle = "#ffffff";
+    ctx.strokeStyle = "#000000";
     ctx.lineWidth = 3;
 
     // Draw airplane body
@@ -70,6 +70,6 @@ export function addAirplaneIcon(map: Map): void {
     ctx.stroke();
 
     const imageData = ctx.getImageData(0, 0, size, size);
-    map.addImage('airplane-icon', imageData, { sdf: true });
+    map.addImage("airplane-icon", imageData, { sdf: true });
   }
 }

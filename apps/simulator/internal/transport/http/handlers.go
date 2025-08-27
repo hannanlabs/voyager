@@ -10,24 +10,20 @@ import (
 	"github.com/hannan/voyager/simulator/internal/simulator"
 )
 
-type FlightProvider interface {
-	GetFlightByID(flightID string) (*flight.State, bool)
-}
-
-func GeoJSONAirportsHandler(repo simulator.Repository) http.HandlerFunc {
+func GeoJSONAirportsHandler(repo *simulator.Repository) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodGet {
 			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 			return
 		}
 
-		if !repo.IsLoaded() {
+		if !repo.Loaded {
 			http.Error(w, "Airport data not loaded", http.StatusInternalServerError)
 			return
 		}
 
-		data := repo.RawJSON()
-		etag := repo.ETag()
+		data := repo.RawJSON
+		etag := repo.ETag
 
 		w.Header().Set("Content-Type", "application/json")
 		w.Header().Set("Cache-Control", "public, max-age=86400, immutable")
@@ -42,7 +38,7 @@ func GeoJSONAirportsHandler(repo simulator.Repository) http.HandlerFunc {
 	}
 }
 
-func GeoJSONFlightRouteHandler(fs FlightProvider, repo simulator.Repository) http.HandlerFunc {
+func GeoJSONFlightRouteHandler(fs *simulator.FlightSimulator, repo *simulator.Repository) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodGet {
 			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
@@ -63,22 +59,22 @@ func GeoJSONFlightRouteHandler(fs FlightProvider, repo simulator.Repository) htt
 			}
 		}
 
+		var f *flight.State
 		f, exists := fs.GetFlightByID(flightID)
 		if !exists {
 			http.Error(w, "Flight not found", http.StatusNotFound)
 			return
 		}
 
-		airportPositions := repo.Positions()
-		fromPos, fromExists := airportPositions[f.DepartureAirport]
-		toPos, toExists := airportPositions[f.ArrivalAirport]
+		fromPos, fromExists := repo.Positions[f.DepartureAirport]
+		toPos, toExists := repo.Positions[f.ArrivalAirport]
 
 		if !fromExists || !toExists {
 			http.Error(w, "Airport data not found", http.StatusInternalServerError)
 			return
 		}
 
-		coordinates := generateGreatCircleCoordinates(fromPos, toPos, n)
+		coordinates := helpers.GenerateGreatCircleCoordinates(fromPos, toPos, n)
 
 		feature := helpers.NewLineStringFeature(coordinates, map[string]interface{}{
 			"id":       f.ID,
@@ -96,16 +92,4 @@ func GeoJSONFlightRouteHandler(fs FlightProvider, repo simulator.Repository) htt
 			http.Error(w, "Failed to encode response", http.StatusInternalServerError)
 		}
 	}
-}
-
-func generateGreatCircleCoordinates(from, to flight.Position, n int) [][]float64 {
-	coordinates := make([][]float64, n+1)
-
-	for i := 0; i <= n; i++ {
-		progress := float64(i) / float64(n)
-		pos := helpers.InterpolatePosition(from, to, progress)
-		coordinates[i] = []float64{pos.Longitude, pos.Latitude}
-	}
-
-	return coordinates
 }

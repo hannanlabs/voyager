@@ -97,3 +97,15 @@ func GreatCircleStep(current, destination flight.Position, groundSpeed, dt float
 	progress := stepDistance / distance
 	return InterpolatePosition(current, destination, progress)
 }
+
+func GenerateGreatCircleCoordinates(from, to flight.Position, n int) [][]float64 {
+	coordinates := make([][]float64, n+1)
+
+	for i := 0; i <= n; i++ {
+		progress := float64(i) / float64(n)
+		pos := InterpolatePosition(from, to, progress)
+		coordinates[i] = []float64{pos.Longitude, pos.Latitude}
+	}
+
+	return coordinates
+}

@@ -12,6 +12,10 @@ import (
 	"github.com/hannan/voyager/simulator/internal/helpers"
 )
 
+// ============================================================================
+// Type Definitions
+// ============================================================================
+
 type FlightSimulator struct {
 	flights          map[string]*flight.State
 	flightsMu        sync.RWMutex
@@ -24,10 +28,14 @@ type FlightSimulator struct {
 	landedFlights    map[string]time.Time
 	lastSpawnAt      time.Time
 	geoJSONSeq       int64
-	airports         Repository
+	airports         *Repository
 }
 
-func NewFlightSimulator(updateHz int, geoJSONFlightsHz int, airports Repository) *FlightSimulator {
+// ============================================================================
+// Constructor and Core Operations
+// ============================================================================
+
+func NewFlightSimulator(updateHz int, geoJSONFlightsHz int, airports *Repository) *FlightSimulator {
 	now := time.Now()
 	sim := &FlightSimulator{
 		flights:          make(map[string]*flight.State),
@@ -54,6 +62,10 @@ func (fs *FlightSimulator) Start(ctx context.Context) {
 	})
 }
 
+// ============================================================================
+// Flight Management
+// ============================================================================
+
 func (fs *FlightSimulator) GetFlightByID(flightID string) (*flight.State, bool) {
 	fs.flightsMu.RLock()
 	defer fs.flightsMu.RUnlock()
@@ -61,6 +73,10 @@ func (fs *FlightSimulator) GetFlightByID(flightID string) (*flight.State, bool) 
 	flightState, exists := fs.flights[flightID]
 	return flightState, exists
 }
+
+// ============================================================================
+// Client Management
+// ============================================================================
 
 func (fs *FlightSimulator) AddClient(conn *websocket.Conn) {
 	fs.clientsMu.Lock()
@@ -96,6 +112,10 @@ func (fs *FlightSimulator) sendInitialGeoJSONToClient(conn *websocket.Conn) {
 		conn.WriteMessage(websocket.TextMessage, data)
 	}
 }
+
+// ============================================================================
+// GeoJSON Processing and Broadcasting
+// ============================================================================
 
 func (fs *FlightSimulator) buildFlightsGeoJSON() helpers.GeoJSONFeatureCollection {
 	fs.flightsMu.RLock()

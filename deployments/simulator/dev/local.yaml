@@ -19,30 +19,6 @@ spec:
         image: simulator
         ports:
         - containerPort: 8080
-        env:
-        - name: UPDATE_HZ
-          value: "6"
-        - name: PORT
-          value: "8080"
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 8080
-          initialDelaySeconds: 15
-          periodSeconds: 30
-        readinessProbe:
-          httpGet:
-            path: /readyz
-            port: 8080
-          initialDelaySeconds: 5
-          periodSeconds: 10
-        resources:
-          requests:
-            cpu: 10m
-            memory: 32Mi
-          limits:
-            cpu: 100m
-            memory: 64Mi
 ---
 apiVersion: v1
 kind: Service
@@ -54,5 +30,4 @@ spec:
   ports:
     - protocol: TCP
       port: 8080
-      targetPort: 8080
   type: ClusterIP

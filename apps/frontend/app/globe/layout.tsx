@@ -1,5 +1,9 @@
-import { WebSocketProvider } from './transport/websocket';
+import { WebSocketProvider } from "./transport/websocket";
 
-export default function GlobeLayout({ children }: { children: React.ReactNode }) {
+export default function GlobeLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return <WebSocketProvider>{children}</WebSocketProvider>;
 }

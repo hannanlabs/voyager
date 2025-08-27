@@ -12,9 +12,8 @@ import (
 )
 
 func (fs *FlightSimulator) createFlight(from, to, airline, callSign string) *flight.State {
-	airportPositions := fs.airports.Positions()
-	fromPos := airportPositions[from]
-	toPos := airportPositions[to]
+	fromPos := fs.airports.Positions[from]
+	toPos := fs.airports.Positions[to]
 
 	if from == to {
 		return nil
@@ -81,10 +80,9 @@ func (fs *FlightSimulator) UpdateFlights() {
 
 	var toRemove []string
 
-	airportPositions := fs.airports.Positions()
 	for flightID, f := range fs.flights {
-		fromPos := airportPositions[f.DepartureAirport]
-		toPos := airportPositions[f.ArrivalAirport]
+		fromPos := fs.airports.Positions[f.DepartureAirport]
+		toPos := fs.airports.Positions[f.ArrivalAirport]
 
 		if f.Phase == flight.Landed {
 			if landedAt, exists := fs.landedFlights[flightID]; exists {
@@ -125,7 +123,21 @@ func (fs *FlightSimulator) UpdateFlights() {
 			f.EstimatedArrival = estimatedArrival.Format(time.RFC3339)
 		}
 
-		newPhase := fs.determinePhase(f)
+		var newPhase flight.Phase
+		if f.Phase == flight.Landed {
+			newPhase = flight.Landed
+		} else if f.Progress < 0.15 && f.Altitude < 15000 && f.Speed < 15000 {
+			newPhase = flight.Takeoff
+		} else if f.Progress < 0.25 && f.Altitude < 40000 {
+			newPhase = flight.Climb
+		} else if (f.DistanceRemaining < 50 || f.Progress > 0.90) && f.Altitude < 8000 && f.Speed < 21000 {
+			newPhase = flight.Landing
+		} else if f.Progress > 0.75 && (f.Altitude < 45000 || f.DistanceRemaining < 200) {
+			newPhase = flight.Descent
+		} else {
+			newPhase = flight.Cruise
+		}
+
 		if newPhase != f.Phase {
 			f.Phase = newPhase
 			switch f.Phase {
@@ -157,133 +169,5 @@ func (fs *FlightSimulator) UpdateFlights() {
 	for _, flightID := range toRemove {
 		delete(fs.flights, flightID)
 		delete(fs.landedFlights, flightID)
-	}
-}
-
-func (fs *FlightSimulator) determinePhase(f *flight.State) flight.Phase {
-	if f.Phase == flight.Landed {
-		return flight.Landed
-	}
-
-	distanceRemaining := f.DistanceRemaining
-	altitude := f.Altitude
-	speed := f.Speed
-
-	if f.Progress < 0.15 && altitude < 15000 && speed < 15000 {
-		return flight.Takeoff
-	}
-
-	if f.Progress < 0.25 && altitude < 40000 {
-		return flight.Climb
-	}
-
-	if (distanceRemaining < 50 || f.Progress > 0.90) && altitude < 8000 && speed < 21000 {
-		return flight.Landing
-	}
-
-	if f.Progress > 0.75 && (altitude < 45000 || distanceRemaining < 200) {
-		return flight.Descent
-	}
-
-	return flight.Cruise
-}
-
-func generateCallSign(airline string, flightNum int) string {
-	prefixes := map[string]string{
-		"United":    "UAL",
-		"American":  "AAL",
-		"Delta":     "DL",
-		"Southwest": "SWA",
-		"JetBlue":   "JBU",
-		"Alaska":    "ASA",
-	}
-
-	prefix := prefixes[airline]
-	if prefix == "" {
-		prefix = "GEN"
-	}
-
-	return fmt.Sprintf("%s%d", prefix, flightNum)
-}
-
-func (fs *FlightSimulator) dynamicSpawn(now time.Time) {
-	currentFlights := len(fs.flights)
-	const targetFlights = 2000
-	const fluctuationRange = 200
-	const maxFlights = targetFlights + fluctuationRange // 2200
-
-	if currentFlights >= maxFlights {
-		return
-	}
-
-	var spawnInterval time.Duration
-	var burstSize int
-
-	if currentFlights < targetFlights {
-		progress := float64(currentFlights) / float64(targetFlights)
-
-		spawnInterval = time.Duration(5+15*progress) * time.Second
-
-		burstSize = int(30 - 25*progress + rand.Float64()*10)
-	} else {
-		spawnInterval = 30 * time.Second
-		burstSize = int(5 + rand.Float64()*10)
-	}
-
-	if now.Sub(fs.lastSpawnAt) >= spawnInterval {
-		fs.generateAirportBurst(burstSize)
-		fs.lastSpawnAt = now
-	}
-}
-
-func (fs *FlightSimulator) selectDeparture() string {
-	codes := fs.airports.Codes()
-	if len(codes) == 0 {
-		return ""
-	}
-	return codes[rand.Intn(len(codes))]
-}
-
-func (fs *FlightSimulator) selectArrival(departure string) string {
-	codes := fs.airports.Codes()
-	if len(codes) <= 1 {
-		return ""
-	}
-
-	maxRetries := 10
-	for retry := 0; retry < maxRetries; retry++ {
-		candidate := codes[rand.Intn(len(codes))]
-		if candidate != departure {
-			return candidate
-		}
-	}
-
-	for _, code := range codes {
-		if code != departure {
-			return code
-		}
-	}
-	return ""
-}
-
-func (fs *FlightSimulator) generateAirportBurst(numFlights int) {
-	for i := 0; i < numFlights; i++ {
-		departure := fs.selectDeparture()
-		if departure == "" {
-			continue
-		}
-
-		arrival := fs.selectArrival(departure)
-		if arrival == "" {
-			continue
-		}
-
-		airline := data.Airlines[rand.Intn(len(data.Airlines))]
-		callSign := generateCallSign(airline, i+1)
-
-		flightState := fs.createFlight(departure, arrival, airline, callSign)
-		if flightState != nil {
-			fs.flights[flightState.ID] = flightState
-		}
 	}
 }

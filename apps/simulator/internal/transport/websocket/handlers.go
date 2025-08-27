@@ -3,35 +3,19 @@ package wshandlers
 import (
 	"log"
 	"net/http"
-	"os"
-	"strings"
 
 	"github.com/gorilla/websocket"
 	"github.com/hannan/voyager/simulator/internal/simulator"
 )
 
-var upgrader = websocket.Upgrader{
-	EnableCompression: false,
-	CheckOrigin: func(r *http.Request) bool {
-		allowedOriginsEnv := os.Getenv("ALLOWED_ORIGINS")
-		if allowedOriginsEnv == "" {
-			return true
-		}
-
-		allowedOrigins := strings.Split(allowedOriginsEnv, ",")
-		origin := r.Header.Get("Origin")
-		for _, allowed := range allowedOrigins {
-			if strings.TrimSpace(allowed) == origin {
-				return true
-			}
-		}
-		return false
-	},
-}
-
 func WSFlightsHandler(fs *simulator.FlightSimulator) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		conn, err := upgrader.Upgrade(w, r, nil)
+		conn, err := (&websocket.Upgrader{
+			CheckOrigin: func(r *http.Request) bool {
+				origin := r.Header.Get("Origin")
+				return origin == "http://localhost:3000"
+			},
+		}).Upgrade(w, r, nil)
 		if err != nil {
 			log.Printf("WebSocket upgrade error: %v", err)
 			return
