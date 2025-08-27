@@ -1,7 +1,7 @@
 'use client';
 
 import mapboxgl from 'mapbox-gl';
-import { useRef, useEffect, useState, useCallback } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { addAirplaneIcon } from '../components/layers/sprites';
 import FlightDetailsSheet from '../components/flightsheet';
 import FlightStatusIndicator from '../components/flightstatus';
@@ -17,44 +17,18 @@ import {
   MAP_SOURCES,
   MAP_LAYERS,
 } from '@voyager/shared-ts';
-import { getFlightRoute } from './transport/http';
+import { getFlightRoute, getAirportsUrl } from './transport/http';
 
 const MAPBOX_ACCESS_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
-const SIMULATOR_HTTP_URL = process.env.NEXT_PUBLIC_SIMULATOR_HTTP_URL;
 
 export default function Globe() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const mapReady = useRef(false);
   const [selectedFlightId, setSelectedFlightId] = useState<string | null>(null);
-  const [selectedFlightEnriched, setSelectedFlightEnriched] = useState<FlightState | null>(null);
+  const [selectedFlight, setSelectedFlight] = useState<FlightState | null>(null);
 
-  const { flights: flightsMap, flightsGeoJSON, flightCount, status } = useFlights();
-  const selectedFlight =
-    selectedFlightEnriched ??
-    (selectedFlightId ? (flightsMap.get(selectedFlightId) ?? null) : null);
-
-  const processedFlightsGeoJSON = flightsGeoJSON
-    ? addSelectionToGeoJSON(flightsGeoJSON, selectedFlightId)
-    : null;
-
-  const fetchFlightRoute = useCallback(async (flightId: string) => {
-    try {
-      return await getFlightRoute(flightId);
-    } catch (error) {
-      console.error('Failed to fetch flight route:', error);
-      return EMPTY_GEOJSON;
-    }
-  }, []);
-
-  const handleFlightClick = useCallback((flightId: string) => {
-    setSelectedFlightId(flightId);
-  }, []);
-
-  const handleCloseDetails = useCallback(() => {
-    setSelectedFlightId(null);
-    setSelectedFlightEnriched(null);
-  }, []);
+  const { flights, flightsGeoJSON, status } = useFlights();
 
   useEffect(() => {
     if (!MAPBOX_ACCESS_TOKEN || map.current) return;
@@ -74,7 +48,7 @@ export default function Globe() {
     mapInstance.scrollZoom.enable();
     mapInstance.doubleClickZoom.disable();
 
-    const setupMapContent = () => {
+    mapInstance.on('load', () => {
       addAirplaneIcon(mapInstance);
 
       mapInstance.addSource(MAP_SOURCES.FLIGHTS_POINTS, {
@@ -85,7 +59,7 @@ export default function Globe() {
       mapInstance.addSource(MAP_SOURCES.FLIGHTS_ROUTES, { type: 'geojson', data: EMPTY_GEOJSON });
       mapInstance.addSource(MAP_SOURCES.AIRPORTS, {
         type: 'geojson',
-        data: `${SIMULATOR_HTTP_URL || ''}/geojson/airports`,
+        data: getAirportsUrl(),
       });
 
       createFlightsPointsLayer(mapInstance, {
@@ -95,7 +69,7 @@ export default function Globe() {
       addFlightInteractions(mapInstance, {
         sourceId: MAP_SOURCES.FLIGHTS_POINTS,
         layerId: MAP_LAYERS.FLIGHTS_POINTS,
-        onFlightClick: handleFlightClick,
+        onFlightClick: setSelectedFlightId,
       });
       createFlightsRoutesLayer(mapInstance, {
         sourceId: MAP_SOURCES.FLIGHTS_ROUTES,
@@ -109,68 +83,62 @@ export default function Globe() {
       });
 
       mapReady.current = true;
-    };
-
-    mapInstance.on('load', setupMapContent);
+    });
     map.current = mapInstance;
 
     return () => {
       map.current?.remove();
       map.current = null;
     };
-  }, [handleFlightClick]);
+  }, []);
 
   useEffect(() => {
-    if (!map.current || !mapReady.current) return;
+    if (!map.current || !mapReady.current || !flightsGeoJSON) return;
 
     const points = map.current.getSource(MAP_SOURCES.FLIGHTS_POINTS) as mapboxgl.GeoJSONSource;
-    if (processedFlightsGeoJSON) {
-      points.setData(processedFlightsGeoJSON);
-    }
-  }, [processedFlightsGeoJSON]);
+    points.setData(addSelectionToGeoJSON(flightsGeoJSON, selectedFlightId));
+  }, [flightsGeoJSON, selectedFlightId]);
 
   useEffect(() => {
     if (!map.current || !mapReady.current) return;
 
-    const updateFlightRoute = async () => {
-      const routesSrc = map.current?.getSource(
-        MAP_SOURCES.FLIGHTS_ROUTES,
-      ) as mapboxgl.GeoJSONSource;
-      if (selectedFlightId) {
-        const routes = await fetchFlightRoute(selectedFlightId);
-        routesSrc.setData(routes);
+    const routesSrc = map.current.getSource(MAP_SOURCES.FLIGHTS_ROUTES) as mapboxgl.GeoJSONSource;
 
-        const baseFlight = flightsMap.get(selectedFlightId);
-        if (baseFlight && routes.features.length > 0) {
-          const routeFeature = routes.features[0];
-          if (routeFeature) {
-            const enrichedFlight: FlightState = {
-              ...baseFlight,
-              departureAirport: routeFeature.properties.departureAirport,
-              arrivalAirport: routeFeature.properties.arrivalAirport,
-            };
-            setSelectedFlightEnriched(enrichedFlight);
-          }
-        }
-      } else {
-        routesSrc.setData(EMPTY_GEOJSON);
-        setSelectedFlightEnriched(null);
+    if (!selectedFlightId) {
+      routesSrc.setData(EMPTY_GEOJSON);
+      setSelectedFlight(null);
+      return;
+    }
+
+    void getFlightRoute(selectedFlightId).then((routes) => {
+      routesSrc.setData(routes);
+
+      const baseFlight = flights.get(selectedFlightId);
+      const routeFeature = routes.features[0];
+
+      if (baseFlight && routeFeature) {
+        setSelectedFlight({
+          ...baseFlight,
+          departureAirport: routeFeature.properties.departureAirport,
+          arrivalAirport: routeFeature.properties.arrivalAirport,
+        });
       }
-    };
-
-    void updateFlightRoute();
-  }, [selectedFlightId, fetchFlightRoute, flightsMap]);
+    });
+  }, [selectedFlightId, flights]);
 
   return (
     <div className="relative w-full h-screen">
       <div ref={mapContainer} className="w-full h-full" />
 
-      <FlightStatusIndicator flightCount={flightCount} status={status} />
+      <FlightStatusIndicator flightCount={flights.size} status={status} />
 
       <FlightDetailsSheet
         flight={selectedFlight}
         isOpen={selectedFlightId !== null}
-        onClose={handleCloseDetails}
+        onClose={() => {
+          setSelectedFlightId(null);
+          setSelectedFlight(null);
+        }}
       />
     </div>
   );
