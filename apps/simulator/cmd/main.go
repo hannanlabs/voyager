@@ -10,6 +10,7 @@ import (
 	"github.com/hannan/voyager/shared-go/data"
 	"github.com/hannan/voyager/simulator/internal/httpserver"
 	"github.com/hannan/voyager/simulator/internal/simulator"
+	"github.com/hannan/voyager/simulator/internal/simulator/components/airport"
 )
 
 func main() {
@@ -17,7 +18,7 @@ func main() {
 	port := data.ServerPort
 	airportPath := data.AirportPath
 	geoJSONFlightsHz := data.GeoJSONFlightsHz
-	repo := simulator.New()
+	repo := airport.New()
 	repo.Load(airportPath)
 
 	sim := simulator.NewFlightSimulator(updateHz, geoJSONFlightsHz, repo)

@@ -1,4 +1,4 @@
-package simulator
+package airport
 
 import (
 	"crypto/sha256"
@@ -64,4 +64,12 @@ func (r *Repository) Load(path string) error {
 	r.Loaded = true
 
 	return nil
+}
+
+func (r *Repository) GetPositions() map[string]flight.Position {
+	return r.Positions
+}
+
+func (r *Repository) GetCodes() []string {
+	return r.Codes
 }

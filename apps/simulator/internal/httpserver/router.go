@@ -4,11 +4,12 @@ import (
 	"net/http"
 
 	"github.com/hannan/voyager/simulator/internal/simulator"
+	"github.com/hannan/voyager/simulator/internal/simulator/components/airport"
 	httphandlers "github.com/hannan/voyager/simulator/internal/transport/http"
 	wshandlers "github.com/hannan/voyager/simulator/internal/transport/websocket"
 )
 
-func NewRouter(sim *simulator.FlightSimulator, repo *simulator.Repository) http.Handler {
+func NewRouter(sim *simulator.FlightSimulator, repo *airport.Repository) http.Handler {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/healthz", HealthzHandler)

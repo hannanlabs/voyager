@@ -7,42 +7,32 @@ import {
   EMPTY_GEOJSON,
 } from "@voyager/shared-ts";
 
-export async function getFlightRoute(
-  id: string,
-  signal?: AbortSignal,
-): Promise<FlightRoutesGeoJSON> {
-  try {
-    const response = await fetch(
-      `${SIMULATOR_HTTP_URL}/geojson/flights/route?id=${id}&n=${FLIGHT_ROUTE_DETAIL_POINTS.toString()}`,
-      signal ? { signal } : {},
-    );
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-    }
-    const data = await response.json();
-    return validateFlightRouteResponse(data);
-  } catch {
-    return EMPTY_GEOJSON as FlightRoutesGeoJSON;
-  }
-}
-
 export async function loadFlightRoute(
   selectedFlightId: string,
   routesSrc: mapboxgl.GeoJSONSource,
   flights: Map<string, FlightState>,
   setSelectedFlight: (flight: FlightState | null) => void,
 ): Promise<void> {
-  const routes = await getFlightRoute(selectedFlightId);
+  let routes: FlightRoutesGeoJSON;
+  try {
+    const response = await fetch(
+      `${SIMULATOR_HTTP_URL}/geojson/flights/route?id=${selectedFlightId}&n=${FLIGHT_ROUTE_DETAIL_POINTS.toString()}`,
+    );
+    const data = await response.json();
+    routes = validateFlightRouteResponse(data);
+  } catch {
+    routes = EMPTY_GEOJSON as FlightRoutesGeoJSON;
+  }
+
   routesSrc.setData(routes);
 
   const baseFlight = flights.get(selectedFlightId);
-  const routeFeature = routes.features[0];
 
-  if (baseFlight && routeFeature) {
+  if (baseFlight && routes.features[0]) {
     setSelectedFlight({
       ...baseFlight,
-      departureAirport: routeFeature.properties.departureAirport,
-      arrivalAirport: routeFeature.properties.arrivalAirport,
+      departureAirport: routes.features[0].properties.departureAirport,
+      arrivalAirport: routes.features[0].properties.arrivalAirport,
     });
   }
 }
