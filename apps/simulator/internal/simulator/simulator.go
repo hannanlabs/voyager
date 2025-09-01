@@ -74,3 +74,11 @@ func (fs *FlightSimulator) AddClient(conn *websocket.Conn) {
 func (fs *FlightSimulator) RemoveClient(conn *websocket.Conn) {
 	fs.orchestrator.RemoveClient(conn)
 }
+
+// ============================================================================
+// Metrics
+// ============================================================================
+
+func (fs *FlightSimulator) FlightCount() int {
+	return fs.flightManager.FlightCount()
+}

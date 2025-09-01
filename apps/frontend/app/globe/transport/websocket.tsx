@@ -13,6 +13,7 @@ import {
   extractFlightsFromGeoJSON,
   SIMULATOR_WS_URL,
 } from "@voyager/shared-ts";
+import { logEvent, initTelemetry } from "../../utils/telemetry";
 
 const FlightContext = createContext<{
   flights: Map<string, FlightState>;
@@ -34,14 +35,15 @@ export function WebSocketProvider({ children }: { children: ReactNode }) {
   const reconnectTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    initTelemetry();
     let shouldConnect = true;
 
     const websocket = new WebSocket(SIMULATOR_WS_URL);
     wsRef.current = websocket;
-    setStatus(WS_STATUS.CONNECTING);
 
     websocket.onopen = () => {
       setStatus(WS_STATUS.OPEN);
+      logEvent("websocket_connected", { url: SIMULATOR_WS_URL });
       console.log("WebSocket connected");
     };
 
@@ -54,18 +56,29 @@ export function WebSocketProvider({ children }: { children: ReactNode }) {
 
         setFlightsGeoJSON(message.featureCollection);
         setFlights(flightMap);
+
+        logEvent("websocket_message", {
+          flight_count: flightMap.size,
+          message_size: event.data.length,
+        });
       } catch (error) {
+        logEvent("websocket_error", { error: (error as Error).message });
         console.error("Failed to process WebSocket message:", error);
         setStatus(WS_STATUS.ERROR);
       }
     };
 
     websocket.onerror = (error) => {
+      logEvent("websocket_error", { url: SIMULATOR_WS_URL });
       console.error("WebSocket error:", error);
       setStatus(WS_STATUS.ERROR);
     };
 
     websocket.onclose = (event) => {
+      logEvent("websocket_closed", {
+        code: event.code,
+        clean: event.code === 1000,
+      });
       console.log("WebSocket closed:", event.code, event.reason);
       setStatus(WS_STATUS.CLOSED);
 

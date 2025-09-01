@@ -20,6 +20,8 @@ COPY data/airports.iata.geojson ./apps/frontend/public/data/airports.iata.geojso
 
 WORKDIR /workspace/apps/frontend
 
+RUN pnpm install
+
 RUN pnpm build
 
 EXPOSE 3000

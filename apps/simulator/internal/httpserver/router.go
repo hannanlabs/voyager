@@ -7,6 +7,7 @@ import (
 	"github.com/hannan/voyager/simulator/internal/simulator/components/airport"
 	httphandlers "github.com/hannan/voyager/simulator/internal/transport/http"
 	wshandlers "github.com/hannan/voyager/simulator/internal/transport/websocket"
+	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 )
 
 func NewRouter(sim *simulator.FlightSimulator, repo *airport.Repository) http.Handler {
@@ -18,5 +19,6 @@ func NewRouter(sim *simulator.FlightSimulator, repo *airport.Repository) http.Ha
 	mux.HandleFunc("/geojson/airports", httphandlers.GeoJSONAirportsHandler(repo))
 	mux.HandleFunc("/geojson/flights/route", httphandlers.GeoJSONFlightRouteHandler(sim, repo))
 
-	return CORSMiddleware(mux)
+	instrumentedHandler := otelhttp.NewHandler(CORSMiddleware(mux), "flight-simulator")
+	return instrumentedHandler
 }

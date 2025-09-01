@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { JSX } from "react";
 import "./globals.css";
+import { TelemetryProvider } from "./components/TelemetryProvider";
 
 export const metadata: Metadata = {
   title: "Voyager",
@@ -14,7 +15,9 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <TelemetryProvider>{children}</TelemetryProvider>
+      </body>
     </html>
   );
 }

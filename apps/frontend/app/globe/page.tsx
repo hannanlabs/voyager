@@ -24,6 +24,7 @@ import {
   MAP_LAYERS,
 } from "@voyager/shared-ts";
 import { loadFlightRoute, getAirportsUrl } from "./transport/http";
+import { logEvent } from "../utils/telemetry";
 
 const MAPBOX_ACCESS_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
@@ -41,6 +42,10 @@ export default function Globe() {
   useEffect(() => {
     if (!MAPBOX_ACCESS_TOKEN || map.current) return;
 
+    logEvent("globe_page_loaded", {
+      has_mapbox_token: "true",
+    });
+
     const mapInstance = new mapboxgl.Map({
       container: mapContainer.current as HTMLDivElement,
       accessToken: MAPBOX_ACCESS_TOKEN,
@@ -57,6 +62,11 @@ export default function Globe() {
     mapInstance.doubleClickZoom.disable();
 
     mapInstance.on("load", () => {
+      logEvent("map_loaded", {
+        style: MAP_CONFIG.STYLE,
+        projection: MAP_CONFIG.PROJECTION.name || "unknown",
+      });
+
       addAirplaneIcon(mapInstance);
 
       mapInstance.addSource(MAP_SOURCES.FLIGHTS_POINTS, {
@@ -80,7 +90,13 @@ export default function Globe() {
       addFlightInteractions(mapInstance, {
         sourceId: MAP_SOURCES.FLIGHTS_POINTS,
         layerId: MAP_LAYERS.FLIGHTS_POINTS,
-        onFlightClick: setSelectedFlightId,
+        onFlightClick: (flightId) => {
+          logEvent("flight_selected", {
+            flight_id: flightId,
+            total_flights: flights.size.toString(),
+          });
+          setSelectedFlightId(flightId);
+        },
       });
       createFlightsRoutesLayer(mapInstance, {
         sourceId: MAP_SOURCES.FLIGHTS_ROUTES,
@@ -121,7 +137,6 @@ export default function Globe() {
 
     if (!selectedFlightId) {
       routesSrc.setData(EMPTY_GEOJSON);
-      setSelectedFlight(null);
       return;
     }
 
@@ -143,6 +158,9 @@ export default function Globe() {
         flight={selectedFlight}
         isOpen={selectedFlightId !== null}
         onClose={() => {
+          logEvent("flight_details_closed", {
+            flight_id: selectedFlightId || "unknown",
+          });
           setSelectedFlightId(null);
           setSelectedFlight(null);
         }}
