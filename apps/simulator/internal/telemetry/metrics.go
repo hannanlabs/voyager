@@ -15,7 +15,6 @@ import (
 
 var (
 	ActiveFlightsGauge   metric.Int64ObservableGauge
-	FlightSpawnCounter   metric.Int64Counter
 	WebSocketConnections metric.Int64UpDownCounter
 )
 
@@ -52,19 +51,11 @@ func InitMetrics(serviceName string, flightCountFunc func() int) func() {
 	meter := otel.Meter("flight-simulator")
 
 	ActiveFlightsGauge, err = meter.Int64ObservableGauge(
-		"active_flights_total",
+		"active_flights",
 		metric.WithDescription("Total number of active flights"),
 	)
 	if err != nil {
 		log.Printf("Failed to create active_flights gauge: %v", err)
-	}
-
-	FlightSpawnCounter, err = meter.Int64Counter(
-		"flights_spawned_total",
-		metric.WithDescription("Total number of flights spawned"),
-	)
-	if err != nil {
-		log.Printf("Failed to create flights_spawned counter: %v", err)
 	}
 
 	WebSocketConnections, err = meter.Int64UpDownCounter(

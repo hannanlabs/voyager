@@ -6,18 +6,34 @@ receivers:
       http:
         endpoint: 0.0.0.0:4318
 
+processors:
+  batch:
+    timeout: 1s
+    send_batch_size: 1024
+    send_batch_max_size: 2048
+
 exporters:
   debug:
     verbosity: detailed
+
+  prometheusremotewrite:
+    endpoint: http://prometheus:9090/api/v1/write
+    resource_to_telemetry_conversion:
+      enabled: true
+    target_info:
+      enabled: true
 
 service:
   pipelines:
     traces:
       receivers: [otlp]
+      processors: [batch]
       exporters: [debug]
     metrics:
       receivers: [otlp]
-      exporters: [debug]
+      processors: [batch]
+      exporters: [debug, prometheusremotewrite]
     logs:
       receivers: [otlp]
+      processors: [batch]
       exporters: [debug]
