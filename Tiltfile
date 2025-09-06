@@ -6,6 +6,10 @@ docker_build('prometheus', 'infrastructure/prometheus')
 k8s_yaml('deployments/prometheus/dev/local.yaml')
 k8s_resource('prometheus', port_forwards='9090:9090')
 
+docker_build('loki', 'infrastructure/loki')
+k8s_yaml('deployments/loki/dev/local.yaml')
+k8s_resource('loki', port_forwards='3100:3100')
+
 docker_build('frontend', '.', dockerfile='apps/frontend/Dockerfile')
 k8s_yaml('deployments/frontend/dev/local.yaml')
 k8s_resource('frontend', port_forwards='3000:3000')

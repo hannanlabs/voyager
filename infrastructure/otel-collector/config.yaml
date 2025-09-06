@@ -23,6 +23,11 @@ exporters:
     target_info:
       enabled: true
 
+  loki:
+    endpoint: http://loki:3100/otlp
+    headers:
+      "Content-Type": "application/x-protobuf"
+
 service:
   pipelines:
     traces:
@@ -36,4 +41,4 @@ service:
     logs:
       receivers: [otlp]
       processors: [batch]
-      exporters: [debug]
+      exporters: [debug, loki]
