@@ -28,12 +28,17 @@ exporters:
     headers:
       "Content-Type": "application/x-protobuf"
 
+  otlp/tempo:
+    endpoint: http://tempo:4317
+    tls:
+      insecure: true
+
 service:
   pipelines:
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [debug]
+      exporters: [debug, otlp/tempo]
     metrics:
       receivers: [otlp]
       processors: [batch]

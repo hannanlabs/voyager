@@ -10,6 +10,10 @@ docker_build('loki', 'infrastructure/loki')
 k8s_yaml('deployments/loki/dev/local.yaml')
 k8s_resource('loki', port_forwards='3100:3100')
 
+docker_build('tempo', 'infrastructure/tempo')
+k8s_yaml('deployments/tempo/dev/local.yaml')
+k8s_resource('tempo', port_forwards='3200:3200')
+
 docker_build('frontend', '.', dockerfile='apps/frontend/Dockerfile')
 k8s_yaml('deployments/frontend/dev/local.yaml')
 k8s_resource('frontend', port_forwards='3000:3000')
