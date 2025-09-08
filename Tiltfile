@@ -22,3 +22,7 @@ k8s_resource('loki', port_forwards='3100:3100')
 docker_build('tempo', 'infrastructure/tempo')
 k8s_yaml('deployments/tempo/dev/local.yaml')
 k8s_resource('tempo', port_forwards='3200:3200')
+
+docker_build('grafana', 'infrastructure/grafana')
+k8s_yaml('deployments/grafana/dev/local.yaml')
+k8s_resource('grafana', port_forwards='3001:3000')
