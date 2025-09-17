@@ -16,6 +16,12 @@ exporters:
   debug:
     verbosity: detailed
 
+  prometheus:
+    endpoint: "0.0.0.0:8889"
+    resource_to_telemetry_conversion:
+      enabled: true
+    enable_open_metrics: true
+
   prometheusremotewrite:
     endpoint: http://prometheus:9090/api/v1/write
     resource_to_telemetry_conversion:
@@ -42,7 +48,7 @@ service:
     metrics:
       receivers: [otlp]
       processors: [batch]
-      exporters: [debug, prometheusremotewrite]
+      exporters: [debug, prometheus, prometheusremotewrite]
     logs:
       receivers: [otlp]
       processors: [batch]
