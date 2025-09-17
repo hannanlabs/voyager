@@ -3,6 +3,7 @@ package telemetry
 import (
 	"context"
 	"log"
+	"runtime"
 	"time"
 
 	"go.opentelemetry.io/otel"
@@ -14,8 +15,11 @@ import (
 )
 
 var (
-	ActiveFlightsGauge   metric.Int64ObservableGauge
-	WebSocketConnections metric.Int64UpDownCounter
+	ActiveFlightsGauge        metric.Int64ObservableGauge
+	WebSocketConnections      metric.Int64UpDownCounter
+	ProcessMemoryGauge        metric.Int64ObservableGauge
+	ProcessCPUTimeCounter     metric.Float64ObservableCounter
+	GoRoutinesGauge          metric.Int64ObservableGauge
 )
 
 func InitMetrics(serviceName string, flightCountFunc func() int) func() {
@@ -66,17 +70,76 @@ func InitMetrics(serviceName string, flightCountFunc func() int) func() {
 		log.Printf("Failed to create websocket_connections counter: %v", err)
 	}
 
+	ProcessMemoryGauge, err = meter.Int64ObservableGauge(
+		"process_resident_memory_bytes",
+		metric.WithDescription("Resident memory size in bytes"),
+		metric.WithUnit("By"),
+	)
+	if err != nil {
+		log.Printf("Failed to create process_resident_memory_bytes gauge: %v", err)
+	}
+
+	ProcessCPUTimeCounter, err = meter.Float64ObservableCounter(
+		"process_cpu_seconds_total",
+		metric.WithDescription("Total user and system CPU time spent in seconds"),
+		metric.WithUnit("s"),
+	)
+	if err != nil {
+		log.Printf("Failed to create process_cpu_seconds_total counter: %v", err)
+	}
+
+	GoRoutinesGauge, err = meter.Int64ObservableGauge(
+		"go_goroutines",
+		metric.WithDescription("Number of goroutines that currently exist"),
+	)
+	if err != nil {
+		log.Printf("Failed to create go_goroutines gauge: %v", err)
+	}
+
+	var observableMetrics []metric.Observable
 	if ActiveFlightsGauge != nil {
+		observableMetrics = append(observableMetrics, ActiveFlightsGauge)
+	}
+	if ProcessMemoryGauge != nil {
+		observableMetrics = append(observableMetrics, ProcessMemoryGauge)
+	}
+	if ProcessCPUTimeCounter != nil {
+		observableMetrics = append(observableMetrics, ProcessCPUTimeCounter)
+	}
+	if GoRoutinesGauge != nil {
+		observableMetrics = append(observableMetrics, GoRoutinesGauge)
+	}
+
+	if len(observableMetrics) > 0 {
 		_, err = meter.RegisterCallback(
 			func(ctx context.Context, o metric.Observer) error {
-				count := flightCountFunc()
-				o.ObserveInt64(ActiveFlightsGauge, int64(count))
+				if ActiveFlightsGauge != nil {
+					count := flightCountFunc()
+					o.ObserveInt64(ActiveFlightsGauge, int64(count))
+				}
+
+				if ProcessMemoryGauge != nil {
+					var m runtime.MemStats
+					runtime.ReadMemStats(&m)
+					o.ObserveInt64(ProcessMemoryGauge, int64(m.Sys))
+				}
+
+				if ProcessCPUTimeCounter != nil {
+					var m runtime.MemStats
+					runtime.ReadMemStats(&m)
+					o.ObserveFloat64(ProcessCPUTimeCounter, float64(m.PauseTotalNs)/1e9)
+				}
+
+				if GoRoutinesGauge != nil {
+					o.ObserveInt64(GoRoutinesGauge, int64(runtime.NumGoroutine()))
+				}
+
 				return nil
 			},
-			ActiveFlightsGauge,
+			observableMetrics...,
 		)
 		if err != nil {
-			log.Printf("Failed to register callback for active_flights gauge: %v", err)
+			log.Printf("Failed to register callback for metrics: %v", err)
 		}
 	}
 
