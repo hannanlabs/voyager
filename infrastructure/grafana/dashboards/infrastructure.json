@@ -108,7 +108,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "rate(process_cpu_seconds_total[5m])",
+          "expr": "rate(process_cpu_seconds_total{job=\"otel-collector\"}[5m])",
           "refId": "A"
         }
       ],
@@ -154,8 +154,6 @@
             }
           },
           "mappings": [],
-          "max": 1,
-          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -165,15 +163,15 @@
               },
               {
                 "color": "yellow",
-                "value": 0.8
+                "value": 536870912
               },
               {
                 "color": "red",
-                "value": 0.95
+                "value": 1073741824
               }
             ]
           },
-          "unit": "percentunit"
+          "unit": "bytes"
         },
         "overrides": []
       },
@@ -201,7 +199,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "process_resident_memory_bytes",
+          "expr": "process_resident_memory_bytes{job=\"otel-collector\"}",
           "refId": "A"
         }
       ],
