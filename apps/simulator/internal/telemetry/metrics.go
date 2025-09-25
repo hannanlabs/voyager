@@ -15,11 +15,11 @@ import (
 )
 
 var (
-	ActiveFlightsGauge        metric.Int64ObservableGauge
-	WebSocketConnections      metric.Int64UpDownCounter
-	ProcessMemoryGauge        metric.Int64ObservableGauge
-	ProcessCPUTimeCounter     metric.Float64ObservableCounter
-	GoRoutinesGauge          metric.Int64ObservableGauge
+	ActiveFlightsGauge    metric.Int64ObservableGauge
+	WebSocketConnections  metric.Int64UpDownCounter
+	ProcessMemoryGauge    metric.Int64ObservableGauge
+	ProcessCPUTimeCounter metric.Float64ObservableCounter
+	GoRoutinesGauge       metric.Int64ObservableGauge
 )
 
 func InitMetrics(serviceName string, flightCountFunc func() int) func() {
