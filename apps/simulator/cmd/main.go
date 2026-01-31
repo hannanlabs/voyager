@@ -9,8 +9,7 @@ import (
 
 	"github.com/hannan/voyager/shared-go/data"
 	"github.com/hannan/voyager/simulator/internal/httpserver"
-	"github.com/hannan/voyager/simulator/internal/simulator"
-	"github.com/hannan/voyager/simulator/internal/simulator/components/airport"
+	"github.com/hannan/voyager/simulator/internal/sim"
 	"github.com/hannan/voyager/simulator/internal/telemetry"
 )
 
@@ -21,37 +20,34 @@ func main() {
 	shutdownLogs := telemetry.InitLogs("flight-simulator")
 	defer shutdownLogs()
 
-	updateHz := data.UpdateHz
-	port := data.ServerPort
-	airportPath := data.AirportPath
-	geoJSONFlightsHz := data.GeoJSONFlightsHz
-	repo := airport.New()
-	repo.Load(airportPath)
+	airports := sim.NewAirportStore()
+	airports.Load(data.AirportPath)
 
-	sim := simulator.NewFlightSimulator(updateHz, geoJSONFlightsHz, repo)
+	simulator := sim.New(data.UpdateHz, data.GeoJSONFlightsHz, airports)
 
-	shutdownMetrics := telemetry.InitMetrics("flight-simulator", sim.FlightCount)
+	shutdownMetrics := telemetry.InitMetrics("flight-simulator", simulator.FlightCount)
 	defer shutdownMetrics()
 
-	router := httpserver.NewRouter(sim, repo)
+	router := httpserver.NewRouter(simulator, airports)
 
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
-	go sim.Start(ctx)
+	go simulator.Start(ctx)
 
 	go func() {
-		if err := httpserver.StartServer(port, router); err != nil {
-			telemetry.LogError("Server failed to start", err, "port", port)
+		if err := httpserver.StartServer(data.ServerPort, router); err != nil {
+			telemetry.LogError("Server failed to start", err, "port", data.ServerPort)
 			log.Fatalf("Server failed to start: %v", err)
 		}
 	}()
 
 	telemetry.LogInfo("Flight Simulator started successfully",
-		"port", port,
-		"updateHz", updateHz,
-		"geoJSONFlightsHz", geoJSONFlightsHz)
+		"port", data.ServerPort,
+		"updateHz", data.UpdateHz,
+		"geoJSONFlightsHz", data.GeoJSONFlightsHz)
 	log.Printf("Flight Simulator started successfully")
+
 	sigChan := make(chan os.Signal, 1)
 	signal.Notify(sigChan, syscall.SIGINT, syscall.SIGTERM)
 	<-sigChan
