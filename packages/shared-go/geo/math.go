@@ -4,44 +4,33 @@ import (
 	"math"
 
 	"github.com/hannan/voyager/shared-go/flight"
+	"github.com/paulmach/orb"
+	"github.com/paulmach/orb/geo"
 )
 
 func CalculateBearing(from, to flight.Position) float64 {
-	lat1, lat2 := from.Latitude*math.Pi/180, to.Latitude*math.Pi/180
-	deltaLon := (to.Longitude - from.Longitude) * math.Pi / 180
-	y := math.Sin(deltaLon) * math.Cos(lat2)
-	x := math.Cos(lat1)*math.Sin(lat2) - math.Sin(lat1)*math.Cos(lat2)*math.Cos(deltaLon)
-	return math.Mod(math.Atan2(y, x)*180/math.Pi+360, 360)
+	p1 := orb.Point{from.Longitude, from.Latitude}
+	p2 := orb.Point{to.Longitude, to.Latitude}
+	return geo.Bearing(p1, p2)
 }
 
 func CalculateDistance(from, to flight.Position) float64 {
-	lat1, lat2 := from.Latitude*math.Pi/180, to.Latitude*math.Pi/180
-	deltaLat := (to.Latitude - from.Latitude) * math.Pi / 180
-	deltaLon := (to.Longitude - from.Longitude) * math.Pi / 180
-	a := math.Sin(deltaLat/2)*math.Sin(deltaLat/2) + math.Cos(lat1)*math.Cos(lat2)*math.Sin(deltaLon/2)*math.Sin(deltaLon/2)
-	return 3440.065 * 2 * math.Atan2(math.Sqrt(a), math.Sqrt(1-a))
+	p1 := orb.Point{from.Longitude, from.Latitude}
+	p2 := orb.Point{to.Longitude, to.Latitude}
+	return geo.Distance(p1, p2) / 1852.0
 }
 
 func InterpolatePosition(from, to flight.Position, progress float64) flight.Position {
-	lat1, lon1 := from.Latitude*math.Pi/180, from.Longitude*math.Pi/180
-	lat2, lon2 := to.Latitude*math.Pi/180, to.Longitude*math.Pi/180
-	deltaLat, deltaLon := lat2-lat1, lon2-lon1
-	a := math.Sin(deltaLat/2)*math.Sin(deltaLat/2) + math.Cos(lat1)*math.Cos(lat2)*math.Sin(deltaLon/2)*math.Sin(deltaLon/2)
-	d := 2 * math.Atan2(math.Sqrt(a), math.Sqrt(1-a))
-	if d < 1e-6 {
-		return flight.Position{
-			Latitude:  from.Latitude + (to.Latitude-from.Latitude)*progress,
-			Longitude: from.Longitude + (to.Longitude-from.Longitude)*progress,
-			Altitude:  from.Altitude,
-		}
-	}
-	A, B := math.Sin((1-progress)*d)/math.Sin(d), math.Sin(progress*d)/math.Sin(d)
-	x := A*math.Cos(lat1)*math.Cos(lon1) + B*math.Cos(lat2)*math.Cos(lon2)
-	y := A*math.Cos(lat1)*math.Sin(lon1) + B*math.Cos(lat2)*math.Sin(lon2)
-	z := A*math.Sin(lat1) + B*math.Sin(lat2)
+	p1 := orb.Point{from.Longitude, from.Latitude}
+	p2 := orb.Point{to.Longitude, to.Latitude}
+
+	bearing := geo.Bearing(p1, p2)
+	totalDist := geo.Distance(p1, p2)
+	result := geo.PointAtBearingAndDistance(p1, bearing, totalDist*progress)
+
 	return flight.Position{
-		Latitude:  math.Atan2(z, math.Sqrt(x*x+y*y)) * 180 / math.Pi,
-		Longitude: math.Atan2(y, x) * 180 / math.Pi,
+		Latitude:  result.Lat(),
+		Longitude: result.Lon(),
 		Altitude:  from.Altitude,
 	}
 }
