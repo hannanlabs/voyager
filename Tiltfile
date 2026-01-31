@@ -1,5 +1,6 @@
 
-docker_build('frontend', '.', dockerfile='apps/frontend/Dockerfile')
+docker_build('frontend', '.', dockerfile='apps/frontend/Dockerfile',
+    build_args={'NEXT_PUBLIC_MAPBOX_TOKEN': os.getenv('NEXT_PUBLIC_MAPBOX_TOKEN', '')})
 k8s_yaml('deployments/frontend/dev/local.yaml')
 k8s_resource('frontend', port_forwards='3000:3000')
 
