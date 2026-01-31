@@ -111,20 +111,18 @@ func (s *Simulator) buildFlightsGeoJSON() geojson.FeatureCollection {
 // ============================================================================
 
 type flightStore struct {
-	mu            sync.RWMutex
-	flights       map[string]*flight.State
-	landedFlights map[string]time.Time
-	lastTickAt    time.Time
-	lastSpawnAt   time.Time
+	mu          sync.RWMutex
+	flights     map[string]*flight.State
+	lastTickAt  time.Time
+	lastSpawnAt time.Time
 }
 
 func newFlightStore() *flightStore {
 	now := time.Now()
 	return &flightStore{
-		flights:       make(map[string]*flight.State),
-		landedFlights: make(map[string]time.Time),
-		lastTickAt:    now,
-		lastSpawnAt:   now,
+		flights:     make(map[string]*flight.State),
+		lastTickAt:  now,
+		lastSpawnAt: now,
 	}
 }
 
@@ -177,21 +175,13 @@ func (s *flightStore) update(updateHz int, airports *AirportStore) {
 	positions := airports.Positions
 
 	for id, f := range s.flights {
-		fromPos, toPos := positions[f.DepartureAirport], positions[f.ArrivalAirport]
-
+		// Remove landed flights immediately
 		if f.Phase == flight.Landed {
-			if landedAt, exists := s.landedFlights[id]; exists {
-				if now.Sub(landedAt) > 10*time.Second {
-					toRemove = append(toRemove, id)
-					continue
-				}
-			} else {
-				s.landedFlights[id] = now
-			}
-			f.LastComputedAt = now.Format(time.RFC3339)
-			f.TraceID = generateTraceID()
+			toRemove = append(toRemove, id)
 			continue
 		}
+
+		fromPos, toPos := positions[f.DepartureAirport], positions[f.ArrivalAirport]
 
 		f.Position = geo.GreatCircleStep(f.Position, toPos, f.Speed, dt)
 		f.Bearing = geo.CalculateBearing(f.Position, toPos)
@@ -216,13 +206,13 @@ func (s *flightStore) update(updateHz int, airports *AirportStore) {
 		if (f.DistanceRemaining < 15.0 && f.Altitude < 500 && f.Speed < 15000) || f.Progress >= 1.0 {
 			f.Phase, f.DistanceRemaining, f.Progress = flight.Landed, 0, 1.0
 		}
+
 		f.LastComputedAt = now.Format(time.RFC3339)
 		f.TraceID = generateTraceID()
 	}
 
 	for _, id := range toRemove {
 		delete(s.flights, id)
-		delete(s.landedFlights, id)
 	}
 }
 
@@ -287,8 +277,6 @@ func createFlight(dep, arr, airline, callSign string, positions map[string]fligh
 
 func calculatePhase(f *flight.State) flight.Phase {
 	switch {
-	case f.Phase == flight.Landed:
-		return flight.Landed
 	case f.Progress < 0.15 && f.Altitude < 15000 && f.Speed < 15000:
 		return flight.Takeoff
 	case f.Progress < 0.25 && f.Altitude < 40000:
