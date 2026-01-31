@@ -1,4 +1,4 @@
-package geo
+package geomath
 
 import (
 	"math"

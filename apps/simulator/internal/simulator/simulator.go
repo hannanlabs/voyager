@@ -18,8 +18,8 @@ import (
 	"github.com/gorilla/websocket"
 	"github.com/hannan/voyager/shared-go/data"
 	"github.com/hannan/voyager/shared-go/flight"
-	"github.com/hannan/voyager/shared-go/geo"
 	"github.com/hannan/voyager/shared-go/geojson"
+	"github.com/hannan/voyager/shared-go/geomath"
 )
 
 // ============================================================================
@@ -183,13 +183,13 @@ func (s *flightStore) update(updateHz int, airports *AirportStore) {
 
 		fromPos, toPos := positions[f.DepartureAirport], positions[f.ArrivalAirport]
 
-		f.Position = geo.GreatCircleStep(f.Position, toPos, f.Speed, dt)
-		f.Bearing = geo.CalculateBearing(f.Position, toPos)
-		f.Velocity = geo.SpeedToVelocity(f.Speed, f.Bearing)
+		f.Position = geomath.GreatCircleStep(f.Position, toPos, f.Speed, dt)
+		f.Bearing = geomath.CalculateBearing(f.Position, toPos)
+		f.Velocity = geomath.SpeedToVelocity(f.Speed, f.Bearing)
 		f.Altitude = f.Position.Altitude
-		f.DistanceRemaining = geo.CalculateDistance(f.Position, toPos)
+		f.DistanceRemaining = geomath.CalculateDistance(f.Position, toPos)
 
-		if totalDist := geo.CalculateDistance(fromPos, toPos); totalDist > 0.1 {
+		if totalDist := geomath.CalculateDistance(fromPos, toPos); totalDist > 0.1 {
 			f.Progress = math.Max(0, math.Min(1, 1.0-(f.DistanceRemaining/totalDist)))
 		}
 		if f.DistanceRemaining < 50 {
@@ -259,14 +259,14 @@ func createFlight(dep, arr, airline, callSign string, positions map[string]fligh
 	}
 	fromPos, toPos := positions[dep], positions[arr]
 	fromPos.Altitude = 2000 + mathrand.Float64()*8000
-	bearing := geo.CalculateBearing(fromPos, toPos)
+	bearing := geomath.CalculateBearing(fromPos, toPos)
 	now := time.Now()
 	return &flight.State{
 		ID: fmt.Sprintf("%s-%s-%s", callSign, dep, arr), CallSign: callSign, Airline: airline,
 		DepartureAirport: dep, ArrivalAirport: arr, Phase: flight.Takeoff,
-		Position: fromPos, Velocity: geo.SpeedToVelocity(data.SpeedTakeoff, bearing),
+		Position: fromPos, Velocity: geomath.SpeedToVelocity(data.SpeedTakeoff, bearing),
 		Bearing: bearing, Speed: data.SpeedTakeoff, Altitude: fromPos.Altitude,
-		Progress: 0, DistanceRemaining: geo.CalculateDistance(fromPos, toPos),
+		Progress: 0, DistanceRemaining: geomath.CalculateDistance(fromPos, toPos),
 		ScheduledDeparture: now.Format(time.RFC3339),
 		ScheduledArrival:   now.Add(6 * time.Hour).Format(time.RFC3339),
 		EstimatedArrival:   now.Add(6*time.Hour + time.Duration((mathrand.Float64()-0.5)*30)*time.Minute).Format(time.RFC3339),
