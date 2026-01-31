@@ -1,0 +1,683 @@
+package simulator
+
+import (
+	"context"
+	"crypto/rand"
+	"crypto/sha256"
+	"encoding/hex"
+	"encoding/json"
+	"fmt"
+	"log"
+	"math"
+	mathrand "math/rand"
+	"net/http"
+	"os"
+	"strconv"
+	"sync"
+	"sync/atomic"
+	"time"
+
+	"github.com/gorilla/websocket"
+	"github.com/hannan/voyager/shared-go/data"
+	"github.com/hannan/voyager/shared-go/flight"
+	"github.com/hannan/voyager/simulator/internal/telemetry"
+	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+	"go.opentelemetry.io/otel"
+	"go.opentelemetry.io/otel/attribute"
+)
+
+// ============================================================================
+// Simulator - Main entry point
+// ============================================================================
+
+type Simulator struct {
+	updateHz         int
+	geoJSONFlightsHz int
+	flights          *flightStore
+	clients          *clientStore
+	geojson          *geoJSONBuilder
+	airports         *AirportStore
+}
+
+func New(updateHz, geoJSONFlightsHz int, airports *AirportStore) *Simulator {
+	s := &Simulator{
+		updateHz:         updateHz,
+		geoJSONFlightsHz: geoJSONFlightsHz,
+		flights:          newFlightStore(),
+		clients:          newClientStore(),
+		geojson:          newGeoJSONBuilder(),
+		airports:         airports,
+	}
+	s.flights.generateBurst(50, s.airports)
+	return s
+}
+
+func (s *Simulator) Start(ctx context.Context) {
+	ticker := time.NewTicker(time.Duration(1000/s.updateHz) * time.Millisecond)
+	defer ticker.Stop()
+
+	for {
+		select {
+		case <-ctx.Done():
+			return
+		case <-ticker.C:
+			s.flights.update(s.updateHz, s.airports)
+			s.broadcast()
+		}
+	}
+}
+
+func (s *Simulator) broadcast() {
+	if s.clients.count() == 0 || !s.geojson.shouldBroadcast(s.geoJSONFlightsHz) {
+		return
+	}
+	fc := s.geojson.build(s.flights.getAll())
+	if data, err := s.geojson.marshal(fc); err == nil {
+		s.clients.broadcast(data)
+	}
+}
+
+func (s *Simulator) FlightCount() int {
+	return s.flights.count()
+}
+
+// ============================================================================
+// HTTP Server & Router
+// ============================================================================
+
+func StartServer(port string, handler http.Handler) error {
+	log.Printf("Starting server on :%s", port)
+	return http.ListenAndServe(":"+port, handler)
+}
+
+func NewRouter(s *Simulator, airports *AirportStore) http.Handler {
+	mux := http.NewServeMux()
+	mux.HandleFunc("/healthz", healthzHandler)
+	mux.HandleFunc("/readyz", readyzHandler)
+	mux.HandleFunc("/ws/flights", s.wsFlightsHandler)
+	mux.HandleFunc("/geojson/airports", airportsHandler(airports))
+	mux.HandleFunc("/geojson/flights/route", flightRouteHandler(s, airports))
+	return otelhttp.NewHandler(corsMiddleware(mux), "flight-simulator")
+}
+
+func corsMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if origin := r.Header.Get("Origin"); origin == "http://localhost:3000" {
+			w.Header().Set("Access-Control-Allow-Origin", origin)
+		}
+		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+		if r.Method == http.MethodOptions {
+			w.WriteHeader(http.StatusOK)
+			return
+		}
+		next.ServeHTTP(w, r)
+	})
+}
+
+func healthzHandler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte("OK"))
+}
+
+func readyzHandler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte("OK"))
+}
+
+func airportsHandler(airports *AirportStore) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodGet {
+			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+			return
+		}
+		if !airports.Loaded {
+			http.Error(w, "Airport data not loaded", http.StatusInternalServerError)
+			return
+		}
+		w.Header().Set("Content-Type", "application/json")
+		w.Header().Set("Cache-Control", "public, max-age=86400, immutable")
+		w.Header().Set("ETag", airports.ETag)
+		if r.Header.Get("If-None-Match") == airports.ETag {
+			w.WriteHeader(http.StatusNotModified)
+			return
+		}
+		w.Write(airports.RawJSON)
+	}
+}
+
+func flightRouteHandler(s *Simulator, airports *AirportStore) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodGet {
+			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+			return
+		}
+		flightID := r.URL.Query().Get("id")
+		if flightID == "" {
+			http.Error(w, "Missing required parameter: id", http.StatusBadRequest)
+			return
+		}
+		n := 128
+		if nStr := r.URL.Query().Get("n"); nStr != "" {
+			if parsed, err := strconv.Atoi(nStr); err == nil && parsed > 0 {
+				n = parsed
+			}
+		}
+		f, exists := s.flights.get(flightID)
+		if !exists {
+			http.Error(w, "Flight not found", http.StatusNotFound)
+			return
+		}
+		fromPos, toPos := airports.Positions[f.DepartureAirport], airports.Positions[f.ArrivalAirport]
+		coords := generateGreatCircleCoordinates(fromPos, toPos, n)
+		feature := newLineStringFeature(coords, map[string]interface{}{
+			"id": f.ID, "callSign": f.CallSign, "from": f.DepartureAirport, "to": f.ArrivalAirport,
+		})
+		w.Header().Set("Content-Type", "application/json")
+		w.Header().Set("Cache-Control", "public, max-age=60")
+		json.NewEncoder(w).Encode(newFeatureCollection([]geoJSONFeature{feature}))
+	}
+}
+
+var wsUpgrader = websocket.Upgrader{
+	CheckOrigin: func(r *http.Request) bool { return r.Header.Get("Origin") == "http://localhost:3000" },
+}
+
+func (s *Simulator) wsFlightsHandler(w http.ResponseWriter, r *http.Request) {
+	tracer := otel.Tracer("flight-simulator")
+	_, span := tracer.Start(r.Context(), "websocket.upgrade")
+	defer span.End()
+
+	conn, err := wsUpgrader.Upgrade(w, r, nil)
+	if err != nil {
+		span.RecordError(err)
+		telemetry.LogError("WebSocket upgrade failed", err, "remote_addr", r.RemoteAddr)
+		return
+	}
+	span.SetAttributes(attribute.String("websocket.status", "connected"))
+	s.clients.add(conn)
+	log.Printf("WebSocket client connected")
+
+	go s.clients.sendInitial(conn, s.geojson.build(s.flights.getAll()))
+
+	defer func() {
+		s.clients.remove(conn)
+		log.Printf("WebSocket client disconnected")
+	}()
+
+	for {
+		if _, _, err := conn.ReadMessage(); err != nil {
+			if websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseAbnormalClosure) {
+				telemetry.LogError("WebSocket error", err)
+			}
+			break
+		}
+	}
+}
+
+// ============================================================================
+// FlightStore - Flight state and physics
+// ============================================================================
+
+type flightStore struct {
+	mu            sync.RWMutex
+	flights       map[string]*flight.State
+	landedFlights map[string]time.Time
+	lastTickAt    time.Time
+	lastSpawnAt   time.Time
+}
+
+func newFlightStore() *flightStore {
+	now := time.Now()
+	return &flightStore{
+		flights:       make(map[string]*flight.State),
+		landedFlights: make(map[string]time.Time),
+		lastTickAt:    now,
+		lastSpawnAt:   now,
+	}
+}
+
+func (s *flightStore) get(id string) (*flight.State, bool) {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	f, ok := s.flights[id]
+	return f, ok
+}
+
+func (s *flightStore) getAll() map[string]*flight.State {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	result := make(map[string]*flight.State, len(s.flights))
+	for id, f := range s.flights {
+		result[id] = f
+	}
+	return result
+}
+
+func (s *flightStore) add(f *flight.State) {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	s.flights[f.ID] = f
+}
+
+func (s *flightStore) count() int {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	return len(s.flights)
+}
+
+func (s *flightStore) update(updateHz int, airports *AirportStore) {
+	now := time.Now()
+	dt := now.Sub(s.lastTickAt).Seconds()
+	s.lastTickAt = now
+	if dt > 5.0 {
+		dt = 1.0 / float64(updateHz)
+	}
+	if dt < 0.001 {
+		dt = 0.001
+	}
+
+	s.dynamicSpawn(now, airports)
+
+	s.mu.Lock()
+	defer s.mu.Unlock()
+
+	var toRemove []string
+	positions := airports.Positions
+
+	for id, f := range s.flights {
+		fromPos, toPos := positions[f.DepartureAirport], positions[f.ArrivalAirport]
+
+		if f.Phase == flight.Landed {
+			if landedAt, exists := s.landedFlights[id]; exists {
+				if now.Sub(landedAt) > 10*time.Second {
+					toRemove = append(toRemove, id)
+					continue
+				}
+			} else {
+				s.landedFlights[id] = now
+			}
+			f.LastComputedAt = now.Format(time.RFC3339)
+			f.TraceID = generateTraceID()
+			continue
+		}
+
+		f.Position = greatCircleStep(f.Position, toPos, f.Speed, dt)
+		f.Bearing = calculateBearing(f.Position, toPos)
+		f.Velocity = speedToVelocity(f.Speed, f.Bearing)
+		f.Altitude = f.Position.Altitude
+		f.DistanceRemaining = calculateDistance(f.Position, toPos)
+
+		if totalDist := calculateDistance(fromPos, toPos); totalDist > 0.1 {
+			f.Progress = math.Max(0, math.Min(1, 1.0-(f.DistanceRemaining/totalDist)))
+		}
+		if f.DistanceRemaining < 50 {
+			f.Speed = data.SpeedLanding
+		}
+		if f.Speed > 50 {
+			f.EstimatedArrival = now.Add(time.Duration(f.DistanceRemaining / f.Speed * float64(time.Hour))).Format(time.RFC3339)
+		}
+
+		if newPhase := calculatePhase(f); newPhase != f.Phase {
+			f.Phase = newPhase
+			f.Speed = speedForPhase(f.Phase)
+		}
+		if (f.DistanceRemaining < 15.0 && f.Altitude < 500 && f.Speed < 15000) || f.Progress >= 1.0 {
+			f.Phase, f.DistanceRemaining, f.Progress = flight.Landed, 0, 1.0
+		}
+		f.LastComputedAt = now.Format(time.RFC3339)
+		f.TraceID = generateTraceID()
+	}
+
+	for _, id := range toRemove {
+		delete(s.flights, id)
+		delete(s.landedFlights, id)
+	}
+}
+
+func (s *flightStore) dynamicSpawn(now time.Time, airports *AirportStore) {
+	count := s.count()
+	if count >= 2200 {
+		return
+	}
+	var interval time.Duration
+	var burst int
+	if count < 2000 {
+		progress := float64(count) / 2000
+		interval = time.Duration(5+15*progress) * time.Second
+		burst = int(30 - 25*progress + mathrand.Float64()*10)
+	} else {
+		interval, burst = 30*time.Second, int(5+mathrand.Float64()*10)
+	}
+	if now.Sub(s.lastSpawnAt) >= interval {
+		s.generateBurst(burst, airports)
+		s.lastSpawnAt = now
+	}
+}
+
+func (s *flightStore) generateBurst(count int, airports *AirportStore) {
+	codes := airports.Codes
+	if len(codes) <= 1 {
+		return
+	}
+	for i := 0; i < count; i++ {
+		dep, arr := codes[mathrand.Intn(len(codes))], codes[mathrand.Intn(len(codes))]
+		for arr == dep {
+			arr = codes[mathrand.Intn(len(codes))]
+		}
+		airline := data.Airlines[mathrand.Intn(len(data.Airlines))]
+		if f := createFlight(dep, arr, airline.Name, fmt.Sprintf("%s%d", airline.ICAOCode, i+1), airports.Positions); f != nil {
+			s.add(f)
+		}
+	}
+}
+
+func createFlight(dep, arr, airline, callSign string, positions map[string]flight.Position) *flight.State {
+	if dep == arr {
+		return nil
+	}
+	fromPos, toPos := positions[dep], positions[arr]
+	fromPos.Altitude = 2000 + mathrand.Float64()*8000
+	bearing := calculateBearing(fromPos, toPos)
+	now := time.Now()
+	return &flight.State{
+		ID: fmt.Sprintf("%s-%s-%s", callSign, dep, arr), CallSign: callSign, Airline: airline,
+		DepartureAirport: dep, ArrivalAirport: arr, Phase: flight.Takeoff,
+		Position: fromPos, Velocity: speedToVelocity(data.SpeedTakeoff, bearing),
+		Bearing: bearing, Speed: data.SpeedTakeoff, Altitude: fromPos.Altitude,
+		Progress: 0, DistanceRemaining: calculateDistance(fromPos, toPos),
+		ScheduledDeparture: now.Format(time.RFC3339),
+		ScheduledArrival:   now.Add(6 * time.Hour).Format(time.RFC3339),
+		EstimatedArrival:   now.Add(6*time.Hour + time.Duration((mathrand.Float64()-0.5)*30)*time.Minute).Format(time.RFC3339),
+		LastComputedAt:     now.Format(time.RFC3339),
+		TraceID:            generateTraceID(),
+	}
+}
+
+func calculatePhase(f *flight.State) flight.Phase {
+	switch {
+	case f.Phase == flight.Landed:
+		return flight.Landed
+	case f.Progress < 0.15 && f.Altitude < 15000 && f.Speed < 15000:
+		return flight.Takeoff
+	case f.Progress < 0.25 && f.Altitude < 40000:
+		return flight.Climb
+	case (f.DistanceRemaining < 50 || f.Progress > 0.90) && f.Altitude < 8000 && f.Speed < 21000:
+		return flight.Landing
+	case f.Progress > 0.75 && (f.Altitude < 45000 || f.DistanceRemaining < 200):
+		return flight.Descent
+	default:
+		return flight.Cruise
+	}
+}
+
+func speedForPhase(phase flight.Phase) float64 {
+	speeds := map[flight.Phase]float64{
+		flight.Takeoff: data.SpeedTakeoff, flight.Climb: data.SpeedClimb,
+		flight.Cruise: data.SpeedCruise, flight.Descent: data.SpeedDescent, flight.Landing: data.SpeedLanding,
+	}
+	return speeds[phase]
+}
+
+// ============================================================================
+// ClientStore - WebSocket clients
+// ============================================================================
+
+type clientStore struct {
+	mu      sync.RWMutex
+	clients map[*websocket.Conn]bool
+}
+
+func newClientStore() *clientStore {
+	return &clientStore{clients: make(map[*websocket.Conn]bool)}
+}
+
+func (s *clientStore) add(conn *websocket.Conn) {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	s.clients[conn] = true
+}
+
+func (s *clientStore) remove(conn *websocket.Conn) {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	if _, exists := s.clients[conn]; exists {
+		delete(s.clients, conn)
+		conn.Close()
+	}
+}
+
+func (s *clientStore) count() int {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	return len(s.clients)
+}
+
+func (s *clientStore) getAll() []*websocket.Conn {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	result := make([]*websocket.Conn, 0, len(s.clients))
+	for c := range s.clients {
+		result = append(result, c)
+	}
+	return result
+}
+
+func (s *clientStore) sendInitial(conn *websocket.Conn, fc geoJSONFeatureCollection) {
+	msg := flightsGeoJSONMessage{Type: "flights_geojson", FeatureCollection: fc, Seq: 0, ServerTimestamp: time.Now().UnixMilli()}
+	if data, err := json.Marshal(msg); err == nil {
+		conn.SetWriteDeadline(time.Now().Add(5 * time.Second))
+		conn.WriteMessage(websocket.TextMessage, data)
+	}
+}
+
+func (s *clientStore) broadcast(data []byte) {
+	for _, c := range s.getAll() {
+		c.SetWriteDeadline(time.Now().Add(5 * time.Second))
+		if err := c.WriteMessage(websocket.TextMessage, data); err != nil {
+			log.Printf("Error broadcasting: %v", err)
+			s.remove(c)
+		}
+	}
+}
+
+// ============================================================================
+// GeoJSONBuilder
+// ============================================================================
+
+type geoJSONBuilder struct {
+	lastBroadcast time.Time
+	seq           int64
+}
+
+func newGeoJSONBuilder() *geoJSONBuilder {
+	return &geoJSONBuilder{lastBroadcast: time.Now()}
+}
+
+func (b *geoJSONBuilder) shouldBroadcast(hz int) bool {
+	now := time.Now()
+	if now.Sub(b.lastBroadcast) < time.Second/time.Duration(hz) {
+		return false
+	}
+	b.lastBroadcast = now
+	return true
+}
+
+func (b *geoJSONBuilder) build(flights map[string]*flight.State) geoJSONFeatureCollection {
+	features := make([]geoJSONFeature, 0, len(flights))
+	for _, f := range flights {
+		features = append(features, newPointFeature(f.Position.Longitude, f.Position.Latitude, f.Position.Altitude, map[string]interface{}{
+			"id": f.ID, "callSign": f.CallSign, "airline": f.Airline,
+			"departureAirport": f.DepartureAirport, "arrivalAirport": f.ArrivalAirport,
+			"phase": string(f.Phase), "bearing": f.Bearing, "speed": f.Speed,
+			"altitude": f.Position.Altitude, "progress": f.Progress, "distanceRemaining": f.DistanceRemaining,
+			"scheduledDeparture": f.ScheduledDeparture, "scheduledArrival": f.ScheduledArrival,
+			"estimatedArrival": f.EstimatedArrival, "lastComputedAt": f.LastComputedAt, "traceID": f.TraceID,
+		}))
+	}
+	return newFeatureCollection(features)
+}
+
+func (b *geoJSONBuilder) marshal(fc geoJSONFeatureCollection) ([]byte, error) {
+	atomic.AddInt64(&b.seq, 1)
+	return json.Marshal(flightsGeoJSONMessage{Type: "flights_geojson", FeatureCollection: fc, Seq: b.seq, ServerTimestamp: time.Now().UnixMilli()})
+}
+
+// ============================================================================
+// AirportStore
+// ============================================================================
+
+type AirportStore struct {
+	RawJSON   []byte
+	ETag      string
+	Positions map[string]flight.Position
+	Codes     []string
+	Loaded    bool
+}
+
+func NewAirportStore() *AirportStore {
+	return &AirportStore{Positions: make(map[string]flight.Position)}
+}
+
+func (s *AirportStore) Load(path string) error {
+	raw, err := os.ReadFile(path)
+	if err != nil {
+		return err
+	}
+	var geoJSON struct {
+		Features []struct {
+			Geometry struct {
+				Coordinates []float64 `json:"coordinates"`
+			} `json:"geometry"`
+			Properties map[string]interface{} `json:"properties"`
+		} `json:"features"`
+	}
+	if err := json.Unmarshal(raw, &geoJSON); err != nil {
+		return err
+	}
+	s.Positions = make(map[string]flight.Position)
+	s.Codes = make([]string, 0, len(geoJSON.Features))
+	for _, f := range geoJSON.Features {
+		if iata, ok := f.Properties["iata"].(string); ok && iata != "" && len(f.Geometry.Coordinates) >= 2 {
+			s.Positions[iata] = flight.Position{Longitude: f.Geometry.Coordinates[0], Latitude: f.Geometry.Coordinates[1]}
+			s.Codes = append(s.Codes, iata)
+		}
+	}
+	s.RawJSON = raw
+	hash := sha256.Sum256(raw)
+	s.ETag = hex.EncodeToString(hash[:])
+	s.Loaded = true
+	return nil
+}
+
+// ============================================================================
+// GeoJSON Types
+// ============================================================================
+
+type geoJSONGeometry struct {
+	Type        string      `json:"type"`
+	Coordinates interface{} `json:"coordinates"`
+}
+
+type geoJSONFeature struct {
+	Type       string                 `json:"type"`
+	Geometry   geoJSONGeometry        `json:"geometry"`
+	Properties map[string]interface{} `json:"properties"`
+}
+
+type geoJSONFeatureCollection struct {
+	Type     string           `json:"type"`
+	Features []geoJSONFeature `json:"features"`
+}
+
+type flightsGeoJSONMessage struct {
+	Type              string                   `json:"type"`
+	FeatureCollection geoJSONFeatureCollection `json:"featureCollection"`
+	Seq               int64                    `json:"seq"`
+	ServerTimestamp   int64                    `json:"serverTimestamp"`
+}
+
+func newFeatureCollection(features []geoJSONFeature) geoJSONFeatureCollection {
+	return geoJSONFeatureCollection{Type: "FeatureCollection", Features: features}
+}
+
+func newPointFeature(lon, lat, alt float64, props map[string]interface{}) geoJSONFeature {
+	return geoJSONFeature{Type: "Feature", Geometry: geoJSONGeometry{Type: "Point", Coordinates: []float64{lon, lat, alt}}, Properties: props}
+}
+
+func newLineStringFeature(coords [][]float64, props map[string]interface{}) geoJSONFeature {
+	return geoJSONFeature{Type: "Feature", Geometry: geoJSONGeometry{Type: "LineString", Coordinates: coords}, Properties: props}
+}
+
+// ============================================================================
+// Math Helpers
+// ============================================================================
+
+func calculateBearing(from, to flight.Position) float64 {
+	lat1, lat2 := from.Latitude*math.Pi/180, to.Latitude*math.Pi/180
+	deltaLon := (to.Longitude - from.Longitude) * math.Pi / 180
+	y := math.Sin(deltaLon) * math.Cos(lat2)
+	x := math.Cos(lat1)*math.Sin(lat2) - math.Sin(lat1)*math.Cos(lat2)*math.Cos(deltaLon)
+	return math.Mod(math.Atan2(y, x)*180/math.Pi+360, 360)
+}
+
+func calculateDistance(from, to flight.Position) float64 {
+	lat1, lat2 := from.Latitude*math.Pi/180, to.Latitude*math.Pi/180
+	deltaLat := (to.Latitude - from.Latitude) * math.Pi / 180
+	deltaLon := (to.Longitude - from.Longitude) * math.Pi / 180
+	a := math.Sin(deltaLat/2)*math.Sin(deltaLat/2) + math.Cos(lat1)*math.Cos(lat2)*math.Sin(deltaLon/2)*math.Sin(deltaLon/2)
+	return 3440.065 * 2 * math.Atan2(math.Sqrt(a), math.Sqrt(1-a))
+}
+
+func interpolatePosition(from, to flight.Position, progress float64) flight.Position {
+	lat1, lon1 := from.Latitude*math.Pi/180, from.Longitude*math.Pi/180
+	lat2, lon2 := to.Latitude*math.Pi/180, to.Longitude*math.Pi/180
+	deltaLat, deltaLon := lat2-lat1, lon2-lon1
+	a := math.Sin(deltaLat/2)*math.Sin(deltaLat/2) + math.Cos(lat1)*math.Cos(lat2)*math.Sin(deltaLon/2)*math.Sin(deltaLon/2)
+	d := 2 * math.Atan2(math.Sqrt(a), math.Sqrt(1-a))
+	if d < 1e-6 {
+		return flight.Position{Latitude: from.Latitude + (to.Latitude-from.Latitude)*progress, Longitude: from.Longitude + (to.Longitude-from.Longitude)*progress, Altitude: from.Altitude}
+	}
+	A, B := math.Sin((1-progress)*d)/math.Sin(d), math.Sin(progress*d)/math.Sin(d)
+	x := A*math.Cos(lat1)*math.Cos(lon1) + B*math.Cos(lat2)*math.Cos(lon2)
+	y := A*math.Cos(lat1)*math.Sin(lon1) + B*math.Cos(lat2)*math.Sin(lon2)
+	z := A*math.Sin(lat1) + B*math.Sin(lat2)
+	return flight.Position{Latitude: math.Atan2(z, math.Sqrt(x*x+y*y)) * 180 / math.Pi, Longitude: math.Atan2(y, x) * 180 / math.Pi, Altitude: from.Altitude}
+}
+
+func speedToVelocity(speed, bearing float64) flight.Velocity {
+	rad := bearing * math.Pi / 180
+	return flight.Velocity{X: speed * math.Sin(rad), Y: speed * math.Cos(rad), Z: 0}
+}
+
+func greatCircleStep(current, dest flight.Position, speed, dt float64) flight.Position {
+	dist := calculateDistance(current, dest)
+	if dist < 0.1 {
+		return dest
+	}
+	step := speed * dt / 3600.0
+	if speed > 10000 {
+		step *= 2.0
+	}
+	if step >= dist {
+		return dest
+	}
+	return interpolatePosition(current, dest, step/dist)
+}
+
+func generateGreatCircleCoordinates(from, to flight.Position, n int) [][]float64 {
+	coords := make([][]float64, n+1)
+	for i := 0; i <= n; i++ {
+		pos := interpolatePosition(from, to, float64(i)/float64(n))
+		coords[i] = []float64{pos.Longitude, pos.Latitude}
+	}
+	return coords
+}
+
+func generateTraceID() string {
+	bytes := make([]byte, 16)
+	if _, err := rand.Read(bytes); err != nil {
+		return fmt.Sprintf("%016x%016x", time.Now().UnixNano(), mathrand.Int63())
+	}
+	return hex.EncodeToString(bytes)
+}

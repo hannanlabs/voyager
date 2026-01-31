@@ -8,8 +8,7 @@ import (
 	"syscall"
 
 	"github.com/hannan/voyager/shared-go/data"
-	"github.com/hannan/voyager/simulator/internal/httpserver"
-	"github.com/hannan/voyager/simulator/internal/sim"
+	"github.com/hannan/voyager/simulator/internal/simulator"
 	"github.com/hannan/voyager/simulator/internal/telemetry"
 )
 
@@ -20,23 +19,23 @@ func main() {
 	shutdownLogs := telemetry.InitLogs("flight-simulator")
 	defer shutdownLogs()
 
-	airports := sim.NewAirportStore()
+	airports := simulator.NewAirportStore()
 	airports.Load(data.AirportPath)
 
-	simulator := sim.New(data.UpdateHz, data.GeoJSONFlightsHz, airports)
+	sim := simulator.New(data.UpdateHz, data.GeoJSONFlightsHz, airports)
 
-	shutdownMetrics := telemetry.InitMetrics("flight-simulator", simulator.FlightCount)
+	shutdownMetrics := telemetry.InitMetrics("flight-simulator", sim.FlightCount)
 	defer shutdownMetrics()
 
-	router := httpserver.NewRouter(simulator, airports)
+	router := simulator.NewRouter(sim, airports)
 
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
-	go simulator.Start(ctx)
+	go sim.Start(ctx)
 
 	go func() {
-		if err := httpserver.StartServer(data.ServerPort, router); err != nil {
+		if err := simulator.StartServer(data.ServerPort, router); err != nil {
 			telemetry.LogError("Server failed to start", err, "port", data.ServerPort)
 			log.Fatalf("Server failed to start: %v", err)
 		}
