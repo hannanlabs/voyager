@@ -20,6 +20,8 @@ import (
 	"github.com/gorilla/websocket"
 	"github.com/hannan/voyager/shared-go/data"
 	"github.com/hannan/voyager/shared-go/flight"
+	"github.com/hannan/voyager/shared-go/geo"
+	"github.com/hannan/voyager/shared-go/geojson"
 	"github.com/hannan/voyager/simulator/internal/telemetry"
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 	"go.opentelemetry.io/otel"
@@ -169,13 +171,13 @@ func flightRouteHandler(s *Simulator, airports *AirportStore) http.HandlerFunc {
 			return
 		}
 		fromPos, toPos := airports.Positions[f.DepartureAirport], airports.Positions[f.ArrivalAirport]
-		coords := generateGreatCircleCoordinates(fromPos, toPos, n)
-		feature := newLineStringFeature(coords, map[string]interface{}{
+		coords := geo.GenerateGreatCircleCoordinates(fromPos, toPos, n)
+		feature := geojson.NewLineStringFeature(coords, map[string]interface{}{
 			"id": f.ID, "callSign": f.CallSign, "from": f.DepartureAirport, "to": f.ArrivalAirport,
 		})
 		w.Header().Set("Content-Type", "application/json")
 		w.Header().Set("Cache-Control", "public, max-age=60")
-		json.NewEncoder(w).Encode(newFeatureCollection([]geoJSONFeature{feature}))
+		json.NewEncoder(w).Encode(geojson.NewFeatureCollection([]geojson.Feature{feature}))
 	}
 }
 
@@ -302,13 +304,13 @@ func (s *flightStore) update(updateHz int, airports *AirportStore) {
 			continue
 		}
 
-		f.Position = greatCircleStep(f.Position, toPos, f.Speed, dt)
-		f.Bearing = calculateBearing(f.Position, toPos)
-		f.Velocity = speedToVelocity(f.Speed, f.Bearing)
+		f.Position = geo.GreatCircleStep(f.Position, toPos, f.Speed, dt)
+		f.Bearing = geo.CalculateBearing(f.Position, toPos)
+		f.Velocity = geo.SpeedToVelocity(f.Speed, f.Bearing)
 		f.Altitude = f.Position.Altitude
-		f.DistanceRemaining = calculateDistance(f.Position, toPos)
+		f.DistanceRemaining = geo.CalculateDistance(f.Position, toPos)
 
-		if totalDist := calculateDistance(fromPos, toPos); totalDist > 0.1 {
+		if totalDist := geo.CalculateDistance(fromPos, toPos); totalDist > 0.1 {
 			f.Progress = math.Max(0, math.Min(1, 1.0-(f.DistanceRemaining/totalDist)))
 		}
 		if f.DistanceRemaining < 50 {
@@ -378,14 +380,14 @@ func createFlight(dep, arr, airline, callSign string, positions map[string]fligh
 	}
 	fromPos, toPos := positions[dep], positions[arr]
 	fromPos.Altitude = 2000 + mathrand.Float64()*8000
-	bearing := calculateBearing(fromPos, toPos)
+	bearing := geo.CalculateBearing(fromPos, toPos)
 	now := time.Now()
 	return &flight.State{
 		ID: fmt.Sprintf("%s-%s-%s", callSign, dep, arr), CallSign: callSign, Airline: airline,
 		DepartureAirport: dep, ArrivalAirport: arr, Phase: flight.Takeoff,
-		Position: fromPos, Velocity: speedToVelocity(data.SpeedTakeoff, bearing),
+		Position: fromPos, Velocity: geo.SpeedToVelocity(data.SpeedTakeoff, bearing),
 		Bearing: bearing, Speed: data.SpeedTakeoff, Altitude: fromPos.Altitude,
-		Progress: 0, DistanceRemaining: calculateDistance(fromPos, toPos),
+		Progress: 0, DistanceRemaining: geo.CalculateDistance(fromPos, toPos),
 		ScheduledDeparture: now.Format(time.RFC3339),
 		ScheduledArrival:   now.Add(6 * time.Hour).Format(time.RFC3339),
 		EstimatedArrival:   now.Add(6*time.Hour + time.Duration((mathrand.Float64()-0.5)*30)*time.Minute).Format(time.RFC3339),
@@ -463,7 +465,7 @@ func (s *clientStore) getAll() []*websocket.Conn {
 	return result
 }
 
-func (s *clientStore) sendInitial(conn *websocket.Conn, fc geoJSONFeatureCollection) {
+func (s *clientStore) sendInitial(conn *websocket.Conn, fc geojson.FeatureCollection) {
 	msg := flightsGeoJSONMessage{Type: "flights_geojson", FeatureCollection: fc, Seq: 0, ServerTimestamp: time.Now().UnixMilli()}
 	if data, err := json.Marshal(msg); err == nil {
 		conn.SetWriteDeadline(time.Now().Add(5 * time.Second))
@@ -503,10 +505,10 @@ func (b *geoJSONBuilder) shouldBroadcast(hz int) bool {
 	return true
 }
 
-func (b *geoJSONBuilder) build(flights map[string]*flight.State) geoJSONFeatureCollection {
-	features := make([]geoJSONFeature, 0, len(flights))
+func (b *geoJSONBuilder) build(flights map[string]*flight.State) geojson.FeatureCollection {
+	features := make([]geojson.Feature, 0, len(flights))
 	for _, f := range flights {
-		features = append(features, newPointFeature(f.Position.Longitude, f.Position.Latitude, f.Position.Altitude, map[string]interface{}{
+		features = append(features, geojson.NewPointFeature(f.Position.Longitude, f.Position.Latitude, f.Position.Altitude, map[string]interface{}{
 			"id": f.ID, "callSign": f.CallSign, "airline": f.Airline,
 			"departureAirport": f.DepartureAirport, "arrivalAirport": f.ArrivalAirport,
 			"phase": string(f.Phase), "bearing": f.Bearing, "speed": f.Speed,
@@ -515,10 +517,10 @@ func (b *geoJSONBuilder) build(flights map[string]*flight.State) geoJSONFeatureC
 			"estimatedArrival": f.EstimatedArrival, "lastComputedAt": f.LastComputedAt, "traceID": f.TraceID,
 		}))
 	}
-	return newFeatureCollection(features)
+	return geojson.NewFeatureCollection(features)
 }
 
-func (b *geoJSONBuilder) marshal(fc geoJSONFeatureCollection) ([]byte, error) {
+func (b *geoJSONBuilder) marshal(fc geojson.FeatureCollection) ([]byte, error) {
 	atomic.AddInt64(&b.seq, 1)
 	return json.Marshal(flightsGeoJSONMessage{Type: "flights_geojson", FeatureCollection: fc, Seq: b.seq, ServerTimestamp: time.Now().UnixMilli()})
 }
@@ -544,7 +546,7 @@ func (s *AirportStore) Load(path string) error {
 	if err != nil {
 		return err
 	}
-	var geoJSON struct {
+	var geoJSONData struct {
 		Features []struct {
 			Geometry struct {
 				Coordinates []float64 `json:"coordinates"`
@@ -552,12 +554,12 @@ func (s *AirportStore) Load(path string) error {
 			Properties map[string]interface{} `json:"properties"`
 		} `json:"features"`
 	}
-	if err := json.Unmarshal(raw, &geoJSON); err != nil {
+	if err := json.Unmarshal(raw, &geoJSONData); err != nil {
 		return err
 	}
 	s.Positions = make(map[string]flight.Position)
-	s.Codes = make([]string, 0, len(geoJSON.Features))
-	for _, f := range geoJSON.Features {
+	s.Codes = make([]string, 0, len(geoJSONData.Features))
+	for _, f := range geoJSONData.Features {
 		if iata, ok := f.Properties["iata"].(string); ok && iata != "" && len(f.Geometry.Coordinates) >= 2 {
 			s.Positions[iata] = flight.Position{Longitude: f.Geometry.Coordinates[0], Latitude: f.Geometry.Coordinates[1]}
 			s.Codes = append(s.Codes, iata)
@@ -571,107 +573,14 @@ func (s *AirportStore) Load(path string) error {
 }
 
 // ============================================================================
-// GeoJSON Types
+// Simulator-specific types
 // ============================================================================
-
-type geoJSONGeometry struct {
-	Type        string      `json:"type"`
-	Coordinates interface{} `json:"coordinates"`
-}
-
-type geoJSONFeature struct {
-	Type       string                 `json:"type"`
-	Geometry   geoJSONGeometry        `json:"geometry"`
-	Properties map[string]interface{} `json:"properties"`
-}
-
-type geoJSONFeatureCollection struct {
-	Type     string           `json:"type"`
-	Features []geoJSONFeature `json:"features"`
-}
 
 type flightsGeoJSONMessage struct {
 	Type              string                   `json:"type"`
-	FeatureCollection geoJSONFeatureCollection `json:"featureCollection"`
+	FeatureCollection geojson.FeatureCollection `json:"featureCollection"`
 	Seq               int64                    `json:"seq"`
 	ServerTimestamp   int64                    `json:"serverTimestamp"`
-}
-
-func newFeatureCollection(features []geoJSONFeature) geoJSONFeatureCollection {
-	return geoJSONFeatureCollection{Type: "FeatureCollection", Features: features}
-}
-
-func newPointFeature(lon, lat, alt float64, props map[string]interface{}) geoJSONFeature {
-	return geoJSONFeature{Type: "Feature", Geometry: geoJSONGeometry{Type: "Point", Coordinates: []float64{lon, lat, alt}}, Properties: props}
-}
-
-func newLineStringFeature(coords [][]float64, props map[string]interface{}) geoJSONFeature {
-	return geoJSONFeature{Type: "Feature", Geometry: geoJSONGeometry{Type: "LineString", Coordinates: coords}, Properties: props}
-}
-
-// ============================================================================
-// Math Helpers
-// ============================================================================
-
-func calculateBearing(from, to flight.Position) float64 {
-	lat1, lat2 := from.Latitude*math.Pi/180, to.Latitude*math.Pi/180
-	deltaLon := (to.Longitude - from.Longitude) * math.Pi / 180
-	y := math.Sin(deltaLon) * math.Cos(lat2)
-	x := math.Cos(lat1)*math.Sin(lat2) - math.Sin(lat1)*math.Cos(lat2)*math.Cos(deltaLon)
-	return math.Mod(math.Atan2(y, x)*180/math.Pi+360, 360)
-}
-
-func calculateDistance(from, to flight.Position) float64 {
-	lat1, lat2 := from.Latitude*math.Pi/180, to.Latitude*math.Pi/180
-	deltaLat := (to.Latitude - from.Latitude) * math.Pi / 180
-	deltaLon := (to.Longitude - from.Longitude) * math.Pi / 180
-	a := math.Sin(deltaLat/2)*math.Sin(deltaLat/2) + math.Cos(lat1)*math.Cos(lat2)*math.Sin(deltaLon/2)*math.Sin(deltaLon/2)
-	return 3440.065 * 2 * math.Atan2(math.Sqrt(a), math.Sqrt(1-a))
-}
-
-func interpolatePosition(from, to flight.Position, progress float64) flight.Position {
-	lat1, lon1 := from.Latitude*math.Pi/180, from.Longitude*math.Pi/180
-	lat2, lon2 := to.Latitude*math.Pi/180, to.Longitude*math.Pi/180
-	deltaLat, deltaLon := lat2-lat1, lon2-lon1
-	a := math.Sin(deltaLat/2)*math.Sin(deltaLat/2) + math.Cos(lat1)*math.Cos(lat2)*math.Sin(deltaLon/2)*math.Sin(deltaLon/2)
-	d := 2 * math.Atan2(math.Sqrt(a), math.Sqrt(1-a))
-	if d < 1e-6 {
-		return flight.Position{Latitude: from.Latitude + (to.Latitude-from.Latitude)*progress, Longitude: from.Longitude + (to.Longitude-from.Longitude)*progress, Altitude: from.Altitude}
-	}
-	A, B := math.Sin((1-progress)*d)/math.Sin(d), math.Sin(progress*d)/math.Sin(d)
-	x := A*math.Cos(lat1)*math.Cos(lon1) + B*math.Cos(lat2)*math.Cos(lon2)
-	y := A*math.Cos(lat1)*math.Sin(lon1) + B*math.Cos(lat2)*math.Sin(lon2)
-	z := A*math.Sin(lat1) + B*math.Sin(lat2)
-	return flight.Position{Latitude: math.Atan2(z, math.Sqrt(x*x+y*y)) * 180 / math.Pi, Longitude: math.Atan2(y, x) * 180 / math.Pi, Altitude: from.Altitude}
-}
-
-func speedToVelocity(speed, bearing float64) flight.Velocity {
-	rad := bearing * math.Pi / 180
-	return flight.Velocity{X: speed * math.Sin(rad), Y: speed * math.Cos(rad), Z: 0}
-}
-
-func greatCircleStep(current, dest flight.Position, speed, dt float64) flight.Position {
-	dist := calculateDistance(current, dest)
-	if dist < 0.1 {
-		return dest
-	}
-	step := speed * dt / 3600.0
-	if speed > 10000 {
-		step *= 2.0
-	}
-	if step >= dist {
-		return dest
-	}
-	return interpolatePosition(current, dest, step/dist)
-}
-
-func generateGreatCircleCoordinates(from, to flight.Position, n int) [][]float64 {
-	coords := make([][]float64, n+1)
-	for i := 0; i <= n; i++ {
-		pos := interpolatePosition(from, to, float64(i)/float64(n))
-		coords[i] = []float64{pos.Longitude, pos.Latitude}
-	}
-	return coords
 }
 
 func generateTraceID() string {
