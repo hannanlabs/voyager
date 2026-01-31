@@ -6,5 +6,5 @@ dev:
 		exit 1; \
 	fi
 
-dev-down:
+down:
 	tilt down
