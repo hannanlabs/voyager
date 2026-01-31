@@ -1,4 +1,4 @@
-package geojson
+package geo
 
 type Geometry struct {
 	Type        string      `json:"type"`

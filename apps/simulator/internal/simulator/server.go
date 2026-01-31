@@ -7,8 +7,7 @@ import (
 	"strconv"
 
 	"github.com/gorilla/websocket"
-	"github.com/hannan/voyager/shared-go/geojson"
-	"github.com/hannan/voyager/shared-go/geomath"
+	"github.com/hannan/voyager/shared-go/geo"
 	"github.com/hannan/voyager/simulator/internal/telemetry"
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 	"go.opentelemetry.io/otel"
@@ -99,13 +98,13 @@ func flightRouteHandler(s *Simulator, airports *AirportStore) http.HandlerFunc {
 			return
 		}
 		fromPos, toPos := airports.Positions[f.DepartureAirport], airports.Positions[f.ArrivalAirport]
-		coords := geomath.GenerateGreatCircleCoordinates(fromPos, toPos, n)
-		feature := geojson.NewLineStringFeature(coords, map[string]interface{}{
+		coords := geo.GenerateGreatCircleCoordinates(fromPos, toPos, n)
+		feature := geo.NewLineStringFeature(coords, map[string]interface{}{
 			"id": f.ID, "callSign": f.CallSign, "from": f.DepartureAirport, "to": f.ArrivalAirport,
 		})
 		w.Header().Set("Content-Type", "application/json")
 		w.Header().Set("Cache-Control", "public, max-age=60")
-		json.NewEncoder(w).Encode(geojson.NewFeatureCollection([]geojson.Feature{feature}))
+		json.NewEncoder(w).Encode(geo.NewFeatureCollection([]geo.Feature{feature}))
 	}
 }
 
