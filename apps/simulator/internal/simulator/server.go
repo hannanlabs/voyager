@@ -128,7 +128,7 @@ func (s *Simulator) wsFlightsHandler(w http.ResponseWriter, r *http.Request) {
 	s.clients.add(conn)
 	log.Printf("WebSocket client connected")
 
-	go s.clients.sendInitial(conn, s.geojson.build(s.flights.getAll()))
+	go s.clients.sendInitial(conn, s.buildFlightsGeoJSON())
 
 	defer func() {
 		s.clients.remove(conn)

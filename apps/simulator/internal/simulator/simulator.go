@@ -23,7 +23,7 @@ import (
 )
 
 // ============================================================================
-// Simulator - Main entry point
+// Simulator
 // ============================================================================
 
 type Simulator struct {
@@ -31,8 +31,9 @@ type Simulator struct {
 	geoJSONFlightsHz int
 	flights          *flightStore
 	clients          *clientStore
-	geojson          *geoJSONBuilder
 	airports         *AirportStore
+	lastBroadcast    time.Time
+	seq              int64
 }
 
 func New(updateHz, geoJSONFlightsHz int, airports *AirportStore) *Simulator {
@@ -41,8 +42,8 @@ func New(updateHz, geoJSONFlightsHz int, airports *AirportStore) *Simulator {
 		geoJSONFlightsHz: geoJSONFlightsHz,
 		flights:          newFlightStore(),
 		clients:          newClientStore(),
-		geojson:          newGeoJSONBuilder(),
 		airports:         airports,
+		lastBroadcast:    time.Now(),
 	}
 	s.flights.generateBurst(50, s.airports)
 	return s
@@ -64,11 +65,23 @@ func (s *Simulator) Start(ctx context.Context) {
 }
 
 func (s *Simulator) broadcast() {
-	if s.clients.count() == 0 || !s.geojson.shouldBroadcast(s.geoJSONFlightsHz) {
+	if s.clients.count() == 0 {
 		return
 	}
-	fc := s.geojson.build(s.flights.getAll())
-	if data, err := s.geojson.marshal(fc); err == nil {
+	now := time.Now()
+	if now.Sub(s.lastBroadcast) < time.Second/time.Duration(s.geoJSONFlightsHz) {
+		return
+	}
+	s.lastBroadcast = now
+
+	atomic.AddInt64(&s.seq, 1)
+	msg := flightsGeoJSONMessage{
+		Type:              "flights_geojson",
+		FeatureCollection: s.buildFlightsGeoJSON(),
+		Seq:               s.seq,
+		ServerTimestamp:   now.UnixMilli(),
+	}
+	if data, err := json.Marshal(msg); err == nil {
 		s.clients.broadcast(data)
 	}
 }
@@ -77,8 +90,24 @@ func (s *Simulator) FlightCount() int {
 	return s.flights.count()
 }
 
+func (s *Simulator) buildFlightsGeoJSON() geojson.FeatureCollection {
+	flights := s.flights.getAll()
+	features := make([]geojson.Feature, 0, len(flights))
+	for _, f := range flights {
+		features = append(features, geojson.NewPointFeature(f.Position.Longitude, f.Position.Latitude, f.Position.Altitude, map[string]interface{}{
+			"id": f.ID, "callSign": f.CallSign, "airline": f.Airline,
+			"departureAirport": f.DepartureAirport, "arrivalAirport": f.ArrivalAirport,
+			"phase": string(f.Phase), "bearing": f.Bearing, "speed": f.Speed,
+			"altitude": f.Position.Altitude, "progress": f.Progress, "distanceRemaining": f.DistanceRemaining,
+			"scheduledDeparture": f.ScheduledDeparture, "scheduledArrival": f.ScheduledArrival,
+			"estimatedArrival": f.EstimatedArrival, "lastComputedAt": f.LastComputedAt, "traceID": f.TraceID,
+		}))
+	}
+	return geojson.NewFeatureCollection(features)
+}
+
 // ============================================================================
-// FlightStore - Flight state and physics
+// FlightStore
 // ============================================================================
 
 type flightStore struct {
@@ -274,15 +303,24 @@ func calculatePhase(f *flight.State) flight.Phase {
 }
 
 func speedForPhase(phase flight.Phase) float64 {
-	speeds := map[flight.Phase]float64{
-		flight.Takeoff: data.SpeedTakeoff, flight.Climb: data.SpeedClimb,
-		flight.Cruise: data.SpeedCruise, flight.Descent: data.SpeedDescent, flight.Landing: data.SpeedLanding,
+	switch phase {
+	case flight.Takeoff:
+		return data.SpeedTakeoff
+	case flight.Climb:
+		return data.SpeedClimb
+	case flight.Cruise:
+		return data.SpeedCruise
+	case flight.Descent:
+		return data.SpeedDescent
+	case flight.Landing:
+		return data.SpeedLanding
+	default:
+		return 0
 	}
-	return speeds[phase]
 }
 
 // ============================================================================
-// ClientStore - WebSocket clients
+// ClientStore
 // ============================================================================
 
 type clientStore struct {
@@ -315,16 +353,6 @@ func (s *clientStore) count() int {
 	return len(s.clients)
 }
 
-func (s *clientStore) getAll() []*websocket.Conn {
-	s.mu.RLock()
-	defer s.mu.RUnlock()
-	result := make([]*websocket.Conn, 0, len(s.clients))
-	for c := range s.clients {
-		result = append(result, c)
-	}
-	return result
-}
-
 func (s *clientStore) sendInitial(conn *websocket.Conn, fc geojson.FeatureCollection) {
 	msg := flightsGeoJSONMessage{Type: "flights_geojson", FeatureCollection: fc, Seq: 0, ServerTimestamp: time.Now().UnixMilli()}
 	if data, err := json.Marshal(msg); err == nil {
@@ -334,55 +362,20 @@ func (s *clientStore) sendInitial(conn *websocket.Conn, fc geojson.FeatureCollec
 }
 
 func (s *clientStore) broadcast(data []byte) {
-	for _, c := range s.getAll() {
+	s.mu.RLock()
+	clients := make([]*websocket.Conn, 0, len(s.clients))
+	for c := range s.clients {
+		clients = append(clients, c)
+	}
+	s.mu.RUnlock()
+
+	for _, c := range clients {
 		c.SetWriteDeadline(time.Now().Add(5 * time.Second))
 		if err := c.WriteMessage(websocket.TextMessage, data); err != nil {
 			log.Printf("Error broadcasting: %v", err)
 			s.remove(c)
 		}
 	}
-}
-
-// ============================================================================
-// GeoJSONBuilder
-// ============================================================================
-
-type geoJSONBuilder struct {
-	lastBroadcast time.Time
-	seq           int64
-}
-
-func newGeoJSONBuilder() *geoJSONBuilder {
-	return &geoJSONBuilder{lastBroadcast: time.Now()}
-}
-
-func (b *geoJSONBuilder) shouldBroadcast(hz int) bool {
-	now := time.Now()
-	if now.Sub(b.lastBroadcast) < time.Second/time.Duration(hz) {
-		return false
-	}
-	b.lastBroadcast = now
-	return true
-}
-
-func (b *geoJSONBuilder) build(flights map[string]*flight.State) geojson.FeatureCollection {
-	features := make([]geojson.Feature, 0, len(flights))
-	for _, f := range flights {
-		features = append(features, geojson.NewPointFeature(f.Position.Longitude, f.Position.Latitude, f.Position.Altitude, map[string]interface{}{
-			"id": f.ID, "callSign": f.CallSign, "airline": f.Airline,
-			"departureAirport": f.DepartureAirport, "arrivalAirport": f.ArrivalAirport,
-			"phase": string(f.Phase), "bearing": f.Bearing, "speed": f.Speed,
-			"altitude": f.Position.Altitude, "progress": f.Progress, "distanceRemaining": f.DistanceRemaining,
-			"scheduledDeparture": f.ScheduledDeparture, "scheduledArrival": f.ScheduledArrival,
-			"estimatedArrival": f.EstimatedArrival, "lastComputedAt": f.LastComputedAt, "traceID": f.TraceID,
-		}))
-	}
-	return geojson.NewFeatureCollection(features)
-}
-
-func (b *geoJSONBuilder) marshal(fc geojson.FeatureCollection) ([]byte, error) {
-	atomic.AddInt64(&b.seq, 1)
-	return json.Marshal(flightsGeoJSONMessage{Type: "flights_geojson", FeatureCollection: fc, Seq: b.seq, ServerTimestamp: time.Now().UnixMilli()})
 }
 
 // ============================================================================
