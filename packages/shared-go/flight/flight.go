@@ -1,5 +1,28 @@
 package flight
 
+type Phase string
+
+const (
+	Takeoff Phase = "takeoff"
+	Climb   Phase = "climb"
+	Cruise  Phase = "cruise"
+	Descent Phase = "descent"
+	Landing Phase = "landing"
+	Landed  Phase = "landed"
+)
+
+type Position struct {
+	Latitude  float64 `json:"latitude"`
+	Longitude float64 `json:"longitude"`
+	Altitude  float64 `json:"altitude"`
+}
+
+type Velocity struct {
+	X float64 `json:"x"`
+	Y float64 `json:"y"`
+	Z float64 `json:"z"`
+}
+
 type State struct {
 	ID                 string   `json:"id"`
 	CallSign           string   `json:"callSign"`
