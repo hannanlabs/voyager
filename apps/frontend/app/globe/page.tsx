@@ -14,7 +14,7 @@ import {
   updateRouteVisibility,
 } from "../components/layers/flightroute";
 import { createAirportLayers } from "../components/layers/airports";
-import { useFlights } from "./transport/websocket";
+import { useFlights } from "../components/WebSocketProvider";
 import {
   addSelectionToGeoJSON,
   type FlightState,
@@ -23,8 +23,8 @@ import {
   MAP_SOURCES,
   MAP_LAYERS,
 } from "@voyager/shared-ts";
-import { loadFlightRoute, getAirportsUrl } from "./transport/http";
-import { logEvent } from "../utils/telemetry";
+import { loadFlightRoute, getAirportsUrl } from "@/lib/http";
+import { logEvent } from "@/lib/telemetry";
 
 const MAPBOX_ACCESS_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 

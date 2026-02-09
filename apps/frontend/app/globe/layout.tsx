@@ -1,4 +1,4 @@
-import { WebSocketProvider } from "./transport/websocket";
+import { WebSocketProvider } from "../components/WebSocketProvider";
 
 export default function GlobeLayout({
   children,
