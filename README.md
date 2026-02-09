@@ -11,7 +11,8 @@ A flight simulator that generates realistic aircraft movements and streams them 
 **Prerequisites:** Docker, Kubernetes (Docker Desktop works), Tilt, pnpm
 
 ```bash
-tilt up
+make up
+make down
 ```
 
 Open [localhost:3000](http://localhost:3000) for the globe, [localhost:3001](http://localhost:3001) for Grafana dashboards.
@@ -73,10 +74,10 @@ deployments/         # Kubernetes manifests
 
 ```bash
 # Start everything
-tilt up
+make up
 
 # Stop everything
-tilt down
+make down
 
 # Frontend only (if running simulator separately)
 cd apps/frontend && pnpm dev
