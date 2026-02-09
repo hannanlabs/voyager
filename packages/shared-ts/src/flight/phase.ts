@@ -1,3 +1,10 @@
-import { z } from 'zod';
+import { z } from "zod";
 
-export const FlightPhaseSchema = z.enum(['takeoff', 'climb', 'cruise', 'descent', 'landing', 'landed']);
+export const FlightPhaseSchema = z.enum([
+  "takeoff",
+  "climb",
+  "cruise",
+  "descent",
+  "landing",
+  "landed",
+]);

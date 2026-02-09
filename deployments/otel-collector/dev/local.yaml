@@ -15,15 +15,15 @@ spec:
         app: otel-collector
     spec:
       containers:
-      - name: otel-collector
-        image: otel-collector
-        ports:
-        - containerPort: 4317
-          name: otlp-grpc
-        - containerPort: 4318
-          name: otlp-http
-        - containerPort: 8889
-          name: prometheus
+        - name: otel-collector
+          image: otel-collector
+          ports:
+            - containerPort: 4317
+              name: otlp-grpc
+            - containerPort: 4318
+              name: otlp-http
+            - containerPort: 8889
+              name: prometheus
 ---
 apiVersion: v1
 kind: Service

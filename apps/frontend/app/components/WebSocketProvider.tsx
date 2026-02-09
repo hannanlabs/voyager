@@ -2,7 +2,11 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 import type { ReactNode } from "react";
-import type { FlightState, WebSocketStatus, FlightPointsGeoJSON } from "@voyager/shared-ts";
+import type {
+  FlightState,
+  WebSocketStatus,
+  FlightPointsGeoJSON,
+} from "@voyager/shared-ts";
 import { WS_STATUS } from "@voyager/shared-ts";
 import { createFlightWebSocket } from "@/lib/websocket";
 
@@ -18,17 +22,15 @@ const FlightContext = createContext<{
 
 export function WebSocketProvider({ children }: { children: ReactNode }) {
   const [flights, setFlights] = useState<Map<string, FlightState>>(new Map());
-  const [flightsGeoJSON, setFlightsGeoJSON] = useState<FlightPointsGeoJSON | null>(null);
+  const [flightsGeoJSON, setFlightsGeoJSON] =
+    useState<FlightPointsGeoJSON | null>(null);
   const [status, setStatus] = useState<WebSocketStatus>(WS_STATUS.CONNECTING);
 
   useEffect(() => {
-    const connection = createFlightWebSocket(
-      (flightMap, geoJSON) => {
-        setFlights(flightMap);
-        setFlightsGeoJSON(geoJSON);
-      },
-      setStatus,
-    );
+    const connection = createFlightWebSocket((flightMap, geoJSON) => {
+      setFlights(flightMap);
+      setFlightsGeoJSON(geoJSON);
+    }, setStatus);
 
     return () => connection.close();
   }, []);

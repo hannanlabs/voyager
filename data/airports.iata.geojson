@@ -5,10 +5,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          160.054993,
-          -9.428
-        ]
+        "coordinates": [160.054993, -9.428]
       },
       "properties": {
         "iata": "HIR",
@@ -23,10 +20,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          147.220001,
-          -9.44338
-        ]
+        "coordinates": [147.220001, -9.44338]
       },
       "properties": {
         "iata": "POM",
@@ -41,10 +35,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -22.6056,
-          63.985001
-        ]
+        "coordinates": [-22.6056, 63.985001]
       },
       "properties": {
         "iata": "KEF",
@@ -59,10 +50,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -113.580002,
-          53.3097
-        ]
+        "coordinates": [-113.580002, 53.3097]
       },
       "properties": {
         "iata": "YEG",
@@ -77,10 +65,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -63.508598,
-          44.880798
-        ]
+        "coordinates": [-63.508598, 44.880798]
       },
       "properties": {
         "iata": "YHZ",
@@ -95,10 +80,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -75.669197,
-          45.322498
-        ]
+        "coordinates": [-75.669197, 45.322498]
       },
       "properties": {
         "iata": "YOW",
@@ -113,10 +95,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.393303,
-          46.7911
-        ]
+        "coordinates": [-71.393303, 46.7911]
       },
       "properties": {
         "iata": "YQB",
@@ -131,10 +110,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -73.742294,
-          45.467837
-        ]
+        "coordinates": [-73.742294, 45.467837]
       },
       "properties": {
         "iata": "YUL",
@@ -149,10 +125,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -123.183998,
-          49.193901
-        ]
+        "coordinates": [-123.183998, 49.193901]
       },
       "properties": {
         "iata": "YVR",
@@ -167,10 +140,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -97.239899,
-          49.91
-        ]
+        "coordinates": [-97.239899, 49.91]
       },
       "properties": {
         "iata": "YWG",
@@ -185,10 +155,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -114.009933,
-          51.118822
-        ]
+        "coordinates": [-114.009933, 51.118822]
       },
       "properties": {
         "iata": "YYC",
@@ -203,10 +170,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -52.7519,
-          47.618599
-        ]
+        "coordinates": [-52.7519, 47.618599]
       },
       "properties": {
         "iata": "YYT",
@@ -221,10 +185,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -79.6306,
-          43.6772
-        ]
+        "coordinates": [-79.6306, 43.6772]
       },
       "properties": {
         "iata": "YYZ",
@@ -239,10 +200,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          3.214531,
-          36.693886
-        ]
+        "coordinates": [3.214531, 36.693886]
       },
       "properties": {
         "iata": "ALG",
@@ -257,10 +215,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -0.166786,
-          5.60519
-        ]
+        "coordinates": [-0.166786, 5.60519]
       },
       "properties": {
         "iata": "ACC",
@@ -275,10 +230,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          7.26317,
-          9.00679
-        ]
+        "coordinates": [7.26317, 9.00679]
       },
       "properties": {
         "iata": "ABV",
@@ -293,10 +245,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          3.32116,
-          6.57737
-        ]
+        "coordinates": [3.32116, 6.57737]
       },
       "properties": {
         "iata": "LOS",
@@ -311,10 +260,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          2.18361,
-          13.4815
-        ]
+        "coordinates": [2.18361, 13.4815]
       },
       "properties": {
         "iata": "NIM",
@@ -329,10 +275,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          10.2272,
-          36.851002
-        ]
+        "coordinates": [10.2272, 36.851002]
       },
       "properties": {
         "iata": "TUN",
@@ -347,10 +290,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          4.48444,
-          50.901402
-        ]
+        "coordinates": [4.48444, 50.901402]
       },
       "properties": {
         "iata": "BRU",
@@ -365,10 +305,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          13.500672,
-          52.362247
-        ]
+        "coordinates": [13.500672, 52.362247]
       },
       "properties": {
         "iata": "BER",
@@ -383,10 +320,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          8.561096,
-          50.030241
-        ]
+        "coordinates": [8.561096, 50.030241]
       },
       "properties": {
         "iata": "FRA",
@@ -401,10 +335,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          9.98823,
-          53.630402
-        ]
+        "coordinates": [9.98823, 53.630402]
       },
       "properties": {
         "iata": "HAM",
@@ -419,10 +350,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          7.14274,
-          50.865898
-        ]
+        "coordinates": [7.14274, 50.865898]
       },
       "properties": {
         "iata": "CGN",
@@ -437,10 +365,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          6.76678,
-          51.289501
-        ]
+        "coordinates": [6.76678, 51.289501]
       },
       "properties": {
         "iata": "DUS",
@@ -455,10 +380,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          11.7861,
-          48.353802
-        ]
+        "coordinates": [11.7861, 48.353802]
       },
       "properties": {
         "iata": "MUC",
@@ -473,10 +395,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          11.078056,
-          49.498699
-        ]
+        "coordinates": [11.078056, 49.498699]
       },
       "properties": {
         "iata": "NUE",
@@ -491,10 +410,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          12.232705,
-          51.420657
-        ]
+        "coordinates": [12.232705, 51.420657]
       },
       "properties": {
         "iata": "LEJ",
@@ -509,10 +425,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          9.22196,
-          48.689899
-        ]
+        "coordinates": [9.22196, 48.689899]
       },
       "properties": {
         "iata": "STR",
@@ -527,10 +440,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          9.68508,
-          52.461102
-        ]
+        "coordinates": [9.68508, 52.461102]
       },
       "properties": {
         "iata": "HAJ",
@@ -545,10 +455,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          24.83264,
-          59.413246
-        ]
+        "coordinates": [24.83264, 59.413246]
       },
       "properties": {
         "iata": "TLL",
@@ -563,10 +470,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          24.963341,
-          60.318363
-        ]
+        "coordinates": [24.963341, 60.318363]
       },
       "properties": {
         "iata": "HEL",
@@ -581,10 +485,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -6.21583,
-          54.657501
-        ]
+        "coordinates": [-6.21583, 54.657501]
       },
       "properties": {
         "iata": "BFS",
@@ -599,10 +500,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -1.74803,
-          52.453899
-        ]
+        "coordinates": [-1.74803, 52.453899]
       },
       "properties": {
         "iata": "BHX",
@@ -617,10 +515,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -2.279521,
-          53.349375
-        ]
+        "coordinates": [-2.279521, 53.349375]
       },
       "properties": {
         "iata": "MAN",
@@ -635,10 +530,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -0.368333,
-          51.874699
-        ]
+        "coordinates": [-0.368333, 51.874699]
       },
       "properties": {
         "iata": "LTN",
@@ -653,10 +545,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -0.192089,
-          51.148771
-        ]
+        "coordinates": [-0.192089, 51.148771]
       },
       "properties": {
         "iata": "LGW",
@@ -671,10 +560,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -0.461941,
-          51.4706
-        ]
+        "coordinates": [-0.461941, 51.4706]
       },
       "properties": {
         "iata": "LHR",
@@ -689,10 +575,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -4.43306,
-          55.871899
-        ]
+        "coordinates": [-4.43306, 55.871899]
       },
       "properties": {
         "iata": "GLA",
@@ -707,10 +590,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -3.372288,
-          55.950145
-        ]
+        "coordinates": [-3.372288, 55.950145]
       },
       "properties": {
         "iata": "EDI",
@@ -725,10 +605,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          0.235,
-          51.884998
-        ]
+        "coordinates": [0.235, 51.884998]
       },
       "properties": {
         "iata": "STN",
@@ -743,10 +620,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          4.76389,
-          52.308601
-        ]
+        "coordinates": [4.76389, 52.308601]
       },
       "properties": {
         "iata": "AMS",
@@ -761,10 +635,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          5.37453,
-          51.4501
-        ]
+        "coordinates": [5.37453, 51.4501]
       },
       "properties": {
         "iata": "EIN",
@@ -779,10 +650,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -6.262121,
-          53.428713
-        ]
+        "coordinates": [-6.262121, 53.428713]
       },
       "properties": {
         "iata": "DUB",
@@ -797,10 +665,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -8.92482,
-          52.702
-        ]
+        "coordinates": [-8.92482, 52.702]
       },
       "properties": {
         "iata": "SNN",
@@ -815,10 +680,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          9.157019,
-          55.740335
-        ]
+        "coordinates": [9.157019, 55.740335]
       },
       "properties": {
         "iata": "BLL",
@@ -833,10 +695,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          12.656,
-          55.617901
-        ]
+        "coordinates": [12.656, 55.617901]
       },
       "properties": {
         "iata": "CPH",
@@ -851,10 +710,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          6.204444,
-          49.623333
-        ]
+        "coordinates": [6.204444, 49.623333]
       },
       "properties": {
         "iata": "LUX",
@@ -869,10 +725,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          5.21814,
-          60.2934
-        ]
+        "coordinates": [5.21814, 60.2934]
       },
       "properties": {
         "iata": "BGO",
@@ -887,10 +740,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          11.1004,
-          60.193901
-        ]
+        "coordinates": [11.1004, 60.193901]
       },
       "properties": {
         "iata": "OSL",
@@ -905,10 +755,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          18.9189,
-          69.683296
-        ]
+        "coordinates": [18.9189, 69.683296]
       },
       "properties": {
         "iata": "TOS",
@@ -923,10 +770,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          10.924,
-          63.457802
-        ]
+        "coordinates": [10.924, 63.457802]
       },
       "properties": {
         "iata": "TRD",
@@ -941,10 +785,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          5.63778,
-          58.876701
-        ]
+        "coordinates": [5.63778, 58.876701]
       },
       "properties": {
         "iata": "SVG",
@@ -959,10 +800,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          18.4662,
-          54.377602
-        ]
+        "coordinates": [18.4662, 54.377602]
       },
       "properties": {
         "iata": "GDN",
@@ -977,10 +815,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          19.7848,
-          50.077702
-        ]
+        "coordinates": [19.7848, 50.077702]
       },
       "properties": {
         "iata": "KRK",
@@ -995,10 +830,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          20.9671,
-          52.165699
-        ]
+        "coordinates": [20.9671, 52.165699]
       },
       "properties": {
         "iata": "WAW",
@@ -1013,10 +845,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          12.2798,
-          57.6628
-        ]
+        "coordinates": [12.2798, 57.6628]
       },
       "properties": {
         "iata": "GOT",
@@ -1031,10 +860,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          17.928829,
-          59.64849
-        ]
+        "coordinates": [17.928829, 59.64849]
       },
       "properties": {
         "iata": "ARN",
@@ -1049,10 +875,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          23.9711,
-          56.923599
-        ]
+        "coordinates": [23.9711, 56.923599]
       },
       "properties": {
         "iata": "RIX",
@@ -1067,10 +890,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          25.285801,
-          54.634102
-        ]
+        "coordinates": [25.285801, 54.634102]
       },
       "properties": {
         "iata": "VNO",
@@ -1085,10 +905,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          18.6017,
-          -33.964802
-        ]
+        "coordinates": [18.6017, -33.964802]
       },
       "properties": {
         "iata": "CPT",
@@ -1103,10 +920,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          31.119722,
-          -29.614444
-        ]
+        "coordinates": [31.119722, -29.614444]
       },
       "properties": {
         "iata": "DUR",
@@ -1121,10 +935,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          28.246,
-          -26.1392
-        ]
+        "coordinates": [28.246, -26.1392]
       },
       "properties": {
         "iata": "JNB",
@@ -1139,10 +950,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          25.9182,
-          -24.555201
-        ]
+        "coordinates": [25.9182, -24.555201]
       },
       "properties": {
         "iata": "GBE",
@@ -1157,10 +965,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          31.716944,
-          -26.358611
-        ]
+        "coordinates": [31.716944, -26.358611]
       },
       "properties": {
         "iata": "SHO",
@@ -1175,10 +980,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          57.683601,
-          -20.430201
-        ]
+        "coordinates": [57.683601, -20.430201]
       },
       "properties": {
         "iata": "MRU",
@@ -1193,10 +995,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          28.452722,
-          -15.330833
-        ]
+        "coordinates": [28.452722, -15.330833]
       },
       "properties": {
         "iata": "LUN",
@@ -1211,10 +1010,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          55.518894,
-          -20.890087
-        ]
+        "coordinates": [55.518894, -20.890087]
       },
       "properties": {
         "iata": "RUN",
@@ -1229,10 +1025,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          47.478802,
-          -18.7969
-        ]
+        "coordinates": [47.478802, -18.7969]
       },
       "properties": {
         "iata": "TNR",
@@ -1247,10 +1040,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          13.2312,
-          -8.85837
-        ]
+        "coordinates": [13.2312, -8.85837]
       },
       "properties": {
         "iata": "LAD",
@@ -1265,10 +1055,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          6.71215,
-          0.378175
-        ]
+        "coordinates": [6.71215, 0.378175]
       },
       "properties": {
         "iata": "TMS",
@@ -1283,10 +1070,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          32.572601,
-          -25.920799
-        ]
+        "coordinates": [32.572601, -25.920799]
       },
       "properties": {
         "iata": "MPM",
@@ -1301,10 +1085,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          55.521801,
-          -4.67434
-        ]
+        "coordinates": [55.521801, -4.67434]
       },
       "properties": {
         "iata": "SEZ",
@@ -1319,10 +1100,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          15.034,
-          12.1337
-        ]
+        "coordinates": [15.034, 12.1337]
       },
       "properties": {
         "iata": "NDJ",
@@ -1337,10 +1115,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          31.0928,
-          -17.931801
-        ]
+        "coordinates": [31.0928, -17.931801]
       },
       "properties": {
         "iata": "HRE",
@@ -1355,10 +1130,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          17.4709,
-          -22.4799
-        ]
+        "coordinates": [17.4709, -22.4799]
       },
       "properties": {
         "iata": "WDH",
@@ -1373,10 +1145,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          15.4446,
-          -4.38575
-        ]
+        "coordinates": [15.4446, -4.38575]
       },
       "properties": {
         "iata": "FIH",
@@ -1391,10 +1160,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -7.94994,
-          12.5335
-        ]
+        "coordinates": [-7.94994, 12.5335]
       },
       "properties": {
         "iata": "BKO",
@@ -1409,10 +1175,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.652201,
-          13.338
-        ]
+        "coordinates": [-16.652201, 13.338]
       },
       "properties": {
         "iata": "BJL",
@@ -1427,10 +1190,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -13.8638,
-          28.4527
-        ]
+        "coordinates": [-13.8638, 28.4527]
       },
       "properties": {
         "iata": "FUE",
@@ -1445,10 +1205,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -15.3866,
-          27.9319
-        ]
+        "coordinates": [-15.3866, 27.9319]
       },
       "properties": {
         "iata": "LPA",
@@ -1463,10 +1220,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -13.6052,
-          28.945499
-        ]
+        "coordinates": [-13.6052, 28.945499]
       },
       "properties": {
         "iata": "ACE",
@@ -1481,10 +1235,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.5725,
-          28.0445
-        ]
+        "coordinates": [-16.5725, 28.0445]
       },
       "properties": {
         "iata": "TFS",
@@ -1499,10 +1250,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -13.1955,
-          8.61644
-        ]
+        "coordinates": [-13.1955, 8.61644]
       },
       "properties": {
         "iata": "FNA",
@@ -1517,10 +1265,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -10.3623,
-          6.23379
-        ]
+        "coordinates": [-10.3623, 6.23379]
       },
       "properties": {
         "iata": "ROB",
@@ -1535,10 +1280,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -9.412003,
-          30.322478
-        ]
+        "coordinates": [-9.412003, 30.322478]
       },
       "properties": {
         "iata": "AGA",
@@ -1553,10 +1295,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -4.97796,
-          33.927299
-        ]
+        "coordinates": [-4.97796, 33.927299]
       },
       "properties": {
         "iata": "FEZ",
@@ -1571,10 +1310,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -6.75152,
-          34.051498
-        ]
+        "coordinates": [-6.75152, 34.051498]
       },
       "properties": {
         "iata": "RBA",
@@ -1589,10 +1325,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -7.58997,
-          33.3675
-        ]
+        "coordinates": [-7.58997, 33.3675]
       },
       "properties": {
         "iata": "CMN",
@@ -1607,10 +1340,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -8.0363,
-          31.606899
-        ]
+        "coordinates": [-8.0363, 31.606899]
       },
       "properties": {
         "iata": "RAK",
@@ -1625,10 +1355,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -5.921459,
-          35.731741
-        ]
+        "coordinates": [-5.921459, 35.731741]
       },
       "properties": {
         "iata": "TNG",
@@ -1643,10 +1370,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -17.072829,
-          14.670878
-        ]
+        "coordinates": [-17.072829, 14.670878]
       },
       "properties": {
         "iata": "DSS",
@@ -1661,10 +1385,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -15.969722,
-          18.31
-        ]
+        "coordinates": [-15.969722, 18.31]
       },
       "properties": {
         "iata": "NKC",
@@ -1679,10 +1400,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -22.9494,
-          16.7414
-        ]
+        "coordinates": [-22.9494, 16.7414]
       },
       "properties": {
         "iata": "SID",
@@ -1697,10 +1415,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -23.484728,
-          14.941126
-        ]
+        "coordinates": [-23.484728, 14.941126]
       },
       "properties": {
         "iata": "RAI",
@@ -1715,10 +1430,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          38.799301,
-          8.97789
-        ]
+        "coordinates": [38.799301, 8.97789]
       },
       "properties": {
         "iata": "ADD",
@@ -1733,10 +1445,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          43.1595,
-          11.5473
-        ]
+        "coordinates": [43.1595, 11.5473]
       },
       "properties": {
         "iata": "JIB",
@@ -1751,10 +1460,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          31.396694,
-          30.111534
-        ]
+        "coordinates": [31.396694, 30.111534]
       },
       "properties": {
         "iata": "CAI",
@@ -1769,10 +1475,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          33.796692,
-          27.176776
-        ]
+        "coordinates": [33.796692, 27.176776]
       },
       "properties": {
         "iata": "HRG",
@@ -1787,10 +1490,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          31.743017,
-          26.342515
-        ]
+        "coordinates": [31.743017, 26.342515]
       },
       "properties": {
         "iata": "HMB",
@@ -1805,10 +1505,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          34.394717,
-          27.977272
-        ]
+        "coordinates": [34.394717, 27.977272]
       },
       "properties": {
         "iata": "SSH",
@@ -1823,10 +1520,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          31.601101,
-          4.87201
-        ]
+        "coordinates": [31.601101, 4.87201]
       },
       "properties": {
         "iata": "JUB",
@@ -1841,10 +1535,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          36.927799,
-          -1.31924
-        ]
+        "coordinates": [36.927799, -1.31924]
       },
       "properties": {
         "iata": "NBO",
@@ -1859,10 +1550,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          39.5942,
-          -4.03483
-        ]
+        "coordinates": [39.5942, -4.03483]
       },
       "properties": {
         "iata": "MBA",
@@ -1877,10 +1565,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          13.287878,
-          32.89177
-        ]
+        "coordinates": [13.287878, 32.89177]
       },
       "properties": {
         "iata": "MJI",
@@ -1895,10 +1580,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          30.1395,
-          -1.96863
-        ]
+        "coordinates": [30.1395, -1.96863]
       },
       "properties": {
         "iata": "KGL",
@@ -1913,10 +1595,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          32.5532,
-          15.5895
-        ]
+        "coordinates": [32.5532, 15.5895]
       },
       "properties": {
         "iata": "KRT",
@@ -1931,10 +1610,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          39.202599,
-          -6.87811
-        ]
+        "coordinates": [39.202599, -6.87811]
       },
       "properties": {
         "iata": "DAR",
@@ -1949,10 +1625,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          39.224899,
-          -6.22202
-        ]
+        "coordinates": [39.224899, -6.22202]
       },
       "properties": {
         "iata": "ZNZ",
@@ -1967,10 +1640,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          32.443501,
-          0.042386
-        ]
+        "coordinates": [32.443501, 0.042386]
       },
       "properties": {
         "iata": "EBB",
@@ -1985,10 +1655,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          111.947222,
-          -7.750278
-        ]
+        "coordinates": [111.947222, -7.750278]
       },
       "properties": {
         "iata": "DHX",
@@ -2003,10 +1670,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          73.065253,
-          18.984597
-        ]
+        "coordinates": [73.065253, 18.984597]
       },
       "properties": {
         "iata": "NMI",
@@ -2021,10 +1685,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -106.608925,
-          35.039976
-        ]
+        "coordinates": [-106.608925, 35.039976]
       },
       "properties": {
         "iata": "ABQ",
@@ -2039,10 +1700,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -76.866997,
-          38.810799
-        ]
+        "coordinates": [-76.866997, 38.810799]
       },
       "properties": {
         "iata": "ADW",
@@ -2057,10 +1715,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -84.428101,
-          33.6367
-        ]
+        "coordinates": [-84.428101, 33.6367]
       },
       "properties": {
         "iata": "ATL",
@@ -2075,10 +1730,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -97.662015,
-          30.197535
-        ]
+        "coordinates": [-97.662015, 30.197535]
       },
       "properties": {
         "iata": "AUS",
@@ -2093,10 +1745,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -72.688066,
-          41.93851
-        ]
+        "coordinates": [-72.688066, 41.93851]
       },
       "properties": {
         "iata": "BDL",
@@ -2111,10 +1760,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -86.6782,
-          36.1245
-        ]
+        "coordinates": [-86.6782, 36.1245]
       },
       "properties": {
         "iata": "BNA",
@@ -2129,10 +1775,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.0079,
-          42.36197
-        ]
+        "coordinates": [-71.0079, 42.36197]
       },
       "properties": {
         "iata": "BOS",
@@ -2147,10 +1790,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -78.732201,
-          42.940498
-        ]
+        "coordinates": [-78.732201, 42.940498]
       },
       "properties": {
         "iata": "BUF",
@@ -2165,10 +1805,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -76.668297,
-          39.1754
-        ]
+        "coordinates": [-76.668297, 39.1754]
       },
       "properties": {
         "iata": "BWI",
@@ -2183,10 +1820,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -81.8498,
-          41.411701
-        ]
+        "coordinates": [-81.8498, 41.411701]
       },
       "properties": {
         "iata": "CLE",
@@ -2201,10 +1835,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -80.9431,
-          35.214001
-        ]
+        "coordinates": [-80.9431, 35.214001]
       },
       "properties": {
         "iata": "CLT",
@@ -2219,10 +1850,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -82.891899,
-          39.998001
-        ]
+        "coordinates": [-82.891899, 39.998001]
       },
       "properties": {
         "iata": "CMH",
@@ -2237,10 +1865,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -84.667801,
-          39.048801
-        ]
+        "coordinates": [-84.667801, 39.048801]
       },
       "properties": {
         "iata": "CVG",
@@ -2255,10 +1880,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -77.037697,
-          38.8521
-        ]
+        "coordinates": [-77.037697, 38.8521]
       },
       "properties": {
         "iata": "DCA",
@@ -2273,10 +1895,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -104.672997,
-          39.861698
-        ]
+        "coordinates": [-104.672997, 39.861698]
       },
       "properties": {
         "iata": "DEN",
@@ -2291,10 +1910,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -97.038002,
-          32.896801
-        ]
+        "coordinates": [-97.038002, 32.896801]
       },
       "properties": {
         "iata": "DFW",
@@ -2309,10 +1925,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -83.353786,
-          42.21377
-        ]
+        "coordinates": [-83.353786, 42.21377]
       },
       "properties": {
         "iata": "DTW",
@@ -2327,10 +1940,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -74.168701,
-          40.692501
-        ]
+        "coordinates": [-74.168701, 40.692501]
       },
       "properties": {
         "iata": "EWR",
@@ -2345,10 +1955,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -80.152702,
-          26.072599
-        ]
+        "coordinates": [-80.152702, 26.072599]
       },
       "properties": {
         "iata": "FLL",
@@ -2363,10 +1970,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -77.455803,
-          38.9445
-        ]
+        "coordinates": [-77.455803, 38.9445]
       },
       "properties": {
         "iata": "IAD",
@@ -2381,10 +1985,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -95.3414,
-          29.9844
-        ]
+        "coordinates": [-95.3414, 29.9844]
       },
       "properties": {
         "iata": "IAH",
@@ -2399,10 +2000,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -86.294403,
-          39.7173
-        ]
+        "coordinates": [-86.294403, 39.7173]
       },
       "properties": {
         "iata": "IND",
@@ -2417,10 +2015,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -81.687813,
-          30.492469
-        ]
+        "coordinates": [-81.687813, 30.492469]
       },
       "properties": {
         "iata": "JAX",
@@ -2435,10 +2030,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -73.779317,
-          40.639447
-        ]
+        "coordinates": [-73.779317, 40.639447]
       },
       "properties": {
         "iata": "JFK",
@@ -2453,10 +2045,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -115.151817,
-          36.083361
-        ]
+        "coordinates": [-115.151817, 36.083361]
       },
       "properties": {
         "iata": "LAS",
@@ -2471,10 +2060,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.407997,
-          33.942501
-        ]
+        "coordinates": [-118.407997, 33.942501]
       },
       "properties": {
         "iata": "LAX",
@@ -2489,10 +2075,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -73.872597,
-          40.777199
-        ]
+        "coordinates": [-73.872597, 40.777199]
       },
       "properties": {
         "iata": "LGA",
@@ -2507,10 +2090,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -94.713898,
-          39.2976
-        ]
+        "coordinates": [-94.713898, 39.2976]
       },
       "properties": {
         "iata": "MCI",
@@ -2525,10 +2105,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -81.308998,
-          28.429399
-        ]
+        "coordinates": [-81.308998, 28.429399]
       },
       "properties": {
         "iata": "MCO",
@@ -2543,10 +2120,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -87.752403,
-          41.785999
-        ]
+        "coordinates": [-87.752403, 41.785999]
       },
       "properties": {
         "iata": "MDW",
@@ -2561,10 +2135,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -89.9767,
-          35.0424
-        ]
+        "coordinates": [-89.9767, 35.0424]
       },
       "properties": {
         "iata": "MEM",
@@ -2579,10 +2150,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -80.290604,
-          25.7932
-        ]
+        "coordinates": [-80.290604, 25.7932]
       },
       "properties": {
         "iata": "MIA",
@@ -2597,10 +2165,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -87.896599,
-          42.947201
-        ]
+        "coordinates": [-87.896599, 42.947201]
       },
       "properties": {
         "iata": "MKE",
@@ -2615,10 +2180,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -93.221741,
-          44.880081
-        ]
+        "coordinates": [-93.221741, 44.880081]
       },
       "properties": {
         "iata": "MSP",
@@ -2633,10 +2195,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -90.258003,
-          29.993401
-        ]
+        "coordinates": [-90.258003, 29.993401]
       },
       "properties": {
         "iata": "MSY",
@@ -2651,10 +2210,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.221184,
-          37.720085
-        ]
+        "coordinates": [-122.221184, 37.720085]
       },
       "properties": {
         "iata": "OAK",
@@ -2669,10 +2225,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -97.598248,
-          35.393388
-        ]
+        "coordinates": [-97.598248, 35.393388]
       },
       "properties": {
         "iata": "OKC",
@@ -2687,10 +2240,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -95.894096,
-          41.3032
-        ]
+        "coordinates": [-95.894096, 41.3032]
       },
       "properties": {
         "iata": "OMA",
@@ -2705,10 +2255,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.600998,
-          34.056
-        ]
+        "coordinates": [-117.600998, 34.056]
       },
       "properties": {
         "iata": "ONT",
@@ -2723,10 +2270,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -87.9048,
-          41.9786
-        ]
+        "coordinates": [-87.9048, 41.9786]
       },
       "properties": {
         "iata": "ORD",
@@ -2741,10 +2285,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -76.201,
-          36.895341
-        ]
+        "coordinates": [-76.201, 36.895341]
       },
       "properties": {
         "iata": "ORF",
@@ -2759,10 +2300,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -80.095596,
-          26.683201
-        ]
+        "coordinates": [-80.095596, 26.683201]
       },
       "properties": {
         "iata": "PBI",
@@ -2777,10 +2315,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.598,
-          45.588699
-        ]
+        "coordinates": [-122.598, 45.588699]
       },
       "properties": {
         "iata": "PDX",
@@ -2795,10 +2330,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -75.241096,
-          39.871899
-        ]
+        "coordinates": [-75.241096, 39.871899]
       },
       "properties": {
         "iata": "PHL",
@@ -2813,10 +2345,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -112.005905,
-          33.435302
-        ]
+        "coordinates": [-112.005905, 33.435302]
       },
       "properties": {
         "iata": "PHX",
@@ -2831,10 +2360,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -80.232903,
-          40.491501
-        ]
+        "coordinates": [-80.232903, 40.491501]
       },
       "properties": {
         "iata": "PIT",
@@ -2849,10 +2375,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.425668,
-          41.725038
-        ]
+        "coordinates": [-71.425668, 41.725038]
       },
       "properties": {
         "iata": "PVD",
@@ -2867,10 +2390,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -70.309303,
-          43.646198
-        ]
+        "coordinates": [-70.309303, 43.646198]
       },
       "properties": {
         "iata": "PWM",
@@ -2885,10 +2405,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -78.787498,
-          35.877602
-        ]
+        "coordinates": [-78.787498, 35.877602]
       },
       "properties": {
         "iata": "RDU",
@@ -2903,10 +2420,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -77.319702,
-          37.505199
-        ]
+        "coordinates": [-77.319702, 37.505199]
       },
       "properties": {
         "iata": "RIC",
@@ -2921,10 +2435,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -119.767998,
-          39.4991
-        ]
+        "coordinates": [-119.767998, 39.4991]
       },
       "properties": {
         "iata": "RNO",
@@ -2939,10 +2450,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -81.755203,
-          26.5362
-        ]
+        "coordinates": [-81.755203, 26.5362]
       },
       "properties": {
         "iata": "RSW",
@@ -2957,10 +2465,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.190002,
-          32.733601
-        ]
+        "coordinates": [-117.190002, 32.733601]
       },
       "properties": {
         "iata": "SAN",
@@ -2975,10 +2480,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -98.469803,
-          29.533701
-        ]
+        "coordinates": [-98.469803, 29.533701]
       },
       "properties": {
         "iata": "SAT",
@@ -2993,10 +2495,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -81.202103,
-          32.127602
-        ]
+        "coordinates": [-81.202103, 32.127602]
       },
       "properties": {
         "iata": "SAV",
@@ -3011,10 +2510,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -85.736,
-          38.1744
-        ]
+        "coordinates": [-85.736, 38.1744]
       },
       "properties": {
         "iata": "SDF",
@@ -3029,10 +2525,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.310276,
-          47.447943
-        ]
+        "coordinates": [-122.310276, 47.447943]
       },
       "properties": {
         "iata": "SEA",
@@ -3047,10 +2540,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -81.237503,
-          28.777599
-        ]
+        "coordinates": [-81.237503, 28.777599]
       },
       "properties": {
         "iata": "SFB",
@@ -3065,10 +2555,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.374821,
-          37.619806
-        ]
+        "coordinates": [-122.374821, 37.619806]
       },
       "properties": {
         "iata": "SFO",
@@ -3083,10 +2570,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -121.929188,
-          37.362452
-        ]
+        "coordinates": [-121.929188, 37.362452]
       },
       "properties": {
         "iata": "SJC",
@@ -3101,10 +2585,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -111.979866,
-          40.78886
-        ]
+        "coordinates": [-111.979866, 40.78886]
       },
       "properties": {
         "iata": "SLC",
@@ -3119,10 +2600,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -121.591003,
-          38.6954
-        ]
+        "coordinates": [-121.591003, 38.6954]
       },
       "properties": {
         "iata": "SMF",
@@ -3137,10 +2615,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.867996,
-          33.675701
-        ]
+        "coordinates": [-117.867996, 33.675701]
       },
       "properties": {
         "iata": "SNA",
@@ -3155,10 +2630,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -82.554359,
-          27.394631
-        ]
+        "coordinates": [-82.554359, 27.394631]
       },
       "properties": {
         "iata": "SRQ",
@@ -3173,10 +2645,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -90.370003,
-          38.748697
-        ]
+        "coordinates": [-90.370003, 38.748697]
       },
       "properties": {
         "iata": "STL",
@@ -3191,10 +2660,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -76.1063,
-          43.111198
-        ]
+        "coordinates": [-76.1063, 43.111198]
       },
       "properties": {
         "iata": "SYR",
@@ -3209,10 +2675,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -82.533203,
-          27.9755
-        ]
+        "coordinates": [-82.533203, 27.9755]
       },
       "properties": {
         "iata": "TPA",
@@ -3227,10 +2690,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -95.8881,
-          36.198399
-        ]
+        "coordinates": [-95.8881, 36.198399]
       },
       "properties": {
         "iata": "TUL",
@@ -3245,10 +2705,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          19.7206,
-          41.4147
-        ]
+        "coordinates": [19.7206, 41.4147]
       },
       "properties": {
         "iata": "TIA",
@@ -3263,10 +2720,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          27.515173,
-          42.569917
-        ]
+        "coordinates": [27.515173, 42.569917]
       },
       "properties": {
         "iata": "BOJ",
@@ -3281,10 +2735,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          23.417671,
-          42.696357
-        ]
+        "coordinates": [23.417671, 42.696357]
       },
       "properties": {
         "iata": "SOF",
@@ -3299,10 +2750,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          27.8251,
-          43.232101
-        ]
+        "coordinates": [27.8251, 43.232101]
       },
       "properties": {
         "iata": "VAR",
@@ -3317,10 +2765,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          33.624901,
-          34.875099
-        ]
+        "coordinates": [33.624901, 34.875099]
       },
       "properties": {
         "iata": "LCA",
@@ -3335,10 +2780,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          16.0688,
-          45.742901
-        ]
+        "coordinates": [16.0688, 45.742901]
       },
       "properties": {
         "iata": "ZAG",
@@ -3353,10 +2795,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -0.558156,
-          38.2822
-        ]
+        "coordinates": [-0.558156, 38.2822]
       },
       "properties": {
         "iata": "ALC",
@@ -3371,10 +2810,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          2.07846,
-          41.2971
-        ]
+        "coordinates": [2.07846, 41.2971]
       },
       "properties": {
         "iata": "BCN",
@@ -3389,10 +2825,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          1.37312,
-          38.872898
-        ]
+        "coordinates": [1.37312, 38.872898]
       },
       "properties": {
         "iata": "IBZ",
@@ -3407,10 +2840,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -3.56264,
-          40.471926
-        ]
+        "coordinates": [-3.56264, 40.471926]
       },
       "properties": {
         "iata": "MAD",
@@ -3425,10 +2855,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -4.49911,
-          36.6749
-        ]
+        "coordinates": [-4.49911, 36.6749]
       },
       "properties": {
         "iata": "AGP",
@@ -3443,10 +2870,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          2.73881,
-          39.551701
-        ]
+        "coordinates": [2.73881, 39.551701]
       },
       "properties": {
         "iata": "PMI",
@@ -3461,10 +2885,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -8.41514,
-          42.896301
-        ]
+        "coordinates": [-8.41514, 42.896301]
       },
       "properties": {
         "iata": "SCQ",
@@ -3479,10 +2900,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -0.715556,
-          44.8283
-        ]
+        "coordinates": [-0.715556, 44.8283]
       },
       "properties": {
         "iata": "BOD",
@@ -3497,10 +2915,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          1.36382,
-          43.629101
-        ]
+        "coordinates": [1.36382, 43.629101]
       },
       "properties": {
         "iata": "TLS",
@@ -3515,10 +2930,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          5.090139,
-          45.725996
-        ]
+        "coordinates": [5.090139, 45.725996]
       },
       "properties": {
         "iata": "LYS",
@@ -3533,10 +2945,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          5.2125,
-          43.438088
-        ]
+        "coordinates": [5.2125, 43.438088]
       },
       "properties": {
         "iata": "MRS",
@@ -3551,10 +2960,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          7.21587,
-          43.658401
-        ]
+        "coordinates": [7.21587, 43.658401]
       },
       "properties": {
         "iata": "NCE",
@@ -3569,10 +2975,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          2.55,
-          49.012798
-        ]
+        "coordinates": [2.55, 49.012798]
       },
       "properties": {
         "iata": "CDG",
@@ -3587,10 +2990,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          2.37944,
-          48.72333
-        ]
+        "coordinates": [2.37944, 48.72333]
       },
       "properties": {
         "iata": "ORY",
@@ -3605,10 +3005,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          7.521117,
-          47.60068
-        ]
+        "coordinates": [7.521117, 47.60068]
       },
       "properties": {
         "iata": "BSL",
@@ -3623,10 +3020,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          23.9445,
-          37.936401
-        ]
+        "coordinates": [23.9445, 37.936401]
       },
       "properties": {
         "iata": "ATH",
@@ -3641,10 +3035,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          25.1803,
-          35.339699
-        ]
+        "coordinates": [25.1803, 35.339699]
       },
       "properties": {
         "iata": "HER",
@@ -3659,10 +3050,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          22.970009,
-          40.51928
-        ]
+        "coordinates": [22.970009, 40.51928]
       },
       "properties": {
         "iata": "SKG",
@@ -3677,10 +3065,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          19.262393,
-          47.43018
-        ]
+        "coordinates": [19.262393, 47.43018]
       },
       "properties": {
         "iata": "BUD",
@@ -3695,10 +3080,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          16.760599,
-          41.138901
-        ]
+        "coordinates": [16.760599, 41.138901]
       },
       "properties": {
         "iata": "BRI",
@@ -3713,10 +3095,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          17.947001,
-          40.6576
-        ]
+        "coordinates": [17.947001, 40.6576]
       },
       "properties": {
         "iata": "BDS",
@@ -3731,10 +3110,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          15.0664,
-          37.466801
-        ]
+        "coordinates": [15.0664, 37.466801]
       },
       "properties": {
         "iata": "CTA",
@@ -3749,10 +3125,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          13.091,
-          38.175999
-        ]
+        "coordinates": [13.091, 38.175999]
       },
       "properties": {
         "iata": "PMO",
@@ -3767,10 +3140,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          9.05428,
-          39.251499
-        ]
+        "coordinates": [9.05428, 39.251499]
       },
       "properties": {
         "iata": "CAG",
@@ -3785,10 +3155,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          8.72811,
-          45.6306
-        ]
+        "coordinates": [8.72811, 45.6306]
       },
       "properties": {
         "iata": "MXP",
@@ -3803,10 +3170,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          9.709223,
-          45.670725
-        ]
+        "coordinates": [9.709223, 45.670725]
       },
       "properties": {
         "iata": "BGY",
@@ -3821,10 +3185,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          7.64963,
-          45.200802
-        ]
+        "coordinates": [7.64963, 45.200802]
       },
       "properties": {
         "iata": "TRN",
@@ -3839,10 +3200,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          8.840732,
-          44.412039
-        ]
+        "coordinates": [8.840732, 44.412039]
       },
       "properties": {
         "iata": "GOA",
@@ -3857,10 +3215,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          11.2887,
-          44.5354
-        ]
+        "coordinates": [11.2887, 44.5354]
       },
       "properties": {
         "iata": "BLQ",
@@ -3875,10 +3230,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          10.887303,
-          45.394955
-        ]
+        "coordinates": [10.887303, 45.394955]
       },
       "properties": {
         "iata": "VRN",
@@ -3893,10 +3245,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          12.3519,
-          45.505299
-        ]
+        "coordinates": [12.3519, 45.505299]
       },
       "properties": {
         "iata": "VCE",
@@ -3911,10 +3260,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          12.251998,
-          41.804532
-        ]
+        "coordinates": [12.251998, 41.804532]
       },
       "properties": {
         "iata": "FCO",
@@ -3929,10 +3275,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          14.2908,
-          40.886002
-        ]
+        "coordinates": [14.2908, 40.886002]
       },
       "properties": {
         "iata": "NAP",
@@ -3947,10 +3290,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          10.3927,
-          43.683899
-        ]
+        "coordinates": [10.3927, 43.683899]
       },
       "properties": {
         "iata": "PSA",
@@ -3965,10 +3305,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          11.202822,
-          43.808558
-        ]
+        "coordinates": [11.202822, 43.808558]
       },
       "properties": {
         "iata": "FLR",
@@ -3983,10 +3320,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          14.4576,
-          46.223701
-        ]
+        "coordinates": [14.4576, 46.223701]
       },
       "properties": {
         "iata": "LJU",
@@ -4001,10 +3335,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          14.259911,
-          50.100874
-        ]
+        "coordinates": [14.259911, 50.100874]
       },
       "properties": {
         "iata": "PRG",
@@ -4019,10 +3350,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          34.8867,
-          32.011398
-        ]
+        "coordinates": [34.8867, 32.011398]
       },
       "properties": {
         "iata": "TLV",
@@ -4037,10 +3365,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          35.014116,
-          29.727009
-        ]
+        "coordinates": [35.014116, 29.727009]
       },
       "properties": {
         "iata": "ETM",
@@ -4055,10 +3380,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          14.4775,
-          35.857498
-        ]
+        "coordinates": [14.4775, 35.857498]
       },
       "properties": {
         "iata": "MLA",
@@ -4073,10 +3395,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          16.5697,
-          48.110298
-        ]
+        "coordinates": [16.5697, 48.110298]
       },
       "properties": {
         "iata": "VIE",
@@ -4091,10 +3410,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -7.96591,
-          37.0144
-        ]
+        "coordinates": [-7.96591, 37.0144]
       },
       "properties": {
         "iata": "FAO",
@@ -4109,10 +3425,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -16.7745,
-          32.697899
-        ]
+        "coordinates": [-16.7745, 32.697899]
       },
       "properties": {
         "iata": "FNC",
@@ -4127,10 +3440,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -25.697901,
-          37.741199
-        ]
+        "coordinates": [-25.697901, 37.741199]
       },
       "properties": {
         "iata": "PDL",
@@ -4145,10 +3455,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -8.68139,
-          41.2481
-        ]
+        "coordinates": [-8.68139, 41.2481]
       },
       "properties": {
         "iata": "OPO",
@@ -4163,10 +3470,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -9.13592,
-          38.7813
-        ]
+        "coordinates": [-9.13592, 38.7813]
       },
       "properties": {
         "iata": "LIS",
@@ -4181,10 +3485,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          18.331499,
-          43.8246
-        ]
+        "coordinates": [18.331499, 43.8246]
       },
       "properties": {
         "iata": "SJJ",
@@ -4199,10 +3500,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          26.103396,
-          44.572127
-        ]
+        "coordinates": [26.103396, 44.572127]
       },
       "properties": {
         "iata": "OTP",
@@ -4217,10 +3515,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          6.10895,
-          46.238098
-        ]
+        "coordinates": [6.10895, 46.238098]
       },
       "properties": {
         "iata": "GVA",
@@ -4235,10 +3530,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          8.548056,
-          47.458056
-        ]
+        "coordinates": [8.548056, 47.458056]
       },
       "properties": {
         "iata": "ZRH",
@@ -4253,10 +3545,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          32.995098,
-          40.128101
-        ]
+        "coordinates": [32.995098, 40.128101]
       },
       "properties": {
         "iata": "ESB",
@@ -4271,10 +3560,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          30.800501,
-          36.898701
-        ]
+        "coordinates": [30.800501, 36.898701]
       },
       "properties": {
         "iata": "AYT",
@@ -4289,10 +3575,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          27.157,
-          38.2924
-        ]
+        "coordinates": [27.157, 38.2924]
       },
       "properties": {
         "iata": "ADB",
@@ -4307,10 +3590,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          28.7925,
-          36.7131
-        ]
+        "coordinates": [28.7925, 36.7131]
       },
       "properties": {
         "iata": "DLM",
@@ -4325,10 +3605,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          35.070522,
-          36.890908
-        ]
+        "coordinates": [35.070522, 36.890908]
       },
       "properties": {
         "iata": "COV",
@@ -4343,10 +3620,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          27.664301,
-          37.250599
-        ]
+        "coordinates": [27.664301, 37.250599]
       },
       "properties": {
         "iata": "BJV",
@@ -4361,10 +3635,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          29.3092,
-          40.898602
-        ]
+        "coordinates": [29.3092, 40.898602]
       },
       "properties": {
         "iata": "SAW",
@@ -4379,10 +3650,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          28.741951,
-          41.261297
-        ]
+        "coordinates": [28.741951, 41.261297]
       },
       "properties": {
         "iata": "IST",
@@ -4397,10 +3665,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          21.622581,
-          41.958087
-        ]
+        "coordinates": [21.622581, 41.958087]
       },
       "properties": {
         "iata": "SKP",
@@ -4415,10 +3680,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -5.34966,
-          36.151199
-        ]
+        "coordinates": [-5.34966, 36.151199]
       },
       "properties": {
         "iata": "GIB",
@@ -4433,10 +3695,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          20.309099,
-          44.818401
-        ]
+        "coordinates": [20.309099, 44.818401]
       },
       "properties": {
         "iata": "BEG",
@@ -4451,10 +3710,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          19.2519,
-          42.359402
-        ]
+        "coordinates": [19.2519, 42.359402]
       },
       "properties": {
         "iata": "TGD",
@@ -4469,10 +3725,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          17.2127,
-          48.1702
-        ]
+        "coordinates": [17.2127, 48.1702]
       },
       "properties": {
         "iata": "BTS",
@@ -4487,10 +3740,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -72.268321,
-          21.773697
-        ]
+        "coordinates": [-72.268321, 21.773697]
       },
       "properties": {
         "iata": "PLS",
@@ -4505,10 +3755,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -68.911111,
-          18.452222
-        ]
+        "coordinates": [-68.911111, 18.452222]
       },
       "properties": {
         "iata": "LRM",
@@ -4523,10 +3770,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -68.363403,
-          18.5674
-        ]
+        "coordinates": [-68.363403, 18.5674]
       },
       "properties": {
         "iata": "PUJ",
@@ -4541,10 +3785,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -69.6689,
-          18.429701
-        ]
+        "coordinates": [-69.6689, 18.429701]
       },
       "properties": {
         "iata": "SDQ",
@@ -4559,10 +3800,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -90.527496,
-          14.5833
-        ]
+        "coordinates": [-90.527496, 14.5833]
       },
       "properties": {
         "iata": "GUA",
@@ -4577,10 +3815,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -76.787498,
-          17.935699
-        ]
+        "coordinates": [-76.787498, 17.935699]
       },
       "properties": {
         "iata": "KIN",
@@ -4595,10 +3830,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -86.928538,
-          20.514922
-        ]
+        "coordinates": [-86.928538, 20.514922]
       },
       "properties": {
         "iata": "CZM",
@@ -4613,10 +3845,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -104.527938,
-          24.125468
-        ]
+        "coordinates": [-104.527938, 24.125468]
       },
       "properties": {
         "iata": "DGO",
@@ -4631,10 +3860,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -103.310108,
-          20.523342
-        ]
+        "coordinates": [-103.310108, 20.523342]
       },
       "properties": {
         "iata": "GDL",
@@ -4649,10 +3875,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -89.645462,
-          20.930485
-        ]
+        "coordinates": [-89.645462, 20.930485]
       },
       "properties": {
         "iata": "MID",
@@ -4667,10 +3890,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -99.071328,
-          19.435137
-        ]
+        "coordinates": [-99.071328, 19.435137]
       },
       "properties": {
         "iata": "MEX",
@@ -4685,10 +3905,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -100.106989,
-          25.778521
-        ]
+        "coordinates": [-100.106989, 25.778521]
       },
       "properties": {
         "iata": "MTY",
@@ -4703,10 +3920,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -106.264572,
-          23.161474
-        ]
+        "coordinates": [-106.264572, 23.161474]
       },
       "properties": {
         "iata": "MZT",
@@ -4721,10 +3935,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -105.254391,
-          20.679913
-        ]
+        "coordinates": [-105.254391, 20.679913]
       },
       "properties": {
         "iata": "PVR",
@@ -4739,10 +3950,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -109.720731,
-          23.151919
-        ]
+        "coordinates": [-109.720731, 23.151919]
       },
       "properties": {
         "iata": "SJD",
@@ -4757,10 +3965,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -99.0257,
-          19.7357
-        ]
+        "coordinates": [-99.0257, 19.7357]
       },
       "properties": {
         "iata": "NLU",
@@ -4775,10 +3980,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -116.969976,
-          32.541043
-        ]
+        "coordinates": [-116.969976, 32.541043]
       },
       "properties": {
         "iata": "TIJ",
@@ -4793,10 +3995,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -86.874304,
-          21.039444
-        ]
+        "coordinates": [-86.874304, 21.039444]
       },
       "properties": {
         "iata": "CUN",
@@ -4811,10 +4010,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -79.383499,
-          9.07136
-        ]
+        "coordinates": [-79.383499, 9.07136]
       },
       "properties": {
         "iata": "PTY",
@@ -4829,10 +4025,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -85.544403,
-          10.5933
-        ]
+        "coordinates": [-85.544403, 10.5933]
       },
       "properties": {
         "iata": "LIR",
@@ -4847,10 +4040,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -84.208801,
-          9.99386
-        ]
+        "coordinates": [-84.208801, 9.99386]
       },
       "properties": {
         "iata": "SJO",
@@ -4865,10 +4055,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -89.055702,
-          13.4409
-        ]
+        "coordinates": [-89.055702, 13.4409]
       },
       "properties": {
         "iata": "SAL",
@@ -4883,10 +4070,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -72.292596,
-          18.580023
-        ]
+        "coordinates": [-72.292596, 18.580023]
       },
       "properties": {
         "iata": "PAP",
@@ -4901,10 +4085,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -82.409103,
-          22.989201
-        ]
+        "coordinates": [-82.409103, 22.989201]
       },
       "properties": {
         "iata": "HAV",
@@ -4919,10 +4100,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -81.435303,
-          23.034401
-        ]
+        "coordinates": [-81.435303, 23.034401]
       },
       "properties": {
         "iata": "VRA",
@@ -4937,10 +4115,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -81.357697,
-          19.292801
-        ]
+        "coordinates": [-81.357697, 19.292801]
       },
       "properties": {
         "iata": "GCM",
@@ -4955,10 +4130,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -77.466202,
-          25.039
-        ]
+        "coordinates": [-77.466202, 25.039]
       },
       "properties": {
         "iata": "NAS",
@@ -4973,10 +4145,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -88.303556,
-          17.539951
-        ]
+        "coordinates": [-88.303556, 17.539951]
       },
       "properties": {
         "iata": "BZE",
@@ -4991,10 +4160,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -149.606995,
-          -17.553699
-        ]
+        "coordinates": [-149.606995, -17.553699]
       },
       "properties": {
         "iata": "PPT",
@@ -5009,10 +4175,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          168.320007,
-          -17.699301
-        ]
+        "coordinates": [168.320007, -17.699301]
       },
       "properties": {
         "iata": "VLI",
@@ -5027,10 +4190,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          174.786331,
-          -37.01199
-        ]
+        "coordinates": [174.786331, -37.01199]
       },
       "properties": {
         "iata": "AKL",
@@ -5045,10 +4205,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          172.532065,
-          -43.489029
-        ]
+        "coordinates": [172.532065, -43.489029]
       },
       "properties": {
         "iata": "CHC",
@@ -5063,10 +4220,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          174.804993,
-          -41.327202
-        ]
+        "coordinates": [174.804993, -41.327202]
       },
       "properties": {
         "iata": "WLG",
@@ -5081,10 +4235,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          50.63764,
-          26.267295
-        ]
+        "coordinates": [50.63764, 26.267295]
       },
       "properties": {
         "iata": "BAH",
@@ -5099,10 +4250,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          42.656601,
-          18.2404
-        ]
+        "coordinates": [42.656601, 18.2404]
       },
       "properties": {
         "iata": "AHB",
@@ -5117,10 +4265,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          49.797901,
-          26.471201
-        ]
+        "coordinates": [49.797901, 26.471201]
       },
       "properties": {
         "iata": "DMM",
@@ -5135,10 +4280,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          50.152,
-          26.2654
-        ]
+        "coordinates": [50.152, 26.2654]
       },
       "properties": {
         "iata": "DHA",
@@ -5153,10 +4295,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          39.156502,
-          21.6796
-        ]
+        "coordinates": [39.156502, 21.6796]
       },
       "properties": {
         "iata": "JED",
@@ -5171,10 +4310,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          39.705101,
-          24.5534
-        ]
+        "coordinates": [39.705101, 24.5534]
       },
       "properties": {
         "iata": "MED",
@@ -5189,10 +4325,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          46.698799,
-          24.9576
-        ]
+        "coordinates": [46.698799, 24.9576]
       },
       "properties": {
         "iata": "RUH",
@@ -5207,10 +4340,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          51.152199,
-          35.4161
-        ]
+        "coordinates": [51.152199, 35.4161]
       },
       "properties": {
         "iata": "IKA",
@@ -5225,10 +4355,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          51.3134,
-          35.689201
-        ]
+        "coordinates": [51.3134, 35.689201]
       },
       "properties": {
         "iata": "THR",
@@ -5243,10 +4370,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          59.640999,
-          36.235199
-        ]
+        "coordinates": [59.640999, 36.235199]
       },
       "properties": {
         "iata": "MHD",
@@ -5261,10 +4385,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          52.589802,
-          29.5392
-        ]
+        "coordinates": [52.589802, 29.5392]
       },
       "properties": {
         "iata": "SYZ",
@@ -5279,10 +4400,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          35.993198,
-          31.722601
-        ]
+        "coordinates": [35.993198, 31.722601]
       },
       "properties": {
         "iata": "AMM",
@@ -5297,10 +4415,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          47.968899,
-          29.226601
-        ]
+        "coordinates": [47.968899, 29.226601]
       },
       "properties": {
         "iata": "KWI",
@@ -5315,10 +4430,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          35.4884,
-          33.8209
-        ]
+        "coordinates": [35.4884, 33.8209]
       },
       "properties": {
         "iata": "BEY",
@@ -5333,10 +4445,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          57.634167,
-          19.501944
-        ]
+        "coordinates": [57.634167, 19.501944]
       },
       "properties": {
         "iata": "DQM",
@@ -5351,10 +4460,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          54.651718,
-          24.443764
-        ]
+        "coordinates": [54.651718, 24.443764]
       },
       "properties": {
         "iata": "AUH",
@@ -5369,10 +4475,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          55.364399,
-          25.2528
-        ]
+        "coordinates": [55.364399, 25.2528]
       },
       "properties": {
         "iata": "DXB",
@@ -5387,10 +4490,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          55.161389,
-          24.896356
-        ]
+        "coordinates": [55.161389, 24.896356]
       },
       "properties": {
         "iata": "DWC",
@@ -5405,10 +4505,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          55.5172,
-          25.3286
-        ]
+        "coordinates": [55.5172, 25.3286]
       },
       "properties": {
         "iata": "SHJ",
@@ -5423,10 +4520,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          58.284401,
-          23.5933
-        ]
+        "coordinates": [58.284401, 23.5933]
       },
       "properties": {
         "iata": "MCT",
@@ -5441,10 +4535,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          72.82566,
-          33.549
-        ]
+        "coordinates": [72.82566, 33.549]
       },
       "properties": {
         "iata": "ISB",
@@ -5459,10 +4550,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          67.160797,
-          24.9065
-        ]
+        "coordinates": [67.160797, 24.9065]
       },
       "properties": {
         "iata": "KHI",
@@ -5477,10 +4565,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          74.403603,
-          31.521601
-        ]
+        "coordinates": [74.403603, 31.521601]
       },
       "properties": {
         "iata": "LHE",
@@ -5495,10 +4580,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          44.2346,
-          33.262501
-        ]
+        "coordinates": [44.2346, 33.262501]
       },
       "properties": {
         "iata": "BGW",
@@ -5513,10 +4595,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          36.515598,
-          33.411499
-        ]
+        "coordinates": [36.515598, 33.411499]
       },
       "properties": {
         "iata": "DAM",
@@ -5531,10 +4610,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          51.608056,
-          25.273056
-        ]
+        "coordinates": [51.608056, 25.273056]
       },
       "properties": {
         "iata": "DOH",
@@ -5549,10 +4625,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -149.992561,
-          61.179004
-        ]
+        "coordinates": [-149.992561, 61.179004]
       },
       "properties": {
         "iata": "ANC",
@@ -5567,10 +4640,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          144.797282,
-          13.485
-        ]
+        "coordinates": [144.797282, 13.485]
       },
       "properties": {
         "iata": "GUM",
@@ -5585,10 +4655,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -157.924228,
-          21.32062
-        ]
+        "coordinates": [-157.924228, 21.32062]
       },
       "properties": {
         "iata": "HNL",
@@ -5603,10 +4670,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -156.431837,
-          20.896263
-        ]
+        "coordinates": [-156.431837, 20.896263]
       },
       "properties": {
         "iata": "OGG",
@@ -5621,10 +4685,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          120.349998,
-          22.577101
-        ]
+        "coordinates": [120.349998, 22.577101]
       },
       "properties": {
         "iata": "KHH",
@@ -5639,10 +4700,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          121.233002,
-          25.0777
-        ]
+        "coordinates": [121.233002, 25.0777]
       },
       "properties": {
         "iata": "TPE",
@@ -5657,10 +4715,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          140.386002,
-          35.764702
-        ]
+        "coordinates": [140.386002, 35.764702]
       },
       "properties": {
         "iata": "NRT",
@@ -5675,10 +4730,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          135.244003,
-          34.427299
-        ]
+        "coordinates": [135.244003, 34.427299]
       },
       "properties": {
         "iata": "KIX",
@@ -5693,10 +4745,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          141.692001,
-          42.7752
-        ]
+        "coordinates": [141.692001, 42.7752]
       },
       "properties": {
         "iata": "CTS",
@@ -5711,10 +4760,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          130.451004,
-          33.585899
-        ]
+        "coordinates": [130.451004, 33.585899]
       },
       "properties": {
         "iata": "FUK",
@@ -5729,10 +4775,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          130.718994,
-          31.8034
-        ]
+        "coordinates": [130.718994, 31.8034]
       },
       "properties": {
         "iata": "KOJ",
@@ -5747,10 +4790,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          136.804993,
-          34.858398
-        ]
+        "coordinates": [136.804993, 34.858398]
       },
       "properties": {
         "iata": "NGO",
@@ -5765,10 +4805,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          135.438004,
-          34.7855
-        ]
+        "coordinates": [135.438004, 34.7855]
       },
       "properties": {
         "iata": "ITM",
@@ -5783,10 +4820,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          140.917007,
-          38.139702
-        ]
+        "coordinates": [140.917007, 38.139702]
       },
       "properties": {
         "iata": "SDJ",
@@ -5801,10 +4835,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          139.779999,
-          35.552299
-        ]
+        "coordinates": [139.779999, 35.552299]
       },
       "properties": {
         "iata": "HND",
@@ -5819,10 +4850,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          139.348007,
-          35.748501
-        ]
+        "coordinates": [139.348007, 35.748501]
       },
       "properties": {
         "iata": "OKO",
@@ -5837,10 +4865,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          126.382814,
-          34.991406
-        ]
+        "coordinates": [126.382814, 34.991406]
       },
       "properties": {
         "iata": "MWX",
@@ -5855,10 +4880,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          126.492548,
-          33.512058
-        ]
+        "coordinates": [126.492548, 33.512058]
       },
       "properties": {
         "iata": "CJU",
@@ -5873,10 +4895,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          128.938004,
-          35.179501
-        ]
+        "coordinates": [128.938004, 35.179501]
       },
       "properties": {
         "iata": "PUS",
@@ -5891,10 +4910,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          126.450996,
-          37.469101
-        ]
+        "coordinates": [126.450996, 37.469101]
       },
       "properties": {
         "iata": "ICN",
@@ -5909,10 +4925,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          126.791,
-          37.5583
-        ]
+        "coordinates": [126.791, 37.5583]
       },
       "properties": {
         "iata": "GMP",
@@ -5927,10 +4940,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          127.646004,
-          26.195801
-        ]
+        "coordinates": [127.646004, 26.195801]
       },
       "properties": {
         "iata": "OKA",
@@ -5945,10 +4955,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          127.769444,
-          26.351667
-        ]
+        "coordinates": [127.769444, 26.351667]
       },
       "properties": {
         "iata": "DNA",
@@ -5963,10 +4970,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          121.019997,
-          14.5086
-        ]
+        "coordinates": [121.019997, 14.5086]
       },
       "properties": {
         "iata": "MNL",
@@ -5981,10 +4985,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          125.646004,
-          7.12552
-        ]
+        "coordinates": [125.646004, 7.12552]
       },
       "properties": {
         "iata": "DVO",
@@ -5999,10 +5000,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          123.97974,
-          10.309261
-        ]
+        "coordinates": [123.97974, 10.309261]
       },
       "properties": {
         "iata": "CEB",
@@ -6017,10 +5015,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -58.4156,
-          -34.5592
-        ]
+        "coordinates": [-58.4156, -34.5592]
       },
       "properties": {
         "iata": "AEP",
@@ -6035,10 +5030,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -58.5358,
-          -34.8222
-        ]
+        "coordinates": [-58.5358, -34.8222]
       },
       "properties": {
         "iata": "EZE",
@@ -6053,10 +5045,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -48.476207,
-          -1.379279
-        ]
+        "coordinates": [-48.476207, -1.379279]
       },
       "properties": {
         "iata": "BEL",
@@ -6071,10 +5060,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -47.920834,
-          -15.869167
-        ]
+        "coordinates": [-47.920834, -15.869167]
       },
       "properties": {
         "iata": "BSB",
@@ -6089,10 +5075,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -43.966928,
-          -19.63571
-        ]
+        "coordinates": [-43.966928, -19.63571]
       },
       "properties": {
         "iata": "CNF",
@@ -6107,10 +5090,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -60.049702,
-          -3.03861
-        ]
+        "coordinates": [-60.049702, -3.03861]
       },
       "properties": {
         "iata": "MAO",
@@ -6125,10 +5105,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -48.552502,
-          -27.670279
-        ]
+        "coordinates": [-48.552502, -27.670279]
       },
       "properties": {
         "iata": "FLN",
@@ -6143,10 +5120,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -38.532222,
-          -3.775833
-        ]
+        "coordinates": [-38.532222, -3.775833]
       },
       "properties": {
         "iata": "FOR",
@@ -6161,10 +5135,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -43.250557,
-          -22.809999
-        ]
+        "coordinates": [-43.250557, -22.809999]
       },
       "properties": {
         "iata": "GIG",
@@ -6179,10 +5150,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -46.467778,
-          -23.431944
-        ]
+        "coordinates": [-46.467778, -23.431944]
       },
       "properties": {
         "iata": "GRU",
@@ -6197,10 +5165,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -39.080584,
-          -16.438426
-        ]
+        "coordinates": [-39.080584, -16.438426]
       },
       "properties": {
         "iata": "BPS",
@@ -6215,10 +5180,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -38.322498,
-          -12.908611
-        ]
+        "coordinates": [-38.322498, -12.908611]
       },
       "properties": {
         "iata": "SSA",
@@ -6233,10 +5195,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -40.285,
-          -20.258
-        ]
+        "coordinates": [-40.285, -20.258]
       },
       "properties": {
         "iata": "VIX",
@@ -6251,10 +5210,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -70.785797,
-          -33.393002
-        ]
+        "coordinates": [-70.785797, -33.393002]
       },
       "properties": {
         "iata": "SCL",
@@ -6269,10 +5225,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -79.883598,
-          -2.15742
-        ]
+        "coordinates": [-79.883598, -2.15742]
       },
       "properties": {
         "iata": "GYE",
@@ -6287,10 +5240,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -78.354306,
-          -0.125399
-        ]
+        "coordinates": [-78.354306, -0.125399]
       },
       "properties": {
         "iata": "UIO",
@@ -6305,10 +5255,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -57.519227,
-          -25.240156
-        ]
+        "coordinates": [-57.519227, -25.240156]
       },
       "properties": {
         "iata": "ASU",
@@ -6323,10 +5270,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -55.837584,
-          -27.227537
-        ]
+        "coordinates": [-55.837584, -27.227537]
       },
       "properties": {
         "iata": "ENO",
@@ -6341,10 +5285,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -54.839544,
-          -25.457186
-        ]
+        "coordinates": [-54.839544, -25.457186]
       },
       "properties": {
         "iata": "AGT",
@@ -6359,10 +5300,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -60.6217,
-          -22.046499
-        ]
+        "coordinates": [-60.6217, -22.046499]
       },
       "properties": {
         "iata": "ESG",
@@ -6377,10 +5315,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -74.1469,
-          4.70159
-        ]
+        "coordinates": [-74.1469, 4.70159]
       },
       "properties": {
         "iata": "BOG",
@@ -6395,10 +5330,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -63.135399,
-          -17.6448
-        ]
+        "coordinates": [-63.135399, -17.6448]
       },
       "properties": {
         "iata": "VVI",
@@ -6413,10 +5345,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -55.187801,
-          5.45283
-        ]
+        "coordinates": [-55.187801, 5.45283]
       },
       "properties": {
         "iata": "PBM",
@@ -6431,10 +5360,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -52.361326,
-          4.819964
-        ]
+        "coordinates": [-52.361326, 4.819964]
       },
       "properties": {
         "iata": "CAY",
@@ -6449,10 +5375,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -77.114305,
-          -12.0219
-        ]
+        "coordinates": [-77.114305, -12.0219]
       },
       "properties": {
         "iata": "LIM",
@@ -6467,10 +5390,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.938797,
-          -13.5357
-        ]
+        "coordinates": [-71.938797, -13.5357]
       },
       "properties": {
         "iata": "CUZ",
@@ -6485,10 +5405,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -56.026497,
-          -34.835647
-        ]
+        "coordinates": [-56.026497, -34.835647]
       },
       "properties": {
         "iata": "MVD",
@@ -6503,10 +5420,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -64.692222,
-          10.111111
-        ]
+        "coordinates": [-64.692222, 10.111111]
       },
       "properties": {
         "iata": "BLA",
@@ -6521,10 +5435,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -66.991222,
-          10.601194
-        ]
+        "coordinates": [-66.991222, 10.601194]
       },
       "properties": {
         "iata": "CCS",
@@ -6539,10 +5450,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -61.003201,
-          14.591
-        ]
+        "coordinates": [-61.003201, 14.591]
       },
       "properties": {
         "iata": "FDF",
@@ -6557,10 +5465,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -61.531799,
-          16.265301
-        ]
+        "coordinates": [-61.531799, 16.265301]
       },
       "properties": {
         "iata": "PTP",
@@ -6575,10 +5480,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -66.001801,
-          18.4394
-        ]
+        "coordinates": [-66.001801, 18.4394]
       },
       "properties": {
         "iata": "SJU",
@@ -6593,10 +5495,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -60.952599,
-          13.7332
-        ]
+        "coordinates": [-60.952599, 13.7332]
       },
       "properties": {
         "iata": "UVF",
@@ -6611,10 +5510,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -70.015198,
-          12.5014
-        ]
+        "coordinates": [-70.015198, 12.5014]
       },
       "properties": {
         "iata": "AUA",
@@ -6629,10 +5525,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -68.268501,
-          12.131
-        ]
+        "coordinates": [-68.268501, 12.131]
       },
       "properties": {
         "iata": "BON",
@@ -6647,10 +5540,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -68.959801,
-          12.1889
-        ]
+        "coordinates": [-68.959801, 12.1889]
       },
       "properties": {
         "iata": "CUR",
@@ -6665,10 +5555,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -63.108898,
-          18.041
-        ]
+        "coordinates": [-63.108898, 18.041]
       },
       "properties": {
         "iata": "SXM",
@@ -6683,10 +5570,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          77.042828,
-          43.354267
-        ]
+        "coordinates": [77.042828, 43.354267]
       },
       "properties": {
         "iata": "ALA",
@@ -6701,10 +5585,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          71.467094,
-          51.027035
-        ]
+        "coordinates": [71.467094, 51.027035]
       },
       "properties": {
         "iata": "NQZ",
@@ -6719,10 +5600,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          74.4776,
-          43.061298
-        ]
+        "coordinates": [74.4776, 43.061298]
       },
       "properties": {
         "iata": "FRU",
@@ -6737,10 +5615,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          50.0467,
-          40.467499
-        ]
+        "coordinates": [50.0467, 40.467499]
       },
       "properties": {
         "iata": "GYD",
@@ -6755,10 +5630,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          44.395901,
-          40.147301
-        ]
+        "coordinates": [44.395901, 40.147301]
       },
       "properties": {
         "iata": "EVN",
@@ -6773,10 +5645,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          44.9547,
-          41.669201
-        ]
+        "coordinates": [44.9547, 41.669201]
       },
       "properties": {
         "iata": "TBS",
@@ -6791,10 +5660,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          132.148155,
-          43.396256
-        ]
+        "coordinates": [132.148155, 43.396256]
       },
       "properties": {
         "iata": "VVO",
@@ -6809,10 +5675,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          30.894699,
-          50.345001
-        ]
+        "coordinates": [30.894699, 50.345001]
       },
       "properties": {
         "iata": "KBP",
@@ -6827,10 +5690,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          23.9561,
-          49.8125
-        ]
+        "coordinates": [23.9561, 49.8125]
       },
       "properties": {
         "iata": "LWO",
@@ -6845,10 +5705,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          30.262501,
-          59.800301
-        ]
+        "coordinates": [30.262501, 59.800301]
       },
       "properties": {
         "iata": "LED",
@@ -6863,10 +5720,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          28.039964,
-          53.888071
-        ]
+        "coordinates": [28.039964, 53.888071]
       },
       "properties": {
         "iata": "MSQ",
@@ -6881,10 +5735,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          92.492437,
-          56.173077
-        ]
+        "coordinates": [92.492437, 56.173077]
       },
       "properties": {
         "iata": "KJA",
@@ -6899,10 +5750,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          82.618675,
-          55.019756
-        ]
+        "coordinates": [82.618675, 55.019756]
       },
       "properties": {
         "iata": "OVB",
@@ -6917,10 +5765,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          39.924722,
-          47.493888
-        ]
+        "coordinates": [39.924722, 47.493888]
       },
       "properties": {
         "iata": "ROV",
@@ -6935,10 +5780,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          39.9566,
-          43.449902
-        ]
+        "coordinates": [39.9566, 43.449902]
       },
       "properties": {
         "iata": "AER",
@@ -6953,10 +5795,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          60.8027,
-          56.743099
-        ]
+        "coordinates": [60.8027, 56.743099]
       },
       "properties": {
         "iata": "SVX",
@@ -6971,10 +5810,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          58.361,
-          37.986801
-        ]
+        "coordinates": [58.361, 37.986801]
       },
       "properties": {
         "iata": "ASB",
@@ -6989,10 +5825,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          69.281197,
-          41.2579
-        ]
+        "coordinates": [69.281197, 41.2579]
       },
       "properties": {
         "iata": "TAS",
@@ -7007,10 +5840,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          38.150002,
-          55.553299
-        ]
+        "coordinates": [38.150002, 55.553299]
       },
       "properties": {
         "iata": "ZIA",
@@ -7025,10 +5855,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          37.9063,
-          55.408798
-        ]
+        "coordinates": [37.9063, 55.408798]
       },
       "properties": {
         "iata": "DME",
@@ -7043,10 +5870,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          37.4146,
-          55.972599
-        ]
+        "coordinates": [37.4146, 55.972599]
       },
       "properties": {
         "iata": "SVO",
@@ -7061,10 +5885,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          37.261501,
-          55.591499
-        ]
+        "coordinates": [37.261501, 55.591499]
       },
       "properties": {
         "iata": "VKO",
@@ -7079,10 +5900,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          49.278702,
-          55.606201
-        ]
+        "coordinates": [49.278702, 55.606201]
       },
       "properties": {
         "iata": "KZN",
@@ -7097,10 +5915,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          46.171111,
-          51.712778
-        ]
+        "coordinates": [46.171111, 51.712778]
       },
       "properties": {
         "iata": "GSV",
@@ -7115,10 +5930,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          55.874401,
-          54.557499
-        ]
+        "coordinates": [55.874401, 54.557499]
       },
       "properties": {
         "iata": "UFA",
@@ -7133,10 +5945,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          50.164299,
-          53.504902
-        ]
+        "coordinates": [50.164299, 53.504902]
       },
       "properties": {
         "iata": "KUF",
@@ -7151,10 +5960,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          72.867897,
-          19.088699
-        ]
+        "coordinates": [72.867897, 19.088699]
       },
       "properties": {
         "iata": "BOM",
@@ -7169,10 +5975,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          71.039391,
-          22.378824
-        ]
+        "coordinates": [71.039391, 22.378824]
       },
       "properties": {
         "iata": "HSR",
@@ -7187,10 +5990,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          79.884102,
-          7.18076
-        ]
+        "coordinates": [79.884102, 7.18076]
       },
       "properties": {
         "iata": "CMB",
@@ -7205,10 +6005,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          81.124128,
-          6.284467
-        ]
+        "coordinates": [81.124128, 6.284467]
       },
       "properties": {
         "iata": "HRI",
@@ -7223,10 +6020,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          104.844002,
-          11.5466
-        ]
+        "coordinates": [104.844002, 11.5466]
       },
       "properties": {
         "iata": "PNH",
@@ -7241,10 +6035,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          104.223056,
-          13.369167
-        ]
+        "coordinates": [104.223056, 13.369167]
       },
       "properties": {
         "iata": "SAI",
@@ -7259,10 +6050,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          88.446701,
-          22.654699
-        ]
+        "coordinates": [88.446701, 22.654699]
       },
       "properties": {
         "iata": "CCU",
@@ -7277,10 +6065,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          90.397783,
-          23.843347
-        ]
+        "coordinates": [90.397783, 23.843347]
       },
       "properties": {
         "iata": "DAC",
@@ -7295,10 +6080,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          113.915001,
-          22.308901
-        ]
+        "coordinates": [113.915001, 22.308901]
       },
       "properties": {
         "iata": "HKG",
@@ -7313,10 +6095,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          77.09519,
-          28.55563
-        ]
+        "coordinates": [77.09519, 28.55563]
       },
       "properties": {
         "iata": "DEL",
@@ -7331,10 +6110,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          113.592003,
-          22.149599
-        ]
+        "coordinates": [113.592003, 22.149599]
       },
       "properties": {
         "iata": "MFM",
@@ -7349,10 +6125,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          85.3591,
-          27.6966
-        ]
+        "coordinates": [85.3591, 27.6966]
       },
       "properties": {
         "iata": "KTM",
@@ -7367,10 +6140,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          77.706299,
-          13.1979
-        ]
+        "coordinates": [77.706299, 13.1979]
       },
       "properties": {
         "iata": "BLR",
@@ -7385,10 +6155,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          76.400838,
-          10.151047
-        ]
+        "coordinates": [76.400838, 10.151047]
       },
       "properties": {
         "iata": "COK",
@@ -7403,10 +6170,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          73.860625,
-          15.744257
-        ]
+        "coordinates": [73.860625, 15.744257]
       },
       "properties": {
         "iata": "GOX",
@@ -7421,10 +6185,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          73.831398,
-          15.3808
-        ]
+        "coordinates": [73.831398, 15.3808]
       },
       "properties": {
         "iata": "GOI",
@@ -7439,10 +6200,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          78.429855,
-          17.231318
-        ]
+        "coordinates": [78.429855, 17.231318]
       },
       "properties": {
         "iata": "HYD",
@@ -7457,10 +6215,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          80.169296,
-          12.990005
-        ]
+        "coordinates": [80.169296, 12.990005]
       },
       "properties": {
         "iata": "MAA",
@@ -7475,10 +6230,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          76.920097,
-          8.48212
-        ]
+        "coordinates": [76.920097, 8.48212]
       },
       "properties": {
         "iata": "TRV",
@@ -7493,10 +6245,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          73.529099,
-          4.19183
-        ]
+        "coordinates": [73.529099, 4.19183]
       },
       "properties": {
         "iata": "MLE",
@@ -7511,10 +6260,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          100.607002,
-          13.9126
-        ]
+        "coordinates": [100.607002, 13.9126]
       },
       "properties": {
         "iata": "DMK",
@@ -7529,10 +6275,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          100.747002,
-          13.6811
-        ]
+        "coordinates": [100.747002, 13.6811]
       },
       "properties": {
         "iata": "BKK",
@@ -7547,10 +6290,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          98.962601,
-          18.7668
-        ]
+        "coordinates": [98.962601, 18.7668]
       },
       "properties": {
         "iata": "CNX",
@@ -7565,10 +6305,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          98.316902,
-          8.1132
-        ]
+        "coordinates": [98.316902, 8.1132]
       },
       "properties": {
         "iata": "HKT",
@@ -7583,10 +6320,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          105.806999,
-          21.221201
-        ]
+        "coordinates": [105.806999, 21.221201]
       },
       "properties": {
         "iata": "HAN",
@@ -7601,10 +6335,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          106.652,
-          10.8188
-        ]
+        "coordinates": [106.652, 10.8188]
       },
       "properties": {
         "iata": "SGN",
@@ -7619,10 +6350,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          95.977898,
-          21.7022
-        ]
+        "coordinates": [95.977898, 21.7022]
       },
       "properties": {
         "iata": "MDL",
@@ -7637,10 +6365,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          96.133202,
-          16.907301
-        ]
+        "coordinates": [96.133202, 16.907301]
       },
       "properties": {
         "iata": "RGN",
@@ -7655,10 +6380,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          119.554001,
-          -5.06163
-        ]
+        "coordinates": [119.554001, -5.06163]
       },
       "properties": {
         "iata": "UPG",
@@ -7673,10 +6395,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          115.167123,
-          -8.748409
-        ]
+        "coordinates": [115.167123, -8.748409]
       },
       "properties": {
         "iata": "DPS",
@@ -7691,10 +6410,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          140.519857,
-          -2.579627
-        ]
+        "coordinates": [140.519857, -2.579627]
       },
       "properties": {
         "iata": "DJJ",
@@ -7709,10 +6425,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          116.89452,
-          -1.268342
-        ]
+        "coordinates": [116.89452, -1.268342]
       },
       "properties": {
         "iata": "BPN",
@@ -7727,10 +6440,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          112.787003,
-          -7.37983
-        ]
+        "coordinates": [112.787003, -7.37983]
       },
       "properties": {
         "iata": "SUB",
@@ -7745,10 +6455,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          114.928001,
-          4.9442
-        ]
+        "coordinates": [114.928001, 4.9442]
       },
       "properties": {
         "iata": "BWN",
@@ -7763,10 +6470,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          106.655998,
-          -6.12557
-        ]
+        "coordinates": [106.655998, -6.12557]
       },
       "properties": {
         "iata": "CGK",
@@ -7781,10 +6485,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          98.870566,
-          3.637847
-        ]
+        "coordinates": [98.870566, 3.637847]
       },
       "properties": {
         "iata": "KNO",
@@ -7799,10 +6500,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          101.709999,
-          2.74558
-        ]
+        "coordinates": [101.709999, 2.74558]
       },
       "properties": {
         "iata": "KUL",
@@ -7817,10 +6515,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          103.994003,
-          1.35019
-        ]
+        "coordinates": [103.994003, 1.35019]
       },
       "properties": {
         "iata": "SIN",
@@ -7835,10 +6530,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          153.117004,
-          -27.384199
-        ]
+        "coordinates": [153.117004, -27.384199]
       },
       "properties": {
         "iata": "BNE",
@@ -7853,10 +6545,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          144.836432,
-          -37.661548
-        ]
+        "coordinates": [144.836432, -37.661548]
       },
       "properties": {
         "iata": "MEL",
@@ -7871,10 +6560,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          138.533393,
-          -34.947512
-        ]
+        "coordinates": [138.533393, -34.947512]
       },
       "properties": {
         "iata": "ADL",
@@ -7889,10 +6575,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          130.88185,
-          -12.41497
-        ]
+        "coordinates": [130.88185, -12.41497]
       },
       "properties": {
         "iata": "DRW",
@@ -7907,10 +6590,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          115.967003,
-          -31.9403
-        ]
+        "coordinates": [115.967003, -31.9403]
       },
       "properties": {
         "iata": "PER",
@@ -7925,10 +6605,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          151.177002,
-          -33.946098
-        ]
+        "coordinates": [151.177002, -33.946098]
       },
       "properties": {
         "iata": "SYD",
@@ -7943,10 +6620,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          116.584999,
-          40.080101
-        ]
+        "coordinates": [116.584999, 40.080101]
       },
       "properties": {
         "iata": "PEK",
@@ -7961,10 +6635,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          116.41092,
-          39.509945
-        ]
+        "coordinates": [116.41092, 39.509945]
       },
       "properties": {
         "iata": "PKX",
@@ -7979,10 +6650,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          111.824598,
-          40.849658
-        ]
+        "coordinates": [111.824598, 40.849658]
       },
       "properties": {
         "iata": "HET",
@@ -7997,10 +6665,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          117.346001,
-          39.124401
-        ]
+        "coordinates": [117.346001, 39.124401]
       },
       "properties": {
         "iata": "TSN",
@@ -8015,10 +6680,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          112.627998,
-          37.746899
-        ]
+        "coordinates": [112.627998, 37.746899]
       },
       "properties": {
         "iata": "TYN",
@@ -8033,10 +6695,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          113.299004,
-          23.392401
-        ]
+        "coordinates": [113.299004, 23.392401]
       },
       "properties": {
         "iata": "CAN",
@@ -8051,10 +6710,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          113.220001,
-          28.189199
-        ]
+        "coordinates": [113.220001, 28.189199]
       },
       "properties": {
         "iata": "CSX",
@@ -8069,10 +6725,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          110.039553,
-          25.219828
-        ]
+        "coordinates": [110.039553, 25.219828]
       },
       "properties": {
         "iata": "KWL",
@@ -8087,10 +6740,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          108.175335,
-          22.608544
-        ]
+        "coordinates": [108.175335, 22.608544]
       },
       "properties": {
         "iata": "NNG",
@@ -8105,10 +6755,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          113.810997,
-          22.639299
-        ]
+        "coordinates": [113.810997, 22.639299]
       },
       "properties": {
         "iata": "SZX",
@@ -8123,10 +6770,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          113.849165,
-          34.526497
-        ]
+        "coordinates": [113.849165, 34.526497]
       },
       "properties": {
         "iata": "CGO",
@@ -8141,10 +6785,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          115.03926,
-          30.341178
-        ]
+        "coordinates": [115.03926, 30.341178]
       },
       "properties": {
         "iata": "EHU",
@@ -8159,10 +6800,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          114.213723,
-          30.774798
-        ]
+        "coordinates": [114.213723, 30.774798]
       },
       "properties": {
         "iata": "WUH",
@@ -8177,10 +6815,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          110.459,
-          19.9349
-        ]
+        "coordinates": [110.459, 19.9349]
       },
       "properties": {
         "iata": "HAK",
@@ -8195,10 +6830,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          109.412003,
-          18.3029
-        ]
+        "coordinates": [109.412003, 18.3029]
       },
       "properties": {
         "iata": "SYX",
@@ -8213,10 +6845,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          125.669998,
-          39.224098
-        ]
+        "coordinates": [125.669998, 39.224098]
       },
       "properties": {
         "iata": "FNJ",
@@ -8231,10 +6860,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          103.620003,
-          36.515202
-        ]
+        "coordinates": [103.620003, 36.515202]
       },
       "properties": {
         "iata": "LHW",
@@ -8249,10 +6875,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          108.751999,
-          34.447102
-        ]
+        "coordinates": [108.751999, 34.447102]
       },
       "properties": {
         "iata": "XIY",
@@ -8267,10 +6890,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          106.819833,
-          47.646916
-        ]
+        "coordinates": [106.819833, 47.646916]
       },
       "properties": {
         "iata": "UBN",
@@ -8285,10 +6905,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          102.936743,
-          25.110313
-        ]
+        "coordinates": [102.936743, 25.110313]
       },
       "properties": {
         "iata": "KMG",
@@ -8303,10 +6920,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          118.127998,
-          24.544001
-        ]
+        "coordinates": [118.127998, 24.544001]
       },
       "properties": {
         "iata": "XMN",
@@ -8321,10 +6935,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          115.90271,
-          28.864815
-        ]
+        "coordinates": [115.90271, 28.864815]
       },
       "properties": {
         "iata": "KHN",
@@ -8339,10 +6950,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          119.66318,
-          25.934669
-        ]
+        "coordinates": [119.66318, 25.934669]
       },
       "properties": {
         "iata": "FOC",
@@ -8357,10 +6965,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          120.428865,
-          30.23609
-        ]
+        "coordinates": [120.428865, 30.23609]
       },
       "properties": {
         "iata": "HGH",
@@ -8375,10 +6980,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          117.216003,
-          36.857201
-        ]
+        "coordinates": [117.216003, 36.857201]
       },
       "properties": {
         "iata": "TNA",
@@ -8393,10 +6995,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          121.461998,
-          29.8267
-        ]
+        "coordinates": [121.461998, 29.8267]
       },
       "properties": {
         "iata": "NGB",
@@ -8411,10 +7010,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          118.865949,
-          31.735032
-        ]
+        "coordinates": [118.865949, 31.735032]
       },
       "properties": {
         "iata": "NKG",
@@ -8429,10 +7025,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          121.805,
-          31.1434
-        ]
+        "coordinates": [121.805, 31.1434]
       },
       "properties": {
         "iata": "PVG",
@@ -8447,10 +7040,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          120.088171,
-          36.361953
-        ]
+        "coordinates": [120.088171, 36.361953]
       },
       "properties": {
         "iata": "TAO",
@@ -8465,10 +7055,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          121.33426,
-          31.198104
-        ]
+        "coordinates": [121.33426, 31.198104]
       },
       "properties": {
         "iata": "SHA",
@@ -8483,10 +7070,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          120.853465,
-          27.910572
-        ]
+        "coordinates": [120.853465, 27.910572]
       },
       "properties": {
         "iata": "WNZ",
@@ -8501,10 +7085,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          120.978124,
-          37.659724
-        ]
+        "coordinates": [120.978124, 37.659724]
       },
       "properties": {
         "iata": "YNT",
@@ -8519,10 +7100,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          106.651895,
-          29.712254
-        ]
+        "coordinates": [106.651895, 29.712254]
       },
       "properties": {
         "iata": "CKG",
@@ -8537,10 +7115,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          106.803331,
-          26.541466
-        ]
+        "coordinates": [106.803331, 26.541466]
       },
       "properties": {
         "iata": "KWE",
@@ -8555,10 +7130,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          104.441284,
-          30.31252
-        ]
+        "coordinates": [104.441284, 30.31252]
       },
       "properties": {
         "iata": "TFU",
@@ -8573,10 +7145,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          103.945966,
-          30.558257
-        ]
+        "coordinates": [103.945966, 30.558257]
       },
       "properties": {
         "iata": "CTU",
@@ -8591,10 +7160,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          87.474197,
-          43.907101
-        ]
+        "coordinates": [87.474197, 43.907101]
       },
       "properties": {
         "iata": "URC",
@@ -8609,10 +7175,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          125.684998,
-          43.996201
-        ]
+        "coordinates": [125.684998, 43.996201]
       },
       "properties": {
         "iata": "CGQ",
@@ -8627,10 +7190,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          126.25,
-          45.623402
-        ]
+        "coordinates": [126.25, 45.623402]
       },
       "properties": {
         "iata": "HRB",
@@ -8645,10 +7205,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          121.538477,
-          38.965719
-        ]
+        "coordinates": [121.538477, 38.965719]
       },
       "properties": {
         "iata": "DLC",
@@ -8663,10 +7220,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          123.483002,
-          41.639801
-        ]
+        "coordinates": [123.483002, 41.639801]
       },
       "properties": {
         "iata": "SHE",

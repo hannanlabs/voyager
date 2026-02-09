@@ -53,22 +53,22 @@ deployments/         # Kubernetes manifests
 
 ## Tech Stack
 
-| Layer | Tech |
-|-------|------|
-| Frontend | Next.js 15, React 19, Mapbox GL, Tailwind |
-| Backend | Go 1.23, Gorilla WebSocket |
+| Layer         | Tech                                            |
+| ------------- | ----------------------------------------------- |
+| Frontend      | Next.js 15, React 19, Mapbox GL, Tailwind       |
+| Backend       | Go 1.23, Gorilla WebSocket                      |
 | Observability | OpenTelemetry, Prometheus, Tempo, Loki, Grafana |
-| Dev | Tilt, Kubernetes, pnpm |
+| Dev           | Tilt, Kubernetes, pnpm                          |
 
 ## API
 
-| Endpoint | What it does |
-|----------|--------------|
-| `ws://localhost:8080/ws/flights` | WebSocket stream of flight positions |
-| `GET /geojson/airports` | Airport locations |
-| `GET /geojson/flights/route?id=X` | Great-circle route for a flight |
-| `GET /healthz` | Health check |
-| `GET /readyz` | Readiness check |
+| Endpoint                          | What it does                         |
+| --------------------------------- | ------------------------------------ |
+| `ws://localhost:8080/ws/flights`  | WebSocket stream of flight positions |
+| `GET /geojson/airports`           | Airport locations                    |
+| `GET /geojson/flights/route?id=X` | Great-circle route for a flight      |
+| `GET /healthz`                    | Health check                         |
+| `GET /readyz`                     | Readiness check                      |
 
 ## Development
 
@@ -88,11 +88,11 @@ cd apps/simulator && go run ./cmd
 
 ## Services
 
-| Service | Port |
-|---------|------|
-| Frontend | 3000 |
-| Simulator | 8080 |
-| Grafana | 3001 |
+| Service    | Port |
+| ---------- | ---- |
+| Frontend   | 3000 |
+| Simulator  | 8080 |
+| Grafana    | 3001 |
 | Prometheus | 9090 |
-| Tempo | 3200 |
-| Loki | 3100 |
+| Tempo      | 3200 |
+| Loki       | 3100 |

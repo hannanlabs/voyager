@@ -1,7 +1,7 @@
-import { z } from 'zod';
-import { FlightPositionSchema } from './position';
-import { FlightVelocitySchema } from './velocity';
-import { FlightPhaseSchema } from './phase';
+import { z } from "zod";
+import { FlightPositionSchema } from "./position";
+import { FlightVelocitySchema } from "./velocity";
+import { FlightPhaseSchema } from "./phase";
 
 export const FlightStateSchema = z.object({
   id: z.string(),
@@ -14,7 +14,7 @@ export const FlightStateSchema = z.object({
   velocity: FlightVelocitySchema,
   bearing: z.number(),
   speed: z.number(),
-  altitude: z.number(), 
+  altitude: z.number(),
   progress: z.number().min(0).max(1),
   distanceRemaining: z.number().min(0),
   scheduledDeparture: z.string().datetime(),

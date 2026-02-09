@@ -1,18 +1,18 @@
-import { z } from 'zod';
+import { z } from "zod";
 
-export type WebSocketStatus = 'connecting' | 'open' | 'closed' | 'error';
+export type WebSocketStatus = "connecting" | "open" | "closed" | "error";
 
 export const WS_STATUS = {
-  CONNECTING: 'connecting',
-  OPEN: 'open', 
-  CLOSED: 'closed',
-  ERROR: 'error'
+  CONNECTING: "connecting",
+  OPEN: "open",
+  CLOSED: "closed",
+  ERROR: "error",
 } as const;
 
 export const FlightsGeoJSONMessageSchema = z.object({
-  type: z.literal('flights_geojson'),
+  type: z.literal("flights_geojson"),
   featureCollection: z.object({
-    type: z.literal('FeatureCollection'),
+    type: z.literal("FeatureCollection"),
     features: z.array(z.any()),
   }),
   seq: z.number(),

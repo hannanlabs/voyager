@@ -12,5 +12,8 @@
   },
   "devDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "prettier": "^3.6.2"
   }
 }
