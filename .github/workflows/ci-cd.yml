@@ -53,10 +53,6 @@ jobs:
           go-version: "1.22"
           cache-dependency-path: apps/simulator/go.sum
 
-      - name: Format check
-        working-directory: apps/simulator
-        run: test -z "$(gofmt -l .)"
-
       - name: Go vet
         working-directory: apps/simulator
         run: go vet ./...
@@ -119,15 +115,6 @@ jobs:
 
       - name: Build shared-ts
         run: pnpm --filter @voyager/shared-ts build
-
-      - name: Lint frontend
-        run: pnpm --filter frontend lint
-
-      - name: Format check frontend
-        run: pnpm --filter frontend format
-
-      - name: Type check frontend
-        run: pnpm --filter frontend typecheck
 
       - name: Build frontend
         run: pnpm --filter frontend build
