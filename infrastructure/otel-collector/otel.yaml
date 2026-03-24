@@ -13,21 +13,11 @@ processors:
     send_batch_max_size: 2048
 
 exporters:
-  debug:
-    verbosity: detailed
-
   prometheus:
     endpoint: "0.0.0.0:8889"
     resource_to_telemetry_conversion:
       enabled: true
     enable_open_metrics: true
-
-  prometheusremotewrite:
-    endpoint: http://prometheus:9090/api/v1/write
-    resource_to_telemetry_conversion:
-      enabled: true
-    target_info:
-      enabled: true
 
   loki:
     endpoint: http://loki:3100/otlp
@@ -44,12 +34,12 @@ service:
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [debug, otlp/tempo]
+      exporters: [otlp/tempo]
     metrics:
       receivers: [otlp]
       processors: [batch]
-      exporters: [debug, prometheus, prometheusremotewrite]
+      exporters: [prometheus]
     logs:
       receivers: [otlp]
       processors: [batch]
-      exporters: [debug, loki]
+      exporters: [loki]
