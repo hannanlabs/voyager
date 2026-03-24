@@ -25,7 +25,7 @@ exporters:
       "Content-Type": "application/x-protobuf"
 
   otlp/tempo:
-    endpoint: http://tempo:4317
+    endpoint: tempo:4317
     tls:
       insecure: true
 
