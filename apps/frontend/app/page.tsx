@@ -15,7 +15,7 @@ export default function Home(): JSX.Element {
         <main className="max-w-7xl mx-auto px-8 py-24">
           <div className="max-w-4xl">
             <h1 className="text-6xl md:text-8xl font-thin mb-8 tracking-tighter leading-none">
-              Global Air Traffic
+              Air Traffic
               <br />
               <span className="text-red-600">Simulation</span>
             </h1>
