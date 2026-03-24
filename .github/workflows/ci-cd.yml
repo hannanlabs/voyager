@@ -68,15 +68,11 @@ jobs:
       - name: Deploy to EKS
         run: |
           aws eks update-kubeconfig --name voyager --region us-east-1
-          ECR="${{ steps.ecr.outputs.registry }}"
-          TAG="${{ github.sha }}"
+          R=${{ steps.ecr.outputs.registry }}
+          T=${{ github.sha }}
           for manifest in deployments/*/prod/deployment.yaml; do
-            sed "s|PLACEHOLDER_ECR|${ECR}|g; s|PLACEHOLDER_TAG|${TAG}|g" \
-              "$manifest" | kubectl apply -f -
-          done
-      - name: Verify rollout
-        run: |
-          for manifest in deployments/*/prod/deployment.yaml; do
-            service=$(echo "$manifest" | cut -d/ -f2)
-            kubectl rollout status deployment/${service} --timeout=120s
+            svc=$(echo "$manifest" | cut -d/ -f2)
+            kubectl apply -f "$manifest"
+            kubectl set image deployment/$svc $svc=$R/voyager/$svc:$T
+            kubectl rollout status deployment/$svc --timeout=120s
           done

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: grafana
-          image: PLACEHOLDER_ECR/voyager/grafana:PLACEHOLDER_TAG
+          image: voyager/grafana
           ports:
             - containerPort: 3000
 ---

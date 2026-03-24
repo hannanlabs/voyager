@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: PLACEHOLDER_ECR/voyager/frontend:PLACEHOLDER_TAG
+          image: voyager/frontend
           ports:
             - containerPort: 3000
 ---

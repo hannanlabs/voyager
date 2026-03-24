@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: prometheus
-          image: PLACEHOLDER_ECR/voyager/prometheus:PLACEHOLDER_TAG
+          image: voyager/prometheus
           ports:
             - containerPort: 9090
 ---

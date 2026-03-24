@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: tempo
-          image: PLACEHOLDER_ECR/voyager/tempo:PLACEHOLDER_TAG
+          image: voyager/tempo
           ports:
             - containerPort: 3200
             - containerPort: 4317

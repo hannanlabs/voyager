@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: loki
-          image: PLACEHOLDER_ECR/voyager/loki:PLACEHOLDER_TAG
+          image: voyager/loki
           ports:
             - containerPort: 3100
 ---

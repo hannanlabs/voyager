@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: otel-collector
-          image: PLACEHOLDER_ECR/voyager/otel-collector:PLACEHOLDER_TAG
+          image: voyager/otel-collector
           ports:
             - containerPort: 4317
               name: otlp-grpc
