@@ -16,9 +16,10 @@ jobs:
           aws-region: us-east-1
       - name: Ensure ECR repos exist
         run: |
-          for manifest in deployments/*/prod/deployment.yaml; do
-            service=$(echo "$manifest" | cut -d/ -f2)
-            aws ecr describe-repositories --repository-names "voyager/${service}" 2>/dev/null || \
-              aws ecr create-repository --repository-name "voyager/${service}"
-            echo "voyager/${service} ready"
+          for d in deployments/*/; do
+            svc=$(basename "$d")
+            [ -f "$d/prod/deployment.yaml" ] || continue
+            aws ecr describe-repositories --repository-names "voyager/${svc}" 2>/dev/null || \
+              aws ecr create-repository --repository-name "voyager/${svc}"
+            echo "voyager/${svc} ready"
           done

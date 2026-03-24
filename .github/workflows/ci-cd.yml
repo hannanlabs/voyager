@@ -54,15 +54,17 @@ jobs:
         run: |
           R=${{ steps.ecr.outputs.registry }}
           T=${{ github.sha }}
-          for df in apps/*/Dockerfile; do
-            app=$(echo "$df" | cut -d/ -f2)
-            docker build -t $R/voyager/$app:$T -f "$df" \
+          for d in apps/*/; do
+            app=$(basename "$d")
+            [ -f "$d/Dockerfile" ] || continue
+            docker build -t $R/voyager/$app:$T -f "$d/Dockerfile" \
               --build-arg NEXT_PUBLIC_MAPBOX_TOKEN=${{ secrets.NEXT_PUBLIC_MAPBOX_TOKEN }} .
             docker push $R/voyager/$app:$T
           done
-          for df in infrastructure/*/Dockerfile; do
-            svc=$(echo "$df" | cut -d/ -f2)
-            docker build -t $R/voyager/$svc:$T infrastructure/$svc
+          for d in infrastructure/*/; do
+            svc=$(basename "$d")
+            [ -f "$d/Dockerfile" ] || continue
+            docker build -t $R/voyager/$svc:$T "$d"
             docker push $R/voyager/$svc:$T
           done
       - name: Deploy to EKS
@@ -70,9 +72,10 @@ jobs:
           aws eks update-kubeconfig --name voyager --region us-east-1
           R=${{ steps.ecr.outputs.registry }}
           T=${{ github.sha }}
-          for manifest in deployments/*/prod/deployment.yaml; do
-            svc=$(echo "$manifest" | cut -d/ -f2)
-            kubectl apply -f "$manifest"
+          for d in deployments/*/; do
+            svc=$(basename "$d")
+            [ -f "$d/prod/deployment.yaml" ] || continue
+            kubectl apply -f "$d/prod/deployment.yaml"
             kubectl set image deployment/$svc $svc=$R/voyager/$svc:$T
             kubectl rollout status deployment/$svc --timeout=120s
           done
