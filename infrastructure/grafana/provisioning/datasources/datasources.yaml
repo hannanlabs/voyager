@@ -28,9 +28,8 @@ datasources:
     uid: tempo
     editable: true
     jsonData:
-      tracesToLogs:
+      tracesToLogsV2:
         datasourceUid: loki
-      search:
-        hide: false
+        customQuery: false
       nodeGraph:
         enabled: true

@@ -232,18 +232,16 @@
       "options": {
         "showSpans": true
       },
-      "pluginVersion": "10.0.0",
       "targets": [
         {
           "datasource": {
             "type": "tempo",
             "uid": "tempo"
           },
-          "queryType": "search",
+          "queryType": "traceql",
           "refId": "A",
           "query": "{}",
-          "limit": 20,
-          "spss": 3
+          "limit": 20
         }
       ],
       "title": "Recent Traces",
