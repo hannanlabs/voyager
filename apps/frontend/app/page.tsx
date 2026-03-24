@@ -21,7 +21,7 @@ export default function Home(): JSX.Element {
             </h1>
 
             <p className="text-xl text-gray-600 mb-12 leading-relaxed max-w-2xl font-light">
-              Real-time flight simulation with live physics calculations and
+              Real time flight simulation with live physics calculations and
               WebSocket streaming, built for scalability and observability.
             </p>
 
