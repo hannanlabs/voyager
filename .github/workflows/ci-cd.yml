@@ -54,12 +54,14 @@ jobs:
         run: |
           R=${{ steps.ecr.outputs.registry }}
           T=${{ github.sha }}
-          for app in frontend simulator; do
-            docker build -t $R/voyager/$app:$T -f apps/$app/Dockerfile \
+          for df in apps/*/Dockerfile; do
+            app=$(echo "$df" | cut -d/ -f2)
+            docker build -t $R/voyager/$app:$T -f "$df" \
               --build-arg NEXT_PUBLIC_MAPBOX_TOKEN=${{ secrets.NEXT_PUBLIC_MAPBOX_TOKEN }} .
             docker push $R/voyager/$app:$T
           done
-          for svc in otel-collector prometheus loki tempo grafana; do
+          for df in infrastructure/*/Dockerfile; do
+            svc=$(echo "$df" | cut -d/ -f2)
             docker build -t $R/voyager/$svc:$T infrastructure/$svc
             docker push $R/voyager/$svc:$T
           done
