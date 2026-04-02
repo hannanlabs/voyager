@@ -1,6 +1,6 @@
 "use client";
 
-import type { FlightState } from "@voyager/shared-ts";
+import type { FlightState } from "@/lib/shared";
 
 interface FlightDetailsSheetProps {
   flight: FlightState | null;
