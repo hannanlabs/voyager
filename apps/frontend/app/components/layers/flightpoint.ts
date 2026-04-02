@@ -1,5 +1,5 @@
 import type { Map } from "mapbox-gl";
-import type { FlightsPointsLayerConfig } from "@voyager/shared-ts";
+import type { FlightsPointsLayerConfig } from "@/lib/shared";
 
 export function createFlightsPointsLayer(
   map: Map,
