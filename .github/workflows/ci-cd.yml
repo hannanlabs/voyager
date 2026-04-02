@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: CI
 
 on:
   push:
@@ -35,47 +35,3 @@ jobs:
           cache: "pnpm"
       - run: pnpm install
       - run: pnpm --filter frontend... build
-
-  build-and-deploy:
-    name: Build & Deploy
-    needs: [validate-go, validate-node]
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
-      - uses: aws-actions/amazon-ecr-login@v2
-        id: ecr
-      - name: Build and push images
-        run: |
-          R=${{ steps.ecr.outputs.registry }}
-          T=${{ github.sha }}
-          for d in apps/*/; do
-            app=$(basename "$d")
-            [ -f "$d/Dockerfile" ] || continue
-            docker build -t $R/voyager/$app:$T -f "$d/Dockerfile" \
-              --build-arg NEXT_PUBLIC_MAPBOX_TOKEN=${{ secrets.NEXT_PUBLIC_MAPBOX_TOKEN }} .
-            docker push $R/voyager/$app:$T
-          done
-          for d in infrastructure/*/; do
-            svc=$(basename "$d")
-            [ -f "$d/Dockerfile" ] || continue
-            docker build -t $R/voyager/$svc:$T "$d"
-            docker push $R/voyager/$svc:$T
-          done
-      - name: Deploy to EKS
-        run: |
-          aws eks update-kubeconfig --name voyager --region us-east-1
-          R=${{ steps.ecr.outputs.registry }}
-          T=${{ github.sha }}
-          for d in deployments/*/; do
-            svc=$(basename "$d")
-            [ -f "$d/prod/deployment.yaml" ] || continue
-            kubectl apply -f "$d/prod/deployment.yaml"
-            kubectl set image deployment/$svc $svc=$R/voyager/$svc:$T
-            kubectl rollout status deployment/$svc --timeout=120s
-          done
