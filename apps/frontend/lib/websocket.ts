@@ -2,13 +2,13 @@ import type {
   FlightState,
   WebSocketStatus,
   FlightPointsGeoJSON,
-} from "@voyager/shared-ts";
+} from "@/lib/shared";
 import {
   validateWebSocketMessage,
   WS_STATUS,
   extractFlightsFromGeoJSON,
   SIMULATOR_WS_URL,
-} from "@voyager/shared-ts";
+} from "@/lib/shared";
 import { logEvent, initTelemetry } from "./telemetry";
 
 export type FlightDataHandler = (
