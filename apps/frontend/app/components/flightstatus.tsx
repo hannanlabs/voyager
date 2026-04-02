@@ -1,4 +1,4 @@
-import { WS_STATUS, type WebSocketStatus } from "@voyager/shared-ts";
+import { WS_STATUS, type WebSocketStatus } from "@/lib/shared";
 
 interface FlightStatusIndicatorProps {
   flightCount: number;
