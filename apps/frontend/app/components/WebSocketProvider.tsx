@@ -6,8 +6,8 @@ import type {
   FlightState,
   WebSocketStatus,
   FlightPointsGeoJSON,
-} from "@voyager/shared-ts";
-import { WS_STATUS } from "@voyager/shared-ts";
+} from "@/lib/shared";
+import { WS_STATUS } from "@/lib/shared";
 import { createFlightWebSocket } from "@/lib/websocket";
 
 const FlightContext = createContext<{
