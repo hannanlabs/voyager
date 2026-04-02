@@ -44,9 +44,6 @@ Open [localhost:3000](http://localhost:3000) for the globe, [localhost:3001](htt
 apps/
   frontend/          # Next.js + React + Mapbox
   simulator/         # Go flight engine
-packages/
-  shared-go/         # Go domain models
-  shared-ts/         # TypeScript schemas (Zod)
 infrastructure/      # Prometheus, Loki, Tempo, Grafana, OTEL Collector
 deployments/         # Kubernetes manifests
 ```
