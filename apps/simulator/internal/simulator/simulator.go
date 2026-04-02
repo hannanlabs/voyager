@@ -16,9 +16,9 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/hannan/voyager/shared-go/data"
-	"github.com/hannan/voyager/shared-go/flight"
-	"github.com/hannan/voyager/shared-go/geo"
+	"github.com/hannan/voyager/simulator/internal/data"
+	"github.com/hannan/voyager/simulator/internal/flight"
+	"github.com/hannan/voyager/simulator/internal/geo"
 )
 
 // ============================================================================
