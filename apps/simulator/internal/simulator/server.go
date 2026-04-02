@@ -7,7 +7,7 @@ import (
 	"strconv"
 
 	"github.com/gorilla/websocket"
-	"github.com/hannan/voyager/shared-go/geo"
+	"github.com/hannan/voyager/simulator/internal/geo"
 	"github.com/hannan/voyager/simulator/internal/telemetry"
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 	"go.opentelemetry.io/otel"
