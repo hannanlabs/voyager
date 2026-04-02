@@ -6,7 +6,6 @@ toolchain go1.24.6
 
 require (
 	github.com/gorilla/websocket v1.5.3
-	github.com/hannan/voyager/shared-go v0.0.0
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.57.0
 	go.opentelemetry.io/otel v1.38.0
 	go.opentelemetry.io/otel/exporters/otlp/otlplog/otlploggrpc v0.14.0
@@ -26,7 +25,7 @@ require (
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.27.2 // indirect
-	github.com/paulmach/orb v0.11.1 // indirect
+	github.com/paulmach/orb v0.11.1
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.38.0 // indirect
 	go.opentelemetry.io/otel/trace v1.38.0 // indirect
@@ -39,5 +38,3 @@ require (
 	google.golang.org/grpc v1.75.0 // indirect
 	google.golang.org/protobuf v1.36.8 // indirect
 )
-
-replace github.com/hannan/voyager/shared-go => ../../packages/shared-go
