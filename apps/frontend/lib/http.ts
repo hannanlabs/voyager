@@ -5,7 +5,7 @@ import {
   type FlightRoutesGeoJSON,
   type FlightState,
   EMPTY_GEOJSON,
-} from "@voyager/shared-ts";
+} from "@/lib/shared";
 
 export async function loadFlightRoute(
   selectedFlightId: string,
