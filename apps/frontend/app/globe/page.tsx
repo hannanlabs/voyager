@@ -22,7 +22,7 @@ import {
   MAP_CONFIG,
   MAP_SOURCES,
   MAP_LAYERS,
-} from "@voyager/shared-ts";
+} from "@/lib/shared";
 import { loadFlightRoute, getAirportsUrl } from "@/lib/http";
 import { logEvent } from "@/lib/telemetry";
 
