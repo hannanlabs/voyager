@@ -15,10 +15,8 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: "1.22"
-          cache-dependency-path: packages/shared-go/go.mod
-      - run: go vet ./... && go build ./... && go test -v ./...
-        working-directory: packages/shared-go
-      - run: go vet ./... && go build ./... && go test -v ./...
+          cache-dependency-path: apps/simulator/go.mod
+      - run: go vet ./... && go build -o simulator ./cmd && go test -v ./...
         working-directory: apps/simulator
 
   validate-node:
@@ -33,5 +31,8 @@ jobs:
         with:
           node-version: "18"
           cache: "pnpm"
+          cache-dependency-path: apps/frontend/pnpm-lock.yaml
       - run: pnpm install
-      - run: pnpm --filter frontend... build
+        working-directory: apps/frontend
+      - run: pnpm build
+        working-directory: apps/frontend
