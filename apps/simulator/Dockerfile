@@ -1,15 +1,17 @@
-FROM golang:1.23-alpine
+FROM golang:1.23-alpine AS build
 
-WORKDIR /workspace
+WORKDIR /src
 
-COPY packages/shared-go/ ./packages/shared-go/
-COPY apps/simulator/ ./apps/simulator/
-COPY data/airports.iata.geojson ./apps/simulator/data/airports.iata.geojson
+COPY apps/simulator/ ./
+COPY data/airports.iata.geojson ./data/airports.iata.geojson
 
-WORKDIR /workspace/apps/simulator
+RUN CGO_ENABLED=0 go build -o /simulator ./cmd
 
-RUN go build -o simulator ./cmd
+FROM alpine:3.20
+
+COPY --from=build /simulator /simulator
+COPY --from=build /src/data/airports.iata.geojson /data/airports.iata.geojson
 
 EXPOSE 8080
 
-CMD ["./simulator"]
+CMD ["/simulator"]
