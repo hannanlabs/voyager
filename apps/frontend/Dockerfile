@@ -2,25 +2,14 @@ FROM node:18-alpine
 
 RUN npm install -g pnpm
 
-WORKDIR /workspace
+WORKDIR /app
 
-COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
-
-COPY packages/shared-ts/package.json ./packages/shared-ts/
-COPY apps/frontend/package.json ./apps/frontend/
+COPY apps/frontend/package.json ./
 
 RUN pnpm install
 
-COPY packages/shared-ts/ ./packages/shared-ts/
-
-RUN pnpm --filter @voyager/shared-ts build
-
-COPY apps/frontend/ ./apps/frontend/
-COPY data/airports.iata.geojson ./apps/frontend/public/data/airports.iata.geojson
-
-WORKDIR /workspace/apps/frontend
-
-RUN pnpm install
+COPY apps/frontend/ .
+COPY data/airports.iata.geojson ./public/data/airports.iata.geojson
 
 ARG NEXT_PUBLIC_MAPBOX_TOKEN
 ENV NEXT_PUBLIC_MAPBOX_TOKEN=$NEXT_PUBLIC_MAPBOX_TOKEN
