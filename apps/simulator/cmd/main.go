@@ -7,7 +7,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/hannan/voyager/shared-go/data"
+	"github.com/hannan/voyager/simulator/internal/data"
 	"github.com/hannan/voyager/simulator/internal/simulator"
 	"github.com/hannan/voyager/simulator/internal/telemetry"
 )
