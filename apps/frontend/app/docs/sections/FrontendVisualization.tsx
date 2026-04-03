@@ -145,7 +145,7 @@ export default function FrontendVisualization() {
             {MAP_CONFIG.map((row) => (
               <tr key={row.key} className="border-b border-white/5 last:border-0">
                 <td className="px-5 py-3 text-white font-medium">{row.key}</td>
-                <td className="px-5 py-3 font-mono text-emerald-400">
+                <td className="px-5 py-3 font-mono text-red-400">
                   {row.value}
                 </td>
               </tr>

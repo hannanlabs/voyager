@@ -40,7 +40,7 @@ const CARDS = [
   },
   {
     title: "Data Flow",
-    description: "End-to-end pipeline from generation to rendering.",
+    description: "End to end pipeline from generation to rendering.",
     href: "#data-flow",
     icon: (
       <svg className="w-5 h-5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
@@ -76,7 +76,7 @@ export default function DocsPage(): JSX.Element {
       {/* Hero */}
       <header className="space-y-4 pt-8">
         <h1 className="text-5xl md:text-6xl font-thin text-white tracking-tighter">
-          Documentation
+          <span className="text-red-600">Documentation</span>
         </h1>
         <p className="text-xl text-gray-400 font-light max-w-2xl leading-relaxed">
           Technical reference for Voyager which is a real time flight simulation

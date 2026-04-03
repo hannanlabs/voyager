@@ -16,9 +16,9 @@ export default function SectionCard({
   return (
     <a
       href={href}
-      className="group bg-white/5 border border-white/[0.08] rounded-2xl p-6 hover:bg-white/10 transition-colors"
+      className="group bg-white/5 border border-white/[0.08] rounded-2xl p-6 hover:bg-red-600/10 hover:border-red-600/20 transition-colors"
     >
-      <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-white/15 transition-colors">
+      <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-red-600/20 transition-colors">
         {icon}
       </div>
       <h3 className="text-white font-medium mb-2">{title}</h3>

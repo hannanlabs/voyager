@@ -62,7 +62,7 @@ export default function ArchitectureOverview() {
             {STACK.map((row) => (
               <tr key={row.category} className="border-b border-white/5 last:border-0">
                 <td className="px-5 py-3 text-white font-medium">{row.category}</td>
-                <td className="px-5 py-3 font-mono text-emerald-400">{row.tech}</td>
+                <td className="px-5 py-3 font-mono text-red-400">{row.tech}</td>
                 <td className="px-5 py-3 text-gray-400 hidden md:table-cell">{row.detail}</td>
               </tr>
             ))}

@@ -90,7 +90,7 @@ export default function DataFlow() {
               <h4 className="text-white font-medium">{step.title}</h4>
             </div>
             <p className="text-gray-400 text-sm mb-2">{step.description}</p>
-            <span className="text-xs font-mono text-emerald-400">{step.detail}</span>
+            <span className="text-xs font-mono text-red-400">{step.detail}</span>
           </div>
         ))}
       </div>

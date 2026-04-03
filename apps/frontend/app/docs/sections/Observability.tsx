@@ -78,7 +78,7 @@ export default function Observability() {
           <tbody>
             {METRICS.map((m) => (
               <tr key={m.name} className="border-b border-white/5 last:border-0">
-                <td className="px-5 py-3 font-mono text-emerald-400 text-xs">
+                <td className="px-5 py-3 font-mono text-red-400 text-xs">
                   {m.name}
                 </td>
                 <td className="px-5 py-3">
@@ -115,7 +115,7 @@ export default function Observability() {
             {SERVICES.map((s) => (
               <tr key={s.name} className="border-b border-white/5 last:border-0">
                 <td className="px-5 py-3 text-white font-medium">{s.name}</td>
-                <td className="px-5 py-3 font-mono text-emerald-400">{s.port}</td>
+                <td className="px-5 py-3 font-mono text-red-400">{s.port}</td>
                 <td className="px-5 py-3 text-gray-400">{s.protocol}</td>
               </tr>
             ))}
@@ -124,19 +124,19 @@ export default function Observability() {
       </div>
 
       {/* Trace ID note */}
-      <div className="bg-purple-500/10 border border-purple-500/20 rounded-2xl p-5">
+      <div className="bg-red-600/10 border border-red-600/20 rounded-2xl p-5">
         <div className="flex items-start gap-3">
-          <div className="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
-            <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+          <div className="w-8 h-8 bg-red-600/20 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
             </svg>
           </div>
           <div>
-            <h4 className="text-purple-300 font-medium text-sm mb-1">
+            <h4 className="text-red-400 font-medium text-sm mb-1">
               Distributed Trace Correlation
             </h4>
             <p className="text-gray-400 text-sm">
-              Each flight carries a <code className="font-mono text-purple-300 bg-white/5 px-1.5 py-0.5 rounded">traceID</code> field,
+              Each flight carries a <code className="font-mono text-red-400 bg-white/5 px-1.5 py-0.5 rounded">traceID</code> field,
               enabling end to end correlation from the simulator&apos;s physics loop through WebSocket delivery to frontend rendering.
             </p>
           </div>
