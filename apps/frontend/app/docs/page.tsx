@@ -30,7 +30,7 @@ const CARDS = [
   },
   {
     title: "Simulator Engine",
-    description: "Physics loop, flight phases, and great-circle navigation.",
+    description: "Physics loop, flight phases, and great circle navigation.",
     href: "#simulator-engine",
     icon: (
       <svg className="w-5 h-5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
@@ -79,7 +79,7 @@ export default function DocsPage(): JSX.Element {
           Documentation
         </h1>
         <p className="text-xl text-gray-400 font-light max-w-2xl leading-relaxed">
-          Technical reference for Voyager — a real-time flight simulation
+          Technical reference for Voyager which is a real time flight simulation
           platform built with Go, WebSockets, and Mapbox GL.
         </p>
       </header>
