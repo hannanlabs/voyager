@@ -28,7 +28,7 @@ export function HeroSection() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center gap-8 md:gap-0">
         {/* Left side — Hero text */}
         <div className="flex-1 flex flex-col items-start text-left">
-          <div className="text-sm font-light tracking-[0.3em] uppercase text-gray-400 mb-8">
+          <div className="text-3xl md:text-4xl font-thin tracking-tighter uppercase text-gray-400 mb-4">
             VOYAGER
           </div>
 
@@ -39,7 +39,7 @@ export function HeroSection() {
           </h1>
 
           <p className="text-lg md:text-xl text-gray-400 mb-12 leading-relaxed max-w-lg font-light">
-            Real-time flight simulation with live physics calculations and
+            Real time flight simulation with live physics calculations and
             WebSocket streaming, built for scalability and observability.
           </p>
 

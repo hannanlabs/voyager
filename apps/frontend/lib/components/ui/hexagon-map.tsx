@@ -119,14 +119,14 @@ const HEATMAP_SERIES_COLOR_SCHEME = [
 const LEGEND_COLOR_SCHEME = schemes.unifyvizWarm;
 
 const STAT_ITEMS_DATA: StatItemProps[] = [
-  { title: "Near-Misses Prevented", count: 321, comparisonText: "Compared to 293 last week", percentageChange: "12%", trend: "down" },
-  { title: "Total Alerts Processed", count: 1120, comparisonText: "Compared to 1.06k last week", percentageChange: "4%", trend: "down" },
+  { title: "Collisions Prevented", count: 321, comparisonText: "Compared to 293 last week", percentageChange: "12%", trend: "down" },
+  { title: "Disruptions Avoided", count: 1120, comparisonText: "Compared to 1.06k last week", percentageChange: "4%", trend: "down" },
 ];
 
 const METRIC_LIST_ITEMS_DATA: MetricItem[] = [
-  { id: 'mttr', icon: <MetricTagIcon fill="#E84045" />, label: "Mean Detection Time", value: "1.2s", trendDirection: "down", trendColor: '#40E5D1', trendStrokeColor: '#40E5D1' },
-  { id: 'irt', icon: <MetricClockIcon fill="#E84045" />, label: "Conflict Resolution Time", value: "4.8s", trendDirection: "down", trendColor: '#40E5D1', trendStrokeColor: '#40E5D1' },
-  { id: 'ier', icon: <MetricAlertIcon fill="#E84045" />, label: "Alert Escalation Rate", value: "3.2%", trendDirection: "down", trendColor: '#40E5D1', trendStrokeColor: '#40E5D1' },
+  { id: 'mttr', icon: <MetricTagIcon fill="#E84045" />, label: "Threat Detection Latency", value: "1.2s", trendDirection: "down", trendColor: '#40E5D1', trendStrokeColor: '#40E5D1' },
+  { id: 'irt', icon: <MetricClockIcon fill="#E84045" />, label: "Evasive Maneuver Time", value: "4.8s", trendDirection: "down", trendColor: '#40E5D1', trendStrokeColor: '#40E5D1' },
+  { id: 'ier', icon: <MetricAlertIcon fill="#E84045" />, label: "Disruption Escalation Rate", value: "3.2%", trendDirection: "down", trendColor: '#40E5D1', trendStrokeColor: '#40E5D1' },
 ];
 
 // Custom Hexagon Symbol for HeatmapCell
@@ -164,7 +164,7 @@ const HexagonHeatmapReportCard: React.FC = () => {
   return (
     <div className="flex flex-col justify-between pt-4 pb-4 bg-white dark:bg-black rounded-3xl shadow-[11px_21px_3px_rgba(0,0,0,0.06),14px_27px_7px_rgba(0,0,0,0.10),19px_38px_14px_rgba(0,0,0,0.13),27px_54px_27px_rgba(0,0,0,0.16),39px_78px_50px_rgba(0,0,0,0.20),55px_110px_86px_rgba(0,0,0,0.26)] w-[600px] h-[714px] overflow-hidden text-black dark:text-white transition-colors duration-300">
       <div className="flex justify-between items-center p-7 pt-6 pb-8">
-        <h3 className="text-3xl text-left font-bold">Flight Safety Report</h3>
+        <h3 className="text-3xl text-left font-bold">Collision Prevention</h3>
         <select
           aria-label="Select time range for incident report"
           className="p-3 pt-2 pb-2 rounded-md bg-gray-100 text-gray-800 dark:bg-[#262631] dark:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
