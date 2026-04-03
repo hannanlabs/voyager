@@ -1,6 +1,21 @@
 import type { Map } from "mapbox-gl";
 import type { FlightsPointsLayerConfig } from "@/lib/shared";
 
+const PHASE_COLOR_EXPR = [
+  "case",
+  ["==", ["get", "phase"], "takeoff"],
+  "#ff7849",
+  ["==", ["get", "phase"], "climb"],
+  "#ffab40",
+  ["==", ["get", "phase"], "cruise"],
+  "#00e676",
+  ["==", ["get", "phase"], "descent"],
+  "#ffca28",
+  ["==", ["get", "phase"], "landing"],
+  "#ff5252",
+  "#607d8b",
+] as mapboxgl.ExpressionSpecification;
+
 export function createFlightsPointsLayer(
   map: Map,
   config: FlightsPointsLayerConfig,
@@ -46,32 +61,32 @@ export function createFlightsPointsLayer(
         "case",
         ["boolean", ["get", "selected"], false],
         "#ffffff",
-        [
-          "case",
-          ["==", ["get", "phase"], "takeoff"],
-          "#ff6b35",
-          ["==", ["get", "phase"], "climb"],
-          "#f7931e",
-          ["==", ["get", "phase"], "cruise"],
-          "#2ecc71",
-          ["==", ["get", "phase"], "descent"],
-          "#f39c12",
-          ["==", ["get", "phase"], "landing"],
-          "#e74c3c",
-          "#95a5a6",
-        ],
+        PHASE_COLOR_EXPR,
       ],
       "icon-opacity": [
         "interpolate",
         ["linear"],
         ["zoom"],
         1,
-        0.6,
+        0.75,
         5,
-        0.8,
+        0.85,
         10,
         1.0,
       ],
+      "icon-halo-color": [
+        "case",
+        ["boolean", ["get", "selected"], false],
+        "#ffffff",
+        PHASE_COLOR_EXPR,
+      ],
+      "icon-halo-width": [
+        "case",
+        ["boolean", ["get", "selected"], false],
+        3,
+        1.5,
+      ],
+      "icon-halo-blur": 1,
     },
   });
 }

@@ -67,6 +67,20 @@ export default function Globe() {
         projection: MAP_CONFIG.PROJECTION.name || "unknown",
       });
 
+      mapInstance.setFog({
+        color: "#0a1128",
+        "high-color": "#1a1a3e",
+        "space-color": "#050510",
+        "horizon-blend": 0.08,
+        "star-intensity": 0.6,
+      });
+
+      mapInstance.setLight({
+        anchor: "viewport",
+        color: "#ffffff",
+        intensity: 0.3,
+      });
+
       addAirplaneIcon(mapInstance);
 
       mapInstance.addSource(MAP_SOURCES.FLIGHTS_POINTS, {
