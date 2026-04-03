@@ -13,7 +13,7 @@ const PARAMS = [
 const PHASE_RULES = [
   { phase: "Takeoff", color: "#ff7849", condition: "progress < 15%, alt < 15k ft, speed < 15k kts" },
   { phase: "Climb", color: "#ffab40", condition: "progress < 25%, alt < 40k ft" },
-  { phase: "Cruise", color: "#00e676", condition: "Default mid-flight phase" },
+  { phase: "Cruise", color: "#00e676", condition: "Default mid flight phase" },
   { phase: "Descent", color: "#ffca28", condition: "progress > 75%, alt < 45k ft or dist < 200nm" },
   { phase: "Landing", color: "#ff5252", condition: "progress > 90%, alt < 8k ft, dist < 50nm" },
   { phase: "Landed", color: "#607d8b", condition: "dist < 15nm, alt < 500 ft" },
@@ -40,7 +40,7 @@ export default function SimulatorEngine() {
       <div>
         <h2 className="text-3xl font-light text-white mb-3">Simulator Engine</h2>
         <p className="text-gray-400 text-lg">
-          Go-based physics engine with great-circle navigation and dynamic flight spawning.
+          Go based physics engine with great circle navigation and dynamic flight spawning.
         </p>
       </div>
 

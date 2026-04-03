@@ -4,7 +4,7 @@ const PHASE_COLORS = [
   { phase: "Cruise", color: "#00e676" },
   { phase: "Descent", color: "#ffca28" },
   { phase: "Landing", color: "#ff5252" },
-  { phase: "Unknown", color: "#607d8b" },
+  { phase: "Landed", color: "#607d8b" },
 ];
 
 const LAYERS = [
@@ -13,7 +13,7 @@ const LAYERS = [
     type: "Symbol",
     source: "flights-points",
     description:
-      "Canvas-generated airplane sprites rendered as SDF icons. Rotated by bearing, colored by flight phase, sized dynamically with zoom level (0.8x at zoom 1, 2.5x at zoom 15).",
+      "Canvas generated airplane sprites rendered as SDF icons. Rotated by bearing, colored by flight phase, sized dynamically with zoom level (0.8x at zoom 1, 2.5x at zoom 15).",
     icon: (
       <svg className="w-5 h-5 text-white/80" fill="currentColor" viewBox="0 0 24 24">
         <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
@@ -25,7 +25,7 @@ const LAYERS = [
     type: "Line",
     source: "flights-routes",
     description:
-      "Great-circle paths rendered as colored lines with a glow sub-layer. Selected routes highlighted with white halo effect. Opacity and width scale with zoom.",
+      "Great circle paths rendered as colored lines with a glow sublayer. Selected routes highlighted with white halo effect. Opacity and width scale with zoom.",
     icon: (
       <svg className="w-5 h-5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />

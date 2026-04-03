@@ -6,7 +6,7 @@ const STACK = [
   { category: "Platform", tech: "Kubernetes", detail: "Tilt for local dev, Helm charts" },
   { category: "Observability", tech: "OpenTelemetry", detail: "Prometheus, Loki, Tempo, Grafana" },
   { category: "Geospatial", tech: "Mapbox GL JS", detail: "3D globe projection, GeoJSON layers" },
-  { category: "Streaming", tech: "WebSocket", detail: "2Hz GeoJSON broadcast, auto-reconnect" },
+  { category: "Streaming", tech: "WebSocket", detail: "2Hz GeoJSON broadcast, auto reconnect" },
 ];
 
 export default function ArchitectureOverview() {
@@ -15,7 +15,7 @@ export default function ArchitectureOverview() {
       <div>
         <h2 className="text-3xl font-light text-white mb-3">Architecture Overview</h2>
         <p className="text-gray-400 text-lg">
-          End-to-end system design from simulation engine to real-time visualization.
+          End to end system design from simulation engine to real time visualization.
         </p>
       </div>
 

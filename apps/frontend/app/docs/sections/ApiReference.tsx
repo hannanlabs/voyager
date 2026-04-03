@@ -59,7 +59,7 @@ export default function ApiReference() {
         <EndpointRow
           method="WS"
           path="/ws/flights"
-          description="Real-time flight positions streamed as GeoJSON FeatureCollection at 2Hz. Each feature includes position, phase, velocity, bearing, and progress."
+          description="Real time flight positions streamed as GeoJSON FeatureCollection at 2Hz. Each feature includes position, phase, velocity, bearing, and progress."
         >
           <CodeBlock
             code={WS_EXAMPLE}
@@ -77,7 +77,7 @@ export default function ApiReference() {
         <EndpointRow
           method="GET"
           path="/geojson/flights/route?id={flightId}&n=128"
-          description="Returns a great-circle route as a GeoJSON LineString with n interpolated points between departure and arrival airports."
+          description="Returns a great circle route as a GeoJSON LineString with n interpolated points between departure and arrival airports."
         >
           <div className="mt-2">
             <div className="flex gap-4 mb-3">

@@ -30,8 +30,8 @@ const PIPELINE_STEPS = [
   },
   {
     title: "Compute",
-    description: "Physics tick at 6Hz calculates great-circle position, bearing, speed, and flight phase.",
-    detail: "Great-circle interpolation",
+    description: "Physics tick at 6Hz calculates great circle position, bearing, speed, and flight phase.",
+    detail: "Great circle interpolation",
   },
   {
     title: "Serialize",
@@ -41,7 +41,7 @@ const PIPELINE_STEPS = [
   {
     title: "Stream",
     description: "WebSocket broadcasts FeatureCollection to all connected clients at 2Hz with sequence numbers.",
-    detail: "Auto-reconnect on disconnect",
+    detail: "Auto reconnect on disconnect",
   },
   {
     title: "Validate",
@@ -50,7 +50,7 @@ const PIPELINE_STEPS = [
   },
   {
     title: "Render",
-    description: "React Context distributes flight data to Mapbox GL layers for real-time 3D globe visualization.",
+    description: "React Context distributes flight data to Mapbox GL layers for real time 3D globe visualization.",
     detail: "Symbol + line + circle layers",
   },
 ];

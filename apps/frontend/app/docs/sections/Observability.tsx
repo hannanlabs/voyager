@@ -137,7 +137,7 @@ export default function Observability() {
             </h4>
             <p className="text-gray-400 text-sm">
               Each flight carries a <code className="font-mono text-purple-300 bg-white/5 px-1.5 py-0.5 rounded">traceID</code> field,
-              enabling end-to-end correlation from the simulator&apos;s physics loop through WebSocket delivery to frontend rendering.
+              enabling end to end correlation from the simulator&apos;s physics loop through WebSocket delivery to frontend rendering.
             </p>
           </div>
         </div>

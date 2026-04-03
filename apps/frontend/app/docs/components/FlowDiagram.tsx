@@ -22,7 +22,7 @@ export default function FlowDiagram({ steps, title }: FlowDiagramProps) {
           <div key={step.label} className="flex items-center shrink-0">
             <div className="flex flex-col items-center">
               <div
-                className="px-4 py-3 rounded-xl border text-center min-w-[120px]"
+                className="px-6 py-3 rounded-xl border text-center min-w-[160px]"
                 style={{
                   borderColor: step.color
                     ? `${step.color}40`
@@ -43,8 +43,8 @@ export default function FlowDiagram({ steps, title }: FlowDiagramProps) {
               </div>
             </div>
             {i < steps.length - 1 && (
-              <div className="flex items-center px-2 shrink-0">
-                <div className="w-6 h-px bg-white/20" />
+              <div className="flex items-center px-3 shrink-0">
+                <div className="w-10 h-px bg-white/20" />
                 <svg
                   className="w-3 h-3 text-white/30 -ml-1"
                   fill="currentColor"
