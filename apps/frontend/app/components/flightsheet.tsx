@@ -8,179 +8,208 @@ interface FlightDetailsSheetProps {
   onClose: () => void;
 }
 
+const PHASE_COLORS: Record<string, string> = {
+  takeoff: "#ff7849",
+  climb: "#ffab40",
+  cruise: "#00e676",
+  descent: "#ffca28",
+  landing: "#ff5252",
+};
+
+function getPhaseColor(phase: string): string {
+  return PHASE_COLORS[phase] ?? "#607d8b";
+}
+
+function DataRow({
+  label,
+  value,
+}: {
+  label: string;
+  value: string;
+}) {
+  return (
+    <div className="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+      <span className="text-gray-400 text-sm">{label}</span>
+      <span className="font-mono font-medium text-white">{value}</span>
+    </div>
+  );
+}
+
 export default function FlightDetailsSheet({
   flight,
   isOpen,
   onClose,
-}: FlightDetailsSheetProps): React.ReactElement | null {
-  if (!isOpen || !flight) return null;
+}: FlightDetailsSheetProps): React.ReactElement {
+  const phaseColor = flight ? getPhaseColor(flight.phase) : "#607d8b";
 
   return (
-    <>
-      <div className="fixed right-0 top-0 h-full w-96 bg-gray-50 shadow-2xl z-50 transform transition-transform duration-300 border-l border-gray-300">
+    <div
+      className={`fixed right-0 top-0 h-full w-96 z-50 transform transition-transform duration-300 ease-out ${
+        isOpen && flight ? "translate-x-0 pointer-events-auto" : "translate-x-full pointer-events-none"
+      }`}
+    >
+      <div className="h-full bg-gray-950/90 backdrop-blur-xl border-l border-white/10 shadow-[-20px_0_60px_rgba(0,0,0,0.5)]">
         <div className="h-full flex flex-col">
-          <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-black px-8 py-8 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.08),transparent_50%)]"></div>
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-white/5 to-transparent rounded-full blur-2xl"></div>
-
-            <div className="relative z-10">
-              <div className="flex items-center justify-between mb-8">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
-                    </svg>
-                  </div>
-                  <h2 className="text-2xl font-light text-white tracking-wide">
-                    Flight Details
-                  </h2>
-                </div>
-                <button
-                  onClick={onClose}
-                  className="text-white/60 hover:text-white transition-all duration-200 p-3 hover:bg-white/10 rounded-2xl backdrop-blur-sm"
-                >
+          {/* Header */}
+          <div className="bg-white/5 border-b border-white/10 px-6 py-6">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center">
                   <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
+                    className="w-5 h-5 text-white/80"
+                    fill="currentColor"
                     viewBox="0 0 24 24"
-                    strokeWidth={1.5}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
+                    <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
                   </svg>
-                </button>
+                </div>
+                <h2 className="text-lg font-medium text-white tracking-wide">
+                  Flight Details
+                </h2>
               </div>
+              <button
+                onClick={onClose}
+                className="text-white/40 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-xl"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
 
-              <div className="space-y-6">
-                <div className="flex items-baseline gap-4">
-                  <span className="text-3xl font-light text-white tracking-wide">
+            {flight && (
+              <div className="space-y-4">
+                <div className="flex items-baseline gap-3">
+                  <span className="text-2xl font-medium text-white">
                     {flight.airline}
                   </span>
-                  <span className="text-lg font-mono text-gray-300 bg-white/10 px-3 py-1 rounded-xl">
+                  <span className="font-mono text-sm text-gray-400 bg-white/10 px-2.5 py-1 rounded-lg">
                     {flight.callSign}
                   </span>
                 </div>
-                <div className="flex items-center gap-4 text-white">
-                  <div className="bg-white/10 px-4 py-3 rounded-2xl backdrop-blur-sm border border-white/10">
-                    <span className="text-lg font-medium tracking-wider">
+                <div className="flex items-center gap-3 text-white">
+                  <div className="bg-white/5 border border-white/10 px-3 py-2 rounded-xl">
+                    <span className="font-mono text-lg tracking-widest">
                       {flight.departureAirport}
                     </span>
                   </div>
-                  <div className="flex-1 flex items-center gap-3">
-                    <div className="flex-1 h-px bg-gradient-to-r from-white/40 to-white/20"></div>
-                    <div className="w-8 h-8 bg-white/15 rounded-full flex items-center justify-center backdrop-blur-sm">
-                      <svg
-                        className="w-4 h-4 text-white/80"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10.293 15.707a1 1 0 010-1.414L14.586 10 10.293 5.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
-                        />
-                      </svg>
-                    </div>
-                    <div className="flex-1 h-px bg-gradient-to-l from-white/40 to-white/20"></div>
+                  <div className="flex-1 flex items-center gap-2">
+                    <div className="flex-1 h-px bg-gradient-to-r from-white/30 to-transparent" />
+                    <svg
+                      className="w-4 h-4 text-white/40"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10.293 15.707a1 1 0 010-1.414L14.586 10 10.293 5.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                      />
+                    </svg>
+                    <div className="flex-1 h-px bg-gradient-to-l from-white/30 to-transparent" />
                   </div>
-                  <div className="bg-white/10 px-4 py-3 rounded-2xl backdrop-blur-sm border border-white/10">
-                    <span className="text-lg font-medium tracking-wider">
+                  <div className="bg-white/5 border border-white/10 px-3 py-2 rounded-xl">
+                    <span className="font-mono text-lg tracking-widest">
                       {flight.arrivalAirport}
                     </span>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
 
-          <div className="flex-1 overflow-y-auto px-8 py-6 space-y-8 bg-gradient-to-b from-gray-50 to-white">
-            <div className="space-y-4">
-              <h3 className="text-xl font-light text-gray-800 tracking-wide">
-                Current Status
-              </h3>
-              <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-200/50 backdrop-blur-sm">
-                <div className="flex justify-between items-center p-4 bg-gray-50/80 rounded-2xl">
-                  <span className="text-gray-700 font-medium">Phase</span>
-                  <span className="font-mono font-semibold text-gray-900 capitalize px-4 py-2 bg-white rounded-xl border border-gray-200 shadow-sm">
-                    {flight.phase}
-                  </span>
+          {/* Body */}
+          {flight && (
+            <div className="flex-1 overflow-y-auto px-6 py-5 space-y-6">
+              {/* Phase */}
+              <div className="space-y-3">
+                <h3 className="text-gray-300 text-sm uppercase tracking-wider font-medium">
+                  Status
+                </h3>
+                <div className="bg-white/5 border border-white/[0.08] rounded-2xl p-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-400 text-sm">Phase</span>
+                    <span
+                      className="font-mono text-sm font-medium capitalize px-3 py-1 rounded-lg border"
+                      style={{
+                        color: phaseColor,
+                        backgroundColor: `${phaseColor}20`,
+                        borderColor: `${phaseColor}30`,
+                      }}
+                    >
+                      {flight.phase}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="space-y-4">
-              <h3 className="text-xl font-light text-gray-800 tracking-wide">
-                Flight Progress
-              </h3>
-              <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-200/50">
-                <div className="space-y-6">
+              {/* Progress */}
+              <div className="space-y-3">
+                <h3 className="text-gray-300 text-sm uppercase tracking-wider font-medium">
+                  Progress
+                </h3>
+                <div className="bg-white/5 border border-white/[0.08] rounded-2xl p-4 space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-700 font-medium">Progress</span>
-                    <span className="text-3xl font-light text-gray-900 tracking-wide">
+                    <span className="text-gray-400 text-sm">Completion</span>
+                    <span className="text-2xl font-mono font-bold text-white">
                       {(flight.progress * 100).toFixed(1)}%
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-4 shadow-inner">
+                  <div className="w-full bg-white/10 rounded-full h-2.5 overflow-hidden">
                     <div
-                      className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 h-4 rounded-full transition-all duration-500 shadow-sm relative overflow-hidden"
+                      className="h-full rounded-full transition-all duration-500 relative"
                       style={{
                         width: `${(flight.progress * 100).toFixed(1)}%`,
+                        backgroundColor: phaseColor,
                       }}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="space-y-4">
-              <h3 className="text-xl font-light text-gray-800 tracking-wide">
-                Position
-              </h3>
-              <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-200/50 space-y-4">
-                <div className="flex justify-between items-center p-4 bg-gray-50/80 rounded-2xl">
-                  <span className="text-gray-700 font-medium">Latitude</span>
-                  <span className="font-mono font-semibold text-gray-900">
-                    {flight.position.latitude.toFixed(6)}°
-                  </span>
-                </div>
-                <div className="flex justify-between items-center p-4 bg-gray-50/80 rounded-2xl">
-                  <span className="text-gray-700 font-medium">Longitude</span>
-                  <span className="font-mono font-semibold text-gray-900">
-                    {flight.position.longitude.toFixed(6)}°
-                  </span>
-                </div>
-                <div className="flex justify-between items-center p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl border border-gray-200/70 shadow-sm">
-                  <span className="text-gray-700 font-medium">Altitude</span>
-                  <span className="font-mono font-semibold text-gray-900 px-3 py-1 bg-white rounded-xl border border-gray-200">
-                    {flight.position.altitude.toLocaleString()} ft
-                  </span>
-                </div>
-                <div className="flex justify-between items-center p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl border border-gray-200/70 shadow-sm">
-                  <span className="text-gray-700 font-medium">Bearing</span>
-                  <span className="font-mono font-semibold text-gray-900 px-3 py-1 bg-white rounded-xl border border-gray-200">
-                    {flight.bearing.toFixed(1)}°
-                  </span>
-                </div>
-                <div className="flex justify-between items-center p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl border border-gray-200/70 shadow-sm">
-                  <span className="text-gray-700 font-medium">Speed</span>
-                  <span className="font-mono font-semibold text-gray-900 px-3 py-1 bg-white rounded-xl border border-gray-200">
-                    {flight.speed.toFixed(0)} kts
-                  </span>
+              {/* Position */}
+              <div className="space-y-3">
+                <h3 className="text-gray-300 text-sm uppercase tracking-wider font-medium">
+                  Position
+                </h3>
+                <div className="bg-white/5 border border-white/[0.08] rounded-2xl p-4 space-y-2">
+                  <DataRow
+                    label="Latitude"
+                    value={`${flight.position.latitude.toFixed(6)}\u00B0`}
+                  />
+                  <DataRow
+                    label="Longitude"
+                    value={`${flight.position.longitude.toFixed(6)}\u00B0`}
+                  />
+                  <DataRow
+                    label="Altitude"
+                    value={`${flight.position.altitude.toLocaleString()} ft`}
+                  />
+                  <DataRow
+                    label="Bearing"
+                    value={`${flight.bearing.toFixed(1)}\u00B0`}
+                  />
+                  <DataRow
+                    label="Speed"
+                    value={`${flight.speed.toFixed(0)} kts`}
+                  />
                 </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 }

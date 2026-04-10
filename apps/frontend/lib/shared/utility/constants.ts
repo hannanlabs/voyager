@@ -6,11 +6,11 @@ export const EMPTY_GEOJSON = {
 };
 
 export const MAP_CONFIG = {
-  STYLE: "mapbox://styles/mapbox/standard",
+  STYLE: "mapbox://styles/mapbox/dark-v11",
   PROJECTION: { name: "globe" } as const,
   CENTER: [0, 20] as [number, number],
   ZOOM: 1.5,
-  PITCH: 0,
+  PITCH: 20,
   BEARING: 0,
 } as const;
 

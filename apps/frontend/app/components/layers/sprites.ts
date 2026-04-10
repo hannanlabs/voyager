@@ -2,7 +2,7 @@ import type { Map } from "mapbox-gl";
 
 export function addAirplaneIcon(map: Map): void {
   if (!map.hasImage("airplane-icon")) {
-    const size = 48;
+    const size = 64;
     const canvas = document.createElement("canvas");
     canvas.width = size;
     canvas.height = size;
@@ -13,61 +13,61 @@ export function addAirplaneIcon(map: Map): void {
 
     ctx.clearRect(0, 0, size, size);
 
+    const cx = size / 2;
+
+    ctx.shadowColor = "rgba(0, 0, 0, 0.3)";
+    ctx.shadowBlur = 2;
+
     ctx.fillStyle = "#ffffff";
-    ctx.strokeStyle = "#000000";
-    ctx.lineWidth = 3;
 
-    // Draw airplane body
+    // Fuselage — tapered nose to tail
     ctx.beginPath();
-    ctx.moveTo(size / 2, 6);
-    ctx.lineTo(size / 2 - 4, size / 2 - 2);
-    ctx.lineTo(size / 2 - 3, size - 8);
-    ctx.lineTo(size / 2, size - 4);
-    ctx.lineTo(size / 2 + 3, size - 8);
-    ctx.lineTo(size / 2 + 4, size / 2 - 2);
+    ctx.moveTo(cx, 6);
+    ctx.quadraticCurveTo(cx + 4, 16, cx + 3, 30);
+    ctx.lineTo(cx + 2, 50);
+    ctx.lineTo(cx, 56);
+    ctx.lineTo(cx - 2, 50);
+    ctx.lineTo(cx - 3, 30);
+    ctx.quadraticCurveTo(cx - 4, 16, cx, 6);
     ctx.closePath();
     ctx.fill();
-    ctx.stroke();
 
-    // Draw left wing
+    // Swept-back delta wings
     ctx.beginPath();
-    ctx.moveTo(size / 2 - 4, size / 2 - 2);
-    ctx.lineTo(size / 2 - 18, size / 2 + 4);
-    ctx.lineTo(size / 2 - 12, size / 2 + 10);
-    ctx.lineTo(size / 2 - 3, size / 2 + 6);
+    ctx.moveTo(cx - 3, 26);
+    ctx.lineTo(cx - 22, 36);
+    ctx.lineTo(cx - 18, 38);
+    ctx.lineTo(cx - 3, 34);
     ctx.closePath();
     ctx.fill();
-    ctx.stroke();
 
-    // Draw right wing
     ctx.beginPath();
-    ctx.moveTo(size / 2 + 4, size / 2 - 2);
-    ctx.lineTo(size / 2 + 18, size / 2 + 4);
-    ctx.lineTo(size / 2 + 12, size / 2 + 10);
-    ctx.lineTo(size / 2 + 3, size / 2 + 6);
+    ctx.moveTo(cx + 3, 26);
+    ctx.lineTo(cx + 22, 36);
+    ctx.lineTo(cx + 18, 38);
+    ctx.lineTo(cx + 3, 34);
     ctx.closePath();
     ctx.fill();
-    ctx.stroke();
 
-    // Draw left tail
+    // Horizontal stabilizer
     ctx.beginPath();
-    ctx.moveTo(size / 2 - 3, size - 8);
-    ctx.lineTo(size / 2 - 8, size - 6);
-    ctx.lineTo(size / 2 - 6, size - 4);
-    ctx.lineTo(size / 2 - 1, size - 6);
+    ctx.moveTo(cx - 2, 48);
+    ctx.lineTo(cx - 10, 52);
+    ctx.lineTo(cx - 8, 54);
+    ctx.lineTo(cx - 1, 51);
     ctx.closePath();
     ctx.fill();
-    ctx.stroke();
 
-    // Draw right tail
     ctx.beginPath();
-    ctx.moveTo(size / 2 + 3, size - 8);
-    ctx.lineTo(size / 2 + 8, size - 6);
-    ctx.lineTo(size / 2 + 6, size - 4);
-    ctx.lineTo(size / 2 + 1, size - 6);
+    ctx.moveTo(cx + 2, 48);
+    ctx.lineTo(cx + 10, 52);
+    ctx.lineTo(cx + 8, 54);
+    ctx.lineTo(cx + 1, 51);
     ctx.closePath();
     ctx.fill();
-    ctx.stroke();
+
+    ctx.shadowColor = "transparent";
+    ctx.shadowBlur = 0;
 
     const imageData = ctx.getImageData(0, 0, size, size);
     map.addImage("airplane-icon", imageData, { sdf: true });
