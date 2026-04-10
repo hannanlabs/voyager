@@ -50,6 +50,12 @@ export function HeroSection() {
             >
               Explore Globe
             </Link>
+            <Link
+              href="/docs"
+              className="border border-gray-600 text-gray-300 px-8 py-3 font-medium hover:border-red-600 hover:text-white transition-colors rounded-md"
+            >
+              Documentation
+            </Link>
             <a
               href="https://github.com/hannanlabs/voyager"
               target="_blank"
